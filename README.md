@@ -1,4 +1,4 @@
-# SkillBridge
+# NAXORA
 
 Academia–Industry collaboration platform for skill mapping, internships and placement.
 
