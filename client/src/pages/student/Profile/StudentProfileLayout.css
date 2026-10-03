@@ -1,0 +1,308 @@
+/* =========================================================
+   PROFILE INTERNAL LAYOUT
+   Sidebar stays stable while profile pages change
+   ========================================================= */
+
+.student-profile-layout {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns: 255px minmax(0, 1fr);
+
+  gap: 18px;
+
+  padding: 28px 28px 50px;
+
+  align-items: start;
+}
+
+
+/* =========================================================
+   PROFILE SIDEBAR
+   ========================================================= */
+
+.student-profile-sidebar {
+  position: sticky;
+
+  top: 92px;
+
+  height: calc(100vh - 120px);
+
+  min-height: 500px;
+
+  padding: 18px;
+
+  background: #101b29;
+
+  border: 1px solid #243548;
+
+  border-radius: 16px;
+
+  overflow-y: auto;
+
+  z-index: 10;
+}
+
+.student-profile-sidebar-title {
+  margin: 2px 12px 14px;
+
+  color: #7890aa;
+
+  font-size: 12px;
+  font-weight: 800;
+
+  letter-spacing: 1.2px;
+}
+
+
+/* =========================================================
+   NAVIGATION
+   ========================================================= */
+
+.student-profile-navigation {
+  display: flex;
+  flex-direction: column;
+
+  gap: 5px;
+}
+
+.student-profile-nav-item {
+  min-height: 48px;
+
+  display: grid;
+
+  grid-template-columns: 22px minmax(0, 1fr) 16px;
+
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 0 12px;
+
+  border-radius: 10px;
+
+  color: #8195ad;
+
+  text-decoration: none;
+
+  font-size: 14px;
+  font-weight: 650;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.student-profile-nav-item svg {
+  color: #8195ad;
+}
+
+.student-profile-nav-item:hover {
+  background: #142b3c;
+
+  color: #dcecf8;
+}
+
+.student-profile-nav-item:hover svg {
+  color: #38d5e8;
+}
+
+.student-profile-nav-item.active {
+  background: #103447;
+
+  color: #35d9ea;
+}
+
+.student-profile-nav-item.active svg {
+  color: #35d9ea;
+}
+
+.student-profile-nav-arrow {
+  font-size: 24px;
+
+  line-height: 1;
+
+  text-align: right;
+
+  opacity: 0;
+}
+
+.student-profile-nav-item.active
+.student-profile-nav-arrow {
+  opacity: 1;
+}
+
+
+/* =========================================================
+   PROFILE SETUP
+   ========================================================= */
+
+.student-profile-setup {
+  margin-top: 24px;
+
+  padding-top: 18px;
+
+  border-top: 1px solid #27384b;
+}
+
+.student-profile-setup-header {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  margin-bottom: 12px;
+
+  color: #7890aa;
+
+  font-size: 10px;
+  font-weight: 800;
+
+  letter-spacing: 1px;
+}
+
+.student-profile-setup-line {
+  flex: 1;
+
+  height: 1px;
+
+  background: #38a8d1;
+}
+
+.student-profile-progress {
+  width: 100%;
+
+  height: 8px;
+
+  overflow: hidden;
+
+  border-radius: 4px;
+
+  background: #293b4e;
+}
+
+.student-profile-progress span {
+  display: block;
+
+  width: 14%;
+
+  height: 100%;
+
+  background: #318cf4;
+
+  border-radius: 4px;
+}
+
+.student-profile-setup p {
+  margin: 9px 0 0;
+
+  color: #7890aa;
+
+  font-size: 12px;
+
+  line-height: 1.5;
+}
+
+
+/* =========================================================
+   RIGHT CONTENT
+   ========================================================= */
+
+.student-profile-content {
+  min-width: 0;
+
+  width: 100%;
+}
+
+
+/* =========================================================
+   LIGHT MODE
+   ========================================================= */
+
+:root:not(.dark) .student-profile-sidebar {
+  background: #ffffff;
+
+  border-color: #dce5ef;
+
+  box-shadow:
+    0 8px 28px rgba(15, 23, 42, 0.05);
+}
+
+:root:not(.dark) .student-profile-nav-item {
+  color: #667085;
+}
+
+:root:not(.dark) .student-profile-nav-item svg {
+  color: #8493a5;
+}
+
+:root:not(.dark) .student-profile-nav-item:hover {
+  background: #eefaff;
+
+  color: #087ea4;
+}
+
+:root:not(.dark) .student-profile-nav-item.active {
+  background: #e7f8fd;
+
+  color: #0284c7;
+}
+
+:root:not(.dark) .student-profile-nav-item.active svg {
+  color: #0284c7;
+}
+
+:root:not(.dark) .student-profile-setup {
+  border-color: #e2e8f0;
+}
+
+:root:not(.dark) .student-profile-setup-header {
+  color: #7890aa;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 900px) {
+  .student-profile-layout {
+    grid-template-columns: 210px minmax(0, 1fr);
+
+    padding: 22px 20px 40px;
+  }
+
+  .student-profile-sidebar {
+    top: 88px;
+  }
+}
+
+@media (max-width: 720px) {
+  .student-profile-layout {
+    grid-template-columns: 1fr;
+
+    padding: 20px 16px 35px;
+  }
+
+  .student-profile-sidebar {
+    position: relative;
+
+    top: auto;
+
+    height: auto;
+
+    min-height: auto;
+  }
+
+  .student-profile-navigation {
+    display: grid;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .student-profile-setup {
+    display: none;
+  }
+}

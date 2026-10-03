@@ -1,0 +1,942 @@
+/* =========================================================
+   INSTITUTION DASHBOARD
+   Light + Dark Mode
+========================================================= */
+
+.institution-dashboard {
+  width: 100%;
+  max-width: 1500px;
+  margin: 0 auto;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.institution-dashboard-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 28px;
+}
+
+.institution-dashboard-eyebrow {
+  margin: 0 0 7px;
+
+  color: #2563eb;
+
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.institution-dashboard-header h1 {
+  margin: 0;
+
+  color: #172033;
+
+  font-size: 30px;
+  line-height: 1.2;
+  font-weight: 750;
+  letter-spacing: -0.03em;
+}
+
+.institution-dashboard-header > div > p:last-child {
+  max-width: 650px;
+  margin: 9px 0 0;
+
+  color: #69778c;
+
+  font-size: 13.5px;
+  line-height: 1.65;
+}
+
+.institution-profile-button {
+  height: 41px;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 0 16px;
+
+  border: 1px solid #dce4ef;
+  border-radius: 9px;
+
+  background: #ffffff;
+  color: #334155;
+
+  font-size: 12.5px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.04);
+
+  transition:
+    border-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.institution-profile-button:hover {
+  border-color: #9bb9ef;
+  color: #2563eb;
+
+  transform: translateY(-1px);
+
+  box-shadow: 0 7px 18px rgba(37, 99, 235, 0.09);
+}
+
+
+/* =========================================================
+   OVERVIEW CARDS
+========================================================= */
+
+.institution-overview-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+
+  gap: 16px;
+
+  margin-bottom: 20px;
+}
+
+.institution-overview-card {
+  position: relative;
+
+  min-height: 138px;
+
+  display: flex;
+  align-items: flex-start;
+
+  gap: 14px;
+
+  padding: 20px;
+
+  overflow: hidden;
+
+  background: #ffffff;
+
+  border: 1px solid #e4e9f1;
+  border-radius: 13px;
+
+  box-shadow: 0 7px 24px rgba(15, 23, 42, 0.045);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.institution-overview-card::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  height: 3px;
+}
+
+.institution-overview-card:nth-child(1)::after {
+  background: #2563eb;
+}
+
+.institution-overview-card:nth-child(2)::after {
+  background: #7c3aed;
+}
+
+.institution-overview-card:nth-child(3)::after {
+  background: #16a34a;
+}
+
+.institution-overview-card:nth-child(4)::after {
+  background: #f97316;
+}
+
+.institution-overview-card:hover {
+  transform: translateY(-2px);
+
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+}
+
+
+/* ICON COLOURS */
+
+.institution-overview-card:nth-child(1)
+.institution-overview-icon {
+  background: #eaf2ff;
+  color: #2563eb;
+}
+
+.institution-overview-card:nth-child(2)
+.institution-overview-icon {
+  background: #f1eaff;
+  color: #7c3aed;
+}
+
+.institution-overview-card:nth-child(3)
+.institution-overview-icon {
+  background: #e9f9ef;
+  color: #16a34a;
+}
+
+.institution-overview-card:nth-child(4)
+.institution-overview-icon {
+  background: #fff1e7;
+  color: #ea580c;
+}
+
+.institution-overview-icon {
+  width: 43px;
+  height: 43px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 10px;
+}
+
+.institution-overview-content {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.institution-overview-content span {
+  color: #738096;
+
+  font-size: 11.5px;
+  font-weight: 600;
+}
+
+.institution-overview-content strong {
+  color: #172033;
+
+  font-size: 27px;
+  line-height: 1.05;
+  font-weight: 750;
+}
+
+.institution-overview-content small {
+  color: #98a3b3;
+
+  font-size: 10.5px;
+}
+
+
+/* =========================================================
+   MAIN GRID
+========================================================= */
+
+.institution-dashboard-grid {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1.35fr)
+    minmax(340px, 0.65fr);
+
+  gap: 20px;
+
+  margin-bottom: 20px;
+}
+
+.institution-dashboard-panel {
+  overflow: hidden;
+
+  background: #ffffff;
+
+  border: 1px solid #e3e8f0;
+  border-radius: 13px;
+
+  box-shadow: 0 7px 24px rgba(15, 23, 42, 0.04);
+}
+
+
+/* =========================================================
+   PANEL HEADER
+========================================================= */
+
+.institution-panel-header {
+  padding: 20px 21px 17px;
+
+  border-bottom: 1px solid #edf0f4;
+}
+
+.institution-panel-header h2 {
+  margin: 0;
+
+  color: #202b3d;
+
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.institution-panel-header p {
+  margin: 5px 0 0;
+
+  color: #8793a5;
+
+  font-size: 11.5px;
+  line-height: 1.55;
+}
+
+
+/* =========================================================
+   GETTING STARTED
+========================================================= */
+
+.institution-progress-box {
+  padding: 18px 21px 15px;
+}
+
+.institution-progress-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 9px;
+}
+
+.institution-progress-top span {
+  color: #536176;
+
+  font-size: 12px;
+  font-weight: 650;
+}
+
+.institution-progress-top strong {
+  color: #2563eb;
+
+  font-size: 12px;
+}
+
+.institution-progress-track {
+  width: 100%;
+  height: 7px;
+
+  overflow: hidden;
+
+  background: #e9eef5;
+
+  border-radius: 5px;
+}
+
+.institution-progress-value {
+  width: 18%;
+  height: 100%;
+
+  background: #2563eb;
+
+  border-radius: 5px;
+}
+
+.institution-progress-note {
+  display: block;
+
+  margin-top: 8px;
+
+  color: #929dac;
+
+  font-size: 10.5px;
+}
+
+.institution-checklist {
+  border-top: 1px solid #edf0f4;
+}
+
+.institution-check-item {
+  min-height: 74px;
+
+  display: grid;
+
+  grid-template-columns:
+    38px
+    minmax(0, 1fr)
+    auto;
+
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 12px 21px;
+
+  border-bottom: 1px solid #edf0f4;
+}
+
+.institution-check-item:last-child {
+  border-bottom: none;
+}
+
+.institution-check-number {
+  width: 33px;
+  height: 33px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 9px;
+
+  font-size: 10px;
+  font-weight: 750;
+}
+
+
+/* Different checklist colours */
+
+.institution-check-item:nth-child(1)
+.institution-check-number {
+  background: #eaf2ff;
+  color: #2563eb;
+}
+
+.institution-check-item:nth-child(2)
+.institution-check-number {
+  background: #fff1e7;
+  color: #ea580c;
+}
+
+.institution-check-item:nth-child(3)
+.institution-check-number {
+  background: #e9f9ef;
+  color: #16a34a;
+}
+
+.institution-check-item strong {
+  color: #354154;
+
+  font-size: 12px;
+}
+
+.institution-check-item p {
+  margin: 4px 0 0;
+
+  color: #8a95a5;
+
+  font-size: 10.5px;
+  line-height: 1.45;
+}
+
+.institution-check-item > svg {
+  color: #8795a8;
+}
+
+
+/* =========================================================
+   QUICK ACTIONS
+========================================================= */
+
+.institution-quick-actions {
+  padding: 8px 0;
+}
+
+.institution-quick-action {
+  width: 100%;
+  min-height: 76px;
+
+  display: grid;
+
+  grid-template-columns:
+    40px
+    minmax(0, 1fr)
+    auto;
+
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 12px 20px;
+
+  border: none;
+  border-bottom: 1px solid #edf0f4;
+
+  background: transparent;
+
+  text-align: left;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    padding-left 0.2s ease;
+}
+
+.institution-quick-action:last-child {
+  border-bottom: none;
+}
+
+.institution-quick-action:hover {
+  background: #f8fafc;
+
+  padding-left: 23px;
+}
+
+
+/* Quick action icon colours */
+
+.institution-quick-action:nth-child(1)
+.institution-quick-icon {
+  background: #eaf2ff;
+  color: #2563eb;
+}
+
+.institution-quick-action:nth-child(2)
+.institution-quick-icon {
+  background: #f1eaff;
+  color: #7c3aed;
+}
+
+.institution-quick-action:nth-child(3)
+.institution-quick-icon {
+  background: #e9f9ef;
+  color: #16a34a;
+}
+
+.institution-quick-action:nth-child(4)
+.institution-quick-icon {
+  background: #fff1e7;
+  color: #ea580c;
+}
+
+.institution-quick-icon {
+  width: 38px;
+  height: 38px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 9px;
+}
+
+.institution-quick-action strong {
+  color: #354154;
+
+  font-size: 12px;
+  font-weight: 650;
+}
+
+.institution-quick-action p {
+  margin: 4px 0 0;
+
+  color: #8b96a6;
+
+  font-size: 10.5px;
+  line-height: 1.45;
+}
+
+.institution-quick-action > svg {
+  color: #9aa5b4;
+}
+
+
+/* =========================================================
+   BOTTOM GRID
+========================================================= */
+
+.institution-bottom-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 20px;
+}
+
+.institution-empty-panel {
+  min-height: 280px;
+}
+
+.institution-empty-state {
+  min-height: 205px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding: 30px;
+
+  text-align: center;
+}
+
+.institution-empty-icon {
+  width: 48px;
+  height: 48px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 13px;
+
+  border-radius: 11px;
+
+  background: #edf4ff;
+
+  color: #2563eb;
+}
+
+.institution-empty-state h3 {
+  margin: 0;
+
+  color: #4a576b;
+
+  font-size: 13px;
+}
+
+.institution-empty-state p {
+  max-width: 340px;
+
+  margin: 7px 0 0;
+
+  color: #8b96a6;
+
+  font-size: 10.5px;
+  line-height: 1.6;
+}
+
+
+/* =========================================================
+   DARK MODE
+   Works with body[data-theme="dark"]
+   and html[data-theme="dark"]
+========================================================= */
+
+body[data-theme="dark"] .institution-dashboard,
+html[data-theme="dark"] .institution-dashboard {
+  color: #e7edf6;
+}
+
+
+/* Dashboard header */
+
+body[data-theme="dark"] .institution-dashboard-header h1,
+html[data-theme="dark"] .institution-dashboard-header h1 {
+  color: #f1f5fb;
+}
+
+body[data-theme="dark"] .institution-dashboard-header > div > p:last-child,
+html[data-theme="dark"] .institution-dashboard-header > div > p:last-child {
+  color: #91a0b5;
+}
+
+body[data-theme="dark"] .institution-dashboard-eyebrow,
+html[data-theme="dark"] .institution-dashboard-eyebrow {
+  color: #60a5fa;
+}
+
+
+/* Profile button */
+
+body[data-theme="dark"] .institution-profile-button,
+html[data-theme="dark"] .institution-profile-button {
+  background: #172235;
+  border-color: #29384e;
+  color: #d4deec;
+
+  box-shadow: none;
+}
+
+body[data-theme="dark"] .institution-profile-button:hover,
+html[data-theme="dark"] .institution-profile-button:hover {
+  border-color: #3b82f6;
+  color: #60a5fa;
+}
+
+
+/* Overview cards */
+
+body[data-theme="dark"] .institution-overview-card,
+html[data-theme="dark"] .institution-overview-card {
+  background: #111c2d;
+  border-color: #24334a;
+
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.16);
+}
+
+body[data-theme="dark"] .institution-overview-card:hover,
+html[data-theme="dark"] .institution-overview-card:hover {
+  box-shadow: 0 13px 32px rgba(0, 0, 0, 0.25);
+}
+
+
+/* Dark icon backgrounds */
+
+body[data-theme="dark"]
+.institution-overview-card:nth-child(1)
+.institution-overview-icon,
+html[data-theme="dark"]
+.institution-overview-card:nth-child(1)
+.institution-overview-icon {
+  background: rgba(37, 99, 235, 0.16);
+  color: #60a5fa;
+}
+
+body[data-theme="dark"]
+.institution-overview-card:nth-child(2)
+.institution-overview-icon,
+html[data-theme="dark"]
+.institution-overview-card:nth-child(2)
+.institution-overview-icon {
+  background: rgba(124, 58, 237, 0.16);
+  color: #b794f6;
+}
+
+body[data-theme="dark"]
+.institution-overview-card:nth-child(3)
+.institution-overview-icon,
+html[data-theme="dark"]
+.institution-overview-card:nth-child(3)
+.institution-overview-icon {
+  background: rgba(22, 163, 74, 0.16);
+  color: #4ade80;
+}
+
+body[data-theme="dark"]
+.institution-overview-card:nth-child(4)
+.institution-overview-icon,
+html[data-theme="dark"]
+.institution-overview-card:nth-child(4)
+.institution-overview-icon {
+  background: rgba(249, 115, 22, 0.16);
+  color: #fb923c;
+}
+
+body[data-theme="dark"] .institution-overview-content span,
+html[data-theme="dark"] .institution-overview-content span {
+  color: #92a0b4;
+}
+
+body[data-theme="dark"] .institution-overview-content strong,
+html[data-theme="dark"] .institution-overview-content strong {
+  color: #f2f6fb;
+}
+
+body[data-theme="dark"] .institution-overview-content small,
+html[data-theme="dark"] .institution-overview-content small {
+  color: #718096;
+}
+
+
+/* Dashboard panels */
+
+body[data-theme="dark"] .institution-dashboard-panel,
+html[data-theme="dark"] .institution-dashboard-panel {
+  background: #111c2d;
+  border-color: #24334a;
+
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.16);
+}
+
+body[data-theme="dark"] .institution-panel-header,
+html[data-theme="dark"] .institution-panel-header {
+  border-bottom-color: #24334a;
+}
+
+body[data-theme="dark"] .institution-panel-header h2,
+html[data-theme="dark"] .institution-panel-header h2 {
+  color: #eaf0f8;
+}
+
+body[data-theme="dark"] .institution-panel-header p,
+html[data-theme="dark"] .institution-panel-header p {
+  color: #7f8da3;
+}
+
+
+/* Progress */
+
+body[data-theme="dark"] .institution-progress-top span,
+html[data-theme="dark"] .institution-progress-top span {
+  color: #b8c5d7;
+}
+
+body[data-theme="dark"] .institution-progress-top strong,
+html[data-theme="dark"] .institution-progress-top strong {
+  color: #60a5fa;
+}
+
+body[data-theme="dark"] .institution-progress-track,
+html[data-theme="dark"] .institution-progress-track {
+  background: #24334a;
+}
+
+body[data-theme="dark"] .institution-progress-value,
+html[data-theme="dark"] .institution-progress-value {
+  background: #3b82f6;
+}
+
+body[data-theme="dark"] .institution-progress-note,
+html[data-theme="dark"] .institution-progress-note {
+  color: #718096;
+}
+
+
+/* Checklist */
+
+body[data-theme="dark"] .institution-checklist,
+html[data-theme="dark"] .institution-checklist {
+  border-top-color: #24334a;
+}
+
+body[data-theme="dark"] .institution-check-item,
+html[data-theme="dark"] .institution-check-item {
+  border-bottom-color: #24334a;
+}
+
+body[data-theme="dark"] .institution-check-item strong,
+html[data-theme="dark"] .institution-check-item strong {
+  color: #dce5f1;
+}
+
+body[data-theme="dark"] .institution-check-item p,
+html[data-theme="dark"] .institution-check-item p {
+  color: #7e8da3;
+}
+
+body[data-theme="dark"] .institution-check-item > svg,
+html[data-theme="dark"] .institution-check-item > svg {
+  color: #718096;
+}
+
+
+/* Quick actions */
+
+body[data-theme="dark"] .institution-quick-action,
+html[data-theme="dark"] .institution-quick-action {
+  border-bottom-color: #24334a;
+}
+
+body[data-theme="dark"] .institution-quick-action:hover,
+html[data-theme="dark"] .institution-quick-action:hover {
+  background: #172337;
+}
+
+body[data-theme="dark"] .institution-quick-action strong,
+html[data-theme="dark"] .institution-quick-action strong {
+  color: #dce5f1;
+}
+
+body[data-theme="dark"] .institution-quick-action p,
+html[data-theme="dark"] .institution-quick-action p {
+  color: #7f8da3;
+}
+
+body[data-theme="dark"] .institution-quick-action > svg,
+html[data-theme="dark"] .institution-quick-action > svg {
+  color: #718096;
+}
+
+
+/* Dark quick icons */
+
+body[data-theme="dark"]
+.institution-quick-action:nth-child(1)
+.institution-quick-icon,
+html[data-theme="dark"]
+.institution-quick-action:nth-child(1)
+.institution-quick-icon {
+  background: rgba(37, 99, 235, 0.16);
+  color: #60a5fa;
+}
+
+body[data-theme="dark"]
+.institution-quick-action:nth-child(2)
+.institution-quick-icon,
+html[data-theme="dark"]
+.institution-quick-action:nth-child(2)
+.institution-quick-icon {
+  background: rgba(124, 58, 237, 0.16);
+  color: #b794f6;
+}
+
+body[data-theme="dark"]
+.institution-quick-action:nth-child(3)
+.institution-quick-icon,
+html[data-theme="dark"]
+.institution-quick-action:nth-child(3)
+.institution-quick-icon {
+  background: rgba(22, 163, 74, 0.16);
+  color: #4ade80;
+}
+
+body[data-theme="dark"]
+.institution-quick-action:nth-child(4)
+.institution-quick-icon,
+html[data-theme="dark"]
+.institution-quick-action:nth-child(4)
+.institution-quick-icon {
+  background: rgba(249, 115, 22, 0.16);
+  color: #fb923c;
+}
+
+
+/* Empty state */
+
+body[data-theme="dark"] .institution-empty-icon,
+html[data-theme="dark"] .institution-empty-icon {
+  background: rgba(37, 99, 235, 0.15);
+  color: #60a5fa;
+}
+
+body[data-theme="dark"] .institution-empty-state h3,
+html[data-theme="dark"] .institution-empty-state h3 {
+  color: #cbd6e5;
+}
+
+body[data-theme="dark"] .institution-empty-state p,
+html[data-theme="dark"] .institution-empty-state p {
+  color: #77869c;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1200px) {
+  .institution-overview-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 1000px) {
+  .institution-dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 750px) {
+  .institution-dashboard-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .institution-bottom-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 550px) {
+  .institution-overview-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .institution-content {
+    padding: 18px;
+  }
+
+  .institution-dashboard-header h1 {
+    font-size: 24px;
+  }
+}

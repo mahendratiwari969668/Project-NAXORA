@@ -1,0 +1,468 @@
+/* =========================================================
+   NEXORA STUDENT LAYOUT
+   ONE SHARED SIDEBAR + TOPBAR
+========================================================= */
+
+.student-layout {
+  min-height: 100vh;
+  background: #070d16;
+  color: #edf7ff;
+}
+
+/* =========================================================
+   SIDEBAR
+========================================================= */
+
+.student-layout-sidebar {
+  width: 255px;
+  min-width: 255px;
+  height: 100vh;
+
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;
+
+  padding: 24px 15px;
+
+  background:
+    linear-gradient(
+      180deg,
+      #0b1420 0%,
+      #08111c 55%,
+      #07101a 100%
+    );
+
+  border-right: 1px solid rgba(108, 152, 194, 0.18);
+
+  z-index: 100;
+}
+
+/* =========================================================
+   BRAND
+========================================================= */
+
+.student-layout-brand {
+  height: 55px;
+
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  padding: 0 10px;
+  margin-bottom: 26px;
+
+  color: inherit;
+  text-decoration: none;
+}
+
+.student-layout-brand-mark {
+  width: 44px;
+  height: 44px;
+
+  display: grid;
+  place-items: center;
+
+  flex-shrink: 0;
+
+  border-radius: 12px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #277cff,
+      #1160df 60%,
+      #0c4dbb
+    );
+
+  color: #ffffff;
+
+  font-size: 20px;
+  font-weight: 800;
+
+  box-shadow:
+    0 8px 22px rgba(20, 105, 242, 0.3);
+}
+
+.student-layout-brand-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.student-layout-brand-text strong {
+  font-size: 18px;
+  line-height: 1;
+}
+
+.student-layout-brand-text small {
+  margin-top: 5px;
+
+  color: #73869b;
+
+  font-size: 14px;
+}
+
+/* =========================================================
+   NAV
+========================================================= */
+
+.student-layout-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.student-layout-nav-item {
+  width: 100%;
+  min-height: 48px;
+
+  box-sizing: border-box;
+
+  position: relative;
+
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 0 14px;
+
+  border-radius: 10px;
+
+  color: #8192a7;
+
+  text-decoration: none;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.student-layout-nav-item:hover {
+  background:
+    rgba(49, 111, 177, 0.1);
+
+  color: #d8e9f7;
+
+  transform: translateX(2px);
+}
+
+.student-layout-nav-item.active {
+  background:
+    linear-gradient(
+      90deg,
+      rgba(19, 170, 204, 0.2),
+      rgba(30, 100, 181, 0.12)
+    );
+
+  color: #51e6ff;
+
+  box-shadow:
+    inset 3px 0 0 #26dcf5,
+    0 8px 25px rgba(0, 160, 210, 0.05);
+}
+
+.student-layout-nav-arrow {
+  margin-left: auto;
+  opacity: 0.9;
+}
+
+/* =========================================================
+   USER
+========================================================= */
+
+.student-layout-user {
+  min-height: 58px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 9px;
+
+  box-sizing: border-box;
+
+  margin-top: auto;
+
+  border:
+    1px solid rgba(99, 139, 173, 0.14);
+
+  border-radius: 11px;
+
+  background:
+    rgba(20, 40, 58, 0.38);
+
+  color: inherit;
+
+  text-decoration: none;
+}
+
+.student-layout-user:hover {
+  background:
+    rgba(31, 61, 87, 0.45);
+}
+
+.student-layout-user-avatar {
+  width: 37px;
+  height: 37px;
+
+  display: grid;
+  place-items: center;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background:
+    rgba(29, 207, 239, 0.12);
+
+  color: #49dcec;
+}
+
+.student-layout-user-info {
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  flex: 1;
+}
+
+.student-layout-user-info strong {
+  font-size: 14px;
+}
+
+.student-layout-user-info small {
+  margin-top: 3px;
+
+  color: #72869a;
+
+  font-size: 14px;
+}
+
+/* =========================================================
+   RIGHT CONTENT
+========================================================= */
+
+.student-layout-content {
+  width: calc(100% - 255px);
+  min-height: 100vh;
+
+  margin-left: 255px;
+}
+
+/* =========================================================
+   TOPBAR
+========================================================= */
+
+.student-layout-topbar {
+  width: 100%;
+  height: 72px;
+
+  box-sizing: border-box;
+
+  position: sticky;
+  top: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 34px;
+
+  background:
+    rgba(6, 13, 22, 0.84);
+
+  border-bottom:
+    1px solid rgba(91, 131, 163, 0.16);
+
+  backdrop-filter: blur(12px);
+
+  z-index: 50;
+}
+
+.student-layout-portal-label {
+  color: #72869a;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  letter-spacing: 0.1em;
+}
+
+.student-layout-topbar-actions {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+}
+
+.student-layout-icon-button,
+.student-layout-profile-button {
+  width: 43px;
+  height: 43px;
+
+  display: grid;
+  place-items: center;
+
+  border:
+    1px solid rgba(101, 145, 179, 0.24);
+
+  border-radius: 11px;
+
+  background:
+    rgba(15, 30, 45, 0.7);
+
+  color: #92a7ba;
+
+  text-decoration: none;
+
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease,
+    background 0.2s ease;
+}
+
+.student-layout-icon-button:hover,
+.student-layout-profile-button:hover {
+  color: #54e2f6;
+
+  border-color:
+    rgba(44, 213, 241, 0.3);
+
+  background:
+    rgba(21, 52, 70, 0.75);
+}
+
+.student-layout-profile-button {
+  border-radius: 50%;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(28, 202, 232, 0.13),
+      rgba(30, 91, 158, 0.2)
+    );
+
+  color: #4bd8ef;
+}
+
+/* =========================================================
+   PAGE CONTENT
+========================================================= */
+
+.student-layout-main {
+  min-height: calc(100vh - 72px);
+}
+
+/* =========================================================
+   LIGHT MODE
+========================================================= */
+
+html:not(.dark) .student-layout {
+  background: #f4f8fc;
+  color: #172033;
+}
+
+html:not(.dark) .student-layout-sidebar {
+  background:
+    linear-gradient(
+      180deg,
+      #ffffff,
+      #f6faff
+    );
+
+  border-right-color: #dce7f1;
+}
+
+html:not(.dark) .student-layout-nav-item {
+  color: #66788b;
+}
+
+html:not(.dark) .student-layout-nav-item:hover {
+  background: #edf6fb;
+  color: #17334a;
+}
+
+html:not(.dark) .student-layout-nav-item.active {
+  background:
+    linear-gradient(
+      90deg,
+      rgba(19, 190, 220, 0.15),
+      rgba(45, 105, 204, 0.1)
+    );
+
+  color: #087fa1;
+
+  box-shadow:
+    inset 3px 0 0 #1acde8;
+}
+
+html:not(.dark) .student-layout-user {
+  background:
+    linear-gradient(
+      120deg,
+      #f1f8fc,
+      #edf4fb
+    );
+
+  border-color: #dbe7ef;
+}
+
+html:not(.dark) .student-layout-topbar {
+  background:
+    rgba(255, 255, 255, 0.9);
+
+  border-bottom-color: #dce5ee;
+}
+
+html:not(.dark) .student-layout-portal-label {
+  color: #6e8094;
+}
+
+html:not(.dark) .student-layout-icon-button,
+html:not(.dark) .student-layout-profile-button {
+  background: #ffffff;
+  border-color: #dbe4ed;
+  color: #65778a;
+}
+
+html:not(.dark) .student-layout-profile-button {
+  background:
+    linear-gradient(
+      145deg,
+      #eefbfe,
+      #edf4ff
+    );
+
+  color: #087fa1;
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 760px) {
+  .student-layout-sidebar {
+    display: none;
+  }
+
+  .student-layout-content {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .student-layout-topbar {
+    padding: 0 18px;
+  }
+}

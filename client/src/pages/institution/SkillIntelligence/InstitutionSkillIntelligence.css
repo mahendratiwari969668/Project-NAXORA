@@ -1,0 +1,1367 @@
+/* =========================================================
+   INSTITUTION SKILL INTELLIGENCE
+========================================================= */
+
+.institution-skill-page {
+  width: 100%;
+  max-width: 1500px;
+  margin: 0 auto;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.institution-skill-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+
+  gap: 25px;
+  margin-bottom: 22px;
+}
+
+.institution-skill-eyebrow {
+  margin: 0 0 6px;
+
+  color: #7c3aed;
+
+  font-size: 10.5px;
+  font-weight: 750;
+
+  letter-spacing: 0.12em;
+}
+
+.institution-skill-header h1 {
+  margin: 0;
+
+  color: #172033;
+
+  font-size: 29px;
+  font-weight: 750;
+
+  letter-spacing: -0.03em;
+}
+
+.institution-skill-header > div:first-child > p:last-child {
+  max-width: 650px;
+
+  margin: 8px 0 0;
+
+  color: #738096;
+
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+
+/* =========================================================
+   FILTERS
+========================================================= */
+
+.institution-skill-filters {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.institution-skill-filter {
+  min-width: 145px;
+  height: 39px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 11px;
+
+  background: #ffffff;
+
+  border: 1px solid #dfe6ef;
+  border-radius: 8px;
+
+  color: #59677b;
+
+  font-size: 11.5px;
+  font-weight: 550;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.institution-skill-filter:hover {
+  border-color: #b7c8e3;
+
+  color: #2563eb;
+}
+
+.institution-skill-filter svg {
+  color: #8390a2;
+}
+
+
+/* =========================================================
+   TABS
+========================================================= */
+
+.institution-skill-tabs {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+
+  height: 48px;
+
+  margin-bottom: 16px;
+
+  background: #ffffff;
+
+  border: 1px solid #e2e8f0;
+
+  border-radius: 10px;
+
+  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.03);
+
+  overflow: hidden;
+}
+
+.institution-skill-tabs button {
+  position: relative;
+
+  border: none;
+
+  background: transparent;
+
+  color: #718096;
+
+  font-size: 11.5px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    color 0.2s ease,
+    background 0.2s ease;
+}
+
+.institution-skill-tabs button:hover {
+  background: #f7faff;
+
+  color: #2563eb;
+}
+
+.institution-skill-tabs button.active {
+  color: #2563eb;
+
+  background: #f8fbff;
+}
+
+.institution-skill-tabs button.active::after {
+  content: "";
+
+  position: absolute;
+
+  left: 20%;
+  right: 20%;
+  bottom: 0;
+
+  height: 3px;
+
+  background: #2563eb;
+
+  border-radius: 3px 3px 0 0;
+}
+
+
+/* =========================================================
+   OVERVIEW
+========================================================= */
+
+.institution-skill-overview {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1.4fr)
+    minmax(360px, 0.6fr);
+
+  gap: 18px;
+}
+
+
+/* =========================================================
+   PANELS
+========================================================= */
+
+.institution-skill-panel {
+  background: #ffffff;
+
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+
+  box-shadow:
+    0 6px 22px rgba(15, 23, 42, 0.04);
+
+  overflow: hidden;
+}
+
+.institution-skill-panel-header {
+  min-height: 61px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 13px 18px;
+
+  border-bottom: 1px solid #edf0f4;
+}
+
+.institution-skill-panel-header h2 {
+  margin: 0;
+
+  color: #263449;
+
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.institution-skill-panel-header p {
+  margin: 4px 0 0;
+
+  color: #8b96a6;
+
+  font-size: 10.5px;
+}
+
+.institution-skill-panel-header > svg {
+  color: #8190a5;
+}
+
+
+/* =========================================================
+   SKILL TABLE
+========================================================= */
+
+.institution-skill-table {
+  padding: 4px 0;
+}
+
+.institution-skill-table-head,
+.institution-skill-row {
+  display: grid;
+
+  grid-template-columns:
+    1.2fr
+    0.75fr
+    1.4fr;
+
+  align-items: center;
+}
+
+.institution-skill-table-head {
+  min-height: 39px;
+
+  padding: 0 18px;
+
+  background: #f8fafc;
+
+  color: #7a8799;
+
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.institution-skill-row {
+  min-height: 47px;
+
+  padding: 0 18px;
+
+  border-bottom: 1px solid #f0f2f5;
+}
+
+.institution-skill-row:last-child {
+  border-bottom: none;
+}
+
+.institution-skill-row:hover {
+  background: #fbfdff;
+}
+
+.institution-skill-name {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  color: #39475b;
+
+  font-size: 11.5px;
+  font-weight: 600;
+}
+
+.institution-skill-dot {
+  width: 7px;
+  height: 7px;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: #c8d2df;
+}
+
+.institution-skill-row:nth-child(2)
+.institution-skill-dot {
+  background: #2563eb;
+}
+
+.institution-skill-row:nth-child(3)
+.institution-skill-dot {
+  background: #7c3aed;
+}
+
+.institution-skill-row:nth-child(4)
+.institution-skill-dot {
+  background: #f97316;
+}
+
+.institution-skill-row:nth-child(5)
+.institution-skill-dot {
+  background: #16a34a;
+}
+
+.institution-skill-row:nth-child(6)
+.institution-skill-dot {
+  background: #ef4444;
+}
+
+.institution-skill-row:nth-child(7)
+.institution-skill-dot {
+  background: #f5b942;
+}
+
+.institution-skill-row:nth-child(8)
+.institution-skill-dot {
+  background: #06b6d4;
+}
+
+.institution-skill-row:nth-child(9)
+.institution-skill-dot {
+  background: #8b5cf6;
+}
+
+.institution-skill-row:nth-child(10)
+.institution-skill-dot {
+  background: #ec4899;
+}
+
+.institution-skill-row:nth-child(11)
+.institution-skill-dot {
+  background: #84cc16;
+}
+
+.institution-skill-students {
+  color: #657287;
+
+  font-size: 11px;
+  font-weight: 550;
+}
+
+.institution-skill-percentage {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.institution-skill-bar {
+  width: 120px;
+  height: 9px;
+
+  overflow: hidden;
+
+  background: #edf2f7;
+
+  border-radius: 3px;
+}
+
+.skill-bar-fill {
+  height: 100%;
+
+  min-width: 5px;
+
+  border-radius: 3px;
+}
+
+.skill-bar-fill.blue {
+  background: #2563eb;
+}
+
+.skill-bar-fill.violet {
+  background: #7c3aed;
+}
+
+.skill-bar-fill.orange {
+  background: #f97316;
+}
+
+.skill-bar-fill.green {
+  background: #16a34a;
+}
+
+.skill-bar-fill.red {
+  background: #ef4444;
+}
+
+.skill-bar-fill.yellow {
+  background: #f5b942;
+}
+
+.skill-bar-fill.cyan {
+  background: #06b6d4;
+}
+
+.skill-bar-fill.purple {
+  background: #8b5cf6;
+}
+
+.skill-bar-fill.pink {
+  background: #ec4899;
+}
+
+.skill-bar-fill.lime {
+  background: #84cc16;
+}
+
+.institution-skill-percentage > span {
+  min-width: 31px;
+
+  color: #66758a;
+
+  font-size: 10.5px;
+  font-weight: 650;
+}
+
+
+/* =========================================================
+   RIGHT COLUMN
+========================================================= */
+
+.institution-skill-side {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+
+/* =========================================================
+   DONUT
+========================================================= */
+
+.institution-donut-section {
+  min-height: 213px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 22px;
+
+  padding: 20px;
+}
+
+.institution-donut {
+  width: 142px;
+  height: 142px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background:
+    conic-gradient(
+      #2563eb 0deg 115deg,
+      #7c3aed 115deg 210deg,
+      #f97316 210deg 282deg,
+      #16a34a 282deg 335deg,
+      #f5b942 335deg 360deg
+    );
+
+  position: relative;
+}
+
+.institution-donut::before {
+  content: "";
+
+  position: absolute;
+
+  width: 92px;
+  height: 92px;
+
+  border-radius: 50%;
+
+  background: #ffffff;
+}
+
+.institution-donut-inner {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  z-index: 1;
+}
+
+.institution-donut-inner strong {
+  color: #263449;
+
+  font-size: 20px;
+  line-height: 1.1;
+}
+
+.institution-donut-inner span {
+  margin-top: 3px;
+
+  color: #8a96a7;
+
+  font-size: 9.5px;
+}
+
+
+/* =========================================================
+   DONUT LEGEND
+========================================================= */
+
+.institution-donut-legend {
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 11px;
+}
+
+.institution-donut-item {
+  display: grid;
+
+  grid-template-columns:
+    9px
+    minmax(0, 1fr)
+    auto;
+
+  align-items: center;
+
+  gap: 7px;
+}
+
+.institution-donut-color {
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+}
+
+.institution-donut-name {
+  color: #59677b;
+
+  font-size: 10.5px;
+}
+
+.institution-donut-item strong {
+  color: #526176;
+
+  font-size: 10.5px;
+}
+
+
+/* =========================================================
+   TRENDING
+========================================================= */
+
+.institution-trending-panel {
+  flex: 1;
+}
+
+.institution-trending-list {
+  padding: 5px 0;
+}
+
+.institution-trending-item {
+  min-height: 52px;
+
+  display: grid;
+
+  grid-template-columns:
+    34px
+    minmax(0, 1fr)
+    auto;
+
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 8px 17px;
+
+  border-bottom: 1px solid #f0f2f5;
+}
+
+.institution-trending-item:last-child {
+  border-bottom: none;
+}
+
+.institution-trending-icon {
+  width: 31px;
+  height: 31px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 8px;
+}
+
+.institution-trending-icon.blue {
+  background: #eaf2ff;
+  color: #2563eb;
+}
+
+.institution-trending-icon.violet {
+  background: #f1eaff;
+  color: #7c3aed;
+}
+
+.institution-trending-icon.red {
+  background: #fff0f0;
+  color: #ef4444;
+}
+
+.institution-trending-icon.green {
+  background: #e9f9ef;
+  color: #16a34a;
+}
+
+.institution-trending-item > span {
+  color: #4d5b70;
+
+  font-size: 11px;
+  font-weight: 550;
+}
+
+.institution-trending-growth {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+
+  font-size: 10.5px;
+  font-weight: 700;
+}
+
+.institution-trending-growth.up {
+  color: #16a34a;
+}
+
+.institution-trending-growth.down {
+  color: #ef4444;
+}
+
+
+/* =========================================================
+   INFO STRIP
+========================================================= */
+
+.institution-skill-info {
+  min-height: 70px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  margin-top: 18px;
+
+  padding: 13px 17px;
+
+  background: #f7faff;
+
+  border: 1px solid #dce9fb;
+  border-radius: 11px;
+}
+
+.institution-skill-info-icon {
+  width: 35px;
+  height: 35px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 8px;
+
+  background: #eaf2ff;
+
+  color: #2563eb;
+}
+
+.institution-skill-info strong {
+  color: #3d4b60;
+
+  font-size: 11.5px;
+}
+
+.institution-skill-info p {
+  margin: 3px 0 0;
+
+  color: #7f8b9d;
+
+  font-size: 10px;
+  line-height: 1.45;
+}
+
+
+/* =========================================================
+   DARK MODE
+========================================================= */
+
+body[data-theme="dark"] .institution-skill-header h1,
+html[data-theme="dark"] .institution-skill-header h1 {
+  color: #f2f6fb;
+}
+
+body[data-theme="dark"] .institution-skill-header > div:first-child > p:last-child,
+html[data-theme="dark"] .institution-skill-header > div:first-child > p:last-child {
+  color: #8fa0b6;
+}
+
+body[data-theme="dark"] .institution-skill-eyebrow,
+html[data-theme="dark"] .institution-skill-eyebrow {
+  color: #b794f6;
+}
+
+
+/* Filters */
+
+body[data-theme="dark"] .institution-skill-filter,
+html[data-theme="dark"] .institution-skill-filter {
+  background: #142238;
+
+  border-color: #293a53;
+
+  color: #c4d0df;
+}
+
+body[data-theme="dark"] .institution-skill-filter:hover,
+html[data-theme="dark"] .institution-skill-filter:hover {
+  border-color: #526f9c;
+
+  color: #60a5fa;
+}
+
+
+/* Tabs */
+
+body[data-theme="dark"] .institution-skill-tabs,
+html[data-theme="dark"] .institution-skill-tabs {
+  background: #111c2d;
+
+  border-color: #26364e;
+
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+body[data-theme="dark"] .institution-skill-tabs button {
+  color: #8595ab;
+}
+
+body[data-theme="dark"] .institution-skill-tabs button:hover {
+  background: #17263c;
+
+  color: #60a5fa;
+}
+
+body[data-theme="dark"] .institution-skill-tabs button.active {
+  background: #15263e;
+
+  color: #60a5fa;
+}
+
+body[data-theme="dark"] .institution-skill-tabs button.active::after {
+  background: #3b82f6;
+
+  box-shadow:
+    0 0 10px rgba(59, 130, 246, 0.55);
+}
+
+
+/* Panels */
+
+body[data-theme="dark"] .institution-skill-panel,
+html[data-theme="dark"] .institution-skill-panel {
+  background: #111c2d;
+
+  border-color: #26364e;
+
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.17);
+}
+
+body[data-theme="dark"] .institution-skill-panel-header,
+html[data-theme="dark"] .institution-skill-panel-header {
+  border-bottom-color: #26364e;
+}
+
+body[data-theme="dark"] .institution-skill-panel-header h2,
+html[data-theme="dark"] .institution-skill-panel-header h2 {
+  color: #e7eef8;
+}
+
+body[data-theme="dark"] .institution-skill-panel-header p,
+html[data-theme="dark"] .institution-skill-panel-header p {
+  color: #7889a0;
+}
+
+body[data-theme="dark"] .institution-skill-panel-header > svg,
+html[data-theme="dark"] .institution-skill-panel-header > svg {
+  color: #71839b;
+}
+
+
+/* Table */
+
+body[data-theme="dark"] .institution-skill-table-head,
+html[data-theme="dark"] .institution-skill-table-head {
+  background: #152237;
+
+  color: #8d9db3;
+}
+
+body[data-theme="dark"] .institution-skill-row {
+  border-bottom-color: #24344b;
+}
+
+body[data-theme="dark"] .institution-skill-row:hover {
+  background: #16263d;
+}
+
+body[data-theme="dark"] .institution-skill-name {
+  color: #d5dfeb;
+}
+
+body[data-theme="dark"] .institution-skill-students {
+  color: #9cacc0;
+}
+
+body[data-theme="dark"] .institution-skill-bar {
+  background: #293b54;
+}
+
+body[data-theme="dark"] .institution-skill-percentage > span {
+  color: #a6b5c8;
+}
+
+
+/* Glowing bars */
+
+body[data-theme="dark"] .skill-bar-fill.blue {
+  box-shadow: 0 0 9px rgba(37, 99, 235, 0.65);
+}
+
+body[data-theme="dark"] .skill-bar-fill.violet {
+  box-shadow: 0 0 9px rgba(124, 58, 237, 0.65);
+}
+
+body[data-theme="dark"] .skill-bar-fill.orange {
+  box-shadow: 0 0 9px rgba(249, 115, 22, 0.6);
+}
+
+body[data-theme="dark"] .skill-bar-fill.green {
+  box-shadow: 0 0 9px rgba(22, 163, 74, 0.6);
+}
+
+body[data-theme="dark"] .skill-bar-fill.red {
+  box-shadow: 0 0 9px rgba(239, 68, 68, 0.6);
+}
+
+body[data-theme="dark"] .skill-bar-fill.yellow {
+  box-shadow: 0 0 9px rgba(245, 185, 66, 0.6);
+}
+
+body[data-theme="dark"] .skill-bar-fill.cyan {
+  box-shadow: 0 0 9px rgba(6, 182, 212, 0.6);
+}
+
+body[data-theme="dark"] .skill-bar-fill.purple {
+  box-shadow: 0 0 9px rgba(139, 92, 246, 0.6);
+}
+
+body[data-theme="dark"] .skill-bar-fill.pink {
+  box-shadow: 0 0 9px rgba(236, 72, 153, 0.6);
+}
+
+body[data-theme="dark"] .skill-bar-fill.lime {
+  box-shadow: 0 0 9px rgba(132, 204, 22, 0.6);
+}
+
+
+/* Donut */
+
+body[data-theme="dark"] .institution-donut::before {
+  background: #111c2d;
+}
+
+body[data-theme="dark"] .institution-donut-inner strong {
+  color: #f1f5fa;
+}
+
+body[data-theme="dark"] .institution-donut-inner span {
+  color: #7d8da3;
+}
+
+body[data-theme="dark"] .institution-donut-name {
+  color: #aab9cc;
+}
+
+body[data-theme="dark"] .institution-donut-item strong {
+  color: #c1cedd;
+}
+
+
+/* Trending */
+
+body[data-theme="dark"] .institution-trending-item {
+  border-bottom-color: #24344b;
+}
+
+body[data-theme="dark"] .institution-trending-item > span {
+  color: #c7d3e1;
+}
+
+body[data-theme="dark"] .institution-trending-icon.blue {
+  background: rgba(37, 99, 235, 0.15);
+  color: #60a5fa;
+  box-shadow: 0 0 12px rgba(37, 99, 235, 0.1);
+}
+
+body[data-theme="dark"] .institution-trending-icon.violet {
+  background: rgba(124, 58, 237, 0.15);
+  color: #b794f6;
+  box-shadow: 0 0 12px rgba(124, 58, 237, 0.1);
+}
+
+body[data-theme="dark"] .institution-trending-icon.red {
+  background: rgba(239, 68, 68, 0.15);
+  color: #fb7185;
+  box-shadow: 0 0 12px rgba(239, 68, 68, 0.1);
+}
+
+body[data-theme="dark"] .institution-trending-icon.green {
+  background: rgba(22, 163, 74, 0.15);
+  color: #4ade80;
+  box-shadow: 0 0 12px rgba(22, 163, 74, 0.1);
+}
+
+body[data-theme="dark"] .institution-trending-growth.up {
+  color: #4ade80;
+
+  text-shadow: 0 0 8px rgba(74, 222, 128, 0.25);
+}
+
+body[data-theme="dark"] .institution-trending-growth.down {
+  color: #fb7185;
+
+  text-shadow: 0 0 8px rgba(251, 113, 133, 0.2);
+}
+
+
+/* Info */
+
+body[data-theme="dark"] .institution-skill-info,
+html[data-theme="dark"] .institution-skill-info {
+  background: #122139;
+
+  border-color: #294366;
+}
+
+body[data-theme="dark"] .institution-skill-info-icon,
+html[data-theme="dark"] .institution-skill-info-icon {
+  background: rgba(37, 99, 235, 0.15);
+
+  color: #60a5fa;
+
+  box-shadow:
+    0 0 12px rgba(37, 99, 235, 0.12);
+}
+
+body[data-theme="dark"] .institution-skill-info strong,
+html[data-theme="dark"] .institution-skill-info strong {
+  color: #d4dfec;
+}
+
+body[data-theme="dark"] .institution-skill-info p,
+html[data-theme="dark"] .institution-skill-info p {
+  color: #7e8fa6;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1050px) {
+  .institution-skill-overview {
+    grid-template-columns: 1fr;
+  }
+
+  .institution-skill-side {
+    display: grid;
+
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 800px) {
+  .institution-skill-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .institution-skill-filters {
+    width: 100%;
+  }
+
+  .institution-skill-filter {
+    flex: 1;
+  }
+
+  .institution-skill-side {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 650px) {
+  .institution-skill-tabs {
+    height: auto;
+
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+  .institution-skill-tabs button {
+    min-height: 45px;
+  }
+
+  .institution-skill-table-panel {
+    overflow-x: auto;
+  }
+
+  .institution-skill-table {
+    min-width: 620px;
+  }
+
+  .institution-skill-info {
+    align-items: flex-start;
+  }
+}
+
+/* =========================================================
+   FUNCTIONAL FILTER CONTROLS
+   The original filter styling is preserved. These rules make
+   the JSX <select> controls match the existing design.
+========================================================= */
+
+.institution-skill-filter {
+  position: relative;
+}
+
+.institution-skill-filter select {
+  width: 100%;
+  height: 100%;
+
+  padding: 0 28px 0 0;
+
+  border: none;
+  outline: none;
+
+  appearance: none;
+
+  background: transparent;
+
+  color: inherit;
+
+  font: inherit;
+
+  cursor: pointer;
+}
+
+.institution-skill-filter select option {
+  background: #ffffff;
+  color: #263449;
+}
+
+.institution-skill-filter:focus-within {
+  border-color: #2563eb;
+
+  box-shadow:
+    0 0 0 3px rgba(37, 99, 235, 0.08);
+}
+
+.institution-skill-filter select:focus {
+  outline: none;
+}
+
+
+/* =========================================================
+   FUNCTIONAL TAB CONTENT
+========================================================= */
+
+.institution-skill-tab-content {
+  width: 100%;
+}
+
+.institution-skill-tab-panel {
+  width: 100%;
+}
+
+.institution-skill-tab-panel > .institution-skill-panel {
+  width: 100%;
+}
+
+
+/* =========================================================
+   ANALYSIS TABLES
+========================================================= */
+
+.institution-analysis-table {
+  width: 100%;
+}
+
+.institution-analysis-head,
+.institution-analysis-row {
+  display: grid;
+
+  grid-template-columns:
+    1.25fr
+    0.8fr
+    0.8fr
+    0.8fr
+    0.75fr;
+
+  align-items: center;
+
+  gap: 14px;
+
+  padding: 0 20px;
+}
+
+.institution-analysis-head {
+  min-height: 43px;
+
+  background: #f8fafc;
+
+  color: #7a8799;
+
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.institution-analysis-row {
+  min-height: 61px;
+
+  border-bottom: 1px solid #f0f2f5;
+
+  color: #657287;
+
+  font-size: 11px;
+
+  transition:
+    background 0.2s ease;
+}
+
+.institution-analysis-row:last-child {
+  border-bottom: none;
+}
+
+.institution-analysis-row:hover {
+  background: #fbfdff;
+}
+
+.institution-analysis-row strong {
+  color: #39475b;
+
+  font-size: 11.5px;
+  font-weight: 650;
+}
+
+.institution-analysis-row span {
+  min-width: 0;
+}
+
+.institution-analysis-badge {
+  width: fit-content;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 58px;
+
+  padding: 5px 9px;
+
+  border-radius: 6px;
+
+  font-size: 9.5px;
+  font-weight: 700;
+}
+
+.institution-analysis-badge.high {
+  background: #fff0f0;
+  color: #dc2626;
+}
+
+.institution-analysis-badge.medium {
+  background: #fff7e8;
+  color: #d97706;
+}
+
+.institution-analysis-coverage {
+  color: #2563eb !important;
+
+  font-weight: 700;
+}
+
+.institution-analysis-empty {
+  min-height: 150px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #8a96a7;
+
+  font-size: 11px;
+}
+
+.department-head {
+  grid-template-columns:
+    1fr
+    0.8fr
+    1.2fr
+    0.9fr;
+}
+
+.department-row {
+  grid-template-columns:
+    1fr
+    0.8fr
+    1.2fr
+    0.9fr;
+}
+
+.industry-head {
+  grid-template-columns:
+    1.15fr
+    0.75fr
+    1.7fr
+    0.9fr;
+}
+
+.industry-row {
+  grid-template-columns:
+    1.15fr
+    0.75fr
+    1.7fr
+    0.9fr;
+}
+
+
+/* =========================================================
+   DARK MODE - FUNCTIONAL CONTROLS + ANALYSIS
+========================================================= */
+
+body[data-theme="dark"] .institution-skill-filter select,
+html[data-theme="dark"] .institution-skill-filter select {
+  color: #c4d0df;
+}
+
+body[data-theme="dark"] .institution-skill-filter select option,
+html[data-theme="dark"] .institution-skill-filter select option {
+  background: #17253a;
+  color: #dce5f1;
+}
+
+body[data-theme="dark"] .institution-skill-filter:focus-within,
+html[data-theme="dark"] .institution-skill-filter:focus-within {
+  border-color: #3b82f6;
+
+  box-shadow:
+    0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+body[data-theme="dark"] .institution-analysis-head,
+html[data-theme="dark"] .institution-analysis-head {
+  background: #152237;
+
+  color: #8d9db3;
+}
+
+body[data-theme="dark"] .institution-analysis-row,
+html[data-theme="dark"] .institution-analysis-row {
+  border-bottom-color: #24344b;
+
+  color: #9cacc0;
+}
+
+body[data-theme="dark"] .institution-analysis-row:hover,
+html[data-theme="dark"] .institution-analysis-row:hover {
+  background: #16263d;
+}
+
+body[data-theme="dark"] .institution-analysis-row strong,
+html[data-theme="dark"] .institution-analysis-row strong {
+  color: #d5dfeb;
+}
+
+body[data-theme="dark"] .institution-analysis-badge.high,
+html[data-theme="dark"] .institution-analysis-badge.high {
+  background: rgba(239, 68, 68, 0.13);
+
+  color: #fb7185;
+}
+
+body[data-theme="dark"] .institution-analysis-badge.medium,
+html[data-theme="dark"] .institution-analysis-badge.medium {
+  background: rgba(245, 158, 11, 0.13);
+
+  color: #fbbf24;
+}
+
+body[data-theme="dark"] .institution-analysis-coverage,
+html[data-theme="dark"] .institution-analysis-coverage {
+  color: #60a5fa !important;
+}
+
+body[data-theme="dark"] .institution-analysis-empty,
+html[data-theme="dark"] .institution-analysis-empty {
+  color: #718198;
+}
+
+
+/* =========================================================
+   RESPONSIVE - ANALYSIS TABLES
+========================================================= */
+
+@media (max-width: 800px) {
+  .institution-analysis-table {
+    overflow-x: auto;
+  }
+
+  .institution-analysis-head,
+  .institution-analysis-row {
+    min-width: 720px;
+  }
+}

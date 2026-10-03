@@ -1,0 +1,1704 @@
+/* =========================================================
+   INSTITUTION STUDENTS
+========================================================= */
+
+.institution-students-page {
+  width: 100%;
+  max-width: 1500px;
+  margin: 0 auto;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.institution-students-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+
+  margin-bottom: 22px;
+}
+
+.institution-students-eyebrow {
+  margin: 0 0 6px;
+
+  color: #2563eb;
+
+  font-size: 10.5px;
+  font-weight: 750;
+
+  letter-spacing: 0.12em;
+}
+
+.institution-students-header h1 {
+  margin: 0;
+
+  color: #172033;
+
+  font-size: 29px;
+  font-weight: 750;
+
+  letter-spacing: -0.03em;
+}
+
+.institution-students-header > div > p:last-child {
+  margin: 7px 0 0;
+
+  color: #738096;
+
+  font-size: 13px;
+}
+
+
+/* =========================================================
+   ACTION BUTTONS
+========================================================= */
+
+.institution-students-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.institution-students-primary-button,
+.institution-students-secondary-button {
+  height: 40px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  padding: 0 14px;
+
+  border-radius: 8px;
+
+  font-size: 12px;
+  font-weight: 650;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.institution-students-primary-button {
+  border: 1px solid #2563eb;
+
+  background: #2563eb;
+
+  color: #ffffff;
+
+  box-shadow: 0 5px 15px rgba(37, 99, 235, 0.18);
+}
+
+.institution-students-primary-button:hover {
+  background: #1d4ed8;
+
+  transform: translateY(-1px);
+
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.25);
+}
+
+.institution-students-secondary-button {
+  border: 1px solid #dbe3ed;
+
+  background: #ffffff;
+
+  color: #3d4b60;
+}
+
+.institution-students-secondary-button:hover {
+  border-color: #a8bce0;
+
+  color: #2563eb;
+
+  transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   TOOLBAR
+========================================================= */
+
+.institution-students-toolbar {
+  min-height: 62px;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  margin-bottom: 14px;
+
+  padding: 10px;
+
+  background: #ffffff;
+
+  border: 1px solid #e4e9f0;
+  border-radius: 11px;
+
+  box-shadow: 0 5px 20px rgba(15, 23, 42, 0.035);
+}
+
+.institution-students-filter {
+  position: relative;
+
+  height: 38px;
+
+  min-width: 145px;
+
+  display: flex;
+  align-items: center;
+
+  background: #f7f9fc;
+
+  border: 1px solid #e1e7ef;
+
+  border-radius: 8px;
+
+  color: #6e7c90;
+}
+
+.institution-students-filter:first-child {
+  min-width: 158px;
+}
+
+.institution-students-filter > svg:first-child {
+  margin-left: 10px;
+
+  color: #6b7b91;
+}
+
+.institution-students-filter > svg:last-child {
+  position: absolute;
+
+  right: 10px;
+
+  pointer-events: none;
+
+  color: #7d8ba0;
+}
+
+.institution-students-filter select {
+  width: 100%;
+  height: 100%;
+
+  padding: 0 32px 0 10px;
+
+  border: none;
+  outline: none;
+
+  appearance: none;
+
+  background: transparent;
+
+  color: #526176;
+
+  font-size: 11.5px;
+
+  cursor: pointer;
+}
+
+.institution-students-filter:first-child select {
+  padding-left: 8px;
+}
+
+
+/* Search */
+
+.institution-students-search {
+  height: 38px;
+
+  flex: 1;
+
+  min-width: 200px;
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 0 11px;
+
+  background: #f7f9fc;
+
+  border: 1px solid #e1e7ef;
+
+  border-radius: 8px;
+
+  color: #7c8a9e;
+}
+
+.institution-students-search:focus-within {
+  border-color: #9bb9ef;
+
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.07);
+}
+
+.institution-students-search input {
+  width: 100%;
+
+  border: none;
+  outline: none;
+
+  background: transparent;
+
+  color: #263449;
+
+  font-size: 11.5px;
+}
+
+.institution-students-search input::placeholder {
+  color: #98a4b4;
+}
+
+
+/* =========================================================
+   TABLE CARD
+========================================================= */
+
+.institution-students-table-card {
+  overflow: hidden;
+
+  background: #ffffff;
+
+  border: 1px solid #e3e8ef;
+  border-radius: 12px;
+
+  box-shadow: 0 7px 24px rgba(15, 23, 42, 0.04);
+}
+
+.institution-students-table-wrapper {
+  width: 100%;
+
+  overflow-x: auto;
+}
+
+.institution-students-table {
+  width: 100%;
+
+  border-collapse: collapse;
+
+  min-width: 900px;
+}
+
+
+/* =========================================================
+   TABLE HEADER
+========================================================= */
+
+.institution-students-table thead {
+  background: #f8fafc;
+}
+
+.institution-students-table th {
+  height: 46px;
+
+  padding: 0 14px;
+
+  border-bottom: 1px solid #e7ebf1;
+
+  color: #657287;
+
+  text-align: left;
+
+  font-size: 10.5px;
+  font-weight: 700;
+
+  white-space: nowrap;
+}
+
+.student-number-column {
+  width: 48px;
+
+  text-align: center !important;
+}
+
+.student-action-column {
+  width: 45px;
+}
+
+
+/* =========================================================
+   TABLE BODY
+========================================================= */
+
+.institution-students-table td {
+  height: 62px;
+
+  padding: 8px 14px;
+
+  border-bottom: 1px solid #edf0f4;
+
+  color: #435167;
+
+  font-size: 11.5px;
+
+  white-space: nowrap;
+}
+
+.institution-students-table tbody tr {
+  transition: background 0.18s ease;
+}
+
+.institution-students-table tbody tr:hover {
+  background: #f8fbff;
+}
+
+.institution-students-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.student-number {
+  color: #9aa5b4 !important;
+
+  text-align: center;
+}
+
+
+/* =========================================================
+   STUDENT NAME
+========================================================= */
+
+.student-name-cell {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.student-avatar {
+  width: 32px;
+  height: 32px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 8px;
+
+  background: #eaf2ff;
+
+  color: #2563eb;
+
+  font-size: 11px;
+  font-weight: 750;
+}
+
+.student-name-cell > div:last-child {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.student-name-cell strong {
+  color: #2d3a4e;
+
+  font-size: 11.5px;
+  font-weight: 650;
+}
+
+.student-name-cell span {
+  color: #a0a9b7;
+
+  font-size: 9px;
+}
+
+.student-roll {
+  color: #58677c;
+
+  font-size: 11px;
+  font-weight: 550;
+}
+
+.student-department {
+  color: #56657a;
+
+  font-weight: 600;
+}
+
+
+/* =========================================================
+   STATUS
+========================================================= */
+
+.student-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+
+  min-width: 67px;
+
+  padding: 5px 8px;
+
+  border-radius: 6px;
+
+  font-size: 9.5px;
+  font-weight: 650;
+}
+
+.student-status-dot {
+  width: 5px;
+  height: 5px;
+
+  border-radius: 50%;
+}
+
+.student-status.active {
+  background: #e9f9ef;
+
+  color: #15803d;
+}
+
+.student-status.active .student-status-dot {
+  background: #22c55e;
+}
+
+.student-status.inactive {
+  background: #fff0f0;
+
+  color: #dc2626;
+}
+
+.student-status.inactive .student-status-dot {
+  background: #ef4444;
+}
+
+
+/* =========================================================
+   PROFILE COMPLETION
+========================================================= */
+
+.student-profile-cell {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  min-width: 110px;
+}
+
+.student-profile-track {
+  width: 66px;
+  height: 5px;
+
+  overflow: hidden;
+
+  background: #edf1f5;
+
+  border-radius: 4px;
+}
+
+.student-profile-value {
+  height: 100%;
+
+  border-radius: 4px;
+}
+
+.student-profile-value.high {
+  background: #16a34a;
+}
+
+.student-profile-value.medium {
+  background: #f59e0b;
+}
+
+.student-profile-value.low {
+  background: #ef4444;
+}
+
+.student-profile-cell > span {
+  color: #5c6a7e;
+
+  font-size: 10px;
+  font-weight: 650;
+}
+
+
+/* =========================================================
+   MORE BUTTON
+========================================================= */
+
+.student-more-button {
+  width: 31px;
+  height: 31px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+
+  background: transparent;
+
+  color: #8d99aa;
+
+  border-radius: 7px;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.student-more-button:hover {
+  background: #edf4ff;
+
+  color: #2563eb;
+}
+
+
+/* =========================================================
+   EMPTY STATE
+========================================================= */
+
+.institution-students-empty {
+  height: 260px !important;
+
+  text-align: center;
+}
+
+.institution-students-empty > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  gap: 7px;
+}
+
+.institution-students-empty svg {
+  margin-bottom: 5px;
+
+  color: #7b8ca4;
+}
+
+.institution-students-empty strong {
+  color: #4b596d;
+
+  font-size: 13px;
+}
+
+.institution-students-empty span {
+  color: #98a3b3;
+
+  font-size: 10.5px;
+}
+
+
+/* =========================================================
+   PAGINATION
+========================================================= */
+
+.institution-students-pagination {
+  min-height: 58px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 16px;
+
+  border-top: 1px solid #edf0f4;
+}
+
+.institution-students-pagination > span {
+  color: #8a96a7;
+
+  font-size: 10.5px;
+}
+
+.institution-students-pagination > span strong {
+  color: #526176;
+}
+
+.student-pagination-controls {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.student-pagination-controls button {
+  width: 30px;
+  height: 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid transparent;
+
+  border-radius: 7px;
+
+  background: transparent;
+
+  color: #6e7c90;
+
+  font-size: 10.5px;
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.student-pagination-controls button:hover:not(:disabled) {
+  background: #edf4ff;
+
+  color: #2563eb;
+}
+
+.student-pagination-controls button.active {
+  background: #2563eb;
+
+  color: #ffffff;
+
+  box-shadow: 0 4px 10px rgba(37, 99, 235, 0.2);
+}
+
+.student-pagination-controls button:disabled {
+  opacity: 0.35;
+
+  cursor: not-allowed;
+}
+
+.student-pagination-dots {
+  padding: 0 3px;
+
+  color: #9ba5b4;
+
+  font-size: 11px;
+}
+
+
+/* =========================================================
+   DARK MODE
+========================================================= */
+
+body[data-theme="dark"] .institution-students-header h1,
+html[data-theme="dark"] .institution-students-header h1 {
+  color: #f2f6fb;
+}
+
+body[data-theme="dark"] .institution-students-header > div > p:last-child,
+html[data-theme="dark"] .institution-students-header > div > p:last-child {
+  color: #8fa0b6;
+}
+
+body[data-theme="dark"] .institution-students-eyebrow,
+html[data-theme="dark"] .institution-students-eyebrow {
+  color: #60a5fa;
+}
+
+
+/* Buttons */
+
+body[data-theme="dark"] .institution-students-secondary-button,
+html[data-theme="dark"] .institution-students-secondary-button {
+  background: #142238;
+
+  border-color: #2a3a52;
+
+  color: #c9d5e5;
+}
+
+body[data-theme="dark"] .institution-students-secondary-button:hover,
+html[data-theme="dark"] .institution-students-secondary-button:hover {
+  border-color: #4b70a6;
+
+  color: #60a5fa;
+
+  background: #182b45;
+}
+
+body[data-theme="dark"] .institution-students-primary-button,
+html[data-theme="dark"] .institution-students-primary-button {
+  background: #2563eb;
+
+  border-color: #3b82f6;
+
+  box-shadow:
+    0 0 18px rgba(37, 99, 235, 0.28);
+}
+
+body[data-theme="dark"] .institution-students-primary-button:hover,
+html[data-theme="dark"] .institution-students-primary-button:hover {
+  background: #3b82f6;
+
+  box-shadow:
+    0 0 24px rgba(59, 130, 246, 0.4);
+}
+
+
+/* Toolbar */
+
+body[data-theme="dark"] .institution-students-toolbar,
+html[data-theme="dark"] .institution-students-toolbar {
+  background: #111c2d;
+
+  border-color: #26364e;
+
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.14);
+}
+
+body[data-theme="dark"] .institution-students-filter,
+html[data-theme="dark"] .institution-students-filter {
+  background: #17253a;
+
+  border-color: #2b3c56;
+
+  color: #91a1b8;
+}
+
+body[data-theme="dark"] .institution-students-filter select,
+html[data-theme="dark"] .institution-students-filter select {
+  color: #c9d5e4;
+
+  background: transparent;
+}
+
+body[data-theme="dark"] .institution-students-filter select option,
+html[data-theme="dark"] .institution-students-filter select option {
+  background: #17253a;
+
+  color: #dce5f1;
+}
+
+body[data-theme="dark"] .institution-students-search,
+html[data-theme="dark"] .institution-students-search {
+  background: #17253a;
+
+  border-color: #2b3c56;
+
+  color: #8fa0b7;
+}
+
+body[data-theme="dark"] .institution-students-search:focus-within,
+html[data-theme="dark"] .institution-students-search:focus-within {
+  border-color: #3b82f6;
+
+  box-shadow:
+    0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+body[data-theme="dark"] .institution-students-search input,
+html[data-theme="dark"] .institution-students-search input {
+  color: #e4ebf5;
+}
+
+body[data-theme="dark"] .institution-students-search input::placeholder,
+html[data-theme="dark"] .institution-students-search input::placeholder {
+  color: #6f8199;
+}
+
+
+/* Table */
+
+body[data-theme="dark"] .institution-students-table-card,
+html[data-theme="dark"] .institution-students-table-card {
+  background: #111c2d;
+
+  border-color: #26364e;
+
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.18);
+}
+
+body[data-theme="dark"] .institution-students-table thead,
+html[data-theme="dark"] .institution-students-table thead {
+  background: #152237;
+}
+
+body[data-theme="dark"] .institution-students-table th,
+html[data-theme="dark"] .institution-students-table th {
+  color: #94a4ba;
+
+  border-bottom-color: #293950;
+}
+
+body[data-theme="dark"] .institution-students-table td,
+html[data-theme="dark"] .institution-students-table td {
+  color: #aebcd0;
+
+  border-bottom-color: #24344b;
+}
+
+body[data-theme="dark"] .institution-students-table tbody tr:hover,
+html[data-theme="dark"] .institution-students-table tbody tr:hover {
+  background: #16263d;
+}
+
+body[data-theme="dark"] .student-number,
+html[data-theme="dark"] .student-number {
+  color: #667992 !important;
+}
+
+
+/* Student avatar */
+
+body[data-theme="dark"] .student-avatar,
+html[data-theme="dark"] .student-avatar {
+  background: rgba(37, 99, 235, 0.16);
+
+  color: #60a5fa;
+
+  box-shadow:
+    0 0 12px rgba(37, 99, 235, 0.08);
+}
+
+body[data-theme="dark"] .student-name-cell strong,
+html[data-theme="dark"] .student-name-cell strong {
+  color: #e0e8f3;
+}
+
+body[data-theme="dark"] .student-name-cell span,
+html[data-theme="dark"] .student-name-cell span {
+  color: #708198;
+}
+
+body[data-theme="dark"] .student-roll,
+html[data-theme="dark"] .student-roll {
+  color: #aab9cc;
+}
+
+body[data-theme="dark"] .student-department,
+html[data-theme="dark"] .student-department {
+  color: #b4c2d4;
+}
+
+
+/* Status */
+
+body[data-theme="dark"] .student-status.active,
+html[data-theme="dark"] .student-status.active {
+  background: rgba(34, 197, 94, 0.13);
+
+  color: #4ade80;
+
+  box-shadow:
+    0 0 12px rgba(34, 197, 94, 0.07);
+}
+
+body[data-theme="dark"] .student-status.inactive,
+html[data-theme="dark"] .student-status.inactive {
+  background: rgba(239, 68, 68, 0.13);
+
+  color: #fb7185;
+
+  box-shadow:
+    0 0 12px rgba(239, 68, 68, 0.06);
+}
+
+
+/* Profile */
+
+body[data-theme="dark"] .student-profile-track,
+html[data-theme="dark"] .student-profile-track {
+  background: #293a52;
+}
+
+body[data-theme="dark"] .student-profile-value.high,
+html[data-theme="dark"] .student-profile-value.high {
+  background: #22c55e;
+
+  box-shadow:
+    0 0 8px rgba(34, 197, 94, 0.45);
+}
+
+body[data-theme="dark"] .student-profile-value.medium,
+html[data-theme="dark"] .student-profile-value.medium {
+  background: #f59e0b;
+
+  box-shadow:
+    0 0 8px rgba(245, 158, 11, 0.4);
+}
+
+body[data-theme="dark"] .student-profile-value.low,
+html[data-theme="dark"] .student-profile-value.low {
+  background: #ef4444;
+
+  box-shadow:
+    0 0 8px rgba(239, 68, 68, 0.4);
+}
+
+body[data-theme="dark"] .student-profile-cell > span,
+html[data-theme="dark"] .student-profile-cell > span {
+  color: #9eacc0;
+}
+
+
+/* More button */
+
+body[data-theme="dark"] .student-more-button,
+html[data-theme="dark"] .student-more-button {
+  color: #74869e;
+}
+
+body[data-theme="dark"] .student-more-button:hover,
+html[data-theme="dark"] .student-more-button:hover {
+  background: rgba(37, 99, 235, 0.14);
+
+  color: #60a5fa;
+}
+
+
+/* Empty */
+
+body[data-theme="dark"] .institution-students-empty svg,
+html[data-theme="dark"] .institution-students-empty svg {
+  color: #6f829d;
+}
+
+body[data-theme="dark"] .institution-students-empty strong,
+html[data-theme="dark"] .institution-students-empty strong {
+  color: #cbd7e6;
+}
+
+body[data-theme="dark"] .institution-students-empty span,
+html[data-theme="dark"] .institution-students-empty span {
+  color: #718198;
+}
+
+
+/* Pagination */
+
+body[data-theme="dark"] .institution-students-pagination,
+html[data-theme="dark"] .institution-students-pagination {
+  border-top-color: #26364e;
+}
+
+body[data-theme="dark"] .institution-students-pagination > span,
+html[data-theme="dark"] .institution-students-pagination > span {
+  color: #718198;
+}
+
+body[data-theme="dark"] .institution-students-pagination > span strong,
+html[data-theme="dark"] .institution-students-pagination > span strong {
+  color: #aebcd0;
+}
+
+body[data-theme="dark"] .student-pagination-controls button,
+html[data-theme="dark"] .student-pagination-controls button {
+  color: #8c9db3;
+}
+
+body[data-theme="dark"] .student-pagination-controls button:hover:not(:disabled),
+html[data-theme="dark"] .student-pagination-controls button:hover:not(:disabled) {
+  background: rgba(37, 99, 235, 0.14);
+
+  color: #60a5fa;
+}
+
+body[data-theme="dark"] .student-pagination-controls button.active,
+html[data-theme="dark"] .student-pagination-controls button.active {
+  background: #2563eb;
+
+  color: #ffffff;
+
+  box-shadow:
+    0 0 15px rgba(37, 99, 235, 0.35);
+}
+
+body[data-theme="dark"] .student-pagination-dots,
+html[data-theme="dark"] .student-pagination-dots {
+  color: #64758c;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1000px) {
+  .institution-students-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .institution-students-actions {
+    width: 100%;
+  }
+}
+
+@media (max-width: 800px) {
+  .institution-students-toolbar {
+    flex-wrap: wrap;
+  }
+
+  .institution-students-filter {
+    flex: 1;
+    min-width: 140px;
+  }
+
+  .institution-students-search {
+    width: 100%;
+    flex-basis: 100%;
+  }
+}
+
+@media (max-width: 550px) {
+  .institution-students-header h1 {
+    font-size: 24px;
+  }
+
+  .institution-students-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .institution-students-primary-button,
+  .institution-students-secondary-button {
+    width: 100%;
+  }
+
+  .institution-students-toolbar {
+    align-items: stretch;
+  }
+
+  .institution-students-filter {
+    width: 100%;
+  }
+
+  .institution-students-pagination {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 10px;
+
+    padding: 12px 15px;
+  }
+}
+
+/* =========================================
+   CLICKABLE STUDENT ROW
+========================================= */
+
+.institution-student-row {
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.institution-student-row:hover {
+  background: rgba(59, 130, 246, 0.055);
+}
+
+.institution-student-row:focus {
+  outline: none;
+  background: rgba(59, 130, 246, 0.07);
+  box-shadow: inset 3px 0 0 #3b82f6;
+}
+
+/* Student name area */
+
+.institution-student-row .student-name-cell {
+  cursor: pointer;
+}
+
+.institution-student-row .student-name-cell strong {
+  transition: color 0.2s ease;
+}
+
+.institution-student-row:hover .student-name-cell strong {
+  color: #60a5fa;
+}
+
+/* Keep action area independent from row click */
+
+.institution-student-row
+  .student-action-wrapper {
+  cursor: default;
+}
+
+.institution-student-row
+  .student-more-button {
+  cursor: pointer;
+}
+/* =========================================================
+   CLICKABLE STUDENT ROW
+========================================================= */
+
+.institution-student-row {
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.institution-student-row:hover {
+  background: #f5f9ff;
+}
+
+.institution-student-row:focus {
+  outline: none;
+  background: #f1f7ff;
+  box-shadow: inset 3px 0 0 #2563eb;
+}
+
+.institution-student-row .student-name-cell {
+  cursor: pointer;
+}
+
+.institution-student-row:hover .student-name-cell strong {
+  color: #2563eb;
+}
+
+.institution-student-row .student-action-wrapper {
+  cursor: default;
+}
+
+.institution-student-row .student-more-button {
+  cursor: pointer;
+}
+
+
+/* =========================================================
+   STUDENT DETAILS MODAL
+========================================================= */
+
+.institution-student-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 24px;
+
+  background: rgba(8, 15, 28, 0.68);
+
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+
+/* Modal */
+
+.institution-student-modal {
+  width: min(620px, 100%);
+  max-height: calc(100vh - 48px);
+
+  overflow-y: auto;
+
+  background: #ffffff;
+
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+
+  box-shadow:
+    0 25px 70px rgba(15, 23, 42, 0.25);
+
+  animation: institutionStudentModalIn 0.2s ease-out;
+}
+
+@keyframes institutionStudentModalIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+
+/* Modal Header */
+
+.institution-student-modal-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  padding: 22px 24px;
+
+  border-bottom: 1px solid #e8edf3;
+}
+
+.institution-student-modal-header span {
+  display: block;
+
+  margin-bottom: 6px;
+
+  color: #2563eb;
+
+  font-size: 10px;
+  font-weight: 750;
+
+  letter-spacing: 0.12em;
+}
+
+.institution-student-modal-header h2 {
+  margin: 0;
+
+  color: #172033;
+
+  font-size: 21px;
+  font-weight: 750;
+
+  letter-spacing: -0.02em;
+}
+
+.institution-student-modal-header > button {
+  width: 34px;
+  height: 34px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid #e1e7ef;
+  border-radius: 8px;
+
+  background: #f7f9fc;
+
+  color: #657287;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.institution-student-modal-header > button:hover {
+  background: #edf4ff;
+  border-color: #c7d8f5;
+  color: #2563eb;
+}
+
+
+/* =========================================================
+   STUDENT DETAILS
+========================================================= */
+
+.institution-student-details {
+  padding: 24px;
+}
+
+.institution-student-detail-avatar {
+  width: 64px;
+  height: 64px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 22px;
+
+  border-radius: 14px;
+
+  background: #eaf2ff;
+
+  color: #2563eb;
+
+  font-size: 24px;
+  font-weight: 750;
+
+  box-shadow:
+    0 8px 20px rgba(37, 99, 235, 0.12);
+}
+
+.institution-student-detail-grid {
+  display: grid;
+
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  gap: 1px;
+
+  overflow: hidden;
+
+  background: #e5eaf1;
+
+  border: 1px solid #e5eaf1;
+  border-radius: 12px;
+}
+
+.institution-student-detail-grid > div {
+  min-height: 78px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  gap: 6px;
+
+  padding: 15px 17px;
+
+  background: #ffffff;
+}
+
+.institution-student-detail-grid span {
+  color: #8995a6;
+
+  font-size: 10px;
+  font-weight: 600;
+
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.institution-student-detail-grid strong {
+  color: #263449;
+
+  font-size: 13px;
+  font-weight: 650;
+}
+
+
+/* =========================================================
+   MODAL FOOTER
+========================================================= */
+
+.institution-student-modal-footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  gap: 10px;
+
+  margin-top: 22px;
+
+  padding-top: 18px;
+
+  border-top: 1px solid #e8edf3;
+}
+
+.institution-student-cancel-button,
+.institution-student-primary-modal-button {
+  height: 38px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 7px;
+
+  padding: 0 14px;
+
+  border-radius: 8px;
+
+  font-size: 11.5px;
+  font-weight: 650;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.institution-student-cancel-button {
+  border: 1px solid #dce3ec;
+
+  background: #ffffff;
+
+  color: #526176;
+}
+
+.institution-student-cancel-button:hover {
+  background: #f7f9fc;
+  border-color: #c6d2e1;
+}
+
+.institution-student-primary-modal-button {
+  border: 1px solid #2563eb;
+
+  background: #2563eb;
+
+  color: #ffffff;
+
+  box-shadow:
+    0 5px 15px rgba(37, 99, 235, 0.18);
+}
+
+.institution-student-primary-modal-button:hover {
+  background: #1d4ed8;
+
+  transform: translateY(-1px);
+
+  box-shadow:
+    0 8px 20px rgba(37, 99, 235, 0.25);
+}
+
+
+/* =========================================================
+   STUDENT FORM
+========================================================= */
+
+.institution-student-form {
+  padding: 24px;
+}
+
+.institution-student-form-grid {
+  display: grid;
+
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  gap: 17px;
+}
+
+.institution-student-form-group {
+  display: flex;
+  flex-direction: column;
+
+  gap: 7px;
+}
+
+.institution-student-form-group.full {
+  grid-column: 1 / -1;
+}
+
+.institution-student-form-group label {
+  color: #647287;
+
+  font-size: 10.5px;
+  font-weight: 650;
+}
+
+.institution-student-form-group input,
+.institution-student-form-group select {
+  width: 100%;
+  height: 40px;
+
+  padding: 0 11px;
+
+  border: 1px solid #dce4ed;
+  border-radius: 8px;
+
+  outline: none;
+
+  background: #f8fafc;
+
+  color: #263449;
+
+  font-size: 11.5px;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.institution-student-form-group input:focus,
+.institution-student-form-group select:focus {
+  background: #ffffff;
+
+  border-color: #7ba7e8;
+
+  box-shadow:
+    0 0 0 3px rgba(37, 99, 235, 0.08);
+}
+
+.institution-student-form-group select {
+  cursor: pointer;
+}
+
+.institution-student-form-group input::placeholder {
+  color: #a0aaba;
+}
+
+
+/* =========================================================
+   DARK MODE - STUDENT MODAL
+========================================================= */
+
+body[data-theme="dark"] .institution-student-modal-overlay,
+html[data-theme="dark"] .institution-student-modal-overlay {
+  background: rgba(2, 8, 20, 0.74);
+}
+
+body[data-theme="dark"] .institution-student-modal,
+html[data-theme="dark"] .institution-student-modal {
+  background: #111c2d;
+
+  border-color: #2a3a52;
+
+  box-shadow:
+    0 30px 80px rgba(0, 0, 0, 0.48);
+}
+
+body[data-theme="dark"] .institution-student-modal-header,
+html[data-theme="dark"] .institution-student-modal-header {
+  border-bottom-color: #26364e;
+}
+
+body[data-theme="dark"] .institution-student-modal-header h2,
+html[data-theme="dark"] .institution-student-modal-header h2 {
+  color: #f2f6fb;
+}
+
+body[data-theme="dark"] .institution-student-modal-header span,
+html[data-theme="dark"] .institution-student-modal-header span {
+  color: #60a5fa;
+}
+
+body[data-theme="dark"] .institution-student-modal-header > button,
+html[data-theme="dark"] .institution-student-modal-header > button {
+  background: #17253a;
+
+  border-color: #2b3c56;
+
+  color: #8fa0b7;
+}
+
+body[data-theme="dark"] .institution-student-modal-header > button:hover,
+html[data-theme="dark"] .institution-student-modal-header > button:hover {
+  background: #1d304b;
+
+  border-color: #3b82f6;
+
+  color: #60a5fa;
+}
+
+body[data-theme="dark"] .institution-student-detail-avatar,
+html[data-theme="dark"] .institution-student-detail-avatar {
+  background: rgba(37, 99, 235, 0.16);
+
+  color: #60a5fa;
+
+  box-shadow:
+    0 0 18px rgba(37, 99, 235, 0.12);
+}
+
+body[data-theme="dark"] .institution-student-detail-grid,
+html[data-theme="dark"] .institution-student-detail-grid {
+  background: #26364e;
+
+  border-color: #26364e;
+}
+
+body[data-theme="dark"] .institution-student-detail-grid > div,
+html[data-theme="dark"] .institution-student-detail-grid > div {
+  background: #142238;
+}
+
+body[data-theme="dark"] .institution-student-detail-grid span,
+html[data-theme="dark"] .institution-student-detail-grid span {
+  color: #778aa3;
+}
+
+body[data-theme="dark"] .institution-student-detail-grid strong,
+html[data-theme="dark"] .institution-student-detail-grid strong {
+  color: #dce6f3;
+}
+
+body[data-theme="dark"] .institution-student-modal-footer,
+html[data-theme="dark"] .institution-student-modal-footer {
+  border-top-color: #26364e;
+}
+
+body[data-theme="dark"] .institution-student-cancel-button,
+html[data-theme="dark"] .institution-student-cancel-button {
+  background: #17253a;
+
+  border-color: #2b3c56;
+
+  color: #c4d0df;
+}
+
+body[data-theme="dark"] .institution-student-cancel-button:hover,
+html[data-theme="dark"] .institution-student-cancel-button:hover {
+  background: #1d304b;
+
+  border-color: #3b4f6b;
+}
+
+body[data-theme="dark"] .institution-student-primary-modal-button,
+html[data-theme="dark"] .institution-student-primary-modal-button {
+  background: #2563eb;
+
+  border-color: #3b82f6;
+
+  box-shadow:
+    0 0 18px rgba(37, 99, 235, 0.28);
+}
+
+body[data-theme="dark"] .institution-student-form-group label,
+html[data-theme="dark"] .institution-student-form-group label {
+  color: #8fa0b7;
+}
+
+body[data-theme="dark"] .institution-student-form-group input,
+body[data-theme="dark"] .institution-student-form-group select,
+html[data-theme="dark"] .institution-student-form-group input,
+html[data-theme="dark"] .institution-student-form-group select {
+  background: #17253a;
+
+  border-color: #2b3c56;
+
+  color: #e0e8f3;
+}
+
+body[data-theme="dark"] .institution-student-form-group input:focus,
+body[data-theme="dark"] .institution-student-form-group select:focus,
+html[data-theme="dark"] .institution-student-form-group input:focus,
+html[data-theme="dark"] .institution-student-form-group select:focus {
+  background: #1a2b43;
+
+  border-color: #3b82f6;
+
+  box-shadow:
+    0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+body[data-theme="dark"] .institution-student-form-group input::placeholder,
+html[data-theme="dark"] .institution-student-form-group input::placeholder {
+  color: #667992;
+}
+
+
+/* =========================================================
+   RESPONSIVE MODAL
+========================================================= */
+
+@media (max-width: 600px) {
+  .institution-student-modal-overlay {
+    padding: 12px;
+  }
+
+  .institution-student-modal {
+    max-height: calc(100vh - 24px);
+
+    border-radius: 13px;
+  }
+
+  .institution-student-modal-header {
+    padding: 18px;
+  }
+
+  .institution-student-details,
+  .institution-student-form {
+    padding: 18px;
+  }
+
+  .institution-student-detail-grid,
+  .institution-student-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .institution-student-form-group.full {
+    grid-column: auto;
+  }
+
+  .institution-student-modal-footer {
+    flex-direction: column-reverse;
+    align-items: stretch;
+  }
+
+  .institution-student-cancel-button,
+  .institution-student-primary-modal-button {
+    width: 100%;
+  }
+}

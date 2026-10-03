@@ -1,0 +1,1309 @@
+.company-colleges-page {
+  min-height: 100vh;
+  padding: 30px 34px 44px;
+  background: #f8fafc;
+  color: #0f172a;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.company-colleges-header {
+  margin-bottom: 20px;
+}
+
+.company-colleges-eyebrow {
+  margin: 0 0 7px;
+  color: #2563eb;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
+
+.company-colleges-header h1 {
+  margin: 0;
+  font-size: 28px;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+}
+
+.company-colleges-header p:not(.company-colleges-eyebrow) {
+  margin: 8px 0 0;
+  color: #64748b;
+  font-size: 13px;
+}
+
+/* =========================
+   TABS
+========================= */
+
+.company-colleges-tabs-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px 10px 0 0;
+}
+
+.company-colleges-tabs {
+  display: flex;
+  align-items: center;
+  min-height: 45px;
+  padding: 0 10px;
+  gap: 3px;
+}
+
+.company-colleges-tabs button {
+  position: relative;
+  height: 45px;
+  padding: 0 16px;
+  border: 0;
+  color: #64748b;
+  background: transparent;
+  font: inherit;
+  font-size: 10px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.18s ease;
+}
+
+.company-colleges-tabs button:hover {
+  color: #2563eb;
+}
+
+.company-colleges-tabs button.active {
+  color: #2563eb;
+}
+
+.company-colleges-tabs button.active::after {
+  content: "";
+  position: absolute;
+  left: 12px;
+  right: 12px;
+  bottom: -1px;
+  height: 2px;
+  background: #2563eb;
+}
+
+.company-colleges-tab-count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 17px;
+  height: 17px;
+  margin-left: 6px;
+  padding: 0 4px;
+  color: #2563eb;
+  background: #dbeafe;
+  border-radius: 5px;
+  font-size: 8px;
+}
+
+/* =========================
+   FILTER BAR
+========================= */
+
+.company-colleges-filter-bar {
+  position: relative;
+  z-index: 20;
+  display: grid;
+  grid-template-columns:
+    minmax(280px, 1fr)
+    145px
+    145px auto;
+  gap: 9px;
+  padding: 10px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-top: 0;
+}
+
+.company-colleges-search,
+.company-colleges-select {
+  position: relative;
+  height: 37px;
+  display: flex;
+  align-items: center;
+  border: 1px solid #dbe3ec;
+  border-radius: 7px;
+  background: #ffffff;
+}
+
+.company-colleges-search {
+  gap: 8px;
+  padding: 0 11px;
+  color: #94a3b8;
+}
+
+.company-colleges-search input {
+  width: 100%;
+  border: 0;
+  outline: 0;
+  color: #334155;
+  background: transparent;
+  font: inherit;
+  font-size: 10px;
+}
+
+.company-colleges-search input::placeholder {
+  color: #94a3b8;
+}
+
+.company-colleges-select {
+  padding: 0 10px;
+}
+
+.company-colleges-select select {
+  width: 100%;
+  height: 100%;
+  padding-right: 17px;
+  appearance: none;
+  border: 0;
+  outline: 0;
+  color: #475569;
+  background: transparent;
+  font: inherit;
+  font-size: 10px;
+  cursor: pointer;
+}
+
+.company-colleges-select svg {
+  position: absolute;
+  right: 9px;
+  color: #94a3b8;
+  pointer-events: none;
+}
+
+.company-colleges-clear {
+  height: 37px;
+  padding: 0 12px;
+  border: 1px solid #bfdbfe;
+  border-radius: 7px;
+  color: #2563eb;
+  background: #eff6ff;
+  font-size: 9px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* =========================
+   TABLE CARD
+========================= */
+
+.company-colleges-table-card {
+  overflow: visible;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-top: 0;
+  border-radius: 0 0 11px 11px;
+  box-shadow: 0 7px 24px rgba(15, 23, 42, 0.035);
+}
+
+.company-colleges-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.company-colleges-table {
+  width: 100%;
+  min-width: 850px;
+  border-collapse: collapse;
+}
+
+.company-colleges-table thead {
+  background: #f8fafc;
+}
+
+.company-colleges-table th {
+  height: 43px;
+  padding: 0 15px;
+  color: #64748b;
+  border-bottom: 1px solid #e2e8f0;
+  text-align: left;
+  font-size: 9px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.company-colleges-table td {
+  height: 61px;
+  padding: 8px 15px;
+  color: #475569;
+  border-bottom: 1px solid #eef2f7;
+  font-size: 10px;
+  vertical-align: middle;
+}
+
+.company-colleges-table tbody tr {
+  transition: background 0.15s ease;
+}
+
+.company-colleges-table tbody tr:hover {
+  background: #f8fbff;
+}
+
+.company-colleges-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+/* =========================
+   NUMBER
+========================= */
+
+.college-number {
+  width: 40px;
+  color: #94a3b8 !important;
+  text-align: center !important;
+}
+
+/* =========================
+   COLLEGE INFO
+========================= */
+
+.college-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.college-logo {
+  width: 32px;
+  height: 32px;
+  flex: 0 0 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #2563eb;
+  background: #eff6ff;
+  border: 1px solid #dbeafe;
+  border-radius: 50%;
+}
+
+.college-info strong {
+  display: block;
+  color: #1e293b;
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.college-info small {
+  display: block;
+  max-width: 230px;
+  overflow: hidden;
+  margin-top: 3px;
+  color: #94a3b8;
+  font-size: 7px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.college-location {
+  color: #64748b;
+  white-space: nowrap;
+}
+
+.college-students {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: #475569;
+  white-space: nowrap;
+}
+
+.college-students svg {
+  color: #94a3b8;
+}
+
+.college-programs {
+  color: #64748b;
+  white-space: nowrap;
+}
+
+/* =========================
+   STATUS
+========================= */
+
+.college-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-width: 80px;
+  padding: 6px 8px;
+  border-radius: 7px;
+  font-size: 8px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.college-status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+}
+
+.college-status.connected {
+  color: #15803d;
+  background: #dcfce7;
+}
+
+.college-status.connected .college-status-dot {
+  background: #16a34a;
+}
+
+.college-status.pending {
+  color: #d97706;
+  background: #fef3c7;
+}
+
+.college-status.pending .college-status-dot {
+  background: #d97706;
+}
+
+.college-status.not-connected {
+  color: #64748b;
+  background: #f1f5f9;
+}
+
+.college-status.not-connected .college-status-dot {
+  background: #94a3b8;
+}
+
+/* =========================
+   ACTIONS
+========================= */
+
+.college-actions-heading {
+  width: 65px;
+  text-align: center !important;
+}
+
+.college-actions {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.college-more {
+  width: 29px;
+  height: 29px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  border-radius: 6px;
+  color: #64748b;
+  background: transparent;
+  cursor: pointer;
+}
+
+.college-more:hover {
+  color: #2563eb;
+  background: #eff6ff;
+}
+
+.college-action-menu {
+  position: absolute;
+  z-index: 40;
+  top: 32px;
+  right: 0;
+  width: 170px;
+  padding: 5px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  box-shadow: 0 15px 38px rgba(15, 23, 42, 0.15);
+}
+
+.college-action-menu button {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 9px;
+  border: 0;
+  border-radius: 5px;
+  color: #475569;
+  background: transparent;
+  text-align: left;
+  font-size: 9px;
+  cursor: pointer;
+}
+
+.college-action-menu button:hover {
+  color: #2563eb;
+  background: #f8fafc;
+}
+
+.college-action-menu button.danger {
+  color: #dc2626;
+}
+
+.college-action-menu button.danger:hover {
+  background: #fef2f2;
+}
+
+/* =========================
+   EMPTY
+========================= */
+
+.company-colleges-empty {
+  height: 250px !important;
+  text-align: center !important;
+}
+
+.company-colleges-empty > div {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 7px;
+  color: #94a3b8;
+}
+
+.company-colleges-empty strong {
+  color: #475569;
+  font-size: 13px;
+}
+
+.company-colleges-empty span {
+  font-size: 10px;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+.company-colleges-footer {
+  min-height: 54px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 15px;
+  border-top: 1px solid #eef2f7;
+  color: #94a3b8;
+  font-size: 9px;
+}
+
+.company-colleges-footer strong {
+  color: #475569;
+}
+
+.company-colleges-pagination {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.company-colleges-pagination button {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #dbe3ec;
+  border-radius: 6px;
+  color: #64748b;
+  background: #ffffff;
+  font-size: 9px;
+  cursor: pointer;
+}
+
+.company-colleges-pagination button:hover:not(
+    :disabled
+  ) {
+  color: #2563eb;
+  border-color: #bfdbfe;
+  background: #eff6ff;
+}
+
+.company-colleges-pagination button.active {
+  color: #ffffff;
+  background: #2563eb;
+  border-color: #2563eb;
+}
+
+.company-colleges-pagination button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.company-colleges-pagination span {
+  color: #94a3b8;
+  font-size: 9px;
+}
+
+/* =========================
+   CUSTOM FILTER DROPDOWNS
+========================= */
+
+.company-colleges-select.open {
+  z-index: 100;
+}
+
+.company-colleges-select-trigger {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  color: #475569;
+  background: transparent;
+  font: inherit;
+  font-size: 10px;
+  font-weight: 700;
+  text-align: left;
+  cursor: pointer;
+}
+
+.company-colleges-select-trigger:focus-visible {
+  color: #2563eb;
+}
+
+.company-colleges-select-chevron {
+  flex: 0 0 auto;
+  color: #94a3b8;
+  transition: transform 0.18s ease;
+  pointer-events: none;
+}
+
+.company-colleges-select.open
+  .company-colleges-select-chevron {
+  color: #2563eb;
+  transform: rotate(180deg);
+}
+
+.company-colleges-select-menu {
+  position: absolute;
+  z-index: 1000;
+  top: calc(100% + 7px);
+  left: 0;
+  width: 100%;
+  min-width: 145px;
+  padding: 5px;
+  background: #ffffff;
+  border: 1px solid #dbe3ec;
+  border-radius: 8px;
+  box-shadow:
+    0 14px 35px rgba(15, 23, 42, 0.16),
+    0 3px 10px rgba(15, 23, 42, 0.06);
+}
+
+.company-colleges-select-menu button {
+  width: 100%;
+  min-height: 31px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 7px 8px;
+  border: 0;
+  border-radius: 5px;
+  color: #475569;
+  background: transparent;
+  font: inherit;
+  font-size: 9px;
+  font-weight: 700;
+  text-align: left;
+  cursor: pointer;
+  transition:
+    color 0.15s ease,
+    background 0.15s ease;
+}
+
+.company-colleges-select-menu button:hover,
+.company-colleges-select-menu button:focus-visible {
+  color: #2563eb;
+  background: #eff6ff;
+  outline: 0;
+}
+
+.company-colleges-select-menu button.selected {
+  color: #2563eb;
+  background: #eff6ff;
+}
+
+.company-colleges-select-menu .select-check {
+  color: #2563eb;
+  font-size: 12px;
+  font-weight: 900;
+}
+
+/* =========================
+   FIXED ACTION MENU
+========================= */
+
+.college-action-menu {
+  position: fixed !important;
+  z-index: 2000 !important;
+  top: auto;
+  right: auto;
+  width: 170px;
+  max-width: calc(100vw - 16px);
+  padding: 5px;
+  background: #ffffff;
+  border: 1px solid #dbe3ec;
+  border-radius: 9px;
+  box-shadow:
+    0 18px 42px rgba(15, 23, 42, 0.2),
+    0 5px 14px rgba(15, 23, 42, 0.08);
+}
+
+.college-action-menu button {
+  width: 100%;
+  min-height: 34px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 9px;
+  border: 0;
+  border-radius: 6px;
+  color: #475569;
+  background: transparent;
+  text-align: left;
+  font-size: 9px;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    color 0.15s ease,
+    background 0.15s ease;
+}
+
+.college-action-menu button:hover,
+.college-action-menu button:focus-visible {
+  color: #2563eb;
+  background: #eff6ff;
+  outline: 0;
+}
+
+.college-action-menu button.danger {
+  color: #dc2626;
+}
+
+.college-action-menu button.danger:hover,
+.college-action-menu button.danger:focus-visible {
+  color: #b91c1c;
+  background: #fef2f2;
+}
+
+/* =========================
+   COLLEGE DETAILS MODAL
+========================= */
+
+.company-colleges-modal-backdrop {
+  position: fixed;
+  z-index: 3000;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgba(3, 10, 20, 0.58);
+  backdrop-filter: blur(4px);
+}
+
+.company-colleges-modal {
+  width: min(520px, 100%);
+  max-height: min(620px, calc(100vh - 40px));
+  overflow: auto;
+  background: #ffffff;
+  border: 1px solid #dbe3ec;
+  border-radius: 14px;
+  box-shadow: 0 24px 70px rgba(15, 23, 42, 0.28);
+}
+
+.company-colleges-modal-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 20px 20px 16px;
+  border-bottom: 1px solid #eef2f7;
+}
+
+.company-colleges-modal-kicker {
+  display: block;
+  margin-bottom: 6px;
+  color: #2563eb;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
+
+.company-colleges-modal-header h2 {
+  margin: 0;
+  color: #0f172a;
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.company-colleges-modal-header p {
+  margin: 5px 0 0;
+  color: #64748b;
+  font-size: 10px;
+}
+
+.company-colleges-modal-close {
+  width: 31px;
+  height: 31px;
+  flex: 0 0 31px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #dbe3ec;
+  border-radius: 7px;
+  color: #64748b;
+  background: #f8fafc;
+  cursor: pointer;
+}
+
+.company-colleges-modal-close:hover {
+  color: #2563eb;
+  border-color: #bfdbfe;
+  background: #eff6ff;
+}
+
+.company-colleges-modal-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 9px;
+  padding: 18px 20px;
+}
+
+.company-colleges-modal-item {
+  padding: 12px;
+  background: #f8fafc;
+  border: 1px solid #e7edf4;
+  border-radius: 8px;
+}
+
+.company-colleges-modal-item span:first-child {
+  display: block;
+  margin-bottom: 5px;
+  color: #94a3b8;
+  font-size: 8px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.company-colleges-modal-item strong {
+  color: #334155;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.company-colleges-modal-item .modal-status {
+  color: #15803d;
+}
+
+.company-colleges-modal-item .modal-status.pending {
+  color: #d97706;
+}
+
+.company-colleges-modal-item .modal-status.not-connected {
+  color: #64748b;
+}
+
+.company-colleges-students-panel {
+  padding: 18px 20px;
+}
+
+.company-colleges-students-summary {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 9px;
+}
+
+.company-colleges-students-summary > div {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 13px;
+  background: #f8fafc;
+  border: 1px solid #e7edf4;
+  border-radius: 8px;
+}
+
+.company-colleges-students-summary strong {
+  color: #0f172a;
+  font-size: 16px;
+  font-weight: 800;
+}
+
+.company-colleges-students-summary span {
+  color: #94a3b8;
+  font-size: 8px;
+  font-weight: 700;
+}
+
+.company-colleges-students-list {
+  margin-top: 10px;
+  padding: 12px;
+  background: #f8fafc;
+  border: 1px solid #e7edf4;
+  border-radius: 8px;
+}
+
+.company-colleges-students-list > div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.student-avatar {
+  width: 34px;
+  height: 34px;
+  flex: 0 0 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #2563eb;
+  background: #dbeafe;
+  border-radius: 50%;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.company-colleges-students-list strong {
+  display: block;
+  color: #334155;
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.company-colleges-students-list small {
+  display: block;
+  margin-top: 3px;
+  color: #94a3b8;
+  font-size: 8px;
+  line-height: 1.45;
+}
+
+.company-colleges-modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  padding: 13px 20px;
+  border-top: 1px solid #eef2f7;
+}
+
+.company-colleges-modal-footer button {
+  min-width: 78px;
+  height: 32px;
+  padding: 0 13px;
+  border: 1px solid #bfdbfe;
+  border-radius: 7px;
+  color: #2563eb;
+  background: #eff6ff;
+  font-size: 9px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.company-colleges-modal-footer button:hover {
+  color: #ffffff;
+  background: #2563eb;
+  border-color: #2563eb;
+}
+
+/* =========================
+   DARK MODE
+========================= */
+
+html[data-theme="dark"] .company-colleges-page,
+body[data-theme="dark"] .company-colleges-page,
+.dark .company-colleges-page {
+  background:
+    radial-gradient(
+      circle at 85% 4%,
+      rgba(37, 99, 235, 0.08),
+      transparent 30%
+    ),
+    #07111f;
+  color: #e2e8f0;
+}
+
+html[data-theme="dark"] .company-colleges-header p:not(.company-colleges-eyebrow),
+body[data-theme="dark"] .company-colleges-header p:not(.company-colleges-eyebrow),
+.dark .company-colleges-header p:not(.company-colleges-eyebrow) {
+  color: #94a3b8;
+}
+
+html[data-theme="dark"] .company-colleges-tabs-card,
+html[data-theme="dark"] .company-colleges-filter-bar,
+html[data-theme="dark"] .company-colleges-table-card,
+body[data-theme="dark"] .company-colleges-tabs-card,
+body[data-theme="dark"] .company-colleges-filter-bar,
+body[data-theme="dark"] .company-colleges-table-card,
+.dark .company-colleges-tabs-card,
+.dark .company-colleges-filter-bar,
+.dark .company-colleges-table-card {
+  background: rgba(15, 30, 48, 0.9);
+  border-color: rgba(96, 165, 250, 0.13);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.16);
+}
+
+html[data-theme="dark"] .company-colleges-tabs button,
+body[data-theme="dark"] .company-colleges-tabs button,
+.dark .company-colleges-tabs button {
+  color: #94a3b8;
+}
+
+html[data-theme="dark"] .company-colleges-tabs button.active,
+body[data-theme="dark"] .company-colleges-tabs button.active,
+.dark .company-colleges-tabs button.active {
+  color: #60a5fa;
+}
+
+html[data-theme="dark"] .company-colleges-search,
+html[data-theme="dark"] .company-colleges-select,
+body[data-theme="dark"] .company-colleges-search,
+body[data-theme="dark"] .company-colleges-select,
+.dark .company-colleges-search,
+.dark .company-colleges-select {
+  background: #0b1b2e;
+  border-color: rgba(148, 163, 184, 0.14);
+}
+
+html[data-theme="dark"] .company-colleges-search input,
+body[data-theme="dark"] .company-colleges-search input,
+.dark .company-colleges-search input {
+  color: #cbd5e1;
+}
+
+html[data-theme="dark"] .company-colleges-select select,
+body[data-theme="dark"] .company-colleges-select select,
+.dark .company-colleges-select select {
+  color: #cbd5e1;
+  background: #0b1b2e;
+}
+
+html[data-theme="dark"] .company-colleges-table thead,
+body[data-theme="dark"] .company-colleges-table thead,
+.dark .company-colleges-table thead {
+  background: rgba(7, 17, 31, 0.65);
+}
+
+html[data-theme="dark"] .company-colleges-table th,
+body[data-theme="dark"] .company-colleges-table th,
+.dark .company-colleges-table th {
+  color: #94a3b8;
+  border-bottom-color: rgba(148, 163, 184, 0.09);
+}
+
+html[data-theme="dark"] .company-colleges-table td,
+body[data-theme="dark"] .company-colleges-table td,
+.dark .company-colleges-table td {
+  color: #cbd5e1;
+  border-bottom-color: rgba(148, 163, 184, 0.07);
+}
+
+html[data-theme="dark"] .company-colleges-table tbody tr:hover,
+body[data-theme="dark"] .company-colleges-table tbody tr:hover,
+.dark .company-colleges-table tbody tr:hover {
+  background: rgba(37, 99, 235, 0.045);
+}
+
+html[data-theme="dark"] .college-info strong,
+body[data-theme="dark"] .college-info strong,
+.dark .college-info strong {
+  color: #e2e8f0;
+}
+
+html[data-theme="dark"] .college-logo,
+body[data-theme="dark"] .college-logo,
+.dark .college-logo {
+  color: #60a5fa;
+  background: rgba(37, 99, 235, 0.1);
+  border-color: rgba(96, 165, 250, 0.15);
+}
+
+html[data-theme="dark"] .college-location,
+html[data-theme="dark"] .college-students,
+html[data-theme="dark"] .college-programs,
+body[data-theme="dark"] .college-location,
+body[data-theme="dark"] .college-students,
+body[data-theme="dark"] .college-programs,
+.dark .college-location,
+.dark .college-students,
+.dark .college-programs {
+  color: #94a3b8;
+}
+
+html[data-theme="dark"] .college-action-menu,
+body[data-theme="dark"] .college-action-menu,
+.dark .college-action-menu {
+  background: #102238;
+  border-color: rgba(96, 165, 250, 0.14);
+}
+
+html[data-theme="dark"] .college-action-menu button,
+body[data-theme="dark"] .college-action-menu button,
+.dark .college-action-menu button {
+  color: #cbd5e1;
+}
+
+html[data-theme="dark"] .college-action-menu button:hover,
+body[data-theme="dark"] .college-action-menu button:hover,
+.dark .college-action-menu button:hover {
+  color: #60a5fa;
+  background: rgba(37, 99, 235, 0.1);
+}
+
+html[data-theme="dark"] .company-colleges-footer,
+body[data-theme="dark"] .company-colleges-footer,
+.dark .company-colleges-footer {
+  border-top-color: rgba(148, 163, 184, 0.08);
+}
+
+html[data-theme="dark"] .company-colleges-footer strong,
+body[data-theme="dark"] .company-colleges-footer strong,
+.dark .company-colleges-footer strong {
+  color: #cbd5e1;
+}
+
+html[data-theme="dark"] .company-colleges-pagination button,
+body[data-theme="dark"] .company-colleges-pagination button,
+.dark .company-colleges-pagination button {
+  color: #94a3b8;
+  background: #102238;
+  border-color: rgba(148, 163, 184, 0.14);
+}
+
+html[data-theme="dark"] .company-colleges-pagination button.active,
+body[data-theme="dark"] .company-colleges-pagination button.active,
+.dark .company-colleges-pagination button.active {
+  color: #ffffff;
+  background: #2563eb;
+  border-color: #2563eb;
+}
+
+/* CUSTOM DROPDOWNS / ACTIONS / MODAL - DARK MODE */
+
+html[data-theme="dark"] .company-colleges-select-trigger,
+body[data-theme="dark"] .company-colleges-select-trigger,
+.dark .company-colleges-select-trigger {
+  color: #cbd5e1;
+}
+
+html[data-theme="dark"] .company-colleges-select-trigger:focus-visible,
+body[data-theme="dark"] .company-colleges-select-trigger:focus-visible,
+.dark .company-colleges-select-trigger:focus-visible {
+  color: #60a5fa;
+}
+
+html[data-theme="dark"] .company-colleges-select-menu,
+body[data-theme="dark"] .company-colleges-select-menu,
+.dark .company-colleges-select-menu {
+  background: #102238;
+  border-color: rgba(96, 165, 250, 0.16);
+  box-shadow:
+    0 18px 42px rgba(0, 0, 0, 0.38),
+    0 5px 14px rgba(0, 0, 0, 0.2);
+}
+
+html[data-theme="dark"] .company-colleges-select-menu button,
+body[data-theme="dark"] .company-colleges-select-menu button,
+.dark .company-colleges-select-menu button {
+  color: #cbd5e1;
+}
+
+html[data-theme="dark"] .company-colleges-select-menu button:hover,
+html[data-theme="dark"] .company-colleges-select-menu button:focus-visible,
+body[data-theme="dark"] .company-colleges-select-menu button:hover,
+body[data-theme="dark"] .company-colleges-select-menu button:focus-visible,
+.dark .company-colleges-select-menu button:hover,
+.dark .company-colleges-select-menu button:focus-visible,
+html[data-theme="dark"] .company-colleges-select-menu button.selected,
+body[data-theme="dark"] .company-colleges-select-menu button.selected,
+.dark .company-colleges-select-menu button.selected {
+  color: #60a5fa;
+  background: rgba(37, 99, 235, 0.12);
+}
+
+html[data-theme="dark"] .college-action-menu,
+body[data-theme="dark"] .college-action-menu,
+.dark .college-action-menu {
+  background: #102238;
+  border-color: rgba(96, 165, 250, 0.16);
+  box-shadow:
+    0 20px 48px rgba(0, 0, 0, 0.42),
+    0 5px 14px rgba(0, 0, 0, 0.22);
+}
+
+html[data-theme="dark"] .college-action-menu button,
+body[data-theme="dark"] .college-action-menu button,
+.dark .college-action-menu button {
+  color: #cbd5e1;
+}
+
+html[data-theme="dark"] .college-action-menu button:hover,
+html[data-theme="dark"] .college-action-menu button:focus-visible,
+body[data-theme="dark"] .college-action-menu button:hover,
+body[data-theme="dark"] .college-action-menu button:focus-visible,
+.dark .college-action-menu button:hover,
+.dark .college-action-menu button:focus-visible {
+  color: #60a5fa;
+  background: rgba(37, 99, 235, 0.12);
+}
+
+html[data-theme="dark"] .college-action-menu button.danger,
+body[data-theme="dark"] .college-action-menu button.danger,
+.dark .college-action-menu button.danger {
+  color: #fca5a5;
+}
+
+html[data-theme="dark"] .college-action-menu button.danger:hover,
+body[data-theme="dark"] .college-action-menu button.danger:hover,
+.dark .college-action-menu button.danger:hover {
+  color: #fecaca;
+  background: rgba(220, 38, 38, 0.1);
+}
+
+html[data-theme="dark"] .company-colleges-modal,
+body[data-theme="dark"] .company-colleges-modal,
+.dark .company-colleges-modal {
+  background: #0f1e30;
+  border-color: rgba(96, 165, 250, 0.14);
+  box-shadow: 0 26px 75px rgba(0, 0, 0, 0.45);
+}
+
+html[data-theme="dark"] .company-colleges-modal-header,
+body[data-theme="dark"] .company-colleges-modal-header,
+.dark .company-colleges-modal-header,
+html[data-theme="dark"] .company-colleges-modal-footer,
+body[data-theme="dark"] .company-colleges-modal-footer,
+.dark .company-colleges-modal-footer {
+  border-color: rgba(148, 163, 184, 0.09);
+}
+
+html[data-theme="dark"] .company-colleges-modal-header h2,
+body[data-theme="dark"] .company-colleges-modal-header h2,
+.dark .company-colleges-modal-header h2 {
+  color: #e2e8f0;
+}
+
+html[data-theme="dark"] .company-colleges-modal-header p,
+body[data-theme="dark"] .company-colleges-modal-header p,
+.dark .company-colleges-modal-header p {
+  color: #94a3b8;
+}
+
+html[data-theme="dark"] .company-colleges-modal-close,
+body[data-theme="dark"] .company-colleges-modal-close,
+.dark .company-colleges-modal-close {
+  color: #94a3b8;
+  background: #102238;
+  border-color: rgba(148, 163, 184, 0.14);
+}
+
+html[data-theme="dark"] .company-colleges-modal-item,
+body[data-theme="dark"] .company-colleges-modal-item,
+.dark .company-colleges-modal-item,
+html[data-theme="dark"] .company-colleges-students-summary > div,
+body[data-theme="dark"] .company-colleges-students-summary > div,
+.dark .company-colleges-students-summary > div,
+html[data-theme="dark"] .company-colleges-students-list,
+body[data-theme="dark"] .company-colleges-students-list,
+.dark .company-colleges-students-list {
+  background: rgba(7, 17, 31, 0.6);
+  border-color: rgba(148, 163, 184, 0.09);
+}
+
+html[data-theme="dark"] .company-colleges-modal-item strong,
+body[data-theme="dark"] .company-colleges-modal-item strong,
+.dark .company-colleges-modal-item strong,
+html[data-theme="dark"] .company-colleges-students-summary strong,
+body[data-theme="dark"] .company-colleges-students-summary strong,
+.dark .company-colleges-students-summary strong,
+html[data-theme="dark"] .company-colleges-students-list strong,
+body[data-theme="dark"] .company-colleges-students-list strong {
+  color: #e2e8f0;
+}
+
+html[data-theme="dark"] .company-colleges-students-list small,
+body[data-theme="dark"] .company-colleges-students-list small,
+.dark .company-colleges-students-list small {
+  color: #94a3b8;
+}
+
+html[data-theme="dark"] .company-colleges-modal-footer button,
+body[data-theme="dark"] .company-colleges-modal-footer button,
+.dark .company-colleges-modal-footer button {
+  color: #60a5fa;
+  background: rgba(37, 99, 235, 0.1);
+  border-color: rgba(96, 165, 250, 0.2);
+}
+
+html[data-theme="dark"] .company-colleges-modal-footer button:hover,
+body[data-theme="dark"] .company-colleges-modal-footer button:hover,
+.dark .company-colleges-modal-footer button:hover {
+  color: #ffffff;
+  background: #2563eb;
+  border-color: #2563eb;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 1000px) {
+  .company-colleges-filter-bar {
+    grid-template-columns:
+      minmax(220px, 1fr)
+      1fr
+      1fr;
+  }
+
+  .company-colleges-search {
+    grid-column: 1 / -1;
+  }
+
+  .company-colleges-clear {
+    grid-column: 1 / -1;
+    width: fit-content;
+  }
+}
+
+@media (max-width: 700px) {
+  .company-colleges-modal-backdrop {
+    padding: 12px;
+  }
+
+  .company-colleges-modal-grid,
+  .company-colleges-students-summary {
+    grid-template-columns: 1fr;
+  }
+
+  .company-colleges-page {
+    padding: 22px 17px 35px;
+  }
+
+  .company-colleges-tabs {
+    overflow-x: auto;
+  }
+
+  .company-colleges-tabs button {
+    flex: 0 0 auto;
+  }
+
+  .company-colleges-filter-bar {
+    grid-template-columns: 1fr;
+  }
+
+  .company-colleges-search {
+    grid-column: auto;
+  }
+
+  .company-colleges-clear {
+    grid-column: auto;
+  }
+
+  .company-colleges-footer {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 12px;
+    padding: 13px 15px;
+  }
+}

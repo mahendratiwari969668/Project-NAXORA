@@ -1,0 +1,1240 @@
+/* =========================================================
+   NEXORA — STUDENT DASHBOARD
+   Works with shared StudentLayout
+   ========================================================= */
+
+.student-dashboard {
+  width: 100%;
+  min-height: auto;
+  background: transparent;
+  color: var(--text);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+/* =========================================================
+   OLD DASHBOARD LAYOUT
+   StudentLayout already provides sidebar + topbar.
+   Keep JSX untouched, hide duplicate old layout.
+   ========================================================= */
+
+.student-dashboard > .student-sidebar,
+.student-dashboard > .student-content > .student-topbar {
+  display: none;
+}
+
+.student-content {
+  width: 100%;
+  min-width: 0;
+  background: transparent;
+}
+
+.student-main {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 28px 32px 56px;
+}
+
+/* =========================================================
+   WELCOME
+   ========================================================= */
+
+.student-welcome {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 28px;
+  margin-bottom: 22px;
+}
+
+.dashboard-section-label {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--primary);
+  font-size: 14px;
+  line-height: 1.2;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.student-welcome h1 {
+  margin: 0;
+  color: var(--text);
+  font-family: Geist, Inter, sans-serif;
+  font-size: clamp(30px, 3vw, 40px);
+  line-height: 1.1;
+  letter-spacing: -0.04em;
+}
+
+.welcome-wave {
+  margin-left: 6px;
+}
+
+.student-welcome p {
+  margin: 9px 0 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.welcome-date {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  text-align: right;
+  flex-shrink: 0;
+}
+
+.welcome-date strong {
+  color: var(--text);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.welcome-date span {
+  color: var(--subtle);
+  font-size: 14px;
+}
+
+/* =========================================================
+   PROFILE PROGRESS
+   ========================================================= */
+
+.profile-progress-card {
+  min-height: 140px;
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  padding: 22px 24px;
+  margin-bottom: 18px;
+
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
+}
+
+.profile-progress-ring {
+  width: 92px;
+  height: 92px;
+  flex: 0 0 92px;
+
+  display: grid;
+  place-items: center;
+
+  position: relative;
+  border-radius: 50%;
+
+  background:
+    conic-gradient(
+      var(--primary) 0deg,
+      var(--primary) 43deg,
+      var(--border) 43deg,
+      var(--border) 360deg
+    );
+}
+
+.profile-progress-ring::after {
+  content: "";
+  position: absolute;
+  inset: 8px;
+  background: var(--surface);
+  border-radius: 50%;
+}
+
+.profile-progress-ring div {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+
+.profile-progress-ring strong {
+  display: block;
+  color: var(--text);
+  font-size: 20px;
+  line-height: 1;
+}
+
+.profile-progress-ring span {
+  display: block;
+  margin-top: 5px;
+  color: var(--subtle);
+  font-size: 14px;
+}
+
+.profile-progress-content {
+  min-width: 0;
+  flex: 1;
+}
+
+.profile-progress-label {
+  color: var(--subtle);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+
+.profile-progress-content h2 {
+  margin: 5px 0 5px;
+  color: var(--text);
+  font-size: 19px;
+  line-height: 1.3;
+}
+
+.profile-progress-content p {
+  margin: 0 0 12px;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.profile-progress-track {
+  width: min(100%, 520px);
+  height: 8px;
+  overflow: hidden;
+  background: var(--surface-2);
+  border-radius: 4px;
+}
+
+.profile-progress-track span {
+  display: block;
+  width: 12%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    var(--primary),
+    #4f9bff
+  );
+  border-radius: inherit;
+}
+
+.profile-progress-content small {
+  display: block;
+  margin-top: 7px;
+  color: var(--subtle);
+  font-size: 14px;
+}
+
+.profile-progress-button {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  padding: 0 18px;
+
+  color: #ffffff;
+  background: var(--primary);
+  border: 1px solid var(--primary);
+  border-radius: 9px;
+
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.profile-progress-button:hover {
+  background: var(--primary-dark);
+  border-color: var(--primary-dark);
+  transform: translateY(-1px);
+}
+
+/* =========================================================
+   SUMMARY CARDS
+   ========================================================= */
+
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+.summary-card {
+  min-height: 112px;
+
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  padding: 17px;
+
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.045);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.summary-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.07);
+}
+
+.summary-card-icon {
+  width: 46px;
+  height: 46px;
+  flex: 0 0 46px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 10px;
+}
+
+.summary-card-content {
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.summary-card-content > span {
+  color: var(--subtle);
+  font-size: 14px;
+  line-height: 1.3;
+}
+
+.summary-card-content strong {
+  color: var(--text);
+  font-size: 24px;
+  line-height: 1.1;
+  letter-spacing: -0.04em;
+}
+
+.summary-card-content small {
+  color: var(--subtle);
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.summary-card.blue .summary-card-icon {
+  color: #2563eb;
+  background: #e5efff;
+}
+
+.summary-card.green .summary-card-icon {
+  color: #0da86a;
+  background: #ddf8ec;
+}
+
+.summary-card.rose .summary-card-icon {
+  color: #e6465f;
+  background: #ffe7eb;
+}
+
+.summary-card.violet .summary-card-icon {
+  color: #7c4ce0;
+  background: #eee7ff;
+}
+
+/* =========================================================
+   TWO COLUMN
+   ========================================================= */
+
+.dashboard-two-column {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1.2fr)
+    minmax(0, 0.8fr);
+  gap: 16px;
+  margin-bottom: 26px;
+}
+
+.dashboard-panel {
+  min-width: 0;
+
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.045);
+}
+
+.skills-panel,
+.skill-gap-panel {
+  padding: 20px;
+}
+
+.panel-heading,
+.section-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.panel-heading > div > span,
+.section-title-row > div > span {
+  color: var(--subtle);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+
+.panel-heading h2,
+.section-title-row h2 {
+  margin: 5px 0 0;
+  color: var(--text);
+  font-size: 19px;
+  line-height: 1.3;
+  letter-spacing: -0.025em;
+}
+
+.panel-heading > a,
+.section-title-row > a {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+
+  color: var(--primary);
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;
+
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.panel-heading > a:hover,
+.section-title-row > a:hover {
+  color: var(--primary-dark);
+  transform: translateX(2px);
+}
+
+/* =========================================================
+   SKILLS
+   ========================================================= */
+
+.skills-list {
+  display: grid;
+  gap: 17px;
+  margin-top: 24px;
+}
+
+.skill-row {
+  display: grid;
+  grid-template-columns: 38px 105px minmax(100px, 1fr) 42px;
+  align-items: center;
+  gap: 11px;
+}
+
+.skill-symbol {
+  width: 34px;
+  height: 34px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 8px;
+
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.skill-symbol.blue {
+  color: #c58a00;
+  background: #fff3c8;
+}
+
+.skill-symbol.cyan {
+  color: #0a9fd0;
+  background: #ddf6ff;
+}
+
+.skill-symbol.green {
+  color: #16a36b;
+  background: #dcf8e9;
+}
+
+.skill-symbol.orange {
+  color: #bd7410;
+  background: #fff0d8;
+}
+
+.skill-name {
+  min-width: 0;
+}
+
+.skill-name strong {
+  color: var(--text);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.skill-name span {
+  display: block;
+  margin-top: 3px;
+  color: var(--subtle);
+  font-size: 14px;
+}
+
+.skill-bar {
+  height: 8px;
+  overflow: hidden;
+  background: var(--surface-2);
+  border-radius: 4px;
+}
+
+.skill-bar span {
+  display: block;
+  height: 100%;
+  min-width: 8px;
+  background: #3b82f6;
+  border-radius: inherit;
+}
+
+.skill-row:nth-child(2) .skill-bar span {
+  background: #38a7ed;
+}
+
+.skill-row:nth-child(3) .skill-bar span {
+  background: #22bf7b;
+}
+
+.skill-row:nth-child(4) .skill-bar span {
+  background: #f4ad43;
+}
+
+.skills-empty-note {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+
+  margin-top: 22px;
+  padding: 12px 14px;
+
+  color: var(--muted);
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 9px;
+
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.skills-empty-note svg {
+  color: var(--primary);
+  flex-shrink: 0;
+}
+
+/* =========================================================
+   SKILL GAP
+   ========================================================= */
+
+.career-select {
+  margin-top: 22px;
+}
+
+.career-select > span {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--subtle);
+  font-size: 14px;
+}
+
+.career-select button {
+  width: 100%;
+  min-height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 12px;
+
+  color: var(--muted);
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+
+  font-size: 14px;
+  cursor: pointer;
+
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease;
+}
+
+.career-select button:hover {
+  border-color: var(--primary);
+}
+
+.skill-gap-info {
+  display: flex;
+  gap: 11px;
+
+  margin-top: 15px;
+  padding: 13px;
+
+  background: var(--soft-blue);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+}
+
+.skill-gap-info-icon {
+  width: 34px;
+  height: 34px;
+  flex: 0 0 34px;
+
+  display: grid;
+  place-items: center;
+
+  color: var(--primary);
+  background: var(--surface);
+  border-radius: 8px;
+}
+
+.skill-gap-info strong {
+  display: block;
+  color: var(--text);
+  font-size: 14px;
+}
+
+.skill-gap-info p {
+  margin: 5px 0 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.skill-gap-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 15px;
+}
+
+.skill-gap-list span {
+  padding: 7px 10px;
+
+  color: #c9364c;
+  background: #ffebee;
+  border: 1px solid #ffe0e5;
+  border-radius: 7px;
+
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* =========================================================
+   OPPORTUNITIES
+   ========================================================= */
+
+.dashboard-opportunities {
+  margin-bottom: 26px;
+}
+
+.section-title-row {
+  margin-bottom: 14px;
+}
+
+.opportunity-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.opportunity-card {
+  min-width: 0;
+  padding: 17px;
+
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 13px;
+
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.04);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.opportunity-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.07);
+}
+
+.opportunity-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.opportunity-company-icon {
+  width: 40px;
+  height: 40px;
+
+  display: grid;
+  place-items: center;
+
+  color: var(--primary);
+  background: var(--soft-blue);
+  border-radius: 9px;
+}
+
+.bookmark-button {
+  width: 34px;
+  height: 34px;
+
+  display: grid;
+  place-items: center;
+
+  color: var(--subtle);
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 7px;
+
+  cursor: pointer;
+
+  transition:
+    color 0.2s ease,
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.bookmark-button:hover {
+  color: var(--primary);
+  background: var(--soft-blue);
+  border-color: var(--border);
+}
+
+.opportunity-card h3 {
+  margin: 14px 0 5px;
+  color: var(--text);
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+.opportunity-card > p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.opportunity-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-top: 13px;
+}
+
+.opportunity-tags span {
+  padding: 6px 9px;
+
+  color: var(--muted);
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 7px;
+
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.opportunity-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+
+  margin-top: 18px;
+  padding-top: 12px;
+
+  border-top: 1px solid var(--border);
+}
+
+.opportunity-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+
+  color: #0b9a62;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.opportunity-footer a {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+
+  color: var(--primary);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* =========================================================
+   BOTTOM ROW
+   ========================================================= */
+
+.dashboard-bottom-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.learning-panel,
+.applications-panel {
+  padding: 20px;
+}
+
+.learning-empty {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+
+  margin-top: 20px;
+  padding: 15px;
+
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+}
+
+.learning-empty-icon,
+.applications-empty-icon {
+  width: 42px;
+  height: 42px;
+  flex: 0 0 42px;
+
+  display: grid;
+  place-items: center;
+
+  color: var(--primary);
+  background: var(--soft-blue);
+  border-radius: 9px;
+}
+
+.learning-empty strong {
+  display: block;
+  color: var(--text);
+  font-size: 14px;
+}
+
+.learning-empty p {
+  margin: 5px 0 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.applications-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding: 24px 16px 10px;
+  text-align: center;
+}
+
+.applications-empty-icon {
+  margin-bottom: 11px;
+}
+
+.applications-empty strong {
+  color: var(--text);
+  font-size: 14px;
+}
+
+.applications-empty p {
+  max-width: 330px;
+  margin: 6px 0 13px;
+
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.applications-empty a {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+
+  color: var(--primary);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* =========================================================
+   DARK MODE
+   ========================================================= */
+
+:root[data-theme="dark"] .student-dashboard,
+.dark .student-dashboard {
+  background: transparent;
+  color: var(--text);
+}
+
+:root[data-theme="dark"] .profile-progress-card,
+:root[data-theme="dark"] .summary-card,
+:root[data-theme="dark"] .dashboard-panel,
+:root[data-theme="dark"] .opportunity-card,
+.dark .profile-progress-card,
+.dark .summary-card,
+.dark .dashboard-panel,
+.dark .opportunity-card {
+  background: var(--surface);
+  border-color: var(--border);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.2);
+}
+
+:root[data-theme="dark"] .summary-card:hover,
+:root[data-theme="dark"] .opportunity-card:hover,
+.dark .summary-card:hover,
+.dark .opportunity-card:hover {
+  border-color: #33485b;
+}
+
+:root[data-theme="dark"] .profile-progress-ring,
+.dark .profile-progress-ring {
+  background:
+    conic-gradient(
+      #38d7e2 0deg,
+      #38d7e2 43deg,
+      var(--border) 43deg,
+      var(--border) 360deg
+    );
+}
+
+:root[data-theme="dark"] .profile-progress-ring::after,
+.dark .profile-progress-ring::after {
+  background: var(--surface);
+}
+
+:root[data-theme="dark"] .skill-gap-info,
+.dark .skill-gap-info {
+  background: #102638;
+  border-color: #203c51;
+}
+
+:root[data-theme="dark"] .skill-gap-info-icon,
+.dark .skill-gap-info-icon {
+  background: #142b3b;
+  color: #55dce5;
+}
+
+:root[data-theme="dark"] .skill-gap-list span,
+.dark .skill-gap-list span {
+  color: #ff8c9b;
+  background: #321b22;
+  border-color: #4b252d;
+}
+
+:root[data-theme="dark"] .summary-card.blue .summary-card-icon,
+.dark .summary-card.blue .summary-card-icon {
+  color: #67a9ff;
+  background: #142b48;
+}
+
+:root[data-theme="dark"] .summary-card.green .summary-card-icon,
+.dark .summary-card.green .summary-card-icon {
+  color: #45d69b;
+  background: #123429;
+}
+
+:root[data-theme="dark"] .summary-card.rose .summary-card-icon,
+.dark .summary-card.rose .summary-card-icon {
+  color: #ff7187;
+  background: #351c25;
+}
+
+:root[data-theme="dark"] .summary-card.violet .summary-card-icon,
+.dark .summary-card.violet .summary-card-icon {
+  color: #b08cff;
+  background: #2a2142;
+}
+
+:root[data-theme="dark"] .opportunity-tags span,
+.dark .opportunity-tags span {
+  color: #9db2c5;
+  background: #152331;
+  border-color: #26394a;
+}
+
+:root[data-theme="dark"] .opportunity-footer,
+.dark .opportunity-footer {
+  border-color: var(--border);
+}
+
+:root[data-theme="dark"] .learning-empty,
+:root[data-theme="dark"] .skills-empty-note,
+.dark .learning-empty,
+.dark .skills-empty-note {
+  background: var(--surface-2);
+  border-color: var(--border);
+}
+
+:root[data-theme="dark"] .learning-empty-icon,
+:root[data-theme="dark"] .applications-empty-icon,
+.dark .learning-empty-icon,
+.dark .applications-empty-icon {
+  color: #54dbe4;
+  background: #142c38;
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 1150px) {
+  .student-main {
+    padding-left: 26px;
+    padding-right: 26px;
+  }
+
+  .summary-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .opportunity-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .opportunity-card:last-child {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 900px) {
+  .dashboard-two-column,
+  .dashboard-bottom-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .profile-progress-card {
+    gap: 16px;
+  }
+}
+
+@media (max-width: 760px) {
+  .student-main {
+    padding: 24px 18px 45px;
+  }
+
+  .student-welcome {
+    display: block;
+  }
+
+  .welcome-date {
+    display: none;
+  }
+
+  .profile-progress-card {
+    align-items: flex-start;
+    flex-wrap: wrap;
+    padding: 20px;
+  }
+
+  .profile-progress-content {
+    min-width: calc(100% - 110px);
+  }
+
+  .profile-progress-button {
+    width: 100%;
+  }
+
+  .summary-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .opportunity-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .opportunity-card:last-child {
+    grid-column: auto;
+  }
+}
+
+@media (max-width: 560px) {
+  .student-main {
+    padding: 22px 14px 38px;
+  }
+
+  .student-welcome h1 {
+    font-size: 28px;
+  }
+
+  .student-welcome p {
+    font-size: 14px;
+  }
+
+  .profile-progress-card {
+    padding: 17px;
+  }
+
+  .profile-progress-ring {
+    width: 76px;
+    height: 76px;
+    flex-basis: 76px;
+  }
+
+  .profile-progress-ring::after {
+    inset: 7px;
+  }
+
+  .profile-progress-content {
+    min-width: calc(100% - 92px);
+  }
+
+  .profile-progress-content h2 {
+    font-size: 17px;
+  }
+
+  .skill-row {
+    grid-template-columns: 36px minmax(0, 1fr);
+  }
+
+  .skill-name {
+    display: block;
+  }
+
+  .skill-name span {
+    display: block;
+  }
+
+  .skill-bar {
+    grid-column: 2;
+    width: 100%;
+  }
+
+  .skills-list {
+    gap: 18px;
+  }
+
+  .panel-heading,
+  .section-title-row {
+    align-items: flex-start;
+  }
+
+  .panel-heading h2,
+  .section-title-row h2 {
+    font-size: 17px;
+  }
+
+  .opportunity-footer {
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 420px) {
+  .profile-progress-content {
+    min-width: 100%;
+  }
+
+  .profile-progress-ring {
+    margin-bottom: 2px;
+  }
+
+  .summary-card {
+    min-height: 100px;
+  }
+
+  .summary-card-content strong {
+    font-size: 22px;
+  }
+}
+
+
+/* =========================================================
+   CAREER GOAL SELECT
+========================================================= */
+
+.career-goal-select {
+  width: 100%;
+  min-height: 46px;
+  padding: 0 42px 0 14px;
+  border: 1px solid #243b53;
+  border-radius: 8px;
+  outline: none;
+  appearance: auto;
+  background: #102238;
+  color: #e2e8f0;
+  font-family: inherit;
+  font-size: 14px;
+  cursor: pointer;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.career-goal-select:hover {
+  border-color: #3b82f6;
+}
+
+.career-goal-select:focus {
+  border-color: #38bdf8;
+  box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.1);
+}
+
+/* Dropdown options */
+
+.career-goal-select option {
+  background: #0c1a2a;
+  color: #e2e8f0;
+  padding: 10px;
+}
+
+/* Selected / highlighted option */
+
+.career-goal-select option:checked {
+  background: #2563eb;
+  color: #ffffff;
+}
+
+/* Light mode */
+
+html:not([data-theme="dark"]) .career-goal-select,
+body:not([data-theme="dark"]) .career-goal-select {
+  border-color: #dbe3ee;
+  background: #ffffff;
+  color: #0f172a;
+}
+
+html:not([data-theme="dark"]) .career-goal-select option,
+body:not([data-theme="dark"]) .career-goal-select option {
+  background: #ffffff;
+  color: #0f172a;
+}
+
+/* Dark mode */
+
+html[data-theme="dark"] .career-goal-select,
+body[data-theme="dark"] .career-goal-select,
+.dark .career-goal-select {
+  border-color: #1e3a56;
+  background: #102238;
+  color: #e2e8f0;
+}
+
+html[data-theme="dark"] .career-goal-select option,
+body[data-theme="dark"] .career-goal-select option,
+.dark .career-goal-select option {
+  background: #0c1a2a;
+  color: #e2e8f0;
+}
+
+html[data-theme="dark"] .career-goal-select option:checked,
+body[data-theme="dark"] .career-goal-select option:checked,
+.dark .career-goal-select option:checked {
+  background: #2563eb;
+  color: #ffffff;
+}

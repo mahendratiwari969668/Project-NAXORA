@@ -1,0 +1,1964 @@
+/* =========================================================
+   INSTITUTION INTERNSHIPS
+========================================================= */
+
+.institution-internships-page {
+  width: 100%;
+  max-width: 1500px;
+  margin: 0 auto;
+}
+
+
+/* =========================================================
+   TABS
+========================================================= */
+
+.institution-internship-tabs {
+  height: 48px;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  margin-bottom: 21px;
+
+  background: #ffffff;
+
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 4px 16px rgba(15, 23, 42, 0.035);
+}
+
+.institution-internship-tabs button {
+  position: relative;
+
+  border: none;
+
+  background: transparent;
+
+  color: #718096;
+
+  font-size: 11.5px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    color 0.2s ease,
+    background 0.2s ease;
+}
+
+.institution-internship-tabs button:hover {
+  background: #f7faff;
+
+  color: #2563eb;
+}
+
+.institution-internship-tabs button.active {
+  background: #f8fbff;
+
+  color: #2563eb;
+}
+
+.institution-internship-tabs button.active::after {
+  content: "";
+
+  position: absolute;
+
+  left: 18%;
+  right: 18%;
+  bottom: 0;
+
+  height: 3px;
+
+  background: #2563eb;
+
+  border-radius: 3px 3px 0 0;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.institution-internship-header {
+  margin-bottom: 18px;
+}
+
+.institution-internship-eyebrow {
+  margin: 0 0 6px;
+
+  color: #f97316;
+
+  font-size: 10.5px;
+  font-weight: 750;
+
+  letter-spacing: 0.12em;
+}
+
+.institution-internship-header h1 {
+  margin: 0;
+
+  color: #172033;
+
+  font-size: 29px;
+  font-weight: 750;
+
+  letter-spacing: -0.03em;
+}
+
+.institution-internship-header p:last-child {
+  margin: 7px 0 0;
+
+  color: #738096;
+
+  font-size: 13px;
+}
+
+
+/* =========================================================
+   TOOLBAR
+========================================================= */
+
+.institution-internship-toolbar {
+  min-height: 60px;
+
+  display: flex;
+  align-items: center;
+  gap: 9px;
+
+  margin-bottom: 15px;
+
+  padding: 10px;
+
+  background: #ffffff;
+
+  border: 1px solid #e2e8f0;
+  border-radius: 11px;
+
+  box-shadow:
+    0 5px 18px rgba(15, 23, 42, 0.035);
+}
+
+.institution-internship-filter {
+  position: relative;
+
+  min-width: 126px;
+  height: 37px;
+
+  display: flex;
+  align-items: center;
+
+  background: #f7f9fc;
+
+  border: 1px solid #e1e7ef;
+
+  border-radius: 8px;
+}
+
+.institution-internship-filter select {
+  width: 100%;
+  height: 100%;
+
+  padding: 0 28px 0 10px;
+
+  border: none;
+  outline: none;
+
+  appearance: none;
+
+  background: transparent;
+
+  color: #5b687c;
+
+  font-size: 11px;
+
+  cursor: pointer;
+}
+
+.institution-internship-filter > svg {
+  position: absolute;
+
+  right: 9px;
+
+  color: #8793a5;
+
+  pointer-events: none;
+}
+
+.institution-internship-search {
+  flex: 1;
+
+  min-width: 190px;
+  height: 37px;
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 0 11px;
+
+  background: #f7f9fc;
+
+  border: 1px solid #e1e7ef;
+
+  border-radius: 8px;
+
+  color: #8190a3;
+}
+
+.institution-internship-search:focus-within {
+  border-color: #9bb9ef;
+
+  box-shadow:
+    0 0 0 3px rgba(37, 99, 235, 0.07);
+}
+
+.institution-internship-search input {
+  width: 100%;
+
+  border: none;
+  outline: none;
+
+  background: transparent;
+
+  color: #263449;
+
+  font-size: 11px;
+}
+
+.institution-internship-search input::placeholder {
+  color: #98a4b4;
+}
+
+
+/* =========================================================
+   OPPORTUNITY LIST
+========================================================= */
+
+.institution-opportunity-list {
+  display: flex;
+  flex-direction: column;
+
+  gap: 11px;
+}
+
+.institution-opportunity-card {
+  min-height: 139px;
+
+  display: grid;
+
+  grid-template-columns:
+    49px
+    minmax(0, 1fr)
+    110px;
+
+  gap: 14px;
+
+  align-items: center;
+
+  padding: 15px;
+
+  background: #ffffff;
+
+  border: 1px solid #e2e8f0;
+  border-radius: 11px;
+
+  box-shadow:
+    0 5px 19px rgba(15, 23, 42, 0.035);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.institution-opportunity-card:hover {
+  transform: translateY(-1px);
+
+  border-color: #d2deef;
+
+  box-shadow:
+    0 9px 25px rgba(15, 23, 42, 0.07);
+}
+
+
+/* =========================================================
+   COMPANY ICON
+========================================================= */
+
+.institution-company-icon {
+  width: 49px;
+  height: 49px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 10px;
+}
+
+.institution-company-icon.blue {
+  background: #eaf2ff;
+
+  color: #2563eb;
+}
+
+.institution-company-icon.navy {
+  background: #14233a;
+
+  color: #60a5fa;
+}
+
+.institution-company-icon.cyan {
+  background: #e5f8fb;
+
+  color: #0891b2;
+}
+
+.institution-company-icon.violet {
+  background: #f1eaff;
+
+  color: #7c3aed;
+}
+
+.institution-company-icon.orange {
+  background: #fff0e5;
+
+  color: #ea580c;
+}
+
+
+/* =========================================================
+   OPPORTUNITY MAIN
+========================================================= */
+
+.institution-opportunity-main {
+  min-width: 0;
+}
+
+.institution-opportunity-title-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  gap: 12px;
+}
+
+.institution-opportunity-title-row h2 {
+  margin: 0;
+
+  color: #263449;
+
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.institution-opportunity-company {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  margin-top: 4px;
+}
+
+.institution-opportunity-company span {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+
+  color: #7c899b;
+
+  font-size: 10px;
+}
+
+
+/* =========================================================
+   STATUS
+========================================================= */
+
+.institution-opportunity-status {
+  flex-shrink: 0;
+
+  padding: 5px 9px;
+
+  border-radius: 6px;
+
+  font-size: 9.5px;
+  font-weight: 700;
+}
+
+.institution-opportunity-status.open {
+  background: #e8f9ef;
+
+  color: #15803d;
+}
+
+.institution-opportunity-status.closing {
+  background: #fff1e5;
+
+  color: #ea580c;
+}
+
+
+/* =========================================================
+   SKILLS
+========================================================= */
+
+.institution-opportunity-skills {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 5px;
+
+  margin-top: 9px;
+}
+
+.institution-opportunity-skills span {
+  padding: 4px 7px;
+
+  background: #edf4ff;
+
+  border: 1px solid #dbe9ff;
+
+  border-radius: 5px;
+
+  color: #3973c9;
+
+  font-size: 9px;
+  font-weight: 650;
+}
+
+
+/* =========================================================
+   META
+========================================================= */
+
+.institution-opportunity-meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+
+  gap: 7px;
+
+  margin-top: 9px;
+
+  color: #758296;
+
+  font-size: 9.5px;
+}
+
+.institution-opportunity-meta span {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.meta-divider {
+  color: #c3cad4;
+}
+
+
+/* =========================================================
+   RIGHT SIDE
+========================================================= */
+
+.institution-opportunity-right {
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  gap: 12px;
+
+  border-left: 1px solid #edf0f4;
+}
+
+.institution-application-count {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.institution-application-count strong {
+  color: #263449;
+
+  font-size: 16px;
+  line-height: 1;
+}
+
+.institution-application-count span {
+  margin-top: 4px;
+
+  color: #8a96a7;
+
+  font-size: 9px;
+}
+
+.institution-view-opportunity {
+  height: 31px;
+
+  padding: 0 12px;
+
+  border: 1px solid #cfe0fa;
+
+  border-radius: 6px;
+
+  background: #eaf3ff;
+
+  color: #2563eb;
+
+  font-size: 9.5px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.institution-view-opportunity:hover {
+  background: #2563eb;
+
+  border-color: #2563eb;
+
+  color: #ffffff;
+
+  box-shadow:
+    0 5px 13px rgba(37, 99, 235, 0.2);
+}
+
+
+/* =========================================================
+   EMPTY
+========================================================= */
+
+.institution-opportunity-empty {
+  min-height: 280px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  background: #ffffff;
+
+  border: 1px solid #e2e8f0;
+
+  border-radius: 11px;
+
+  color: #8794a7;
+
+  text-align: center;
+}
+
+.institution-opportunity-empty strong {
+  color: #4b596d;
+
+  font-size: 13px;
+}
+
+.institution-opportunity-empty span {
+  color: #96a1b0;
+
+  font-size: 10.5px;
+}
+
+
+/* =========================================================
+   PLACEHOLDER TABS
+========================================================= */
+
+.institution-internship-placeholder {
+  min-height: 430px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding: 40px;
+
+  background: #ffffff;
+
+  border: 1px solid #e2e8f0;
+
+  border-radius: 12px;
+
+  text-align: center;
+
+  box-shadow:
+    0 6px 22px rgba(15, 23, 42, 0.04);
+}
+
+.institution-placeholder-icon {
+  width: 54px;
+  height: 54px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 14px;
+
+  border-radius: 12px;
+
+  background: #eaf2ff;
+
+  color: #2563eb;
+}
+
+.institution-placeholder-icon.tracking {
+  background: #e9f9ef;
+
+  color: #16a34a;
+}
+
+.institution-internship-placeholder p {
+  margin: 0 0 7px;
+
+  color: #2563eb;
+
+  font-size: 10px;
+  font-weight: 750;
+
+  letter-spacing: 0.12em;
+}
+
+.institution-internship-placeholder h1 {
+  margin: 0;
+
+  color: #263449;
+
+  font-size: 22px;
+}
+
+.institution-internship-placeholder > span {
+  max-width: 450px;
+
+  margin-top: 8px;
+
+  color: #8793a5;
+
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+
+/* =========================================================
+   DARK MODE
+========================================================= */
+
+body[data-theme="dark"] .institution-internship-tabs,
+html[data-theme="dark"] .institution-internship-tabs {
+  background: #111c2d;
+
+  border-color: #26364e;
+
+  box-shadow:
+    0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+body[data-theme="dark"] .institution-internship-tabs button,
+html[data-theme="dark"] .institution-internship-tabs button {
+  color: #8495ac;
+}
+
+body[data-theme="dark"] .institution-internship-tabs button:hover,
+html[data-theme="dark"] .institution-internship-tabs button:hover {
+  background: #17263c;
+
+  color: #60a5fa;
+}
+
+body[data-theme="dark"] .institution-internship-tabs button.active,
+html[data-theme="dark"] .institution-internship-tabs button.active {
+  background: #15263e;
+
+  color: #60a5fa;
+}
+
+body[data-theme="dark"] .institution-internship-tabs button.active::after,
+html[data-theme="dark"] .institution-internship-tabs button.active::after {
+  background: #3b82f6;
+
+  box-shadow:
+    0 0 11px rgba(59, 130, 246, 0.55);
+}
+
+
+/* Header */
+
+body[data-theme="dark"] .institution-internship-header h1,
+html[data-theme="dark"] .institution-internship-header h1 {
+  color: #f2f6fb;
+}
+
+body[data-theme="dark"] .institution-internship-header p:last-child,
+html[data-theme="dark"] .institution-internship-header p:last-child {
+  color: #8fa0b6;
+}
+
+body[data-theme="dark"] .institution-internship-eyebrow,
+html[data-theme="dark"] .institution-internship-eyebrow {
+  color: #fb923c;
+}
+
+
+/* Toolbar */
+
+body[data-theme="dark"] .institution-internship-toolbar,
+html[data-theme="dark"] .institution-internship-toolbar {
+  background: #111c2d;
+
+  border-color: #26364e;
+
+  box-shadow:
+    0 8px 25px rgba(0, 0, 0, 0.14);
+}
+
+body[data-theme="dark"] .institution-internship-filter,
+html[data-theme="dark"] .institution-internship-filter {
+  background: #17253a;
+
+  border-color: #2b3c56;
+}
+
+body[data-theme="dark"] .institution-internship-filter select,
+html[data-theme="dark"] .institution-internship-filter select {
+  color: #c4d0df;
+}
+
+body[data-theme="dark"] .institution-internship-filter select option,
+html[data-theme="dark"] .institution-internship-filter select option {
+  background: #17253a;
+
+  color: #dce5f1;
+}
+
+body[data-theme="dark"] .institution-internship-search,
+html[data-theme="dark"] .institution-internship-search {
+  background: #17253a;
+
+  border-color: #2b3c56;
+}
+
+body[data-theme="dark"] .institution-internship-search input,
+html[data-theme="dark"] .institution-internship-search input {
+  color: #e3ebf5;
+}
+
+body[data-theme="dark"] .institution-internship-search input::placeholder,
+html[data-theme="dark"] .institution-internship-search input::placeholder {
+  color: #71839a;
+}
+
+
+/* Cards */
+
+body[data-theme="dark"] .institution-opportunity-card,
+html[data-theme="dark"] .institution-opportunity-card {
+  background: #111c2d;
+
+  border-color: #26364e;
+
+  box-shadow:
+    0 8px 28px rgba(0, 0, 0, 0.17);
+}
+
+body[data-theme="dark"] .institution-opportunity-card:hover,
+html[data-theme="dark"] .institution-opportunity-card:hover {
+  border-color: #365071;
+
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+
+/* Company icons */
+
+body[data-theme="dark"] .institution-company-icon.blue {
+  background: rgba(37, 99, 235, 0.16);
+
+  color: #60a5fa;
+
+  box-shadow:
+    0 0 14px rgba(37, 99, 235, 0.12);
+}
+
+body[data-theme="dark"] .institution-company-icon.navy {
+  background: #162943;
+
+  color: #60a5fa;
+
+  box-shadow:
+    0 0 14px rgba(37, 99, 235, 0.12);
+}
+
+body[data-theme="dark"] .institution-company-icon.cyan {
+  background: rgba(6, 182, 212, 0.14);
+
+  color: #22d3ee;
+
+  box-shadow:
+    0 0 14px rgba(6, 182, 212, 0.1);
+}
+
+body[data-theme="dark"] .institution-company-icon.violet {
+  background: rgba(124, 58, 237, 0.15);
+
+  color: #b794f6;
+
+  box-shadow:
+    0 0 14px rgba(124, 58, 237, 0.1);
+}
+
+body[data-theme="dark"] .institution-company-icon.orange {
+  background: rgba(249, 115, 22, 0.15);
+
+  color: #fb923c;
+
+  box-shadow:
+    0 0 14px rgba(249, 115, 22, 0.1);
+}
+
+
+/* Content */
+
+body[data-theme="dark"] .institution-opportunity-title-row h2,
+html[data-theme="dark"] .institution-opportunity-title-row h2 {
+  color: #e2eaf4;
+}
+
+body[data-theme="dark"] .institution-opportunity-company span,
+html[data-theme="dark"] .institution-opportunity-company span {
+  color: #8293aa;
+}
+
+
+/* Status */
+
+body[data-theme="dark"] .institution-opportunity-status.open,
+html[data-theme="dark"] .institution-opportunity-status.open {
+  background: rgba(34, 197, 94, 0.13);
+
+  color: #4ade80;
+
+  box-shadow:
+    0 0 12px rgba(34, 197, 94, 0.08);
+}
+
+body[data-theme="dark"] .institution-opportunity-status.closing,
+html[data-theme="dark"] .institution-opportunity-status.closing {
+  background: rgba(249, 115, 22, 0.13);
+
+  color: #fb923c;
+
+  box-shadow:
+    0 0 12px rgba(249, 115, 22, 0.08);
+}
+
+
+/* Skills */
+
+body[data-theme="dark"] .institution-opportunity-skills span,
+html[data-theme="dark"] .institution-opportunity-skills span {
+  background: rgba(37, 99, 235, 0.13);
+
+  border-color: rgba(59, 130, 246, 0.2);
+
+  color: #73a7f7;
+
+  box-shadow:
+    0 0 8px rgba(37, 99, 235, 0.05);
+}
+
+
+/* Meta */
+
+body[data-theme="dark"] .institution-opportunity-meta,
+html[data-theme="dark"] .institution-opportunity-meta {
+  color: #7f90a7;
+}
+
+body[data-theme="dark"] .meta-divider,
+html[data-theme="dark"] .meta-divider {
+  color: #40516a;
+}
+
+
+/* Right */
+
+body[data-theme="dark"] .institution-opportunity-right,
+html[data-theme="dark"] .institution-opportunity-right {
+  border-left-color: #26364e;
+}
+
+body[data-theme="dark"] .institution-application-count strong,
+html[data-theme="dark"] .institution-application-count strong {
+  color: #edf3fa;
+}
+
+body[data-theme="dark"] .institution-application-count span,
+html[data-theme="dark"] .institution-application-count span {
+  color: #73849b;
+}
+
+body[data-theme="dark"] .institution-view-opportunity,
+html[data-theme="dark"] .institution-view-opportunity {
+  background: rgba(37, 99, 235, 0.14);
+
+  border-color: rgba(59, 130, 246, 0.25);
+
+  color: #60a5fa;
+}
+
+body[data-theme="dark"] .institution-view-opportunity:hover,
+html[data-theme="dark"] .institution-view-opportunity:hover {
+  background: #2563eb;
+
+  border-color: #3b82f6;
+
+  color: #ffffff;
+
+  box-shadow:
+    0 0 18px rgba(37, 99, 235, 0.4);
+}
+
+
+/* Empty */
+
+body[data-theme="dark"] .institution-opportunity-empty,
+html[data-theme="dark"] .institution-opportunity-empty {
+  background: #111c2d;
+
+  border-color: #26364e;
+}
+
+body[data-theme="dark"] .institution-opportunity-empty strong,
+html[data-theme="dark"] .institution-opportunity-empty strong {
+  color: #cbd7e6;
+}
+
+body[data-theme="dark"] .institution-opportunity-empty span,
+html[data-theme="dark"] .institution-opportunity-empty span {
+  color: #718198;
+}
+
+
+/* Placeholder */
+
+body[data-theme="dark"] .institution-internship-placeholder,
+html[data-theme="dark"] .institution-internship-placeholder {
+  background: #111c2d;
+
+  border-color: #26364e;
+
+  box-shadow:
+    0 8px 28px rgba(0, 0, 0, 0.17);
+}
+
+body[data-theme="dark"] .institution-placeholder-icon,
+html[data-theme="dark"] .institution-placeholder-icon {
+  background: rgba(37, 99, 235, 0.15);
+
+  color: #60a5fa;
+
+  box-shadow:
+    0 0 16px rgba(37, 99, 235, 0.12);
+}
+
+body[data-theme="dark"] .institution-placeholder-icon.tracking {
+  background: rgba(22, 163, 74, 0.15);
+
+  color: #4ade80;
+
+  box-shadow:
+    0 0 16px rgba(22, 163, 74, 0.1);
+}
+
+body[data-theme="dark"] .institution-internship-placeholder p {
+  color: #60a5fa;
+}
+
+body[data-theme="dark"] .institution-internship-placeholder h1 {
+  color: #e8eef7;
+}
+
+body[data-theme="dark"] .institution-internship-placeholder > span {
+  color: #7d8da4;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1050px) {
+  .institution-opportunity-card {
+    grid-template-columns:
+      45px
+      minmax(0, 1fr)
+      100px;
+  }
+
+  .institution-internship-toolbar {
+    flex-wrap: wrap;
+  }
+
+  .institution-internship-filter {
+    flex: 1;
+  }
+
+  .institution-internship-search {
+    flex-basis: 100%;
+  }
+}
+
+@media (max-width: 750px) {
+  .institution-opportunity-card {
+    grid-template-columns:
+      45px
+      minmax(0, 1fr);
+  }
+
+  .institution-opportunity-right {
+    grid-column: 2;
+
+    height: auto;
+
+    flex-direction: row;
+    justify-content: space-between;
+
+    padding-top: 12px;
+
+    border-left: none;
+    border-top: 1px solid #edf0f4;
+  }
+
+  body[data-theme="dark"] .institution-opportunity-right {
+    border-top-color: #26364e;
+  }
+}
+
+@media (max-width: 600px) {
+  .institution-internship-tabs {
+    height: auto;
+
+    grid-template-columns: 1fr;
+  }
+
+  .institution-internship-tabs button {
+    min-height: 45px;
+  }
+
+  .institution-internship-filter {
+    min-width: 100%;
+
+    flex-basis: 100%;
+  }
+
+  .institution-opportunity-card {
+    grid-template-columns: 1fr;
+
+    padding: 15px;
+  }
+
+  .institution-company-icon {
+    width: 43px;
+    height: 43px;
+  }
+
+  .institution-opportunity-right {
+    grid-column: 1;
+  }
+
+  .institution-opportunity-title-row {
+    align-items: flex-start;
+  }
+
+  .institution-opportunity-meta {
+    line-height: 1.6;
+  }
+}
+
+/* =========================================================
+   OPPORTUNITY DETAILS MODAL
+========================================================= */
+
+.institution-opportunity-modal-backdrop {
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 1000;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 24px;
+
+  background: rgba(5, 12, 24, 0.58);
+
+  backdrop-filter: blur(7px);
+
+  animation: institutionModalBackdropIn 0.18s ease;
+}
+
+.institution-opportunity-modal {
+  width: min(680px, 100%);
+
+  max-height: min(760px, calc(100vh - 48px));
+
+  overflow: auto;
+
+  background: #ffffff;
+
+  border: 1px solid #dfe7f2;
+
+  border-radius: 16px;
+
+  box-shadow:
+    0 24px 70px rgba(15, 23, 42, 0.25);
+
+  animation: institutionModalIn 0.2s ease;
+}
+
+.institution-opportunity-modal-header {
+  display: flex;
+
+  align-items: flex-start;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  padding: 22px 24px;
+
+  border-bottom: 1px solid #e8edf3;
+}
+
+.institution-opportunity-modal-eyebrow {
+  display: block;
+
+  margin-bottom: 7px;
+
+  color: #2563eb;
+
+  font-size: 9.5px;
+
+  font-weight: 750;
+
+  letter-spacing: 0.12em;
+}
+
+.institution-opportunity-modal-header h2 {
+  margin: 0;
+
+  color: #172033;
+
+  font-size: 21px;
+
+  line-height: 1.3;
+}
+
+.institution-opportunity-modal-company {
+  display: flex;
+
+  align-items: center;
+
+  flex-wrap: wrap;
+
+  gap: 6px;
+
+  margin-top: 8px;
+
+  color: #738096;
+
+  font-size: 10.5px;
+}
+
+.institution-opportunity-modal-company svg {
+  color: #8190a3;
+}
+
+.institution-opportunity-modal-close {
+  width: 34px;
+  height: 34px;
+
+  flex-shrink: 0;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid #dfe6ef;
+
+  border-radius: 8px;
+
+  background: #f7f9fc;
+
+  color: #66758a;
+
+  font-size: 23px;
+
+  line-height: 1;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.institution-opportunity-modal-close:hover {
+  background: #edf4ff;
+
+  border-color: #cfe0fa;
+
+  color: #2563eb;
+}
+
+.institution-opportunity-modal-body {
+  padding: 22px 24px;
+}
+
+.institution-opportunity-modal-status-row {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 14px;
+
+  margin-bottom: 20px;
+}
+
+.institution-opportunity-modal-applications {
+  display: inline-flex;
+
+  align-items: baseline;
+
+  gap: 5px;
+
+  color: #8490a2;
+
+  font-size: 10px;
+}
+
+.institution-opportunity-modal-applications strong {
+  color: #263449;
+
+  font-size: 16px;
+}
+
+.institution-opportunity-modal-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 10px;
+
+  margin-bottom: 22px;
+}
+
+.institution-opportunity-modal-grid > div {
+  min-height: 70px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  gap: 5px;
+
+  padding: 12px 14px;
+
+  background: #f8fafc;
+
+  border: 1px solid #e7edf4;
+
+  border-radius: 9px;
+}
+
+.institution-opportunity-modal-grid span,
+.institution-opportunity-modal-section > span {
+  color: #8995a6;
+
+  font-size: 9.5px;
+
+  font-weight: 600;
+}
+
+.institution-opportunity-modal-grid strong {
+  color: #2b3950;
+
+  font-size: 11.5px;
+}
+
+.institution-opportunity-modal-section {
+  padding-top: 18px;
+
+  border-top: 1px solid #edf1f5;
+}
+
+.institution-opportunity-modal-section > span {
+  display: block;
+
+  margin-bottom: 9px;
+}
+
+.institution-opportunity-modal-skills {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 6px;
+}
+
+.institution-opportunity-modal-skills span {
+  padding: 5px 8px;
+
+  background: #edf4ff;
+
+  border: 1px solid #dbe9ff;
+
+  border-radius: 5px;
+
+  color: #3973c9;
+
+  font-size: 9.5px;
+
+  font-weight: 650;
+}
+
+.institution-opportunity-modal-note {
+  margin-top: 20px;
+
+  padding: 13px 14px;
+
+  background: #f7faff;
+
+  border: 1px solid #dce9fb;
+
+  border-radius: 9px;
+}
+
+.institution-opportunity-modal-note strong {
+  color: #3d4b60;
+
+  font-size: 10.5px;
+}
+
+.institution-opportunity-modal-note p {
+  margin: 4px 0 0;
+
+  color: #7f8b9d;
+
+  font-size: 10px;
+
+  line-height: 1.55;
+}
+
+.institution-opportunity-modal-footer {
+  display: flex;
+
+  justify-content: flex-end;
+
+  padding: 14px 24px;
+
+  border-top: 1px solid #e8edf3;
+}
+
+.institution-opportunity-modal-secondary {
+  min-width: 82px;
+
+  height: 34px;
+
+  padding: 0 13px;
+
+  border: 1px solid #d5dfeb;
+
+  border-radius: 7px;
+
+  background: #ffffff;
+
+  color: #59677b;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.institution-opportunity-modal-secondary:hover {
+  border-color: #2563eb;
+
+  background: #edf4ff;
+
+  color: #2563eb;
+}
+
+@keyframes institutionModalBackdropIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes institutionModalIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px) scale(0.985);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+
+/* =========================================================
+   DARK MODE - OPPORTUNITY DETAILS MODAL
+========================================================= */
+
+body[data-theme="dark"] .institution-opportunity-modal,
+html[data-theme="dark"] .institution-opportunity-modal {
+  background: #111c2d;
+
+  border-color: #2a3b54;
+
+  box-shadow:
+    0 28px 80px rgba(0, 0, 0, 0.45);
+}
+
+body[data-theme="dark"] .institution-opportunity-modal-header,
+html[data-theme="dark"] .institution-opportunity-modal-header {
+  border-bottom-color: #26364e;
+}
+
+body[data-theme="dark"] .institution-opportunity-modal-eyebrow,
+html[data-theme="dark"] .institution-opportunity-modal-eyebrow {
+  color: #60a5fa;
+}
+
+body[data-theme="dark"] .institution-opportunity-modal-header h2,
+html[data-theme="dark"] .institution-opportunity-modal-header h2 {
+  color: #eef4fb;
+}
+
+body[data-theme="dark"] .institution-opportunity-modal-company,
+html[data-theme="dark"] .institution-opportunity-modal-company {
+  color: #8293aa;
+}
+
+body[data-theme="dark"] .institution-opportunity-modal-close,
+html[data-theme="dark"] .institution-opportunity-modal-close {
+  background: #17253a;
+
+  border-color: #2b3c56;
+
+  color: #9babc0;
+}
+
+body[data-theme="dark"] .institution-opportunity-modal-close:hover,
+html[data-theme="dark"] .institution-opportunity-modal-close:hover {
+  background: rgba(37, 99, 235, 0.14);
+
+  border-color: #3b82f6;
+
+  color: #60a5fa;
+}
+
+body[data-theme="dark"] .institution-opportunity-modal-grid > div,
+html[data-theme="dark"] .institution-opportunity-modal-grid > div {
+  background: #152237;
+
+  border-color: #293a53;
+}
+
+body[data-theme="dark"] .institution-opportunity-modal-grid span,
+html[data-theme="dark"] .institution-opportunity-modal-grid span,
+body[data-theme="dark"] .institution-opportunity-modal-section > span,
+html[data-theme="dark"] .institution-opportunity-modal-section > span {
+  color: #7889a0;
+}
+
+body[data-theme="dark"] .institution-opportunity-modal-grid strong,
+html[data-theme="dark"] .institution-opportunity-modal-grid strong {
+  color: #dce6f2;
+}
+
+body[data-theme="dark"] .institution-opportunity-modal-section,
+html[data-theme="dark"] .institution-opportunity-modal-section {
+  border-top-color: #26364e;
+}
+
+body[data-theme="dark"] .institution-opportunity-modal-skills span,
+html[data-theme="dark"] .institution-opportunity-modal-skills span {
+  background: rgba(37, 99, 235, 0.13);
+
+  border-color: rgba(59, 130, 246, 0.2);
+
+  color: #73a7f7;
+}
+
+body[data-theme="dark"] .institution-opportunity-modal-applications,
+html[data-theme="dark"] .institution-opportunity-modal-applications {
+  color: #73849b;
+}
+
+body[data-theme="dark"] .institution-opportunity-modal-applications strong,
+html[data-theme="dark"] .institution-opportunity-modal-applications strong {
+  color: #edf3fa;
+}
+
+body[data-theme="dark"] .institution-opportunity-modal-note,
+html[data-theme="dark"] .institution-opportunity-modal-note {
+  background: #122139;
+
+  border-color: #294366;
+}
+
+body[data-theme="dark"] .institution-opportunity-modal-note strong,
+html[data-theme="dark"] .institution-opportunity-modal-note strong {
+  color: #d4dfec;
+}
+
+body[data-theme="dark"] .institution-opportunity-modal-note p,
+html[data-theme="dark"] .institution-opportunity-modal-note p {
+  color: #7e8fa6;
+}
+
+body[data-theme="dark"] .institution-opportunity-modal-footer,
+html[data-theme="dark"] .institution-opportunity-modal-footer {
+  border-top-color: #26364e;
+}
+
+body[data-theme="dark"] .institution-opportunity-modal-secondary,
+html[data-theme="dark"] .institution-opportunity-modal-secondary {
+  background: #17253a;
+
+  border-color: #2b3c56;
+
+  color: #a9b7c9;
+}
+
+body[data-theme="dark"] .institution-opportunity-modal-secondary:hover,
+html[data-theme="dark"] .institution-opportunity-modal-secondary:hover {
+  background: rgba(37, 99, 235, 0.14);
+
+  border-color: #3b82f6;
+
+  color: #60a5fa;
+}
+
+
+/* =========================================================
+   RESPONSIVE - MODAL
+========================================================= */
+
+@media (max-width: 600px) {
+  .institution-opportunity-modal-backdrop {
+    padding: 12px;
+  }
+
+  .institution-opportunity-modal-header,
+  .institution-opportunity-modal-body {
+    padding: 18px;
+  }
+
+  .institution-opportunity-modal-footer {
+    padding: 12px 18px;
+  }
+
+  .institution-opportunity-modal-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* =========================================================
+   CREATE INTERNSHIP DRIVE
+========================================================= */
+
+.institution-create-drive-button {
+  min-height: 38px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  flex-shrink: 0;
+  padding: 0 14px;
+  border: 1px solid #2563eb;
+  border-radius: 8px;
+  background: #2563eb;
+  color: #ffffff;
+  font-size: 10.5px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.institution-create-drive-button:hover {
+  background: #1d4ed8;
+  border-color: #1d4ed8;
+  box-shadow: 0 7px 18px rgba(37, 99, 235, 0.2);
+  transform: translateY(-1px);
+}
+
+.institution-create-drive-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 1100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: rgba(5, 12, 24, 0.58);
+  backdrop-filter: blur(7px);
+  animation: institutionCreateDriveBackdropIn 0.18s ease;
+}
+
+.institution-create-drive-modal {
+  width: min(720px, 100%);
+  max-height: min(760px, calc(100vh - 48px));
+  overflow: auto;
+  background: #ffffff;
+  border: 1px solid #dfe7f2;
+  border-radius: 16px;
+  box-shadow: 0 24px 70px rgba(15, 23, 42, 0.25);
+  animation: institutionCreateDriveModalIn 0.2s ease;
+}
+
+.institution-create-drive-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 22px 24px;
+  border-bottom: 1px solid #e8edf3;
+}
+
+.institution-create-drive-eyebrow {
+  display: block;
+  margin-bottom: 7px;
+  color: #2563eb;
+  font-size: 9.5px;
+  font-weight: 750;
+  letter-spacing: 0.12em;
+}
+
+.institution-create-drive-header h2 {
+  margin: 0;
+  color: #172033;
+  font-size: 21px;
+  line-height: 1.3;
+}
+
+.institution-create-drive-header p {
+  margin: 7px 0 0;
+  color: #738096;
+  font-size: 10.5px;
+}
+
+.institution-create-drive-close {
+  width: 34px;
+  height: 34px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #dfe6ef;
+  border-radius: 8px;
+  background: #f7f9fc;
+  color: #66758a;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.institution-create-drive-close:hover {
+  background: #edf4ff;
+  border-color: #cfe0fa;
+  color: #2563eb;
+}
+
+.institution-create-drive-form {
+  padding: 22px 24px;
+}
+
+.institution-create-drive-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 15px;
+}
+
+.institution-create-drive-grid label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.institution-create-drive-grid label > span {
+  color: #536176;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.institution-create-drive-grid input,
+.institution-create-drive-grid select {
+  width: 100%;
+  height: 39px;
+  box-sizing: border-box;
+  padding: 0 11px;
+  border: 1px solid #dfe6ef;
+  border-radius: 8px;
+  outline: none;
+  background: #f8fafc;
+  color: #263449;
+  font-size: 10.5px;
+  transition: 0.2s ease;
+}
+
+.institution-create-drive-grid input:focus,
+.institution-create-drive-grid select:focus {
+  border-color: #8db2ef;
+  background: #ffffff;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.07);
+}
+
+.institution-create-drive-grid input::placeholder {
+  color: #9aa6b6;
+}
+
+.institution-create-drive-field-full {
+  grid-column: 1 / -1;
+}
+
+.institution-create-drive-grid small {
+  color: #8a96a7;
+  font-size: 9px;
+}
+
+.institution-create-drive-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 9px;
+  margin-top: 22px;
+  padding-top: 15px;
+  border-top: 1px solid #e8edf3;
+}
+
+.institution-create-drive-cancel,
+.institution-create-drive-submit {
+  height: 35px;
+  padding: 0 14px;
+  border-radius: 7px;
+  font-size: 10px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.institution-create-drive-cancel {
+  border: 1px solid #d5dfeb;
+  background: #ffffff;
+  color: #59677b;
+}
+
+.institution-create-drive-cancel:hover {
+  border-color: #b9c8dc;
+  background: #f7f9fc;
+}
+
+.institution-create-drive-submit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  border: 1px solid #2563eb;
+  background: #2563eb;
+  color: #ffffff;
+}
+
+.institution-create-drive-submit:hover {
+  background: #1d4ed8;
+  border-color: #1d4ed8;
+  box-shadow: 0 6px 16px rgba(37, 99, 235, 0.2);
+}
+
+@keyframes institutionCreateDriveBackdropIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes institutionCreateDriveModalIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px) scale(0.985);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+
+/* =========================================================
+   DARK MODE - CREATE INTERNSHIP DRIVE
+========================================================= */
+
+body[data-theme="dark"] .institution-create-drive-modal,
+html[data-theme="dark"] .institution-create-drive-modal {
+  background: #111c2d;
+  border-color: #2a3b54;
+  box-shadow: 0 28px 80px rgba(0, 0, 0, 0.45);
+}
+
+body[data-theme="dark"] .institution-create-drive-header,
+html[data-theme="dark"] .institution-create-drive-header {
+  border-bottom-color: #26364e;
+}
+
+body[data-theme="dark"] .institution-create-drive-eyebrow,
+html[data-theme="dark"] .institution-create-drive-eyebrow {
+  color: #60a5fa;
+}
+
+body[data-theme="dark"] .institution-create-drive-header h2,
+html[data-theme="dark"] .institution-create-drive-header h2 {
+  color: #eef4fb;
+}
+
+body[data-theme="dark"] .institution-create-drive-header p,
+html[data-theme="dark"] .institution-create-drive-header p {
+  color: #8293aa;
+}
+
+body[data-theme="dark"] .institution-create-drive-close,
+html[data-theme="dark"] .institution-create-drive-close {
+  background: #17253a;
+  border-color: #2b3c56;
+  color: #9babc0;
+}
+
+body[data-theme="dark"] .institution-create-drive-close:hover,
+html[data-theme="dark"] .institution-create-drive-close:hover {
+  background: rgba(37, 99, 235, 0.14);
+  border-color: #3b82f6;
+  color: #60a5fa;
+}
+
+body[data-theme="dark"] .institution-create-drive-grid label > span,
+html[data-theme="dark"] .institution-create-drive-grid label > span {
+  color: #b8c6d8;
+}
+
+body[data-theme="dark"] .institution-create-drive-grid input,
+body[data-theme="dark"] .institution-create-drive-grid select,
+html[data-theme="dark"] .institution-create-drive-grid input,
+html[data-theme="dark"] .institution-create-drive-grid select {
+  background: #17253a;
+  border-color: #2b3c56;
+  color: #dce6f2;
+}
+
+body[data-theme="dark"] .institution-create-drive-grid input:focus,
+body[data-theme="dark"] .institution-create-drive-grid select:focus,
+html[data-theme="dark"] .institution-create-drive-grid input:focus,
+html[data-theme="dark"] .institution-create-drive-grid select:focus {
+  background: #192a42;
+  border-color: #3b82f6;
+}
+
+body[data-theme="dark"] .institution-create-drive-grid input::placeholder,
+html[data-theme="dark"] .institution-create-drive-grid input::placeholder {
+  color: #71839a;
+}
+
+body[data-theme="dark"] .institution-create-drive-grid small,
+html[data-theme="dark"] .institution-create-drive-grid small {
+  color: #718198;
+}
+
+body[data-theme="dark"] .institution-create-drive-footer,
+html[data-theme="dark"] .institution-create-drive-footer {
+  border-top-color: #26364e;
+}
+
+body[data-theme="dark"] .institution-create-drive-cancel,
+html[data-theme="dark"] .institution-create-drive-cancel {
+  background: #17253a;
+  border-color: #2b3c56;
+  color: #a9b7c9;
+}
+
+body[data-theme="dark"] .institution-create-drive-cancel:hover,
+html[data-theme="dark"] .institution-create-drive-cancel:hover {
+  background: #1d2d46;
+  border-color: #3b4f6d;
+}
+
+@media (max-width: 600px) {
+  .institution-internship-header {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .institution-create-drive-button {
+    width: 100%;
+  }
+
+  .institution-create-drive-modal-backdrop {
+    padding: 12px;
+  }
+
+  .institution-create-drive-header,
+  .institution-create-drive-form {
+    padding: 18px;
+  }
+
+  .institution-create-drive-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .institution-create-drive-field-full {
+    grid-column: auto;
+  }
+
+  .institution-create-drive-footer {
+    flex-direction: column-reverse;
+  }
+
+  .institution-create-drive-cancel,
+  .institution-create-drive-submit {
+    width: 100%;
+  }
+}

@@ -1,0 +1,533 @@
+/* =========================================================
+   INSTITUTION LAYOUT
+   Light + Dark Mode
+========================================================= */
+
+.institution-layout {
+  min-height: 100vh;
+
+  background: #f5f7fb;
+
+  color: #172033;
+
+  transition:
+    background 0.25s ease,
+    color 0.25s ease;
+}
+
+.institution-main {
+  min-height: 100vh;
+
+  margin-left: 258px;
+
+  background: #f5f7fb;
+
+  transition: background 0.25s ease;
+}
+
+
+/* =========================================================
+   TOPBAR
+========================================================= */
+
+.institution-topbar {
+  height: 72px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 28px;
+
+  background: rgba(255, 255, 255, 0.96);
+
+  border-bottom: 1px solid #e5eaf0;
+
+  position: sticky;
+  top: 0;
+
+  z-index: 50;
+
+  backdrop-filter: blur(14px);
+
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease;
+}
+
+
+/* =========================================================
+   SEARCH
+========================================================= */
+
+.institution-search {
+  width: min(420px, 42%);
+  height: 40px;
+
+  display: flex;
+  align-items: center;
+  gap: 9px;
+
+  padding: 0 13px;
+
+  background: #f4f6f9;
+
+  border: 1px solid #e1e6ee;
+
+  border-radius: 9px;
+
+  color: #718096;
+
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease,
+    color 0.25s ease;
+}
+
+.institution-search input {
+  width: 100%;
+
+  border: none;
+  outline: none;
+
+  background: transparent;
+
+  color: #172033;
+
+  font-size: 13px;
+}
+
+.institution-search input::placeholder {
+  color: #8b98aa;
+}
+
+
+/* =========================================================
+   TOPBAR ACTIONS
+========================================================= */
+
+.institution-topbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.institution-icon-button {
+  width: 39px;
+  height: 39px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid #e0e6ee;
+
+  border-radius: 9px;
+
+  background: #ffffff;
+
+  color: #506078;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.institution-icon-button:hover {
+  background: #f4f7fb;
+  border-color: #cbd6e4;
+  color: #2563eb;
+}
+
+
+/* =========================================================
+   USER
+========================================================= */
+
+.institution-user {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+
+  padding-left: 8px;
+}
+
+.institution-user-avatar {
+  width: 36px;
+  height: 36px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 9px;
+
+  background: #e8f0ff;
+
+  color: #2563eb;
+
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.institution-user-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.institution-user-info strong {
+  color: #182236;
+
+  font-size: 12px;
+}
+
+.institution-user-info span {
+  color: #8995a6;
+
+  font-size: 10px;
+}
+
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.institution-content {
+  min-height: calc(100vh - 72px);
+
+  padding: 30px;
+
+  background: #f5f7fb;
+
+  transition:
+    background 0.25s ease;
+}
+
+
+/* =========================================================
+   DARK MODE
+========================================================= */
+
+/*
+   Supports both common theme implementations:
+   body[data-theme="dark"]
+   html[data-theme="dark"]
+*/
+
+
+/* Main background */
+
+body[data-theme="dark"] .institution-layout,
+html[data-theme="dark"] .institution-layout {
+  background: #0b1424;
+  color: #e8eef7;
+}
+
+body[data-theme="dark"] .institution-main,
+html[data-theme="dark"] .institution-main {
+  background: #0b1424;
+}
+
+body[data-theme="dark"] .institution-content,
+html[data-theme="dark"] .institution-content {
+  background: #0b1424;
+}
+
+
+/* Topbar */
+
+body[data-theme="dark"] .institution-topbar,
+html[data-theme="dark"] .institution-topbar {
+  background: rgba(12, 24, 42, 0.96);
+
+  border-bottom-color: #223149;
+}
+
+
+/* Search */
+
+body[data-theme="dark"] .institution-search,
+html[data-theme="dark"] .institution-search {
+  background: #142238;
+
+  border-color: #293a53;
+
+  color: #8fa0b8;
+}
+
+body[data-theme="dark"] .institution-search input,
+html[data-theme="dark"] .institution-search input {
+  color: #e6edf7;
+}
+
+body[data-theme="dark"] .institution-search input::placeholder,
+html[data-theme="dark"] .institution-search input::placeholder {
+  color: #71839c;
+}
+
+
+/* Notification button */
+
+body[data-theme="dark"] .institution-icon-button,
+html[data-theme="dark"] .institution-icon-button {
+  background: #142238;
+
+  border-color: #293a53;
+
+  color: #9dafc5;
+}
+
+body[data-theme="dark"] .institution-icon-button:hover,
+html[data-theme="dark"] .institution-icon-button:hover {
+  background: #1a2b44;
+
+  border-color: #3a506f;
+
+  color: #60a5fa;
+}
+
+
+/* User */
+
+body[data-theme="dark"] .institution-user-avatar,
+html[data-theme="dark"] .institution-user-avatar {
+  background: rgba(37, 99, 235, 0.17);
+
+  color: #60a5fa;
+}
+
+body[data-theme="dark"] .institution-user-info strong,
+html[data-theme="dark"] .institution-user-info strong {
+  color: #e5ecf6;
+}
+
+body[data-theme="dark"] .institution-user-info span,
+html[data-theme="dark"] .institution-user-info span {
+  color: #7889a1;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 900px) {
+  .institution-main {
+    margin-left: 78px;
+  }
+
+  .institution-topbar {
+    padding: 0 18px;
+  }
+
+  .institution-search {
+    width: 280px;
+  }
+
+  .institution-user-info {
+    display: none;
+  }
+
+  .institution-content {
+    padding: 22px;
+  }
+}
+
+@media (max-width: 600px) {
+  .institution-search {
+    width: 42px;
+
+    padding: 0 11px;
+  }
+
+  .institution-search input {
+    display: none;
+  }
+
+  .institution-user {
+    display: none;
+  }
+}
+.institution-main {
+  min-height: 100vh;
+  margin-left: 258px;
+}
+
+.institution-topbar {
+  height: 72px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 28px;
+
+  background: rgba(255, 255, 255, 0.94);
+
+  border-bottom: 1px solid #e6eaf0;
+
+  position: sticky;
+  top: 0;
+
+  z-index: 50;
+
+  backdrop-filter: blur(14px);
+}
+
+.institution-search {
+  width: min(420px, 42%);
+
+  height: 40px;
+
+  display: flex;
+  align-items: center;
+  gap: 9px;
+
+  padding: 0 13px;
+
+  background: #f4f6f9;
+
+  border: 1px solid #e3e7ee;
+
+  border-radius: 9px;
+
+  color: #7a8798;
+}
+
+.institution-search input {
+  width: 100%;
+
+  border: none;
+  outline: none;
+
+  background: transparent;
+
+  color: #172033;
+
+  font-size: 13px;
+}
+
+.institution-search input::placeholder {
+  color: #8c98a8;
+}
+
+.institution-topbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.institution-icon-button {
+  width: 39px;
+  height: 39px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid #e1e6ed;
+
+  border-radius: 9px;
+
+  background: #ffffff;
+
+  color: #506078;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.institution-icon-button:hover {
+  background: #f4f7fb;
+  color: #1d4ed8;
+}
+
+.institution-user {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+
+  padding-left: 8px;
+}
+
+.institution-user-avatar {
+  width: 36px;
+  height: 36px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 9px;
+
+  background: #e8f0ff;
+
+  color: #2563eb;
+
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.institution-user-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.institution-user-info strong {
+  color: #182236;
+  font-size: 12px;
+}
+
+.institution-user-info span {
+  color: #8995a6;
+  font-size: 10px;
+}
+
+.institution-content {
+  min-height: calc(100vh - 72px);
+
+  padding: 30px;
+}
+
+@media (max-width: 900px) {
+  .institution-main {
+    margin-left: 78px;
+  }
+
+  .institution-topbar {
+    padding: 0 18px;
+  }
+
+  .institution-search {
+    width: 280px;
+  }
+
+  .institution-user-info {
+    display: none;
+  }
+
+  .institution-content {
+    padding: 22px;
+  }
+}
+
+@media (max-width: 600px) {
+  .institution-search {
+    width: 42px;
+    padding: 0 11px;
+  }
+
+  .institution-search input {
+    display: none;
+  }
+
+  .institution-user {
+    display: none;
+  }
+}

@@ -1,0 +1,718 @@
+/* =========================================================
+   NEXORA - PROFILE / RESUME
+   ========================================================= */
+
+.student-resume-page {
+  width: 100%;
+  min-width: 0;
+}
+
+.student-resume-main {
+  width: 100%;
+  min-width: 0;
+  padding: 32px 34px 60px;
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.resume-page-header {
+  margin-bottom: 28px;
+}
+
+.resume-page-eyebrow {
+  display: block;
+  margin-bottom: 7px;
+  color: #168cff;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1.2px;
+}
+
+.resume-page-header h1 {
+  margin: 0;
+  color: #f1f7fc;
+  font-size: 32px;
+  line-height: 1.2;
+  font-weight: 800;
+}
+
+.resume-page-header p {
+  max-width: 700px;
+  margin: 8px 0 0;
+  color: #8ea3b8;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+
+/* =========================================================
+   STATUS
+   ========================================================= */
+
+.resume-status-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 25px;
+  margin-bottom: 20px;
+  background: linear-gradient(
+    135deg,
+    #102536,
+    #101b29 65%,
+    #111d30
+  );
+  border: 1px solid #254258;
+  border-radius: 16px;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.16);
+}
+
+.resume-status-icon {
+  width: 58px;
+  height: 58px;
+  flex: 0 0 58px;
+  display: grid;
+  place-items: center;
+  color: #42d9ea;
+  background: #10394a;
+  border: 1px solid #24657a;
+  border-radius: 14px;
+}
+
+.resume-status-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.resume-status-content > span {
+  display: block;
+  margin-bottom: 6px;
+  color: #2ed7e8;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.resume-status-content h2 {
+  margin: 0;
+  color: #edf5fb;
+  font-size: 21px;
+  font-weight: 750;
+}
+
+.resume-status-content p {
+  max-width: 720px;
+  margin: 7px 0 0;
+  color: #8da3b7;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.resume-status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 32px;
+  padding: 0 11px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 750;
+  white-space: nowrap;
+}
+
+.resume-status-badge.uploaded {
+  color: #55deb0;
+  background: #12372e;
+  border: 1px solid #246b59;
+}
+
+.resume-status-badge.missing {
+  color: #ffd37a;
+  background: #3a2c12;
+  border: 1px solid #6d5420;
+}
+
+
+/* =========================================================
+   CONTENT CARD
+   ========================================================= */
+
+.resume-content-card {
+  width: 100%;
+  padding: 26px;
+  box-sizing: border-box;
+  background: #101a28;
+  border: 1px solid #24374a;
+  border-radius: 16px;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+}
+
+.resume-content-header {
+  padding-bottom: 20px;
+  border-bottom: 1px solid #26384b;
+}
+
+.resume-content-header > div > span {
+  display: block;
+  margin-bottom: 6px;
+  color: #2bd5e7;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.resume-content-header h2 {
+  margin: 0;
+  color: #edf5fb;
+  font-size: 21px;
+  font-weight: 750;
+}
+
+.resume-content-header p {
+  margin: 6px 0 0;
+  color: #8096aa;
+  font-size: 14px;
+}
+
+
+/* =========================================================
+   UPLOAD
+   ========================================================= */
+
+.resume-upload-area {
+  min-height: 300px;
+  margin-top: 22px;
+  padding: 38px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background:
+    linear-gradient(
+      145deg,
+      #0d1b29,
+      #101f2e
+    );
+  border: 1px dashed #376077;
+  border-radius: 14px;
+  cursor: pointer;
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease;
+}
+
+.resume-upload-area:hover {
+  border-color: #29c9df;
+  background: #102536;
+}
+
+.resume-upload-icon {
+  width: 62px;
+  height: 62px;
+  display: grid;
+  place-items: center;
+  margin-bottom: 16px;
+  color: #42d9ea;
+  background: #10384a;
+  border: 1px solid #286174;
+  border-radius: 15px;
+}
+
+.resume-upload-area h3 {
+  margin: 0;
+  color: #edf5fb;
+  font-size: 19px;
+  font-weight: 750;
+}
+
+.resume-upload-area p {
+  margin: 7px 0 4px;
+  color: #9aabba;
+  font-size: 14px;
+}
+
+.resume-upload-area > span {
+  color: #687f92;
+  font-size: 12px;
+}
+
+.resume-browse-button {
+  min-height: 40px;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  margin-top: 19px;
+  padding: 0 15px;
+  color: #3dd8e8;
+  background: #102d3b;
+  border: 1px solid #286074;
+  border-radius: 9px;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.resume-browse-button:hover {
+  background: #143b4b;
+}
+
+
+/* =========================================================
+   FILE
+   ========================================================= */
+
+.resume-file-card {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-top: 22px;
+  padding: 19px;
+  background: #0d1724;
+  border: 1px solid #263d50;
+  border-radius: 13px;
+}
+
+.resume-file-icon {
+  width: 49px;
+  height: 49px;
+  flex: 0 0 49px;
+  display: grid;
+  place-items: center;
+  color: #42d9ea;
+  background: #10384a;
+  border: 1px solid #286174;
+  border-radius: 11px;
+}
+
+.resume-file-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.resume-file-info h3 {
+  margin: 0;
+  overflow: hidden;
+  color: #edf5fb;
+  font-size: 15px;
+  font-weight: 700;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.resume-file-info p {
+  margin: 5px 0 0;
+  color: #7f96a9;
+  font-size: 13px;
+}
+
+.resume-file-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.resume-view-button,
+.resume-download-button {
+  min-height: 36px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0 11px;
+  color: #39d8ea;
+  background: #102d3b;
+  border: 1px solid #24596d;
+  border-radius: 7px;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.resume-view-button:hover,
+.resume-download-button:hover {
+  background: #143b4b;
+}
+
+.resume-remove-button {
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  color: #ff8f8f;
+  background: transparent;
+  border: 1px solid #57333b;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.resume-remove-button:hover {
+  background: #321d25;
+}
+
+
+/* =========================================================
+   ERROR
+   ========================================================= */
+
+.resume-error {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin-top: 12px;
+  padding: 11px 13px;
+  color: #ff9e9e;
+  background: #321d25;
+  border: 1px solid #60353e;
+  border-radius: 8px;
+  font-size: 13px;
+}
+
+
+/* =========================================================
+   GUIDELINES
+   ========================================================= */
+
+.resume-guidelines-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 17px;
+  margin-top: 20px;
+  padding: 22px 24px;
+  background: linear-gradient(
+    135deg,
+    #102536,
+    #101b29
+  );
+  border: 1px solid #254258;
+  border-radius: 16px;
+}
+
+.resume-guidelines-icon {
+  width: 48px;
+  height: 48px;
+  flex: 0 0 48px;
+  display: grid;
+  place-items: center;
+  color: #42d9ea;
+  background: #10384a;
+  border: 1px solid #245e73;
+  border-radius: 12px;
+}
+
+.resume-guidelines-content {
+  flex: 1;
+}
+
+.resume-guidelines-content > span {
+  color: #2bd5e7;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.resume-guidelines-content h2 {
+  margin: 5px 0 0;
+  color: #edf5fb;
+  font-size: 18px;
+}
+
+.resume-guidelines-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-top: 18px;
+}
+
+.resume-guidelines-grid strong {
+  color: #c8d8e3;
+  font-size: 14px;
+}
+
+.resume-guidelines-grid p {
+  margin: 6px 0 0;
+  color: #8399ad;
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+
+/* =========================================================
+   LIGHT MODE
+   ========================================================= */
+
+:root:not(.dark) .resume-page-header h1 {
+  color: #172033;
+}
+
+:root:not(.dark) .resume-page-header p {
+  color: #667085;
+}
+
+:root:not(.dark) .resume-status-card {
+  background: linear-gradient(
+    135deg,
+    #e8faff,
+    #f2f8ff 55%,
+    #fff7e8
+  );
+  border-color: #c7e1eb;
+  box-shadow: 0 12px 30px rgba(28, 98, 130, 0.08);
+}
+
+:root:not(.dark) .resume-status-icon {
+  color: #087ea4;
+  background: linear-gradient(
+    135deg,
+    #d4f8ff,
+    #dbeaff
+  );
+  border-color: #9dd7e4;
+}
+
+:root:not(.dark) .resume-status-content > span {
+  color: #087ea4;
+}
+
+:root:not(.dark) .resume-status-content h2 {
+  color: #172033;
+}
+
+:root:not(.dark) .resume-status-content p {
+  color: #5f7185;
+}
+
+:root:not(.dark) .resume-status-badge.uploaded {
+  color: #087c5a;
+  background: #e4f8ef;
+  border-color: #a9ddc7;
+}
+
+:root:not(.dark) .resume-status-badge.missing {
+  color: #a56800;
+  background: #fff4d8;
+  border-color: #f0d38a;
+}
+
+:root:not(.dark) .resume-content-card {
+  background: #ffffff;
+  border-color: #d8e4ed;
+  box-shadow: 0 12px 32px rgba(15, 23, 42, 0.06);
+}
+
+:root:not(.dark) .resume-content-header {
+  border-color: #e1e9f0;
+}
+
+:root:not(.dark) .resume-content-header > div > span {
+  color: #087ea4;
+}
+
+:root:not(.dark) .resume-content-header h2 {
+  color: #172033;
+}
+
+:root:not(.dark) .resume-content-header p {
+  color: #667085;
+}
+
+:root:not(.dark) .resume-upload-area {
+  background: linear-gradient(
+    145deg,
+    #f4fbfe,
+    #f8fbff
+  );
+  border-color: #9fcbd9;
+}
+
+:root:not(.dark) .resume-upload-area:hover {
+  background: #eefaff;
+  border-color: #159bb6;
+}
+
+:root:not(.dark) .resume-upload-icon {
+  color: #087ea4;
+  background: linear-gradient(
+    135deg,
+    #d9f8ff,
+    #e5efff
+  );
+  border-color: #a8d8e5;
+}
+
+:root:not(.dark) .resume-upload-area h3 {
+  color: #172033;
+}
+
+:root:not(.dark) .resume-upload-area p {
+  color: #667085;
+}
+
+:root:not(.dark) .resume-upload-area > span {
+  color: #7b8c9b;
+}
+
+:root:not(.dark) .resume-browse-button {
+  color: #087ea4;
+  background: #eaf8fc;
+  border-color: #b7dce7;
+}
+
+:root:not(.dark) .resume-browse-button:hover {
+  background: #def5fa;
+}
+
+:root:not(.dark) .resume-file-card {
+  background: linear-gradient(
+    145deg,
+    #ffffff,
+    #f7fbff
+  );
+  border-color: #d8e6ef;
+}
+
+:root:not(.dark) .resume-file-icon {
+  color: #087ea4;
+  background: linear-gradient(
+    135deg,
+    #d9f8ff,
+    #e5efff
+  );
+  border-color: #a8d8e5;
+}
+
+:root:not(.dark) .resume-file-info h3 {
+  color: #172033;
+}
+
+:root:not(.dark) .resume-file-info p {
+  color: #718396;
+}
+
+:root:not(.dark) .resume-view-button,
+:root:not(.dark) .resume-download-button {
+  color: #087ea4;
+  background: #eefaff;
+  border-color: #b7dce7;
+}
+
+:root:not(.dark) .resume-view-button:hover,
+:root:not(.dark) .resume-download-button:hover {
+  background: #e4f7fc;
+}
+
+:root:not(.dark) .resume-remove-button {
+  color: #c45b5b;
+  border-color: #e7c4c4;
+}
+
+:root:not(.dark) .resume-remove-button:hover {
+  background: #fff0f0;
+}
+
+:root:not(.dark) .resume-guidelines-card {
+  background: linear-gradient(
+    135deg,
+    #eefaff,
+    #f7fbff 65%,
+    #fff7e8
+  );
+  border-color: #cfe2ec;
+}
+
+:root:not(.dark) .resume-guidelines-icon {
+  color: #087ea4;
+  background: #e4f8fc;
+  border-color: #a9d8e3;
+}
+
+:root:not(.dark) .resume-guidelines-content > span {
+  color: #087ea4;
+}
+
+:root:not(.dark) .resume-guidelines-content h2 {
+  color: #172033;
+}
+
+:root:not(.dark) .resume-guidelines-grid strong {
+  color: #344054;
+}
+
+:root:not(.dark) .resume-guidelines-grid p {
+  color: #667085;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 800px) {
+  .resume-guidelines-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .resume-file-card {
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .resume-file-actions {
+    width: 100%;
+    margin-left: 64px;
+  }
+}
+
+@media (max-width: 600px) {
+  .student-resume-main {
+    padding: 24px 18px 45px;
+  }
+
+  .resume-status-card {
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .resume-status-badge {
+    margin-left: 78px;
+  }
+
+  .resume-file-actions {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .student-resume-main {
+    padding: 20px 14px 40px;
+  }
+
+  .resume-page-header h1 {
+    font-size: 27px;
+  }
+
+  .resume-content-card {
+    padding: 19px;
+  }
+
+  .resume-status-card {
+    padding: 20px;
+  }
+
+  .resume-status-badge {
+    margin-left: 0;
+  }
+
+  .resume-file-actions {
+    flex-wrap: wrap;
+  }
+
+  .resume-view-button,
+  .resume-download-button {
+    flex: 1;
+    justify-content: center;
+  }
+}

@@ -1,0 +1,1439 @@
+/* =========================================================
+   INSTITUTION NOTIFICATIONS
+========================================================= */
+
+.institution-notifications-page {
+  width: 100%;
+  max-width: 1500px;
+  margin: 0 auto;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.institution-notifications-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 17px;
+}
+
+.institution-notifications-eyebrow {
+  margin: 0 0 6px;
+
+  color: #ef4444;
+
+  font-size: 10.5px;
+  font-weight: 750;
+  letter-spacing: 0.12em;
+}
+
+.institution-notifications-header h1 {
+  margin: 0;
+
+  color: #172033;
+
+  font-size: 29px;
+  font-weight: 750;
+  letter-spacing: -0.03em;
+}
+
+.institution-notifications-header p:last-child {
+  margin: 7px 0 0;
+
+  color: #738096;
+
+  font-size: 13px;
+}
+
+
+/* =========================================================
+   MARK ALL
+========================================================= */
+
+.institution-mark-all {
+  height: 38px;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+
+  padding: 0 13px;
+
+  border: 1px solid #d8e3f2;
+  border-radius: 8px;
+
+  background: #f6f9ff;
+
+  color: #2563eb;
+
+  font-size: 10.5px;
+  font-weight: 650;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.institution-mark-all:hover {
+  background: #eaf2ff;
+  border-color: #c5dafa;
+  transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   TABS
+========================================================= */
+
+.institution-notification-tabs {
+  height: 48px;
+
+  display: grid;
+  grid-template-columns:
+    1.25fr
+    1fr
+    1fr
+    1fr
+    1fr;
+
+  margin-bottom: 12px;
+
+  background: #ffffff;
+
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 4px 16px rgba(15, 23, 42, 0.035);
+}
+
+.institution-notification-tabs button {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+
+  border: none;
+
+  background: transparent;
+
+  color: #718096;
+
+  font-size: 10px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.institution-notification-tabs button:hover {
+  background: #f8fbff;
+  color: #2563eb;
+}
+
+.institution-notification-tabs button.active {
+  background: #f8fbff;
+  color: #2563eb;
+}
+
+.institution-notification-tabs button.active::after {
+  content: "";
+
+  position: absolute;
+
+  left: 17%;
+  right: 17%;
+  bottom: 0;
+
+  height: 3px;
+
+  background: #2563eb;
+
+  border-radius: 3px 3px 0 0;
+}
+
+.institution-notification-tabs button span {
+  min-width: 18px;
+  height: 18px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0 5px;
+
+  border-radius: 5px;
+
+  background: #edf2f8;
+  color: #7b8798;
+
+  font-size: 8px;
+  font-weight: 700;
+}
+
+.institution-notification-tabs button.active span {
+  background: #eaf2ff;
+  color: #2563eb;
+}
+
+
+/* =========================================================
+   TOOLBAR
+========================================================= */
+
+.institution-notification-toolbar {
+  min-height: 54px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 10px;
+
+  margin-bottom: 12px;
+  padding: 8px 11px;
+
+  background: #ffffff;
+
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+
+  box-shadow:
+    0 5px 18px rgba(15, 23, 42, 0.035);
+}
+
+.institution-notification-summary {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+
+  color: #65748a;
+
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.institution-notification-summary svg {
+  color: #2563eb;
+}
+
+
+/* =========================================================
+   UNREAD FILTER
+========================================================= */
+
+.institution-unread-filter {
+  height: 31px;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 0 9px;
+
+  border: 1px solid #e1e7ef;
+  border-radius: 7px;
+
+  background: #f7f9fc;
+
+  color: #718096;
+
+  font-size: 9.5px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.institution-unread-filter.active {
+  background: #eaf2ff;
+
+  border-color: #c5dafa;
+
+  color: #2563eb;
+}
+
+.institution-toggle-dot {
+  width: 8px;
+  height: 8px;
+
+  border-radius: 50%;
+
+  background: #c4ccd7;
+
+  transition: 0.2s ease;
+}
+
+.institution-unread-filter.active
+  .institution-toggle-dot {
+  background: #2563eb;
+
+  box-shadow:
+    0 0 7px rgba(37, 99, 235, 0.45);
+}
+
+
+/* =========================================================
+   SORT
+========================================================= */
+
+.institution-notification-filter {
+  height: 31px;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+
+  padding: 0 10px;
+
+  border: 1px solid #e1e7ef;
+  border-radius: 7px;
+
+  background: #f7f9fc;
+
+  color: #718096;
+
+  font-size: 9.5px;
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+
+/* =========================================================
+   NOTIFICATION LIST
+========================================================= */
+
+.institution-notification-list {
+  display: flex;
+  flex-direction: column;
+
+  overflow: hidden;
+
+  background: #ffffff;
+
+  border: 1px solid #e2e8f0;
+  border-radius: 11px;
+
+  box-shadow:
+    0 5px 19px rgba(15, 23, 42, 0.035);
+}
+
+
+/* =========================================================
+   NOTIFICATION ITEM
+========================================================= */
+
+.institution-notification-item {
+  min-height: 78px;
+
+  display: grid;
+
+  grid-template-columns:
+    42px
+    minmax(0, 1fr)
+    80px;
+
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 10px 14px;
+
+  background: #ffffff;
+
+  border-bottom: 1px solid #edf0f4;
+
+  transition:
+    background 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.institution-notification-item:last-child {
+  border-bottom: none;
+}
+
+.institution-notification-item:hover {
+  background: #f8fbff;
+}
+
+.institution-notification-item.unread {
+  background: #fbfdff;
+}
+
+.institution-notification-item.unread:hover {
+  background: #f4f9ff;
+}
+
+
+/* =========================================================
+   ICONS
+========================================================= */
+
+.institution-notification-icon {
+  width: 38px;
+  height: 38px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 9px;
+
+  transition:
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+}
+
+.institution-notification-item:hover
+  .institution-notification-icon {
+  transform: translateY(-1px);
+}
+
+.institution-notification-icon.red {
+  background: #fff0f0;
+  color: #ef4444;
+}
+
+.institution-notification-icon.orange {
+  background: #fff1e6;
+  color: #ea580c;
+}
+
+.institution-notification-icon.blue {
+  background: #eaf2ff;
+  color: #2563eb;
+}
+
+.institution-notification-icon.violet {
+  background: #f1eaff;
+  color: #7c3aed;
+}
+
+.institution-notification-icon.green {
+  background: #e9f9ef;
+  color: #16a34a;
+}
+
+.institution-notification-icon.cyan {
+  background: #e5f8fb;
+  color: #0891b2;
+}
+
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.institution-notification-content {
+  min-width: 0;
+}
+
+.institution-notification-title-row {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.institution-notification-title-row h2 {
+  overflow: hidden;
+
+  margin: 0;
+
+  color: #354257;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.institution-notification-item.unread
+  .institution-notification-title-row h2 {
+  color: #263449;
+}
+
+.institution-notification-content p {
+  overflow: hidden;
+
+  margin: 4px 0 0;
+
+  color: #8793a5;
+
+  font-size: 9px;
+
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.institution-unread-dot {
+  width: 6px;
+  height: 6px;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: #2563eb;
+
+  box-shadow:
+    0 0 7px rgba(37, 99, 235, 0.45);
+}
+
+
+/* =========================================================
+   TIME
+========================================================= */
+
+.institution-notification-time {
+  justify-self: end;
+
+  color: #9aa5b4;
+
+  font-size: 8.5px;
+
+  white-space: nowrap;
+}
+
+
+/* =========================================================
+   EMPTY
+========================================================= */
+
+.institution-notification-empty {
+  min-height: 280px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  color: #8794a7;
+
+  text-align: center;
+}
+
+.institution-notification-empty > div {
+  width: 45px;
+  height: 45px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 3px;
+
+  border-radius: 10px;
+
+  background: #edf5ff;
+
+  color: #2563eb;
+}
+
+.institution-notification-empty strong {
+  color: #4b596d;
+
+  font-size: 13px;
+}
+
+.institution-notification-empty span {
+  color: #96a1b0;
+
+  font-size: 10px;
+}
+
+
+/* =========================================================
+   FOOTER INFO
+========================================================= */
+
+.institution-notification-footer {
+  min-height: 52px;
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  margin-top: 11px;
+  padding: 8px 12px;
+
+  background: #f7fbff;
+
+  border: 1px solid #dceafa;
+  border-radius: 9px;
+
+  color: #7c8a9d;
+
+  font-size: 9px;
+}
+
+.institution-notification-footer svg {
+  flex-shrink: 0;
+  color: #2563eb;
+}
+
+
+/* =========================================================
+   =========================================================
+   DARK MODE
+   DEEP NAVY + COLOUR GLOW
+   =========================================================
+   ========================================================= */
+
+
+/* ---------- MAIN PAGE ---------- */
+
+:is(body, html)[data-theme="dark"]
+  .institution-notifications-page,
+.dark .institution-notifications-page {
+  color: #e6edf7;
+}
+
+
+/* ---------- HEADER ---------- */
+
+:is(body, html)[data-theme="dark"]
+  .institution-notifications-header
+  h1,
+.dark
+  .institution-notifications-header
+  h1 {
+  color: #f5f9ff;
+  text-shadow:
+    0 0 20px rgba(96, 165, 250, 0.08);
+}
+
+:is(body, html)[data-theme="dark"]
+  .institution-notifications-header
+  p:last-child,
+.dark
+  .institution-notifications-header
+  p:last-child {
+  color: #91a5bf;
+}
+
+:is(body, html)[data-theme="dark"]
+  .institution-notifications-eyebrow,
+.dark
+  .institution-notifications-eyebrow {
+  color: #ff6678;
+
+  text-shadow:
+    0 0 12px rgba(255, 80, 100, 0.3);
+}
+
+
+/* ---------- MARK ALL ---------- */
+
+:is(body, html)[data-theme="dark"]
+  .institution-mark-all,
+.dark .institution-mark-all {
+  background: #13243a;
+
+  border-color: #2c4666;
+
+  color: #72aaff;
+
+  box-shadow:
+    0 0 18px rgba(37, 99, 235, 0.08);
+}
+
+:is(body, html)[data-theme="dark"]
+  .institution-mark-all:hover,
+.dark .institution-mark-all:hover {
+  background: #193150;
+
+  border-color: #3973b9;
+
+  color: #9bc4ff;
+
+  box-shadow:
+    0 0 22px rgba(37, 99, 235, 0.18);
+}
+
+
+/* =========================================================
+   DARK TABS
+========================================================= */
+
+:is(body, html)[data-theme="dark"]
+  .institution-notification-tabs,
+.dark .institution-notification-tabs {
+  background: #0f1d31;
+
+  border-color: #29405e;
+
+  box-shadow:
+    0 8px 28px rgba(0, 0, 0, 0.28),
+    0 0 20px rgba(37, 99, 235, 0.035);
+}
+
+:is(body, html)[data-theme="dark"]
+  .institution-notification-tabs
+  button,
+.dark
+  .institution-notification-tabs
+  button {
+  color: #8195b0;
+}
+
+:is(body, html)[data-theme="dark"]
+  .institution-notification-tabs
+  button:hover,
+.dark
+  .institution-notification-tabs
+  button:hover {
+  background: #142844;
+
+  color: #69a7ff;
+}
+
+:is(body, html)[data-theme="dark"]
+  .institution-notification-tabs
+  button.active,
+.dark
+  .institution-notification-tabs
+  button.active {
+  background:
+    linear-gradient(
+      180deg,
+      #183253 0%,
+      #142943 100%
+    );
+
+  color: #7bb2ff;
+
+  box-shadow:
+    inset 0 0 25px rgba(37, 99, 235, 0.06);
+}
+
+:is(body, html)[data-theme="dark"]
+  .institution-notification-tabs
+  button.active::after,
+.dark
+  .institution-notification-tabs
+  button.active::after {
+  background: #3b82f6;
+
+  box-shadow:
+    0 0 8px #3b82f6,
+    0 0 18px rgba(59, 130, 246, 0.7);
+}
+
+:is(body, html)[data-theme="dark"]
+  .institution-notification-tabs
+  button
+  span,
+.dark
+  .institution-notification-tabs
+  button
+  span {
+  background: #1d3049;
+
+  color: #91a6c0;
+}
+
+:is(body, html)[data-theme="dark"]
+  .institution-notification-tabs
+  button.active
+  span,
+.dark
+  .institution-notification-tabs
+  button.active
+  span {
+  background: rgba(37, 99, 235, 0.2);
+
+  color: #80b6ff;
+
+  box-shadow:
+    0 0 9px rgba(37, 99, 235, 0.18);
+}
+
+
+/* =========================================================
+   DARK TOOLBAR
+========================================================= */
+
+:is(body, html)[data-theme="dark"]
+  .institution-notification-toolbar,
+.dark .institution-notification-toolbar {
+  background: #0f1d31;
+
+  border-color: #29405e;
+
+  box-shadow:
+    0 8px 28px rgba(0, 0, 0, 0.25);
+}
+
+:is(body, html)[data-theme="dark"]
+  .institution-notification-summary,
+.dark
+  .institution-notification-summary {
+  color: #91a5bf;
+}
+
+:is(body, html)[data-theme="dark"]
+  .institution-notification-summary
+  svg,
+.dark
+  .institution-notification-summary
+  svg {
+  color: #55a0ff;
+
+  filter:
+    drop-shadow(0 0 5px rgba(59, 130, 246, 0.5));
+}
+
+
+/* unread */
+
+:is(body, html)[data-theme="dark"]
+  .institution-unread-filter,
+.dark .institution-unread-filter {
+  background: #15263d;
+
+  border-color: #2b4565;
+
+  color: #91a5bf;
+}
+
+:is(body, html)[data-theme="dark"]
+  .institution-unread-filter.active,
+.dark .institution-unread-filter.active {
+  background: #163357;
+
+  border-color: #3974b9;
+
+  color: #78b2ff;
+
+  box-shadow:
+    0 0 16px rgba(37, 99, 235, 0.13);
+}
+
+:is(body, html)[data-theme="dark"]
+  .institution-toggle-dot,
+.dark .institution-toggle-dot {
+  background: #4e617a;
+}
+
+:is(body, html)[data-theme="dark"]
+  .institution-unread-filter.active
+  .institution-toggle-dot,
+.dark
+  .institution-unread-filter.active
+  .institution-toggle-dot {
+  background: #60a5fa;
+
+  box-shadow:
+    0 0 7px #60a5fa,
+    0 0 14px rgba(96, 165, 250, 0.65);
+}
+
+
+/* sort */
+
+:is(body, html)[data-theme="dark"]
+  .institution-notification-filter,
+.dark .institution-notification-filter {
+  background: #15263d;
+
+  border-color: #2b4565;
+
+  color: #91a5bf;
+}
+
+:is(body, html)[data-theme="dark"]
+  .institution-notification-filter:hover,
+.dark .institution-notification-filter:hover {
+  background: #1a3150;
+
+  color: #a7c9f7;
+}
+
+
+/* =========================================================
+   DARK NOTIFICATION LIST
+   THIS IS THE IMPORTANT PART
+========================================================= */
+
+:is(body, html)[data-theme="dark"]
+  .institution-notification-list,
+.dark .institution-notification-list {
+  background: #0d192b;
+
+  border-color: #2a4261;
+
+  box-shadow:
+    0 12px 35px rgba(0, 0, 0, 0.35),
+    0 0 28px rgba(37, 99, 235, 0.045);
+}
+
+
+/* =========================================================
+   DARK NOTIFICATION ROW
+========================================================= */
+
+:is(body, html)[data-theme="dark"]
+  .institution-notification-item,
+.dark .institution-notification-item {
+  background:
+    linear-gradient(
+      90deg,
+      #101e32 0%,
+      #0f1d30 100%
+    );
+
+  border-bottom-color: #263c58;
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.012);
+}
+
+:is(body, html)[data-theme="dark"]
+  .institution-notification-item:hover,
+.dark .institution-notification-item:hover {
+  background:
+    linear-gradient(
+      90deg,
+      #142844 0%,
+      #12243c 100%
+    );
+
+  box-shadow:
+    inset 3px 0 0 #3b82f6,
+    inset 0 0 25px rgba(37, 99, 235, 0.045);
+}
+
+
+/* ---------- UNREAD ROW ---------- */
+
+:is(body, html)[data-theme="dark"]
+  .institution-notification-item.unread,
+.dark .institution-notification-item.unread {
+  background:
+    linear-gradient(
+      90deg,
+      #12253e 0%,
+      #102138 100%
+    );
+
+  box-shadow:
+    inset 3px 0 0 #2563eb,
+    inset 0 0 24px rgba(37, 99, 235, 0.045);
+}
+
+:is(body, html)[data-theme="dark"]
+  .institution-notification-item.unread:hover,
+.dark .institution-notification-item.unread:hover {
+  background:
+    linear-gradient(
+      90deg,
+      #173050 0%,
+      #142943 100%
+    );
+
+  box-shadow:
+    inset 3px 0 0 #60a5fa,
+    inset 0 0 30px rgba(37, 99, 235, 0.08);
+}
+
+
+/* =========================================================
+   DARK ICONS + GLOW
+========================================================= */
+
+:is(body, html)[data-theme="dark"]
+  .institution-notification-icon.red,
+.dark
+  .institution-notification-icon.red {
+  background: rgba(239, 68, 68, 0.13);
+
+  color: #ff6b81;
+
+  box-shadow:
+    0 0 12px rgba(239, 68, 68, 0.1);
+}
+
+:is(body, html)[data-theme="dark"]
+  .institution-notification-icon.orange,
+.dark
+  .institution-notification-icon.orange {
+  background: rgba(249, 115, 22, 0.13);
+
+  color: #ff9a52;
+
+  box-shadow:
+    0 0 12px rgba(249, 115, 22, 0.1);
+}
+
+:is(body, html)[data-theme="dark"]
+  .institution-notification-icon.blue,
+.dark
+  .institution-notification-icon.blue {
+  background: rgba(37, 99, 235, 0.16);
+
+  color: #62a8ff;
+
+  box-shadow:
+    0 0 14px rgba(37, 99, 235, 0.15);
+}
+
+:is(body, html)[data-theme="dark"]
+  .institution-notification-icon.violet,
+.dark
+  .institution-notification-icon.violet {
+  background: rgba(124, 58, 237, 0.15);
+
+  color: #bd9aff;
+
+  box-shadow:
+    0 0 14px rgba(124, 58, 237, 0.13);
+}
+
+:is(body, html)[data-theme="dark"]
+  .institution-notification-icon.green,
+.dark
+  .institution-notification-icon.green {
+  background: rgba(22, 163, 74, 0.14);
+
+  color: #53e58a;
+
+  box-shadow:
+    0 0 14px rgba(22, 163, 74, 0.12);
+}
+
+:is(body, html)[data-theme="dark"]
+  .institution-notification-icon.cyan,
+.dark
+  .institution-notification-icon.cyan {
+  background: rgba(6, 182, 212, 0.14);
+
+  color: #35d9f3;
+
+  box-shadow:
+    0 0 14px rgba(6, 182, 212, 0.13);
+}
+
+
+/* =========================================================
+   DARK TEXT
+========================================================= */
+
+:is(body, html)[data-theme="dark"]
+  .institution-notification-title-row
+  h2,
+.dark
+  .institution-notification-title-row
+  h2 {
+  color: #c8d7e8;
+}
+
+:is(body, html)[data-theme="dark"]
+  .institution-notification-item.unread
+  .institution-notification-title-row
+  h2,
+.dark
+  .institution-notification-item.unread
+  .institution-notification-title-row
+  h2 {
+  color: #f1f6fd;
+}
+
+:is(body, html)[data-theme="dark"]
+  .institution-notification-content
+  p,
+.dark
+  .institution-notification-content
+  p {
+  color: #8296b0;
+}
+
+:is(body, html)[data-theme="dark"]
+  .institution-notification-time,
+.dark
+  .institution-notification-time {
+  color: #71859f;
+}
+
+
+/* =========================================================
+   DARK UNREAD DOT
+========================================================= */
+
+:is(body, html)[data-theme="dark"]
+  .institution-unread-dot,
+.dark .institution-unread-dot {
+  background: #4d9cff;
+
+  box-shadow:
+    0 0 6px #4d9cff,
+    0 0 13px rgba(77, 156, 255, 0.65);
+}
+
+
+/* =========================================================
+   DARK EMPTY
+========================================================= */
+
+:is(body, html)[data-theme="dark"]
+  .institution-notification-empty,
+.dark .institution-notification-empty {
+  background: #0d192b;
+
+  color: #71869f;
+}
+
+:is(body, html)[data-theme="dark"]
+  .institution-notification-empty
+  > div,
+.dark
+  .institution-notification-empty
+  > div {
+  background: rgba(37, 99, 235, 0.15);
+
+  color: #62a8ff;
+
+  box-shadow:
+    0 0 20px rgba(37, 99, 235, 0.15);
+}
+
+:is(body, html)[data-theme="dark"]
+  .institution-notification-empty
+  strong,
+.dark
+  .institution-notification-empty
+  strong {
+  color: #d2deec;
+}
+
+:is(body, html)[data-theme="dark"]
+  .institution-notification-empty
+  span,
+.dark
+  .institution-notification-empty
+  span {
+  color: #71859e;
+}
+
+
+/* =========================================================
+   DARK FOOTER
+========================================================= */
+
+:is(body, html)[data-theme="dark"]
+  .institution-notification-footer,
+.dark .institution-notification-footer {
+  background:
+    linear-gradient(
+      90deg,
+      #102238,
+      #10253d
+    );
+
+  border-color: #294562;
+
+  color: #7f94ad;
+
+  box-shadow:
+    0 0 20px rgba(37, 99, 235, 0.04);
+}
+
+:is(body, html)[data-theme="dark"]
+  .institution-notification-footer
+  svg,
+.dark
+  .institution-notification-footer
+  svg {
+  color: #5da6ff;
+
+  filter:
+    drop-shadow(0 0 5px rgba(59, 130, 246, 0.45));
+}
+
+
+/* =========================================================
+   EXTRA DARK BACKGROUND SAFETY
+   Agar parent/content area white ho raha ho to ye bhi
+   dark mode mein force karega.
+========================================================= */
+
+:is(body, html)[data-theme="dark"]
+  .institution-layout-content,
+:is(body, html)[data-theme="dark"]
+  .institution-main-content,
+:is(body, html)[data-theme="dark"]
+  .institution-content,
+.dark .institution-layout-content,
+.dark .institution-main-content,
+.dark .institution-content {
+  background: #081321 !important;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 750px) {
+  .institution-notifications-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .institution-mark-all {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .institution-notification-tabs {
+    height: auto;
+
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
+  .institution-notification-tabs button {
+    min-height: 44px;
+  }
+}
+
+@media (max-width: 560px) {
+  .institution-notification-toolbar {
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .institution-notification-summary {
+    width: 100%;
+  }
+
+  .institution-notification-item {
+    grid-template-columns:
+      38px
+      minmax(0, 1fr);
+  }
+
+  .institution-notification-time {
+    grid-column: 2;
+
+    justify-self: start;
+
+    margin-top: -7px;
+  }
+}
+
+
+/* =========================================================
+   WORKING SORT DROPDOWN
+========================================================= */
+
+.institution-notification-sort {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.institution-notification-filter {
+  min-width: 112px;
+  justify-content: space-between;
+}
+
+.institution-notification-filter.open {
+  border-color: #8bb7f2;
+  background: #eef6ff;
+  color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.08);
+}
+
+.institution-notification-filter svg {
+  transition: transform 0.2s ease;
+}
+
+.institution-notification-filter svg.rotated {
+  transform: rotate(180deg);
+}
+
+.institution-notification-sort-menu {
+  position: absolute;
+  z-index: 50;
+  top: calc(100% + 7px);
+  right: 0;
+  width: 154px;
+  padding: 5px;
+  background: #ffffff;
+  border: 1px solid #dbe5f2;
+  border-radius: 9px;
+  box-shadow:
+    0 14px 32px rgba(15, 23, 42, 0.14),
+    0 0 0 1px rgba(37, 99, 235, 0.03);
+}
+
+.institution-notification-sort-menu button {
+  width: 100%;
+  min-height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 0 9px;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  background: transparent;
+  color: #59687d;
+  font-size: 9.5px;
+  font-weight: 600;
+  text-align: left;
+  cursor: pointer;
+  transition: 0.18s ease;
+}
+
+.institution-notification-sort-menu button:hover {
+  background: #edf5ff;
+  color: #2563eb;
+}
+
+.institution-notification-sort-menu button.active {
+  background: #eaf2ff;
+  border-color: #d3e5ff;
+  color: #2563eb;
+}
+
+.institution-notification-sort-menu button.active svg {
+  color: #2563eb;
+}
+
+/* Disabled state after everything is read */
+
+.institution-mark-all.disabled {
+  opacity: 0.72;
+  cursor: default;
+  transform: none;
+}
+
+.institution-mark-all.disabled:hover {
+  background: #f6f9ff;
+  border-color: #d8e3f2;
+  transform: none;
+  box-shadow: none;
+}
+
+
+/* =========================================================
+   DARK MODE - WORKING SORT DROPDOWN
+========================================================= */
+
+:is(body, html)[data-theme="dark"]
+  .institution-notification-filter,
+.dark .institution-notification-filter {
+  background: #162a45;
+  border-color: #31557d;
+  color: #a9cbf7;
+  box-shadow:
+    0 0 12px rgba(37, 99, 235, 0.08);
+}
+
+:is(body, html)[data-theme="dark"]
+  .institution-notification-filter:hover,
+.dark .institution-notification-filter:hover {
+  background: #1b3658;
+  border-color: #4c88cc;
+  color: #c7e0ff;
+  box-shadow:
+    0 0 18px rgba(59, 130, 246, 0.18);
+}
+
+:is(body, html)[data-theme="dark"]
+  .institution-notification-filter.open,
+.dark .institution-notification-filter.open {
+  background: #1b3a61;
+  border-color: #5a9ae6;
+  color: #bfe0ff;
+  box-shadow:
+    0 0 0 3px rgba(59, 130, 246, 0.12),
+    0 0 22px rgba(59, 130, 246, 0.18);
+}
+
+:is(body, html)[data-theme="dark"]
+  .institution-notification-sort-menu,
+.dark .institution-notification-sort-menu {
+  background:
+    linear-gradient(
+      145deg,
+      #142942 0%,
+      #0f2036 100%
+    );
+  border-color: #355777;
+  box-shadow:
+    0 16px 38px rgba(0, 0, 0, 0.42),
+    0 0 22px rgba(37, 99, 235, 0.12);
+}
+
+:is(body, html)[data-theme="dark"]
+  .institution-notification-sort-menu button,
+.dark .institution-notification-sort-menu button {
+  color: #9eb2ca;
+}
+
+:is(body, html)[data-theme="dark"]
+  .institution-notification-sort-menu button:hover,
+.dark .institution-notification-sort-menu button:hover {
+  background: #1a3555;
+  border-color: #315b86;
+  color: #a9d1ff;
+  box-shadow:
+    inset 0 0 16px rgba(37, 99, 235, 0.08);
+}
+
+:is(body, html)[data-theme="dark"]
+  .institution-notification-sort-menu button.active,
+.dark .institution-notification-sort-menu button.active {
+  background: #1c3d64;
+  border-color: #4278ad;
+  color: #72b4ff;
+  box-shadow:
+    0 0 14px rgba(37, 99, 235, 0.13),
+    inset 0 0 14px rgba(37, 99, 235, 0.07);
+}
+
+:is(body, html)[data-theme="dark"]
+  .institution-notification-sort-menu button.active svg,
+.dark .institution-notification-sort-menu button.active svg {
+  color: #69adff;
+  filter:
+    drop-shadow(0 0 5px rgba(96, 165, 250, 0.6));
+}
+
+:is(body, html)[data-theme="dark"]
+  .institution-mark-all.disabled,
+.dark .institution-mark-all.disabled {
+  opacity: 0.58;
+  color: #7e94ae;
+  background: #112238;
+  border-color: #273e5a;
+  box-shadow: none;
+}
+
+:is(body, html)[data-theme="dark"]
+  .institution-mark-all.disabled:hover,
+.dark .institution-mark-all.disabled:hover {
+  color: #7e94ae;
+  background: #112238;
+  border-color: #273e5a;
+  box-shadow: none;
+}
