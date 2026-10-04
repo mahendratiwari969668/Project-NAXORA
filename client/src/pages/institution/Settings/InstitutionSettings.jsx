@@ -260,9 +260,6 @@ export default function InstitutionSettings() {
 
   return (
     <div className="institution-settings-page">
-      {/* =================================================
-          PAGE HEADER
-      ================================================= */}
 
       <section className="institution-settings-header">
         <div>
@@ -333,9 +330,6 @@ export default function InstitutionSettings() {
         </div>
       )}
 
-      {/* =================================================
-          TABS
-      ================================================= */}
 
       <nav className="institution-settings-tabs">
         {tabs.map((tab) => {
@@ -360,9 +354,6 @@ export default function InstitutionSettings() {
         })}
       </nav>
 
-      {/* =================================================
-          PROFILE
-      ================================================= */}
 
       {activeTab === "profile" && (
         <form
@@ -662,9 +653,6 @@ export default function InstitutionSettings() {
         </form>
       )}
 
-      {/* =================================================
-          MEMBERS
-      ================================================= */}
 
       {activeTab === "members" && (
         <SettingsPlaceholder
@@ -677,9 +665,6 @@ export default function InstitutionSettings() {
         />
       )}
 
-      {/* =================================================
-          ACCOUNT
-      ================================================= */}
 
       {activeTab === "account" && (
         <SettingsPlaceholder
@@ -692,10 +677,6 @@ export default function InstitutionSettings() {
         />
       )}
 
-      {/* =================================================
-          NOTIFICATIONS
-      ================================================= */}
-
       {activeTab === "notifications" && (
         <SettingsPlaceholder
           icon={Bell}
@@ -707,9 +688,6 @@ export default function InstitutionSettings() {
         />
       )}
 
-      {/* =================================================
-          SECURITY
-      ================================================= */}
 
       {activeTab === "security" && (
         <SettingsPlaceholder
@@ -725,9 +703,6 @@ export default function InstitutionSettings() {
   );
 }
 
-/* =========================================================
-   PLACEHOLDER
-========================================================= */
 
 function SettingsPlaceholder({
   icon: Icon,

@@ -217,9 +217,6 @@ export default function InstitutionNotifications() {
 
   return (
     <div className="institution-notifications-page">
-      {/* =================================================
-          HEADER
-      ================================================= */}
 
       <section className="institution-notifications-header">
         <div>
@@ -249,11 +246,6 @@ export default function InstitutionNotifications() {
             : "Mark all as read"}
         </button>
       </section>
-
-      {/* =================================================
-          TABS
-      ================================================= */}
-
       <nav className="institution-notification-tabs">
         {tabs.map((tab) => {
           const count =
@@ -282,9 +274,6 @@ export default function InstitutionNotifications() {
         })}
       </nav>
 
-      {/* =================================================
-          TOOLBAR
-      ================================================= */}
 
       <section className="institution-notification-toolbar">
         <div className="institution-notification-summary">
@@ -358,10 +347,6 @@ export default function InstitutionNotifications() {
         </div>
       </section>
 
-      {/* =================================================
-          NOTIFICATION LIST
-      ================================================= */}
-
       <section className="institution-notification-list">
         {filteredNotifications.length > 0 ? (
           filteredNotifications.map(
@@ -390,10 +375,6 @@ export default function InstitutionNotifications() {
         )}
       </section>
 
-      {/* =================================================
-          FOOTER INFO
-      ================================================= */}
-
       <div className="institution-notification-footer">
         <Info size={15} />
 
@@ -406,10 +387,6 @@ export default function InstitutionNotifications() {
     </div>
   );
 }
-
-/* =========================================================
-   NOTIFICATION ITEM
-========================================================= */
 
 function NotificationItem({ notification }) {
   const Icon = notification.icon;

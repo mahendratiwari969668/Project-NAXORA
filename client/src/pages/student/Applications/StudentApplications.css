@@ -1,17 +1,10 @@
-/* =========================================================
-   NEXORA - STUDENT APPLICATIONS
-   Premium cyan / blue visual system
-========================================================= */
+
 
 .student-applications-page {
   min-height: 100%;
   background: transparent;
   color: inherit;
 }
-
-/* =========================================================
-   MAIN
-========================================================= */
 
 .applications-main {
   max-width: 1420px;
@@ -63,9 +56,6 @@
   white-space: nowrap;
 }
 
-/* =========================================================
-   SEARCH
-========================================================= */
 
 .applications-toolbar {
   margin-bottom: 17px;
@@ -117,10 +107,6 @@
   color: #72879b;
   cursor: pointer;
 }
-
-/* =========================================================
-   TABS
-========================================================= */
 
 .applications-tabs-card {
   margin-bottom: 17px;
@@ -184,9 +170,6 @@
   font-size: 14px;
 }
 
-/* =========================================================
-   LIST
-========================================================= */
 
 .applications-list {
   display: flex;
@@ -194,9 +177,6 @@
   gap: 15px;
 }
 
-/* =========================================================
-   APPLICATION CARD
-========================================================= */
 
 .application-card {
   position: relative;
@@ -339,10 +319,6 @@
   background: rgba(27, 77, 108, 0.55);
 }
 
-/* =========================================================
-   STATUS
-========================================================= */
-
 .application-status-badge {
   min-height: 27px;
   display: inline-flex;
@@ -372,10 +348,6 @@
   border: 1px solid rgba(46, 181, 120, 0.18);
 }
 
-/* =========================================================
-   META
-========================================================= */
-
 .application-meta {
   display: flex;
   flex-wrap: wrap;
@@ -397,9 +369,6 @@
   color: #49cde5;
 }
 
-/* =========================================================
-   TIMELINE
-========================================================= */
 
 .application-timeline {
   display: grid;
@@ -497,9 +466,6 @@
   font-weight: 700;
 }
 
-/* =========================================================
-   EMPTY
-========================================================= */
 
 .applications-empty {
   min-height: 320px;
@@ -549,10 +515,6 @@
   font-weight: 700;
   cursor: pointer;
 }
-
-/* =========================================================
-   DISCOVER CARD
-========================================================= */
 
 .applications-discover-card {
   position: relative;
@@ -638,10 +600,6 @@
   box-shadow: 0 7px 20px rgba(19, 114, 197, 0.2);
 }
 
-/* =========================================================
-   LIGHT MODE
-   Still keeps NEXORA blue/cyan identity
-========================================================= */
 
 html:not(.dark) .student-applications-page {
   background:
@@ -794,9 +752,6 @@ html:not(.dark) .applications-discover-card p {
   color: #6d7d8e;
 }
 
-/* =========================================================
-   RESPONSIVE
-========================================================= */
 
 @media (max-width: 760px) {
 .applications-main {
@@ -865,11 +820,6 @@ html:not(.dark) .applications-discover-card p {
     justify-content: center;
   }
 }
-
-/* =========================================================
-   APPLICATION WORKSPACE BUTTON
-   ========================================================= */
-
 .applications-heading-status {
   border: 1px solid rgba(87, 139, 174, 0.23);
   cursor: pointer;
@@ -898,9 +848,6 @@ html:not(.dark) .applications-heading-status:hover {
 }
 
 
-/* =========================================================
-   APPLICATION DETAILS PAGE
-   ========================================================= */
 
 .application-details-back {
   min-height: 40px;
@@ -929,9 +876,6 @@ html:not(.dark) .applications-heading-status:hover {
 }
 
 
-/* =========================================================
-   DETAILS CARD
-   ========================================================= */
 
 .application-details-card {
   position: relative;
@@ -956,10 +900,6 @@ html:not(.dark) .applications-heading-status:hover {
     inset 0 1px 0 rgba(170, 215, 241, 0.035);
 }
 
-
-/* =========================================================
-   DETAILS HEADER
-   ========================================================= */
 
 .application-details-header {
   display: flex;
@@ -1004,10 +944,6 @@ html:not(.dark) .applications-heading-status:hover {
 }
 
 
-/* =========================================================
-   DETAILS META
-   ========================================================= */
-
 .application-details-meta {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -1040,10 +976,6 @@ html:not(.dark) .applications-heading-status:hover {
 }
 
 
-/* =========================================================
-   DETAILS SECTION
-   ========================================================= */
-
 .application-details-section {
   margin-top: 30px;
 }
@@ -1069,10 +1001,6 @@ html:not(.dark) .applications-heading-status:hover {
   line-height: 1.75;
 }
 
-
-/* =========================================================
-   DETAILS TIMELINE
-   ========================================================= */
 
 .application-details-timeline {
   display: grid;
@@ -1170,10 +1098,6 @@ html:not(.dark) .applications-heading-status:hover {
 }
 
 
-/* =========================================================
-   DETAILS GRID
-   ========================================================= */
-
 .application-details-grid {
   display: grid;
   grid-template-columns: minmax(0, 1.4fr) minmax(250px, 0.8fr);
@@ -1186,10 +1110,6 @@ html:not(.dark) .applications-heading-status:hover {
   min-width: 0;
 }
 
-
-/* =========================================================
-   DETAILS SKILLS
-   ========================================================= */
 
 .application-details-skills {
   display: flex;
@@ -1208,10 +1128,6 @@ html:not(.dark) .applications-heading-status:hover {
   font-weight: 600;
 }
 
-
-/* =========================================================
-   CURRENT STATUS
-   ========================================================= */
 
 .application-current-status {
   display: flex;
@@ -1246,10 +1162,6 @@ html:not(.dark) .applications-heading-status:hover {
   color: #50ddef;
 }
 
-
-/* =========================================================
-   NOT FOUND
-   ========================================================= */
 
 .application-details-not-found {
   min-height: 420px;
@@ -1305,9 +1217,6 @@ html:not(.dark) .applications-heading-status:hover {
 }
 
 
-/* =========================================================
-   LIGHT MODE — DETAILS
-   ========================================================= */
 
 html:not(.dark) .application-details-back {
   background: #ffffff;
@@ -1445,9 +1354,6 @@ html:not(.dark) .application-details-not-found button {
 }
 
 
-/* =========================================================
-   DETAILS RESPONSIVE
-   ========================================================= */
 
 @media (max-width: 900px) {
   .application-details-meta {

@@ -1,8 +1,4 @@
-/* =========================================================
-   NEXORA — STUDENT OPPORTUNITIES
-   Content styles only
-   Sidebar + Topbar are handled by StudentLayout
-========================================================= */
+
 
 .student-opportunities-page {
   min-height: 100%;
@@ -66,9 +62,6 @@
   white-space: nowrap;
 }
 
-/* =========================================================
-   SEARCH
-========================================================= */
 
 .opportunities-search-card {
   display: flex;
@@ -153,20 +146,12 @@
   color: #2457c5;
 }
 
-/* =========================================================
-   CONTENT LAYOUT
-========================================================= */
-
 .opportunities-layout {
   display: grid;
   grid-template-columns: 225px minmax(0, 1fr);
   gap: 25px;
   align-items: start;
 }
-
-/* =========================================================
-   INTERNAL OPPORTUNITY SIDEBAR
-========================================================= */
 
 .opportunities-section-sidebar {
   position: sticky;
@@ -221,10 +206,6 @@
   color: #2457c5;
 }
 
-/* =========================================================
-   QUICK FILTERS
-========================================================= */
-
 .opportunities-filter-panel {
   margin-top: 22px;
   padding-top: 18px;
@@ -261,10 +242,6 @@
   color: #2457c5;
 }
 
-/* =========================================================
-   RESULTS
-========================================================= */
-
 .opportunities-results {
   min-width: 0;
 }
@@ -290,10 +267,6 @@
   font-size: 23px;
   letter-spacing: -0.02em;
 }
-
-/* =========================================================
-   SORT
-========================================================= */
 
 .opportunities-sort-wrapper {
   position: relative;
@@ -348,9 +321,6 @@
   color: #2457c5;
 }
 
-/* =========================================================
-   ACTIVE FILTERS
-========================================================= */
 
 .opportunities-active-filters {
   display: flex;
@@ -387,19 +357,11 @@
   color: #2457c5;
 }
 
-/* =========================================================
-   OPPORTUNITY LIST
-========================================================= */
-
 .opportunities-list {
   display: flex;
   flex-direction: column;
   gap: 14px;
 }
-
-/* =========================================================
-   OPPORTUNITY CARD
-========================================================= */
 
 .opportunity-card {
   padding: 24px;
@@ -422,9 +384,6 @@
   border-left: 4px solid #3768c5;
 }
 
-/* =========================================================
-   CARD TOP
-========================================================= */
 
 .opportunity-card-top {
   display: flex;
@@ -447,10 +406,6 @@
   min-width: 0;
   flex: 1;
 }
-
-/* =========================================================
-   META
-========================================================= */
 
 .opportunity-meta {
   display: flex;
@@ -491,9 +446,6 @@
   font-size: 14px;
 }
 
-/* =========================================================
-   SAVE
-========================================================= */
 
 .opportunity-save {
   width: 40px;
@@ -519,10 +471,6 @@
   border-color: #ccdafa;
 }
 
-/* =========================================================
-   DESCRIPTION
-========================================================= */
-
 .opportunity-description {
   max-width: 850px;
   margin: 17px 0;
@@ -530,10 +478,6 @@
   font-size: 15px;
   line-height: 1.65;
 }
-
-/* =========================================================
-   DETAILS
-========================================================= */
 
 .opportunity-details {
   display: flex;
@@ -556,9 +500,6 @@
   color: #71809a;
 }
 
-/* =========================================================
-   CARD BOTTOM
-========================================================= */
 
 .opportunity-card-bottom {
   display: flex;
@@ -619,10 +560,6 @@
   transform: translateY(-1px);
 }
 
-/* =========================================================
-   EMPTY STATE
-========================================================= */
-
 .opportunities-empty {
   min-height: 350px;
   display: flex;
@@ -678,10 +615,6 @@
   border-color: #c5d0dd;
 }
 
-/* =========================================================
-   BOTTOM TIP
-========================================================= */
-
 .opportunities-bottom-tip {
   display: flex;
   align-items: center;
@@ -735,9 +668,6 @@
   text-decoration: underline;
 }
 
-/* =========================================================
-   FILTER MODAL
-========================================================= */
 
 .opportunities-filter-overlay {
   position: fixed;
@@ -803,9 +733,6 @@
   color: #172033;
 }
 
-/* =========================================================
-   FILTER FIELDS
-========================================================= */
 
 .opportunities-filter-field {
   margin-bottom: 20px;
@@ -840,9 +767,6 @@
   box-shadow: 0 0 0 3px rgba(77, 114, 199, 0.09);
 }
 
-/* =========================================================
-   FILTER ACTIONS
-========================================================= */
 
 .opportunities-filter-modal-actions {
   display: flex;
@@ -885,9 +809,6 @@
   background: #1e4cae;
 }
 
-/* =========================================================
-   OPPORTUNITY DETAILS PAGE
-========================================================= */
 
 .opportunity-details-back {
   display: inline-flex;
@@ -975,10 +896,6 @@
   color: #72809a;
 }
 
-/* =========================================================
-   DETAILS CONTENT
-========================================================= */
-
 .opportunity-details-content {
   display: grid;
   grid-template-columns: minmax(0, 1fr) 290px;
@@ -1051,10 +968,6 @@
   font-weight: 700;
 }
 
-/* =========================================================
-   DETAILS SIDEBAR
-========================================================= */
-
 .opportunity-details-sidebar {
   display: flex;
   flex-direction: column;
@@ -1113,9 +1026,6 @@
   transform: translateY(-1px);
 }
 
-/* =========================================================
-   DETAILS NOT FOUND
-========================================================= */
 
 .opportunity-details-not-found {
   min-height: 430px;
@@ -1167,9 +1077,6 @@
   cursor: pointer;
 }
 
-/* =========================================================
-   DARK MODE
-========================================================= */
 
 html.dark .student-opportunities-page {
   color: #edf2f7;
@@ -1460,10 +1367,6 @@ html.dark .opportunities-bottom-tip a {
   color: #8eb4ff;
 }
 
-/* =========================================================
-   DARK FILTER MODAL
-========================================================= */
-
 html.dark .opportunities-filter-overlay {
   background: rgba(3, 8, 15, 0.72);
 }
@@ -1532,9 +1435,6 @@ html.dark .filter-apply-button {
   border-color: #3768c5;
 }
 
-/* =========================================================
-   DARK DETAILS PAGE
-========================================================= */
 
 html.dark .opportunity-details-back {
   background: #151b24;
@@ -1652,10 +1552,6 @@ html.dark .opportunity-details-not-found button {
   border-color: #344052;
   color: #8eb4ff;
 }
-
-/* =========================================================
-   RESPONSIVE
-========================================================= */
 
 @media (max-width: 1050px) {
   .opportunities-main {

@@ -235,9 +235,6 @@ export default function InstitutionInternships() {
   return (
     <div className="institution-internships-page">
 
-      {/* =========================
-          TABS
-      ========================== */}
 
       <nav className="institution-internship-tabs">
 
@@ -286,9 +283,6 @@ export default function InstitutionInternships() {
       </nav>
 
 
-      {/* =========================
-          OPPORTUNITIES
-      ========================== */}
 
       {activeTab === "opportunities" && (
         <>
@@ -501,9 +495,6 @@ export default function InstitutionInternships() {
       )}
 
 
-      {/* =========================
-          APPLICATIONS
-      ========================== */}
 
       {activeTab === "applications" && (
         <section className="institution-internship-placeholder">
@@ -525,9 +516,6 @@ export default function InstitutionInternships() {
       )}
 
 
-      {/* =========================
-          TRACKING
-      ========================== */}
 
       {activeTab === "tracking" && (
         <section className="institution-internship-placeholder">
@@ -548,9 +536,6 @@ export default function InstitutionInternships() {
         </section>
       )}
 
-      {/* =========================
-          OPPORTUNITY DETAILS MODAL
-      ========================== */}
 
       {selectedOpportunity && (
         <div
@@ -852,10 +837,6 @@ export default function InstitutionInternships() {
   );
 }
 
-
-/* =========================================================
-   FILTER COMPONENT
-========================================================= */
 
 function FilterSelect({
   value,

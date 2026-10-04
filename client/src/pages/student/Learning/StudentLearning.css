@@ -1,18 +1,10 @@
-/* =========================================================
-   NEXORA — STUDENT LEARNING
-   Content styles only
-   Sidebar + Topbar are handled by StudentLayout
-========================================================= */
+
 
 .student-learning-page {
   min-height: 100%;
   color: #172033;
 }
 
-
-/* =========================================================
-   MAIN
-========================================================= */
 
 .learning-main {
   width: 100%;
@@ -21,11 +13,6 @@
   padding: 40px 42px 60px;
   box-sizing: border-box;
 }
-
-
-/* =========================================================
-   HEADING
-========================================================= */
 
 .learning-heading {
   display: flex;
@@ -72,9 +59,6 @@
 }
 
 
-/* =========================================================
-   SEARCH
-========================================================= */
 
 .learning-search-wrapper {
   margin-bottom: 16px;
@@ -121,10 +105,6 @@
   color: #8b9aaa;
 }
 
-
-/* =========================================================
-   TABS
-========================================================= */
 
 .learning-tabs-card {
   padding: 5px;
@@ -177,9 +157,6 @@
 }
 
 
-/* =========================================================
-   SECTION HEADING
-========================================================= */
 
 .learning-section-heading {
   display: flex;
@@ -231,20 +208,12 @@
 }
 
 
-/* =========================================================
-   COURSE GRID
-========================================================= */
-
 .learning-course-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 16px;
 }
 
-
-/* =========================================================
-   COURSE CARD
-========================================================= */
 
 .learning-course-card {
   position: relative;
@@ -282,9 +251,6 @@
 }
 
 
-/* =========================================================
-   COURSE ICON
-========================================================= */
 
 .learning-course-icon {
   width: 46px;
@@ -313,10 +279,6 @@
   color: #2ba878;
 }
 
-
-/* =========================================================
-   SAVE BUTTON
-========================================================= */
 
 .learning-save {
   width: 35px;
@@ -356,10 +318,6 @@
 }
 
 
-/* =========================================================
-   COURSE CONTENT
-========================================================= */
-
 .learning-course-level {
   color: #718296;
   font-size: 14px;
@@ -378,10 +336,6 @@
   line-height: 1.5;
 }
 
-
-/* =========================================================
-   COURSE META
-========================================================= */
 
 .learning-course-meta {
   display: flex;
@@ -405,10 +359,6 @@
   color: #d99f1b;
 }
 
-
-/* =========================================================
-   COURSE BUTTON
-========================================================= */
 
 .learning-course-button {
   min-height: 40px;
@@ -443,9 +393,6 @@
 }
 
 
-/* =========================================================
-   ROADMAP
-========================================================= */
 
 .learning-roadmap-section {
   margin-top: 35px;
@@ -559,11 +506,6 @@
   color: #087e9e;
 }
 
-
-/* =========================================================
-   BOTTOM CARD
-========================================================= */
-
 .learning-bottom-card {
   display: flex;
   align-items: center;
@@ -661,12 +603,6 @@
 }
 
 
-/* =========================================================
-   DARK MODE
-   StudentLayout handles sidebar/topbar.
-   This file handles Learning content only.
-========================================================= */
-
 html.dark .student-learning-page {
   color: #edf7ff;
 }
@@ -690,9 +626,6 @@ html.dark .learning-heading-status {
 }
 
 
-/* =========================================================
-   DARK SEARCH
-========================================================= */
 
 html.dark .learning-search {
   border-color: rgba(84, 135, 170, 0.22);
@@ -714,9 +647,6 @@ html.dark .learning-search input::placeholder {
 }
 
 
-/* =========================================================
-   DARK TABS
-========================================================= */
 
 html.dark .learning-tabs-card {
   border-color: rgba(83, 133, 169, 0.2);
@@ -743,9 +673,6 @@ html.dark .learning-tabs button.active {
 }
 
 
-/* =========================================================
-   DARK SECTION
-========================================================= */
 
 html.dark .learning-section-heading > div > span {
   color: #71879b;
@@ -766,11 +693,6 @@ html.dark .learning-section-heading p strong {
 html.dark .learning-section-heading button {
   color: #4fdff4;
 }
-
-
-/* =========================================================
-   DARK COURSE CARD
-========================================================= */
 
 html.dark .learning-course-card {
   border-color: rgba(82, 137, 174, 0.2);
@@ -824,10 +746,6 @@ html.dark .learning-save:hover {
 }
 
 
-/* =========================================================
-   DARK ROADMAP
-========================================================= */
-
 html.dark .learning-roadmap {
   border-color: rgba(82, 137, 174, 0.2);
 
@@ -867,10 +785,6 @@ html.dark .roadmap-status.progress {
 }
 
 
-/* =========================================================
-   DARK BOTTOM CARD
-========================================================= */
-
 html.dark .learning-bottom-card {
   border-color: rgba(65, 154, 198, 0.24);
 
@@ -898,11 +812,6 @@ html.dark .learning-bottom-card h3 {
 html.dark .learning-bottom-card p {
   color: #8297aa;
 }
-
-
-/* =========================================================
-   RESPONSIVE
-========================================================= */
 
 @media (max-width: 1050px) {
   .learning-main {
@@ -975,11 +884,6 @@ html.dark .learning-bottom-card p {
 }
 
 
-/* =========================================================
-   LEARNING DETAILS PAGE
-   Added for /student/learning/:resourceId
-========================================================= */
-
 .learning-details-back {
   min-height: 40px;
 
@@ -1016,10 +920,6 @@ html.dark .learning-bottom-card p {
 }
 
 
-/* =========================================================
-   DETAILS CARD
-========================================================= */
-
 .learning-details-card {
   position: relative;
   overflow: hidden;
@@ -1045,10 +945,6 @@ html.dark .learning-bottom-card p {
     0 12px 32px rgba(35, 75, 112, 0.08);
 }
 
-
-/* =========================================================
-   DETAILS HEADER
-========================================================= */
 
 .learning-details-header {
   display: flex;
@@ -1122,10 +1018,6 @@ html.dark .learning-bottom-card p {
 }
 
 
-/* =========================================================
-   DETAILS META
-========================================================= */
-
 .learning-details-meta {
   display: flex;
   align-items: center;
@@ -1149,10 +1041,6 @@ html.dark .learning-bottom-card p {
   color: #d99f1b;
 }
 
-
-/* =========================================================
-   DETAILS SECTION
-========================================================= */
 
 .learning-details-section {
   margin-top: 32px;
@@ -1193,11 +1081,6 @@ html.dark .learning-bottom-card p {
   line-height: 1.75;
 }
 
-
-/* =========================================================
-   SKILLS
-========================================================= */
-
 .learning-details-skills {
   display: flex;
   flex-wrap: wrap;
@@ -1228,9 +1111,6 @@ html.dark .learning-bottom-card p {
 }
 
 
-/* =========================================================
-   LEARNING MODULES
-========================================================= */
 
 .learning-modules {
   display: grid;
@@ -1312,10 +1192,6 @@ html.dark .learning-bottom-card p {
   color: #7c91a4;
 }
 
-
-/* =========================================================
-   START LEARNING CTA
-========================================================= */
 
 .learning-start-card {
   display: flex;
@@ -1428,10 +1304,6 @@ html.dark .learning-bottom-card p {
 }
 
 
-/* =========================================================
-   DETAILS NOT FOUND
-========================================================= */
-
 .learning-details-not-found {
   min-height: 400px;
 
@@ -1504,11 +1376,6 @@ html.dark .learning-bottom-card p {
 
   cursor: pointer;
 }
-
-
-/* =========================================================
-   DARK MODE — DETAILS
-========================================================= */
 
 html.dark .learning-details-back {
   border-color: rgba(87, 139, 174, 0.23);
@@ -1661,10 +1528,6 @@ html.dark .learning-details-not-found button {
   color: #51dcef;
 }
 
-
-/* =========================================================
-   DETAILS RESPONSIVE
-========================================================= */
 
 @media (max-width: 760px) {
   .learning-details-card {

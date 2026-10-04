@@ -1,6 +1,4 @@
-/* =========================================================
-   INSTITUTION STUDENTS
-========================================================= */
+
 
 .institution-students-page {
   width: 100%;
@@ -9,9 +7,6 @@
 }
 
 
-/* =========================================================
-   HEADER
-========================================================= */
 
 .institution-students-header {
   display: flex;
@@ -53,9 +48,6 @@
 }
 
 
-/* =========================================================
-   ACTION BUTTONS
-========================================================= */
 
 .institution-students-actions {
   display: flex;
@@ -122,9 +114,6 @@
 }
 
 
-/* =========================================================
-   TOOLBAR
-========================================================= */
 
 .institution-students-toolbar {
   min-height: 62px;
@@ -256,11 +245,6 @@
   color: #98a4b4;
 }
 
-
-/* =========================================================
-   TABLE CARD
-========================================================= */
-
 .institution-students-table-card {
   overflow: hidden;
 
@@ -286,10 +270,6 @@
   min-width: 900px;
 }
 
-
-/* =========================================================
-   TABLE HEADER
-========================================================= */
 
 .institution-students-table thead {
   background: #f8fafc;
@@ -323,9 +303,6 @@
 }
 
 
-/* =========================================================
-   TABLE BODY
-========================================================= */
 
 .institution-students-table td {
   height: 62px;
@@ -359,10 +336,6 @@
   text-align: center;
 }
 
-
-/* =========================================================
-   STUDENT NAME
-========================================================= */
 
 .student-name-cell {
   display: flex;
@@ -423,9 +396,6 @@
 }
 
 
-/* =========================================================
-   STATUS
-========================================================= */
 
 .student-status {
   display: inline-flex;
@@ -468,11 +438,6 @@
 .student-status.inactive .student-status-dot {
   background: #ef4444;
 }
-
-
-/* =========================================================
-   PROFILE COMPLETION
-========================================================= */
 
 .student-profile-cell {
   display: flex;
@@ -519,9 +484,6 @@
 }
 
 
-/* =========================================================
-   MORE BUTTON
-========================================================= */
 
 .student-more-button {
   width: 31px;
@@ -553,9 +515,6 @@
 }
 
 
-/* =========================================================
-   EMPTY STATE
-========================================================= */
 
 .institution-students-empty {
   height: 260px !important;
@@ -590,10 +549,6 @@
   font-size: 10.5px;
 }
 
-
-/* =========================================================
-   PAGINATION
-========================================================= */
 
 .institution-students-pagination {
   min-height: 58px;
@@ -673,10 +628,6 @@
   font-size: 11px;
 }
 
-
-/* =========================================================
-   DARK MODE
-========================================================= */
 
 body[data-theme="dark"] .institution-students-header h1,
 html[data-theme="dark"] .institution-students-header h1 {
@@ -1007,9 +958,6 @@ html[data-theme="dark"] .student-pagination-dots {
 }
 
 
-/* =========================================================
-   RESPONSIVE
-========================================================= */
 
 @media (max-width: 1000px) {
   .institution-students-header {
@@ -1070,9 +1018,6 @@ html[data-theme="dark"] .student-pagination-dots {
   }
 }
 
-/* =========================================
-   CLICKABLE STUDENT ROW
-========================================= */
 
 .institution-student-row {
   cursor: pointer;
@@ -1116,9 +1061,6 @@ html[data-theme="dark"] .student-pagination-dots {
   .student-more-button {
   cursor: pointer;
 }
-/* =========================================================
-   CLICKABLE STUDENT ROW
-========================================================= */
 
 .institution-student-row {
   cursor: pointer;
@@ -1154,9 +1096,6 @@ html[data-theme="dark"] .student-pagination-dots {
 }
 
 
-/* =========================================================
-   STUDENT DETAILS MODAL
-========================================================= */
 
 .institution-student-modal-overlay {
   position: fixed;
@@ -1278,10 +1217,6 @@ html[data-theme="dark"] .student-pagination-dots {
 }
 
 
-/* =========================================================
-   STUDENT DETAILS
-========================================================= */
-
 .institution-student-details {
   padding: 24px;
 }
@@ -1356,10 +1291,6 @@ html[data-theme="dark"] .student-pagination-dots {
 }
 
 
-/* =========================================================
-   MODAL FOOTER
-========================================================= */
-
 .institution-student-modal-footer {
   display: flex;
   align-items: center;
@@ -1433,9 +1364,6 @@ html[data-theme="dark"] .student-pagination-dots {
 }
 
 
-/* =========================================================
-   STUDENT FORM
-========================================================= */
 
 .institution-student-form {
   padding: 24px;
@@ -1509,10 +1437,6 @@ html[data-theme="dark"] .student-pagination-dots {
   color: #a0aaba;
 }
 
-
-/* =========================================================
-   DARK MODE - STUDENT MODAL
-========================================================= */
 
 body[data-theme="dark"] .institution-student-modal-overlay,
 html[data-theme="dark"] .institution-student-modal-overlay {
@@ -1659,9 +1583,6 @@ html[data-theme="dark"] .institution-student-form-group input::placeholder {
 }
 
 
-/* =========================================================
-   RESPONSIVE MODAL
-========================================================= */
 
 @media (max-width: 600px) {
   .institution-student-modal-overlay {

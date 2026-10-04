@@ -14,20 +14,11 @@ import { Link, useNavigate, useParams } from "react-router-dom";
 import { useState } from "react";
 
 import "./StudentLearning.css";
-
-/* =========================================================
-   LEARNING TABS
-========================================================= */
-
 const learningTabs = [
   "Recommendations",
   "Learning Roadmap",
   "Saved Resources",
 ];
-
-/* =========================================================
-   COURSES
-========================================================= */
 
 const courses = [
   {
@@ -116,11 +107,7 @@ const courses = [
       "Database Integration",
     ],
   },
-];
-
-/* =========================================================
-   LEARNING ROADMAP
-========================================================= */
+]; 
 
 const roadmap = [
   {
@@ -148,10 +135,6 @@ const roadmap = [
   },
 ];
 
-/* =========================================================
-   MAIN COMPONENT
-========================================================= */
-
 export default function StudentLearning() {
   const [activeTab, setActiveTab] =
     useState("Recommendations");
@@ -163,10 +146,6 @@ export default function StudentLearning() {
   const { resourceId } = useParams();
 
   const navigate = useNavigate();
-
-  /* =======================================================
-     COURSE DETAILS
-  ======================================================= */
 
   if (resourceId) {
     const course = courses.find(
@@ -218,9 +197,6 @@ export default function StudentLearning() {
       <div className="student-learning-page">
         <main className="learning-main">
 
-          {/* =================================================
-              BACK BUTTON
-          ================================================= */}
 
           <button
             type="button"
@@ -232,10 +208,6 @@ export default function StudentLearning() {
             <ArrowLeft size={17} />
             Back to Learning
           </button>
-
-          {/* =================================================
-              COURSE DETAILS
-          ================================================= */}
 
           <section className="learning-details-card">
 
@@ -403,9 +375,6 @@ export default function StudentLearning() {
     );
   }
 
-  /* =========================================================
-     FILTER COURSES
-  ========================================================= */
 
   const visibleCourses = courses.filter((course) => {
     const value = search.toLowerCase().trim();
@@ -424,9 +393,6 @@ export default function StudentLearning() {
     );
   });
 
-  /* =========================================================
-     SAVE / UNSAVE
-  ========================================================= */
 
   const toggleSaved = (id) => {
     setSavedCourses((current) =>
@@ -436,17 +402,11 @@ export default function StudentLearning() {
     );
   };
 
-  /* =========================================================
-     MAIN LEARNING PAGE
-  ========================================================= */
 
   return (
     <div className="student-learning-page">
       <main className="learning-main">
 
-        {/* =================================================
-            PAGE HEADING
-        ================================================= */}
 
         <section className="learning-heading">
 
@@ -471,11 +431,6 @@ export default function StudentLearning() {
           </div>
 
         </section>
-
-        {/* =================================================
-            SEARCH
-        ================================================= */}
-
         <div className="learning-search-wrapper">
 
           <div className="learning-search">
@@ -495,9 +450,6 @@ export default function StudentLearning() {
 
         </div>
 
-        {/* =================================================
-            TABS
-        ================================================= */}
 
         <section className="learning-tabs-card">
 
@@ -524,9 +476,6 @@ export default function StudentLearning() {
 
         </section>
 
-        {/* =================================================
-            RECOMMENDATIONS
-        ================================================= */}
 
         {activeTab === "Recommendations" && (
           <section className="learning-recommendations">
@@ -658,10 +607,6 @@ export default function StudentLearning() {
           </section>
         )}
 
-        {/* =================================================
-            ROADMAP
-        ================================================= */}
-
         {(activeTab === "Learning Roadmap" ||
           activeTab === "Recommendations") && (
           <section className="learning-roadmap-section">
@@ -740,10 +685,6 @@ export default function StudentLearning() {
 
           </section>
         )}
-
-        {/* =================================================
-            SAVED RESOURCES
-        ================================================= */}
 
         {activeTab === "Saved Resources" && (
           <section className="learning-saved-section">
@@ -853,9 +794,6 @@ export default function StudentLearning() {
           </section>
         )}
 
-        {/* =================================================
-            BOTTOM CTA
-        ================================================= */}
 
         <section className="learning-bottom-card">
 

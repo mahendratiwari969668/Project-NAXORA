@@ -1,3 +1,17 @@
 import { FileText, Target, BookOpen, BriefcaseBusiness, CheckCircle2 } from 'lucide-react';
-const steps=[['01','Build your profile','Bring education, skills, projects and evidence together.',FileText],['02','Map your skills','Compare current capabilities with your target direction.',Target],['03','Close the gaps','Use learning and development signals to decide what to build next.',BookOpen],['04','Discover opportunities','Find internships, jobs and programs aligned with your profile.',BriefcaseBusiness],['05','Track outcomes','Manage applications, hiring stages and progress.',CheckCircle2]];
-export default function HowItWorks(){return <section id="how-it-works" className="section journey-section"><div className="container"><div className="narrow-heading"><div className="eyebrow">HOW IT WORKS</div><h2>One connected journey from skills to outcomes.</h2><p>The workflow is designed to keep deterministic platform data at the center and use AI only where it adds assistance.</p></div><div className="journey-grid">{steps.map(([number,title,text,Icon])=><div className="journey-step" key={number}><span><Icon size={16}/></span><h3>{title}</h3><p>{text}</p></div>)}</div></div></section>}
+const steps = [
+    ['01', 'Build your profile', 'Bring education, skills, projects and evidence together.', FileText], ['02', 'Map your skills', 'Compare current capabilities with your target direction.', Target], ['03', 'Close the gaps', 'Use learning and development signals to decide what to build next.', BookOpen], ['04', 'Discover opportunities', 'Find internships, jobs and programs aligned with your profile.', BriefcaseBusiness], ['05', 'Track outcomes', 'Manage applications, hiring stages and progress.', CheckCircle2]
+];
+export default function HowItWorks() {
+    return <section id="how-it-works" className="section journey-section">
+        <div className="container">
+            <div className="narrow-heading">
+                <div className="eyebrow">HOW IT WORKS</div>
+                <h2>One connected journey from skills to outcomes.</h2>
+                <p>The workflow is designed to keep deterministic platform data at the center and use AI only where it adds assistance.</p>
+            </div>
+            <div className="journey-grid">{steps.map(([number, title, text, Icon]) => <div className="journey-step" key={number}><span><Icon size={16} /></span><h3>{title}</h3><p>{text}</p></div>)}
+            </div>
+        </div>
+    </section>
+}

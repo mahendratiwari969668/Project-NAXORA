@@ -1,6 +1,4 @@
-/* =========================================================
-   INSTITUTION INTERNSHIPS
-========================================================= */
+
 
 .institution-internships-page {
   width: 100%;
@@ -9,9 +7,6 @@
 }
 
 
-/* =========================================================
-   TABS
-========================================================= */
 
 .institution-internship-tabs {
   height: 48px;
@@ -82,9 +77,6 @@
 }
 
 
-/* =========================================================
-   HEADER
-========================================================= */
 
 .institution-internship-header {
   margin-bottom: 18px;
@@ -121,9 +113,6 @@
 }
 
 
-/* =========================================================
-   TOOLBAR
-========================================================= */
 
 .institution-internship-toolbar {
   min-height: 60px;
@@ -237,9 +226,6 @@
 }
 
 
-/* =========================================================
-   OPPORTUNITY LIST
-========================================================= */
 
 .institution-opportunity-list {
   display: flex;
@@ -288,10 +274,6 @@
 }
 
 
-/* =========================================================
-   COMPANY ICON
-========================================================= */
-
 .institution-company-icon {
   width: 49px;
   height: 49px;
@@ -334,9 +316,6 @@
 }
 
 
-/* =========================================================
-   OPPORTUNITY MAIN
-========================================================= */
 
 .institution-opportunity-main {
   min-width: 0;
@@ -378,9 +357,6 @@
 }
 
 
-/* =========================================================
-   STATUS
-========================================================= */
 
 .institution-opportunity-status {
   flex-shrink: 0;
@@ -406,9 +382,6 @@
 }
 
 
-/* =========================================================
-   SKILLS
-========================================================= */
 
 .institution-opportunity-skills {
   display: flex;
@@ -435,10 +408,6 @@
 }
 
 
-/* =========================================================
-   META
-========================================================= */
-
 .institution-opportunity-meta {
   display: flex;
   align-items: center;
@@ -464,9 +433,6 @@
 }
 
 
-/* =========================================================
-   RIGHT SIDE
-========================================================= */
 
 .institution-opportunity-right {
   height: 100%;
@@ -535,9 +501,6 @@
 }
 
 
-/* =========================================================
-   EMPTY
-========================================================= */
 
 .institution-opportunity-empty {
   min-height: 280px;
@@ -572,10 +535,6 @@
   font-size: 10.5px;
 }
 
-
-/* =========================================================
-   PLACEHOLDER TABS
-========================================================= */
 
 .institution-internship-placeholder {
   min-height: 430px;
@@ -652,10 +611,6 @@
   line-height: 1.6;
 }
 
-
-/* =========================================================
-   DARK MODE
-========================================================= */
 
 body[data-theme="dark"] .institution-internship-tabs,
 html[data-theme="dark"] .institution-internship-tabs {
@@ -998,9 +953,6 @@ body[data-theme="dark"] .institution-internship-placeholder > span {
 }
 
 
-/* =========================================================
-   RESPONSIVE
-========================================================= */
 
 @media (max-width: 1050px) {
   .institution-opportunity-card {
@@ -1089,10 +1041,6 @@ body[data-theme="dark"] .institution-internship-placeholder > span {
     line-height: 1.6;
   }
 }
-
-/* =========================================================
-   OPPORTUNITY DETAILS MODAL
-========================================================= */
 
 .institution-opportunity-modal-backdrop {
   position: fixed;
@@ -1438,9 +1386,6 @@ body[data-theme="dark"] .institution-internship-placeholder > span {
 }
 
 
-/* =========================================================
-   DARK MODE - OPPORTUNITY DETAILS MODAL
-========================================================= */
 
 body[data-theme="dark"] .institution-opportunity-modal,
 html[data-theme="dark"] .institution-opportunity-modal {
@@ -1574,9 +1519,6 @@ html[data-theme="dark"] .institution-opportunity-modal-secondary:hover {
 }
 
 
-/* =========================================================
-   RESPONSIVE - MODAL
-========================================================= */
 
 @media (max-width: 600px) {
   .institution-opportunity-modal-backdrop {
@@ -1598,9 +1540,6 @@ html[data-theme="dark"] .institution-opportunity-modal-secondary:hover {
 }
 
 
-/* =========================================================
-   CREATE INTERNSHIP DRIVE
-========================================================= */
 
 .institution-create-drive-button {
   min-height: 38px;
@@ -1829,10 +1768,6 @@ html[data-theme="dark"] .institution-opportunity-modal-secondary:hover {
   }
 }
 
-
-/* =========================================================
-   DARK MODE - CREATE INTERNSHIP DRIVE
-========================================================= */
 
 body[data-theme="dark"] .institution-create-drive-modal,
 html[data-theme="dark"] .institution-create-drive-modal {

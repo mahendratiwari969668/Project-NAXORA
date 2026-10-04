@@ -1117,9 +1117,6 @@ export default function InstitutionStudents() {
           </table>
         </div>
 
-        {/* =========================
-            PAGINATION
-        ========================== */}
 
         <div className="institution-students-pagination">
           <span>
@@ -1185,9 +1182,6 @@ export default function InstitutionStudents() {
         </div>
       </section>
 
-      {/* =========================
-          STUDENT MODAL
-      ========================== */}
 
       {isStudentModalOpen && (
         <div
@@ -1478,10 +1472,6 @@ export default function InstitutionStudents() {
           </div>
         </div>
       )}
-
-      {/* =========================
-          IMPORT FORMAT NOTE
-      ========================== */}
 
       <div
         style={{

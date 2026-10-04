@@ -4,11 +4,6 @@
   background: #f8fafc;
   color: #0f172a;
 }
-
-/* =========================
-   PAGE HEADER
-========================= */
-
 .company-profile-page-header {
   display: flex;
   align-items: flex-end;
@@ -38,9 +33,6 @@
   font-size: 14px;
 }
 
-/* =========================
-   BUTTONS
-========================= */
 
 .company-profile-edit-button,
 .company-profile-save-button,
@@ -96,9 +88,6 @@
   background: #2563eb;
 }
 
-/* =========================
-   COMPANY HERO
-========================= */
 
 .company-profile-hero {
   display: flex;
@@ -174,10 +163,6 @@
   line-height: 1.65;
 }
 
-/* =========================
-   TABS
-========================= */
-
 .company-profile-tabs {
   display: flex;
   align-items: center;
@@ -217,9 +202,6 @@
   background: #eff6ff;
 }
 
-/* =========================
-   OVERVIEW GRID
-========================= */
 
 .company-profile-overview-grid {
   display: grid;
@@ -233,10 +215,6 @@
   flex-direction: column;
   gap: 18px;
 }
-
-/* =========================
-   CARDS
-========================= */
 
 .company-profile-card {
   background: #ffffff;
@@ -263,9 +241,6 @@
   font-size: 11px;
 }
 
-/* =========================
-   INFO LIST
-========================= */
 
 .company-profile-info-list {
   padding: 6px 20px 17px;
@@ -323,10 +298,6 @@
   text-decoration: underline;
 }
 
-/* =========================
-   STATUS
-========================= */
-
 .company-profile-status-list {
   display: flex;
   flex-direction: column;
@@ -347,9 +318,6 @@
   flex: 0 0 auto;
 }
 
-/* =========================
-   EDIT FORM
-========================= */
 
 .company-profile-edit-form {
   margin-top: 18px;
@@ -406,9 +374,6 @@
   box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.09);
 }
 
-/* =========================
-   EMPTY TAB
-========================= */
 
 .company-profile-empty-tab {
   min-height: 300px;
@@ -445,9 +410,6 @@
   line-height: 1.6;
 }
 
-/* =========================
-   VERIFICATION
-========================= */
 
 .company-profile-verification-card {
   margin-top: 18px;
@@ -495,10 +457,6 @@
   line-height: 1.5;
 }
 
-
-/* =========================
-   COMPANY LOGO EDITOR
-========================= */
 
 .company-profile-logo-editor {
   display: flex;
@@ -574,9 +532,6 @@
   box-shadow: 0 7px 16px rgba(37, 99, 235, 0.16);
 }
 
-/* =========================
-   HERO LOGO IMAGE
-========================= */
 
 .company-profile-company-logo {
   overflow: hidden;
@@ -588,9 +543,6 @@
   object-fit: contain;
 }
 
-/* =========================
-   DETAILS TAB
-========================= */
 
 .company-profile-details-tab {
   margin-top: 18px;
@@ -647,9 +599,6 @@
   overflow-wrap: anywhere;
 }
 
-/* =========================
-   TEAM MEMBERS
-========================= */
 
 .company-profile-team-tab {
   margin-top: 18px;
@@ -727,10 +676,6 @@
   font-size: 9px;
   font-weight: 800;
 }
-
-/* =========================
-   MEDIA TAB
-========================= */
 
 .company-profile-media-tab {
   margin-top: 18px;
@@ -814,9 +759,6 @@
   transform: translateY(-1px);
 }
 
-/* =========================
-   VERIFICATION SUMMARY
-========================= */
 
 .company-profile-verification-summary {
   display: flex;
@@ -869,9 +811,6 @@
   font-weight: 800;
 }
 
-/* =========================
-   DARK MODE
-========================= */
 
 html[data-theme="dark"] .company-profile-page,
 body[data-theme="dark"] .company-profile-page,
@@ -1059,9 +998,6 @@ body[data-theme="dark"] .company-profile-verification-item p,
 }
 
 
-/* =========================
-   NEW CONTENT - DARK MODE
-========================= */
 
 html[data-theme="dark"] .company-profile-logo-editor,
 body[data-theme="dark"] .company-profile-logo-editor,
@@ -1238,9 +1174,6 @@ body[data-theme="dark"] .company-profile-verification-badge,
   border-color: rgba(74, 222, 128, 0.18);
 }
 
-/* =========================
-   RESPONSIVE
-========================= */
 
 @media (max-width: 1050px) {
   .company-profile-overview-grid {

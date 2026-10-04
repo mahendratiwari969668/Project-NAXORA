@@ -1324,10 +1324,6 @@ body[data-theme="dark"] .company-settings-danger,
   }
 }
 
-/* =========================================================
-   NEXORA SETTINGS - INTERACTION / MODAL / THEME ENHANCEMENTS
-   These rules extend the existing design without replacing it.
-   ========================================================= */
 
 .company-settings-hidden-file {
   display: none;

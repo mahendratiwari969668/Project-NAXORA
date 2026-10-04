@@ -24,11 +24,6 @@ import {
 import { useMemo, useState } from "react";
 
 import "./StudentNotifications.css";
-
-/* =========================================================
-   NOTIFICATION TABS
-========================================================= */
-
 const notificationTabs = [
   "All",
   "Applications",
@@ -36,10 +31,6 @@ const notificationTabs = [
   "Profile",
   "System",
 ];
-
-/* =========================================================
-   INITIAL NOTIFICATIONS
-========================================================= */
 
 const initialNotifications = [
   {
@@ -147,10 +138,6 @@ const initialNotifications = [
   },
 ];
 
-/* =========================================================
-   MAIN COMPONENT
-========================================================= */
-
 export default function StudentNotifications() {
   const navigate = useNavigate();
 
@@ -162,17 +149,10 @@ export default function StudentNotifications() {
 
   const [search, setSearch] = useState("");
 
-  /* =======================================================
-     UNREAD COUNT
-  ======================================================= */
-
   const unreadCount = notifications.filter(
     (item) => item.unread
   ).length;
 
-  /* =======================================================
-     FILTER NOTIFICATIONS
-  ======================================================= */
 
   const filteredNotifications = useMemo(() => {
     const searchValue = search.toLowerCase().trim();
@@ -195,9 +175,6 @@ export default function StudentNotifications() {
     });
   }, [notifications, activeTab, search]);
 
-  /* =======================================================
-     MARK AS READ
-  ======================================================= */
 
   const markAsRead = (id) => {
     setNotifications((current) =>
@@ -212,10 +189,6 @@ export default function StudentNotifications() {
     );
   };
 
-  /* =======================================================
-     MARK ALL AS READ
-  ======================================================= */
-
   const markAllAsRead = () => {
     setNotifications((current) =>
       current.map((notification) => ({
@@ -225,11 +198,6 @@ export default function StudentNotifications() {
     );
   };
 
-  /* =======================================================
-     OPEN NOTIFICATION
-     Read + Navigate
-  ======================================================= */
-
   const openNotification = (notification) => {
     markAsRead(notification.id);
 
@@ -238,17 +206,10 @@ export default function StudentNotifications() {
     }
   };
 
-  /* =========================================================
-     RETURN
-  ========================================================= */
 
   return (
     <div className="student-notifications-page">
       <main className="notifications-main">
-
-        {/* =================================================
-            PAGE HEADING
-        ================================================= */}
 
         <section className="notifications-heading">
           <div>
@@ -273,11 +234,6 @@ export default function StudentNotifications() {
               : "All caught up"}
           </div>
         </section>
-
-
-        {/* =================================================
-            TOOLBAR
-        ================================================= */}
 
         <section className="notifications-toolbar">
 
@@ -317,10 +273,6 @@ export default function StudentNotifications() {
         </section>
 
 
-        {/* =================================================
-            TABS
-        ================================================= */}
-
         <section className="notifications-tabs-card">
 
           <div className="notifications-tabs">
@@ -357,9 +309,6 @@ export default function StudentNotifications() {
         </section>
 
 
-        {/* =================================================
-            NOTIFICATION LIST
-        ================================================= */}
 
         <section className="notifications-list">
 
@@ -429,9 +378,6 @@ export default function StudentNotifications() {
                       }}
                     >
 
-                      {/* =================================================
-                          ICON
-                      ================================================= */}
 
                       <div
                         className={`notification-icon ${notification.tone}`}
@@ -439,10 +385,6 @@ export default function StudentNotifications() {
                         <Icon size={19} />
                       </div>
 
-
-                      {/* =================================================
-                          BODY
-                      ================================================= */}
 
                       <div className="notification-body">
 
@@ -479,10 +421,6 @@ export default function StudentNotifications() {
 
                       </div>
 
-
-                      {/* =================================================
-                          ACTIONS
-                      ================================================= */}
 
                       <div className="notification-actions">
 
@@ -546,9 +484,6 @@ export default function StudentNotifications() {
         </section>
 
 
-        {/* =================================================
-            NOTIFICATION PREFERENCES
-        ================================================= */}
 
         <section className="notifications-preference-card">
 
@@ -585,10 +520,6 @@ export default function StudentNotifications() {
   );
 }
 
-
-/* =========================================================
-   ARROW ICON
-========================================================= */
 
 function ArrowRightIcon() {
   return <ChevronRight size={17} />;

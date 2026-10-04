@@ -1,6 +1,3 @@
-/* =========================================================
-   INSTITUTION NOTIFICATIONS
-========================================================= */
 
 .institution-notifications-page {
   width: 100%;
@@ -8,10 +5,6 @@
   margin: 0 auto;
 }
 
-
-/* =========================================================
-   HEADER
-========================================================= */
 
 .institution-notifications-header {
   display: flex;
@@ -50,9 +43,6 @@
 }
 
 
-/* =========================================================
-   MARK ALL
-========================================================= */
 
 .institution-mark-all {
   height: 38px;
@@ -86,11 +76,6 @@
   border-color: #c5dafa;
   transform: translateY(-1px);
 }
-
-
-/* =========================================================
-   TABS
-========================================================= */
 
 .institution-notification-tabs {
   height: 48px;
@@ -188,11 +173,6 @@
   color: #2563eb;
 }
 
-
-/* =========================================================
-   TOOLBAR
-========================================================= */
-
 .institution-notification-toolbar {
   min-height: 54px;
 
@@ -230,9 +210,6 @@
 }
 
 
-/* =========================================================
-   UNREAD FILTER
-========================================================= */
 
 .institution-unread-filter {
   height: 31px;
@@ -285,11 +262,6 @@
     0 0 7px rgba(37, 99, 235, 0.45);
 }
 
-
-/* =========================================================
-   SORT
-========================================================= */
-
 .institution-notification-filter {
   height: 31px;
 
@@ -313,10 +285,6 @@
 }
 
 
-/* =========================================================
-   NOTIFICATION LIST
-========================================================= */
-
 .institution-notification-list {
   display: flex;
   flex-direction: column;
@@ -332,10 +300,6 @@
     0 5px 19px rgba(15, 23, 42, 0.035);
 }
 
-
-/* =========================================================
-   NOTIFICATION ITEM
-========================================================= */
 
 .institution-notification-item {
   min-height: 78px;
@@ -379,10 +343,6 @@
   background: #f4f9ff;
 }
 
-
-/* =========================================================
-   ICONS
-========================================================= */
 
 .institution-notification-icon {
   width: 38px;
@@ -435,9 +395,6 @@
 }
 
 
-/* =========================================================
-   CONTENT
-========================================================= */
 
 .institution-notification-content {
   min-width: 0;
@@ -496,10 +453,6 @@
 }
 
 
-/* =========================================================
-   TIME
-========================================================= */
-
 .institution-notification-time {
   justify-self: end;
 
@@ -510,10 +463,6 @@
   white-space: nowrap;
 }
 
-
-/* =========================================================
-   EMPTY
-========================================================= */
 
 .institution-notification-empty {
   min-height: 280px;
@@ -560,9 +509,6 @@
 }
 
 
-/* =========================================================
-   FOOTER INFO
-========================================================= */
 
 .institution-notification-footer {
   min-height: 52px;
@@ -590,24 +536,12 @@
 }
 
 
-/* =========================================================
-   =========================================================
-   DARK MODE
-   DEEP NAVY + COLOUR GLOW
-   =========================================================
-   ========================================================= */
-
-
-/* ---------- MAIN PAGE ---------- */
-
 :is(body, html)[data-theme="dark"]
   .institution-notifications-page,
 .dark .institution-notifications-page {
   color: #e6edf7;
 }
 
-
-/* ---------- HEADER ---------- */
 
 :is(body, html)[data-theme="dark"]
   .institution-notifications-header
@@ -640,7 +574,6 @@
 }
 
 
-/* ---------- MARK ALL ---------- */
 
 :is(body, html)[data-theme="dark"]
   .institution-mark-all,
@@ -669,9 +602,6 @@
 }
 
 
-/* =========================================================
-   DARK TABS
-========================================================= */
 
 :is(body, html)[data-theme="dark"]
   .institution-notification-tabs,
@@ -767,9 +697,6 @@
 }
 
 
-/* =========================================================
-   DARK TOOLBAR
-========================================================= */
 
 :is(body, html)[data-theme="dark"]
   .institution-notification-toolbar,
@@ -868,11 +795,6 @@
 }
 
 
-/* =========================================================
-   DARK NOTIFICATION LIST
-   THIS IS THE IMPORTANT PART
-========================================================= */
-
 :is(body, html)[data-theme="dark"]
   .institution-notification-list,
 .dark .institution-notification-list {
@@ -885,10 +807,6 @@
     0 0 28px rgba(37, 99, 235, 0.045);
 }
 
-
-/* =========================================================
-   DARK NOTIFICATION ROW
-========================================================= */
 
 :is(body, html)[data-theme="dark"]
   .institution-notification-item,
@@ -922,7 +840,6 @@
 }
 
 
-/* ---------- UNREAD ROW ---------- */
 
 :is(body, html)[data-theme="dark"]
   .institution-notification-item.unread,
@@ -955,9 +872,6 @@
 }
 
 
-/* =========================================================
-   DARK ICONS + GLOW
-========================================================= */
 
 :is(body, html)[data-theme="dark"]
   .institution-notification-icon.red,
@@ -1032,9 +946,6 @@
 }
 
 
-/* =========================================================
-   DARK TEXT
-========================================================= */
 
 :is(body, html)[data-theme="dark"]
   .institution-notification-title-row
@@ -1073,10 +984,6 @@
 }
 
 
-/* =========================================================
-   DARK UNREAD DOT
-========================================================= */
-
 :is(body, html)[data-theme="dark"]
   .institution-unread-dot,
 .dark .institution-unread-dot {
@@ -1088,9 +995,6 @@
 }
 
 
-/* =========================================================
-   DARK EMPTY
-========================================================= */
 
 :is(body, html)[data-theme="dark"]
   .institution-notification-empty,
@@ -1132,11 +1036,6 @@
   color: #71859e;
 }
 
-
-/* =========================================================
-   DARK FOOTER
-========================================================= */
-
 :is(body, html)[data-theme="dark"]
   .institution-notification-footer,
 .dark .institution-notification-footer {
@@ -1168,12 +1067,6 @@
 }
 
 
-/* =========================================================
-   EXTRA DARK BACKGROUND SAFETY
-   Agar parent/content area white ho raha ho to ye bhi
-   dark mode mein force karega.
-========================================================= */
-
 :is(body, html)[data-theme="dark"]
   .institution-layout-content,
 :is(body, html)[data-theme="dark"]
@@ -1187,9 +1080,6 @@
 }
 
 
-/* =========================================================
-   RESPONSIVE
-========================================================= */
 
 @media (max-width: 750px) {
   .institution-notifications-header {
@@ -1240,9 +1130,6 @@
 }
 
 
-/* =========================================================
-   WORKING SORT DROPDOWN
-========================================================= */
 
 .institution-notification-sort {
   position: relative;
@@ -1334,9 +1221,6 @@
 }
 
 
-/* =========================================================
-   DARK MODE - WORKING SORT DROPDOWN
-========================================================= */
 
 :is(body, html)[data-theme="dark"]
   .institution-notification-filter,

@@ -279,10 +279,6 @@ export default function InstitutionReports() {
   return (
     <div className="institution-reports-page">
 
-      {/* =================================================
-          HEADER
-      ================================================= */}
-
       <section className="institution-reports-header">
 
         <div>
@@ -310,10 +306,6 @@ export default function InstitutionReports() {
       </section>
 
 
-      {/* =================================================
-          TABS
-      ================================================= */}
-
       <nav className="institution-reports-tabs">
 
         {tabs.map((tab) => (
@@ -336,9 +328,6 @@ export default function InstitutionReports() {
       </nav>
 
 
-      {/* =================================================
-          TOOLBAR
-      ================================================= */}
 
       <section className="institution-reports-toolbar">
 
@@ -398,10 +387,6 @@ export default function InstitutionReports() {
       </section>
 
 
-      {/* =================================================
-          REPORT GRID
-      ================================================= */}
-
       <section className="institution-report-grid">
 
         {filteredReports.length > 0 ? (
@@ -431,9 +416,6 @@ export default function InstitutionReports() {
       </section>
 
 
-      {/* =================================================
-          REPORT INFO
-      ================================================= */}
 
       <section className="institution-report-info">
 
@@ -475,10 +457,6 @@ export default function InstitutionReports() {
 }
 
 
-/* =========================================================
-   REPORT CARD
-========================================================= */
-
 function ReportCard({ report, onGenerate }) {
   const Icon = report.icon;
 
@@ -514,10 +492,6 @@ function ReportCard({ report, onGenerate }) {
     </article>
   );
 }
-
-/* =========================================================
-   CUSTOM REPORT MODAL
-========================================================= */
 
 function CustomReportModal({ activeTab, onClose }) {
   const [reportName, setReportName] = useState("");
@@ -718,9 +692,6 @@ function CustomReportModal({ activeTab, onClose }) {
 }
 
 
-/* =========================================================
-   GENERATED REPORT MODAL
-========================================================= */
 
 function GeneratedReportModal({ report, onClose }) {
   const handleDownload = () => {
@@ -869,9 +840,6 @@ function GeneratedReportModal({ report, onClose }) {
 }
 
 
-/* =========================================================
-   REPORT DOWNLOAD HELPERS
-========================================================= */
 
 function downloadReport({
   title,

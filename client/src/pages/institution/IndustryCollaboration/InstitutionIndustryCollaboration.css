@@ -1,6 +1,3 @@
-/* =========================================================
-   INDUSTRY COLLABORATION
-========================================================= */
 
 .institution-collaboration-page {
   width: 100%;
@@ -8,10 +5,6 @@
   margin: 0 auto;
 }
 
-
-/* =========================================================
-   TABS
-========================================================= */
 
 .institution-collaboration-tabs {
   height: 48px;
@@ -83,9 +76,6 @@
 }
 
 
-/* =========================================================
-   HEADER
-========================================================= */
 
 .institution-collaboration-header {
   display: flex;
@@ -164,10 +154,6 @@
     0 8px 21px rgba(37, 99, 235, 0.25);
 }
 
-
-/* =========================================================
-   HIGHLIGHTS
-========================================================= */
 
 .institution-collaboration-highlights {
   display: grid;
@@ -276,10 +262,6 @@
   font-size: 8.5px;
 }
 
-
-/* =========================================================
-   TOOLBAR
-========================================================= */
 
 .institution-collaboration-toolbar {
   min-height: 59px;
@@ -392,10 +374,6 @@
 }
 
 
-/* =========================================================
-   CONTENT GRID
-========================================================= */
-
 .institution-collaboration-content {
   display: grid;
 
@@ -416,9 +394,6 @@
 }
 
 
-/* =========================================================
-   COLLABORATION CARD
-========================================================= */
 
 .institution-collaboration-card {
   min-height: 142px;
@@ -496,9 +471,6 @@
 }
 
 
-/* =========================================================
-   CARD MAIN
-========================================================= */
 
 .institution-collaboration-main {
   min-width: 0;
@@ -601,10 +573,6 @@
 }
 
 
-/* =========================================================
-   VIEW BUTTON
-========================================================= */
-
 .institution-collaboration-view {
   height: 31px;
 
@@ -642,9 +610,6 @@
 }
 
 
-/* =========================================================
-   UPCOMING PANEL
-========================================================= */
 
 .institution-upcoming-panel {
   overflow: hidden;
@@ -817,10 +782,6 @@
 }
 
 
-/* =========================================================
-   EMPTY
-========================================================= */
-
 .institution-collaboration-empty {
   min-height: 300px;
 
@@ -854,9 +815,6 @@
 }
 
 
-/* =========================================================
-   DARK MODE
-========================================================= */
 
 body[data-theme="dark"] .institution-collaboration-tabs,
 html[data-theme="dark"] .institution-collaboration-tabs {
@@ -1188,9 +1146,6 @@ body[data-theme="dark"] .institution-collaboration-empty span {
 }
 
 
-/* =========================================================
-   RESPONSIVE
-========================================================= */
 
 @media (max-width: 1100px) {
   .institution-collaboration-content {
@@ -1276,9 +1231,6 @@ body[data-theme="dark"] .institution-collaboration-empty span {
   }
 }
 
-/* =========================================================
-   INTERACTION POLISH + MODALS
-========================================================= */
 
 .institution-collaboration-filter:focus-within {
   border-color: #60a5fa;
@@ -1589,9 +1541,6 @@ body[data-theme="dark"] .institution-collaboration-empty span {
 }
 
 
-/* =========================================================
-   DARK MODE
-========================================================= */
 
 body[data-theme="dark"] .institution-collaboration-filter,
 html[data-theme="dark"] .institution-collaboration-filter {

@@ -20,9 +20,6 @@ import { Link, useNavigate, useParams } from "react-router-dom";
 
 import "./StudentOpportunities.css";
 
-/* =========================================================
-   OPPORTUNITY SECTIONS
-========================================================= */
 
 const opportunitySections = [
   {
@@ -39,9 +36,6 @@ const opportunitySections = [
   },
 ];
 
-/* =========================================================
-   DEMO OPPORTUNITIES
-========================================================= */
 
 const opportunities = [
   {
@@ -118,17 +112,11 @@ const opportunities = [
   },
 ];
 
-/* =========================================================
-   COMPONENT
-========================================================= */
 
 export default function StudentOpportunities() {
   const navigate = useNavigate();
   const { opportunityId } = useParams();
 
-  /* =======================================================
-     GENERAL STATE
-  ======================================================= */
 
   const [activeSection, setActiveSection] =
     useState("All Opportunities");
@@ -143,9 +131,6 @@ export default function StudentOpportunities() {
 
   const [savedIds, setSavedIds] = useState([]);
 
-  /* =======================================================
-     FILTER MODAL STATE
-  ======================================================= */
 
   const [isFilterOpen, setIsFilterOpen] = useState(false);
 
@@ -155,17 +140,11 @@ export default function StudentOpportunities() {
 
   const [draftSkill, setDraftSkill] = useState("All");
 
-  /* =======================================================
-     SORT STATE
-  ======================================================= */
 
   const [sortOrder, setSortOrder] = useState("recent");
 
   const [isSortOpen, setIsSortOpen] = useState(false);
 
-  /* =======================================================
-     SAVE / UNSAVE
-  ======================================================= */
 
   const toggleSaved = (id) => {
     setSavedIds((current) =>
@@ -174,11 +153,6 @@ export default function StudentOpportunities() {
         : [...current, id]
     );
   };
-
-  /* =======================================================
-     FILTER HELPERS
-  ======================================================= */
-
   const allSkills = [
     ...new Set(opportunities.flatMap((item) => item.skills)),
   ];
@@ -187,9 +161,6 @@ export default function StudentOpportunities() {
     ...new Set(opportunities.map((item) => item.mode)),
   ];
 
-  /* =======================================================
-     APPLY FILTERS
-  ======================================================= */
 
   const applyFilters = () => {
     setActiveType(draftType);
@@ -197,10 +168,6 @@ export default function StudentOpportunities() {
     setActiveSkill(draftSkill);
     setIsFilterOpen(false);
   };
-
-  /* =======================================================
-     CLEAR FILTERS
-  ======================================================= */
 
   const clearFilters = () => {
     setSearch("");
@@ -214,29 +181,17 @@ export default function StudentOpportunities() {
     setIsFilterOpen(false);
   };
 
-  /* =======================================================
-     OPEN FILTER MODAL
-  ======================================================= */
-
   const openFilters = () => {
     setDraftType(activeType);
     setDraftMode(activeMode);
     setDraftSkill(activeSkill);
     setIsFilterOpen(true);
   };
-
-  /* =======================================================
-     SORT
-  ======================================================= */
-
   const changeSort = (value) => {
     setSortOrder(value);
     setIsSortOpen(false);
   };
 
-  /* =======================================================
-     FILTER OPPORTUNITIES
-  ======================================================= */
 
   const filteredOpportunities = opportunities
     .filter((item) => {
@@ -292,9 +247,6 @@ export default function StudentOpportunities() {
       return a.id - b.id;
     });
 
-  /* =======================================================
-     DETAILS PAGE
-  ======================================================= */
 
   if (opportunityId) {
     const opportunity = opportunities.find(
@@ -501,16 +453,9 @@ export default function StudentOpportunities() {
     );
   }
 
-  /* =======================================================
-     MAIN OPPORTUNITIES PAGE
-  ======================================================= */
-
   return (
     <div className="student-opportunities-page">
       <main className="opportunities-main">
-        {/* =================================================
-            PAGE HEADING
-        ================================================= */}
 
         <section className="opportunities-heading">
           <div>
@@ -532,9 +477,6 @@ export default function StudentOpportunities() {
           </div>
         </section>
 
-        {/* =================================================
-            SEARCH
-        ================================================= */}
 
         <section className="opportunities-search-card">
           <div className="opportunities-search-box">
@@ -576,14 +518,7 @@ export default function StudentOpportunities() {
           </button>
         </section>
 
-        {/* =================================================
-            BODY
-        ================================================= */}
-
         <section className="opportunities-layout">
-          {/* =================================================
-              OPPORTUNITY SECTION NAVIGATION
-          ================================================= */}
 
           <aside className="opportunities-section-sidebar">
             <div className="opportunities-section-title">
@@ -654,10 +589,6 @@ export default function StudentOpportunities() {
               </button>
             </div>
           </aside>
-
-          {/* =================================================
-              RESULTS
-          ================================================= */}
 
           <div className="opportunities-results">
             <div className="opportunities-results-header">
@@ -896,10 +827,6 @@ export default function StudentOpportunities() {
               </div>
             )}
 
-            {/* =================================================
-                CAREER TIP
-            ================================================= */}
-
             <div className="opportunities-bottom-tip">
               <div className="opportunities-bottom-tip-icon">
                 <CheckCircle2 size={20} />
@@ -924,9 +851,6 @@ export default function StudentOpportunities() {
         </section>
       </main>
 
-      {/* =====================================================
-          FILTER MODAL
-      ====================================================== */}
 
       {isFilterOpen && (
         <div

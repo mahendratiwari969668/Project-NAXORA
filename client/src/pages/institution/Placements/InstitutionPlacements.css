@@ -1,6 +1,4 @@
-/* =========================================================
-   INSTITUTION PLACEMENTS
-========================================================= */
+
 
 .institution-placements-page {
   width: 100%;
@@ -8,10 +6,6 @@
   margin: 0 auto;
 }
 
-
-/* =========================================================
-   TABS
-========================================================= */
 
 .institution-placement-tabs {
   height: 48px;
@@ -75,10 +69,6 @@
 }
 
 
-/* =========================================================
-   HEADER
-========================================================= */
-
 .institution-placement-header {
   display: flex;
   align-items: flex-end;
@@ -120,10 +110,6 @@
 }
 
 
-/* =========================================================
-   CREATE DRIVE
-========================================================= */
-
 .institution-create-drive {
   height: 40px;
 
@@ -163,10 +149,6 @@
   box-shadow: 0 8px 20px rgba(37, 99, 235, 0.25);
 }
 
-
-/* =========================================================
-   TOOLBAR
-========================================================= */
 
 .institution-placement-toolbar {
   min-height: 59px;
@@ -277,10 +259,6 @@
 }
 
 
-/* =========================================================
-   DRIVE LIST
-========================================================= */
-
 .institution-placement-list {
   display: flex;
   flex-direction: column;
@@ -329,9 +307,6 @@
 }
 
 
-/* =========================================================
-   COMPANY ICON
-========================================================= */
 
 .institution-placement-company-icon {
   width: 48px;
@@ -360,9 +335,6 @@
 }
 
 
-/* =========================================================
-   MAIN
-========================================================= */
 
 .institution-placement-main {
   min-width: 0;
@@ -411,9 +383,6 @@
 }
 
 
-/* =========================================================
-   DATE
-========================================================= */
 
 .institution-placement-date {
   min-height: 64px;
@@ -450,10 +419,6 @@
 }
 
 
-/* =========================================================
-   STATUS
-========================================================= */
-
 .institution-placement-status-wrap {
   display: flex;
   justify-content: center;
@@ -484,9 +449,6 @@
 }
 
 
-/* =========================================================
-   ELIGIBLE
-========================================================= */
 
 .institution-placement-eligible {
   display: flex;
@@ -510,11 +472,6 @@
 
   font-size: 8.5px;
 }
-
-
-/* =========================================================
-   VIEW DETAILS
-========================================================= */
 
 .institution-placement-details-button {
   height: 31px;
@@ -556,9 +513,6 @@
 }
 
 
-/* =========================================================
-   EMPTY
-========================================================= */
 
 .institution-placement-empty {
   min-height: 270px;
@@ -593,9 +547,6 @@
 }
 
 
-/* =========================================================
-   PLACEHOLDER
-========================================================= */
 
 .institution-placement-placeholder {
   min-height: 430px;
@@ -675,9 +626,6 @@
 }
 
 
-/* =========================================================
-   DARK MODE
-========================================================= */
 
 body[data-theme="dark"] .institution-placement-tabs,
 html[data-theme="dark"] .institution-placement-tabs {
@@ -946,10 +894,6 @@ body[data-theme="dark"] .institution-placement-placeholder > span {
 }
 
 
-/* =========================================================
-   RESPONSIVE
-========================================================= */
-
 @media (max-width: 1100px) {
   .institution-placement-card {
     grid-template-columns:
@@ -1044,9 +988,6 @@ body[data-theme="dark"] .institution-placement-placeholder > span {
   }
 }
 
-/* =========================================================
-   FUNCTIONAL STATUS DROPDOWN
-========================================================= */
 
 .institution-placement-filter {
   z-index: 30;
@@ -1125,9 +1066,6 @@ body[data-theme="dark"] .institution-placement-placeholder > span {
 }
 
 
-/* =========================================================
-   PLACEMENT MODALS
-========================================================= */
 
 .institution-placement-modal-backdrop {
   position: fixed;
@@ -1376,9 +1314,6 @@ body[data-theme="dark"] .institution-placement-placeholder > span {
 }
 
 
-/* =========================================================
-   DARK MODE - FUNCTIONAL PLACEMENT UI
-========================================================= */
 
 body[data-theme="dark"] .institution-placement-filter-trigger,
 html[data-theme="dark"] .institution-placement-filter-trigger {
@@ -1544,9 +1479,6 @@ html[data-theme="dark"] .institution-placement-details-grid strong {
 }
 
 
-/* =========================================================
-   RESPONSIVE - FUNCTIONAL PLACEMENT UI
-========================================================= */
 
 @media (max-width: 650px) {
   .institution-placement-modal-backdrop {

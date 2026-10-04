@@ -618,9 +618,6 @@
   border: 1px solid #2563eb;
 }
 
-/* =========================
-   DARK MODE
-========================= */
 
 html[data-theme="dark"] .company-jobs-page,
 body[data-theme="dark"] .company-jobs-page,
@@ -888,9 +885,6 @@ body[data-theme="dark"] .company-jobs-modal-cancel,
   }
 }
 
-/* =========================
-   WORKING ACTION MODALS
-========================= */
 
 .company-jobs-details-modal {
   width: min(590px, 100%);

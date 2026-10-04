@@ -1,6 +1,3 @@
-/* =========================================================
-   INSTITUTION COLLABORATION REQUESTS
-   ========================================================= */
 
 .institution-collaboration-requests-page {
   width: 100%;
@@ -541,10 +538,6 @@
   cursor: pointer;
 }
 
-/* =========================================================
-   MODAL
-   ========================================================= */
-
 .institution-collaboration-request-modal-backdrop {
   position: fixed;
   inset: 0;
@@ -735,11 +728,6 @@
   background: #edf5ff;
   color: #2563eb;
 }
-
-/* =========================================================
-   DARK MODE
-   Supports both data-theme and class-based theme systems.
-   ========================================================= */
 
 html[data-theme="dark"] .institution-collaboration-requests-page,
 body[data-theme="dark"] .institution-collaboration-requests-page,
@@ -1106,10 +1094,6 @@ html[data-theme="dark"] .institution-collaboration-request-detail-item strong,
 body[data-theme="dark"] .institution-collaboration-request-detail-item strong {
   color: #dce6f2;
 }
-
-/* =========================================================
-   RESPONSIVE
-   ========================================================= */
 
 @media (max-width: 1050px) {
   .institution-collaboration-request-summary {

@@ -5,10 +5,6 @@
   color: #0f172a;
 }
 
-/* =========================
-   HEADER
-========================= */
-
 .company-candidates-header {
   margin-bottom: 20px;
 }
@@ -33,10 +29,6 @@
   color: #64748b;
   font-size: 13px;
 }
-
-/* =========================
-   SEARCH BAR
-========================= */
 
 .company-candidates-search-bar {
   display: flex;
@@ -106,10 +98,6 @@
   right: 10px;
   pointer-events: none;
 }
-
-/* =========================
-   SORT DROPDOWN
-========================= */
 
 .company-candidates-sort {
   z-index: 30;
@@ -204,9 +192,6 @@
   font-weight: 900;
 }
 
-/* =========================
-   MAIN LAYOUT
-========================= */
 
 .company-candidates-layout {
   display: grid;
@@ -366,10 +351,6 @@
   font-size: 10px !important;
   font-weight: 700;
 }
-
-/* =========================
-   CANDIDATE CARD
-========================= */
 
 .company-candidates-list {
   display: flex;
@@ -605,9 +586,6 @@
   border-color: #bbf7d0;
 }
 
-/* =========================
-   CANDIDATE PROFILE MODAL
-========================= */
 
 .company-candidate-modal-overlay {
   position: fixed;
@@ -848,10 +826,6 @@
   border-color: #bbf7d0;
 }
 
-/* =========================
-   PAGINATION
-========================= */
-
 .company-candidates-pagination {
   display: flex;
   align-items: center;
@@ -938,10 +912,6 @@
   font-weight: 700;
   cursor: pointer;
 }
-
-/* =========================
-   DARK MODE
-========================= */
 
 html[data-theme="dark"] .company-candidates-page,
 body[data-theme="dark"] .company-candidates-page,
@@ -1247,9 +1217,6 @@ body[data-theme="dark"] .company-candidate-modal-secondary.saved,
   border-color: rgba(96, 165, 250, 0.28);
 }
 
-/* =========================
-   RESPONSIVE
-========================= */
 
 @media (max-width: 1050px) {
   .company-candidates-layout {

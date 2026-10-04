@@ -87,10 +87,6 @@ export default function StudentApplications() {
 
   const navigate = useNavigate();
 
-  /* =========================================================
-     FILTER APPLICATIONS
-  ========================================================= */
-
   const filteredApplications = useMemo(() => {
     return applications.filter((application) => {
       const matchesTab =
@@ -114,9 +110,6 @@ export default function StudentApplications() {
     });
   }, [activeTab, search]);
 
-  /* =========================================================
-     APPLICATION WORKSPACE
-  ========================================================= */
 
   const openApplicationWorkspace = () => {
     applicationsListRef.current?.scrollIntoView({
@@ -124,10 +117,6 @@ export default function StudentApplications() {
       block: "start",
     });
   };
-
-  /* =========================================================
-     APPLICATION DETAILS
-  ========================================================= */
 
   if (applicationId) {
     const application = applications.find(
@@ -168,9 +157,6 @@ export default function StudentApplications() {
     return (
       <div className="student-applications-page">
         <main className="applications-main">
-          {/* =================================================
-              BACK BUTTON
-          ================================================= */}
 
           <button
             type="button"
@@ -183,9 +169,6 @@ export default function StudentApplications() {
             Back to Applications
           </button>
 
-          {/* =================================================
-              DETAILS CARD
-          ================================================= */}
 
           <section className="application-details-card">
             {/* HEADER */}
@@ -341,17 +324,9 @@ export default function StudentApplications() {
     );
   }
 
-  /* =========================================================
-     MAIN APPLICATION PAGE
-  ========================================================= */
-
   return (
     <div className="student-applications-page">
       <main className="applications-main">
-        {/* =================================================
-            PAGE HEADING
-        ================================================= */}
-
         <section className="applications-heading">
           <div>
             <span className="applications-eyebrow">
@@ -378,9 +353,6 @@ export default function StudentApplications() {
           </button>
         </section>
 
-        {/* =================================================
-            SEARCH
-        ================================================= */}
 
         <section className="applications-toolbar">
           <div className="applications-search">
@@ -407,10 +379,6 @@ export default function StudentApplications() {
           </div>
         </section>
 
-        {/* =================================================
-            TABS
-        ================================================= */}
-
         <section className="applications-tabs-card">
           <div className="applications-tabs">
             {applicationTabs.map((tab) => (
@@ -432,9 +400,6 @@ export default function StudentApplications() {
           </div>
         </section>
 
-        {/* =================================================
-            APPLICATION LIST
-        ================================================= */}
 
         <section
           className="applications-list"
@@ -473,10 +438,6 @@ export default function StudentApplications() {
           )}
         </section>
 
-        {/* =================================================
-            FOOTER CTA
-        ================================================= */}
-
         <section className="applications-discover-card">
           <div className="applications-discover-icon">
             <BriefcaseBusiness size={22} />
@@ -505,18 +466,12 @@ export default function StudentApplications() {
   );
 }
 
-/* =========================================================
-   APPLICATION CARD
-========================================================= */
 
 function ApplicationCard({ application }) {
   return (
     <article
       className={`application-card ${application.statusTone}`}
     >
-      {/* =================================================
-          CARD HEADER
-      ================================================= */}
 
       <div className="application-card-top">
         <div className="application-company-mark">
@@ -537,10 +492,6 @@ function ApplicationCard({ application }) {
           <p>{application.company}</p>
         </div>
 
-        {/* =================================================
-            VIEW DETAILS
-        ================================================= */}
-
         <Link
           to={`/student/applications/${application.id}`}
           className="application-view-button"
@@ -550,9 +501,6 @@ function ApplicationCard({ application }) {
         </Link>
       </div>
 
-      {/* =================================================
-          META
-      ================================================= */}
 
       <div className="application-meta">
         <span>
@@ -565,10 +513,6 @@ function ApplicationCard({ application }) {
           {application.status}
         </span>
       </div>
-
-      {/* =================================================
-          TIMELINE
-      ================================================= */}
 
       <div className="application-timeline">
         {stages.map((stage, index) => {
@@ -614,9 +558,6 @@ function ApplicationCard({ application }) {
   );
 }
 
-/* =========================================================
-   STATUS BADGE
-========================================================= */
 
 function StatusBadge({ status }) {
   const icon =

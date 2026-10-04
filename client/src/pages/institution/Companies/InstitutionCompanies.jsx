@@ -260,9 +260,6 @@ export default function InstitutionCompanies() {
   return (
     <div className="institution-companies-page">
 
-      {/* =========================
-          TABS
-      ========================== */}
 
       <nav className="institution-company-tabs">
 
@@ -311,9 +308,6 @@ export default function InstitutionCompanies() {
       </nav>
 
 
-      {/* =========================
-          CONNECTED COMPANIES
-      ========================== */}
 
       {activeTab === "connected" && (
         <>
@@ -347,9 +341,6 @@ export default function InstitutionCompanies() {
           </section>
 
 
-          {/* =========================
-              FILTER BAR
-          ========================== */}
 
           <section className="institution-company-toolbar">
 
@@ -383,10 +374,6 @@ export default function InstitutionCompanies() {
 
           </section>
 
-
-          {/* =========================
-              COMPANY TABLE
-          ========================== */}
 
           <section className="institution-company-table-card">
 
@@ -632,18 +619,10 @@ export default function InstitutionCompanies() {
       )}
 
 
-      {/* =========================
-          OPPORTUNITIES
-      ========================== */}
-
       {activeTab === "opportunities" && (
         <InstitutionOpportunities />
       )}
 
-
-      {/* =========================
-          COLLABORATION REQUESTS
-      ========================== */}
 
       {activeTab === "requests" && (
         <InstitutionCollaborationRequests />
@@ -680,9 +659,6 @@ export default function InstitutionCompanies() {
 }
 
 
-/* =========================================================
-   COMPANY DETAILS MODAL
-========================================================= */
 
 function CompanyDetailsModal({
   company,
@@ -802,9 +778,6 @@ function CompanyDetailsModal({
 }
 
 
-/* =========================================================
-   COMPANY FORM MODAL
-========================================================= */
 
 function CompanyFormModal({
   company,
@@ -945,10 +918,6 @@ function CompanyFormModal({
 }
 
 
-/* =========================================================
-   FILTER SELECT
-========================================================= */
-
 function FilterSelect({
   value,
   onChange,
@@ -979,10 +948,6 @@ function FilterSelect({
   );
 }
 
-
-/* =========================================================
-   PLACEHOLDER
-========================================================= */
 
 function CompanyPlaceholder({
   icon,

@@ -456,10 +456,6 @@
   font-size: 10px;
 }
 
-/* =========================
-   DARK MODE
-========================= */
-
 html[data-theme="dark"] .company-applications-page,
 body[data-theme="dark"] .company-applications-page,
 .dark .company-applications-page {

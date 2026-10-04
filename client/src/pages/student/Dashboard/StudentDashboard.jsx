@@ -157,9 +157,6 @@ export default function StudentDashboard() {
 
   return (
     <div className="student-dashboard">
-      {/* =====================================================
-          SIDEBAR
-      ===================================================== */}
 
       <aside className="student-sidebar">
         <div className="sidebar-top">
@@ -235,9 +232,6 @@ export default function StudentDashboard() {
         </div>
       </aside>
 
-      {/* =====================================================
-          MAIN AREA
-      ===================================================== */}
 
       <div className="student-content">
         {/* HEADER */}
@@ -279,9 +273,6 @@ export default function StudentDashboard() {
         </header>
 
         <main className="student-main">
-          {/* =================================================
-              HERO / WELCOME
-          ================================================= */}
 
           <section className="student-welcome">
             <div>
@@ -305,9 +296,6 @@ export default function StudentDashboard() {
             </div>
           </section>
 
-          {/* =================================================
-              PROFILE COMPLETION
-          ================================================= */}
 
           <section className="profile-progress-card">
             <div className="profile-progress-ring">
@@ -347,10 +335,6 @@ export default function StudentDashboard() {
             </Link>
           </section>
 
-          {/* =================================================
-              SUMMARY CARDS
-          ================================================= */}
-
           <section className="summary-grid">
             {summaryCards.map(
               ({
@@ -380,9 +364,6 @@ export default function StudentDashboard() {
             )}
           </section>
 
-          {/* =================================================
-              SKILLS + SKILL GAP
-          ================================================= */}
 
           <section className="dashboard-two-column">
             <article className="dashboard-panel skills-panel">
@@ -450,9 +431,6 @@ export default function StudentDashboard() {
               </div>
             </article>
 
-            {/* =================================================
-                CAREER READINESS
-            ================================================= */}
 
             <article className="dashboard-panel skill-gap-panel">
               <div className="panel-heading">
@@ -535,9 +513,6 @@ export default function StudentDashboard() {
             </article>
           </section>
 
-          {/* =================================================
-              OPPORTUNITIES
-          ================================================= */}
 
           <section className="dashboard-opportunities">
             <div className="section-title-row">
@@ -604,9 +579,6 @@ export default function StudentDashboard() {
             </div>
           </section>
 
-          {/* =================================================
-              LOWER ROW
-          ================================================= */}
 
           <section className="dashboard-bottom-grid">
             <article className="dashboard-panel learning-panel">

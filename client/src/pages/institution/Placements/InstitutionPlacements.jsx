@@ -182,10 +182,6 @@ export default function InstitutionPlacements() {
   return (
     <div className="institution-placements-page">
 
-      {/* =========================
-          TABS
-      ========================== */}
-
       <nav className="institution-placement-tabs">
 
         <button
@@ -477,35 +473,20 @@ export default function InstitutionPlacements() {
       )}
 
 
-      {/* =========================
-          APPLICATIONS
-      ========================== */}
 
       {activeTab === "applications" && (
         <PlacementApplications />
       )}
 
 
-      {/* =========================
-          SHORTLISTED
-      ========================== */}
-
       {activeTab === "shortlisted" && (
         <PlacementShortlisted />
       )}
 
 
-      {/* =========================
-          RECORDS
-      ========================== */}
-
       {activeTab === "records" && (
         <PlacementRecords />
       )}
-
-      {/* =========================================================
-          CREATE DRIVE MODAL
-      ========================================================== */}
 
       {isCreateDriveOpen && (
         <div
@@ -708,9 +689,6 @@ export default function InstitutionPlacements() {
         </div>
       )}
 
-      {/* =========================================================
-          VIEW DRIVE DETAILS MODAL
-      ========================================================== */}
 
       {selectedDrive && (
         <div
@@ -831,9 +809,6 @@ export default function InstitutionPlacements() {
 }
 
 
-/* =========================================================
-   PLACEHOLDER
-========================================================= */
 
 function PlacementPlaceholder({
   icon,

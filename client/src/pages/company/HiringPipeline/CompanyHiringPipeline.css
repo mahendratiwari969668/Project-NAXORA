@@ -5,10 +5,6 @@
   color: #0f172a;
 }
 
-/* =========================
-   HEADER
-========================= */
-
 .company-pipeline-header {
   display: flex;
   align-items: flex-end;
@@ -38,9 +34,6 @@
   font-size: 13px;
 }
 
-/* =========================
-   OPPORTUNITY SELECT
-========================= */
 
 .company-pipeline-opportunity {
   position: relative;
@@ -152,9 +145,6 @@
   font-weight: 900;
 }
 
-/* =========================
-   STATS
-========================= */
 
 .company-pipeline-stats {
   display: grid;
@@ -234,9 +224,6 @@
   background: #e0f2fe;
 }
 
-/* =========================
-   BOARD
-========================= */
 
 .company-pipeline-board {
   position: relative;
@@ -247,10 +234,6 @@
   align-items: start;
   overflow: visible;
 }
-
-/* =========================
-   COLUMN
-========================= */
 
 .company-pipeline-column {
   position: relative;
@@ -378,9 +361,6 @@
   background: #eff6ff;
 }
 
-/* =========================
-   CANDIDATE LIST
-========================= */
 
 .company-pipeline-candidates {
   display: flex;
@@ -587,9 +567,6 @@
   font-size: 9px;
 }
 
-/* =========================
-   DARK MODE
-========================= */
 
 html[data-theme="dark"] .company-pipeline-page,
 body[data-theme="dark"] .company-pipeline-page,
@@ -756,10 +733,6 @@ body[data-theme="dark"] .company-pipeline-move-menu button:hover,
   color: #60a5fa;
   background: rgba(37, 99, 235, 0.1);
 }
-
-/* =========================
-   RESPONSIVE
-========================= */
 
 @media (max-width: 1200px) {
   .company-pipeline-board {

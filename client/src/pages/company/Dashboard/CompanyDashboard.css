@@ -7,9 +7,6 @@
   box-sizing: border-box;
 }
 
-/* =========================
-   HEADER
-========================= */
 
 .company-dashboard-header {
   display: flex;
@@ -62,9 +59,6 @@
   box-shadow: 0 4px 16px rgba(15, 23, 42, 0.04);
 }
 
-/* =========================
-   STATS
-========================= */
 
 .company-stat-grid {
   display: grid;
@@ -173,10 +167,6 @@
   font-weight: 600;
 }
 
-/* =========================
-   PANELS
-========================= */
-
 .company-middle-grid {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
@@ -233,10 +223,6 @@
   font-weight: 650;
   cursor: pointer;
 }
-
-/* =========================
-   FUNNEL
-========================= */
 
 .funnel-content {
   display: grid;
@@ -330,9 +316,6 @@
   font-size: 11px;
 }
 
-/* =========================
-   OPPORTUNITIES
-========================= */
 
 .company-opportunity-list {
   display: flex;
@@ -405,9 +388,6 @@
   font-weight: 650;
 }
 
-/* =========================
-   APPLICATION TABLE
-========================= */
 
 .company-table-wrapper {
   width: 100%;
@@ -491,9 +471,6 @@
   background: #f5f3ff;
 }
 
-/* =========================
-   SCHEDULE
-========================= */
 
 .company-schedule-list {
   display: flex;
@@ -552,9 +529,6 @@
   font-size: 9px;
 }
 
-/* =========================
-   INSIGHT
-========================= */
 
 .company-insight-card {
   display: flex;
@@ -627,9 +601,6 @@
   cursor: pointer;
 }
 
-/* =========================
-   DARK MODE
-========================= */
 
 html[data-theme="dark"] .company-dashboard,
 body[data-theme="dark"] .company-dashboard,
@@ -954,9 +925,6 @@ body[data-theme="dark"] .company-insight-action,
   box-shadow: 0 0 20px rgba(37, 99, 235, 0.22);
 }
 
-/* =========================
-   RESPONSIVE
-========================= */
 
 @media (max-width: 1180px) {
   .company-stat-grid {
@@ -1010,10 +978,6 @@ body[data-theme="dark"] .company-insight-action,
   }
 }
 
-/* =========================================================
-   INTERACTIVE DASHBOARD ADDITIONS
-   These rules only support dashboard interactions.
-========================================================= */
 
 /* Calendar control */
 .company-date-control {

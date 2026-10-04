@@ -441,11 +441,6 @@
   }
 }
 
-
-/* =========================================================
-   LIGHT MODE
-========================================================= */
-
 :root[data-theme="light"] .institution-auth-page,
 .institution-auth-page {
   --institution-bg: #f4f7fb;
@@ -578,9 +573,6 @@
 }
 
 
-/* =========================================================
-   DARK MODE
-========================================================= */
 
 :root[data-theme="dark"] .institution-auth-page,
 .dark .institution-auth-page {

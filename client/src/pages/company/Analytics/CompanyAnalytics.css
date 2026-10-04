@@ -1286,10 +1286,6 @@ body[data-theme="dark"] .company-analytics-footer-stat strong,
   line-height: 1.5;
 }
 
-/* =========================
-   REPORT MODAL
-   ========================= */
-
 .company-analytics-report-modal-backdrop {
   position: fixed;
   inset: 0;
