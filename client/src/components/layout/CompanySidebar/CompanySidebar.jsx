@@ -71,7 +71,6 @@ const navigation = [
 export default function CompanySidebar() {
   return (
     <aside className="company-sidebar">
-      {/* BRAND */}
       <div className="company-sidebar-brand">
         <NavLink
           to="/company/dashboard"
@@ -86,7 +85,6 @@ export default function CompanySidebar() {
         </NavLink>
       </div>
 
-      {/* NAVIGATION */}
       <nav className="company-sidebar-navigation">
         <div className="company-sidebar-section-label">
           WORKSPACE
@@ -120,16 +118,13 @@ export default function CompanySidebar() {
         ))}
       </nav>
 
-      {/* BOTTOM AREA */}
       <div className="company-sidebar-bottom">
 
-        {/* THEME TOGGLE */}
         <div className="company-sidebar-theme">
   <span>Appearance</span>
   <ThemeToggle />
 </div>
 
-        {/* ACCOUNT */}
         <div className="company-sidebar-account">
           <span className="company-sidebar-avatar">
             <Building2 size={17} />

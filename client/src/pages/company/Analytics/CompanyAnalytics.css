@@ -973,9 +973,6 @@ body[data-theme="dark"] .company-analytics-footer-stat strong,
   }
 }
 
-/* =========================
-   INTERACTIVE PERIOD DROPDOWN
-   ========================= */
 
 .company-analytics-select-wrap {
   position: relative;
@@ -1075,9 +1072,6 @@ body[data-theme="dark"] .company-analytics-footer-stat strong,
   }
 }
 
-/* =========================
-   OPPORTUNITY-WISE ANALYTICS
-   ========================= */
 
 .company-analytics-opportunity-section,
 .company-analytics-skill-trends-section {
@@ -1201,11 +1195,6 @@ body[data-theme="dark"] .company-analytics-footer-stat strong,
   border-radius: inherit;
   background: linear-gradient(90deg, #2563eb, #38bdf8);
 }
-
-/* =========================
-   SKILL TRENDS
-   ========================= */
-
 .company-analytics-skill-trends-grid {
   display: grid;
   grid-template-columns: minmax(0, 1.2fr) minmax(300px, 0.8fr);
@@ -1455,11 +1444,6 @@ body[data-theme="dark"] .company-analytics-footer-stat strong,
   background: #1d4ed8;
   border-color: #1d4ed8;
 }
-
-/* =========================
-   INTERACTIVE DARK MODE
-   ========================= */
-
 html[data-theme="dark"] .company-analytics-select-wrap,
 body[data-theme="dark"] .company-analytics-select-wrap,
 .dark .company-analytics-select-wrap {

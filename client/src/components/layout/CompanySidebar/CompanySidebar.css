@@ -15,9 +15,6 @@
   border-right: 1px solid rgba(255, 255, 255, 0.06);
 }
 
-/* =========================
-   BRAND
-========================= */
 
 .company-sidebar-brand {
   padding: 22px 18px 20px;
@@ -77,9 +74,7 @@
   font-weight: 500;
 }
 
-/* =========================
-   NAVIGATION
-========================= */
+
 
 .company-sidebar-navigation {
   flex: 1;
@@ -116,9 +111,6 @@
   letter-spacing: 0.12em;
 }
 
-/* =========================
-   NAV ITEM
-========================= */
 
 .company-sidebar-nav-item {
   position: relative;
@@ -196,9 +188,6 @@
   font-weight: 650;
 }
 
-/* =========================
-   NOTIFICATION
-========================= */
 
 .company-sidebar-notification-dot {
   width: 7px;
@@ -224,9 +213,7 @@
     0 0 7px rgba(255, 255, 255, 0.55);
 }
 
-/* =========================
-   BOTTOM ACCOUNT
-========================= */
+
 
 .company-sidebar-bottom {
   padding: 12px;
@@ -293,9 +280,6 @@
   font-size: 9px;
 }
 
-/* =========================
-   DARK MODE
-========================= */
 
 html[data-theme="dark"] .company-sidebar,
 body[data-theme="dark"] .company-sidebar,

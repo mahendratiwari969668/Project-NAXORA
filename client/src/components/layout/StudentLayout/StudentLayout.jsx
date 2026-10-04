@@ -77,9 +77,6 @@ export default function StudentLayout() {
 
   return (
     <div className="student-layout">
-      {/* =================================================
-          SIDEBAR
-      ================================================= */}
 
       <aside className="student-layout-sidebar">
         {/* BRAND */}
@@ -98,7 +95,6 @@ export default function StudentLayout() {
           </span>
         </Link>
 
-        {/* NAVIGATION */}
 
         <nav className="student-layout-nav">
           {navigation.map(
@@ -129,7 +125,6 @@ export default function StudentLayout() {
           )}
         </nav>
 
-        {/* USER */}
 
         <Link
           to="/student/profile"
@@ -148,9 +143,6 @@ export default function StudentLayout() {
         </Link>
       </aside>
 
-      {/* =================================================
-          RIGHT SIDE
-      ================================================= */}
 
       <div className="student-layout-content">
         {/* TOPBAR */}
@@ -183,7 +175,6 @@ export default function StudentLayout() {
           </div>
         </header>
 
-        {/* PAGE */}
 
         <main className="student-layout-main">
           <Outlet />

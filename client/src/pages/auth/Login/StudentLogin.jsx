@@ -87,11 +87,9 @@ export default function StudentLogin() {
         </div>
       </header>
 
-      {/* Main */}
       <main className="flex min-h-[calc(100vh-80px)] items-center justify-center px-5 py-12">
         <div className="w-full max-w-md">
 
-          {/* Heading */}
           <div className="mb-8 text-center">
             <div className="mx-auto mb-5 flex h-14 w-14 items-center justify-center rounded-xl bg-blue-50 text-blue-600 dark:bg-blue-500/10 dark:text-blue-400">
               <GraduationCap size={28} strokeWidth={1.8} />

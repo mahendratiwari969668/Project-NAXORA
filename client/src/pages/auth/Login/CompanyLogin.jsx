@@ -46,10 +46,6 @@ export default function CompanyLogin() {
   return (
     <div className="company-auth-page">
 
-      {/* =================================================
-          TOP BAR
-      ================================================= */}
-
       <div className="company-auth-top">
 
         <Link
@@ -73,9 +69,6 @@ export default function CompanyLogin() {
       </div>
 
 
-      {/* =================================================
-          MAIN
-      ================================================= */}
 
       <main className="company-auth-container">
 
@@ -98,10 +91,6 @@ export default function CompanyLogin() {
 
         </div>
 
-
-        {/* =================================================
-            LOGIN FORM
-        ================================================= */}
 
         <form
           className="company-auth-card"

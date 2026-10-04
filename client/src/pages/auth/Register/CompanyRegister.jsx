@@ -63,9 +63,6 @@ export default function CompanyRegister() {
   return (
     <div className="company-auth-page company-register-page">
 
-      {/* =================================================
-          TOP BAR
-      ================================================= */}
 
       <div className="company-auth-top">
 
@@ -90,9 +87,6 @@ export default function CompanyRegister() {
       </div>
 
 
-      {/* =================================================
-          HEADER
-      ================================================= */}
 
       <main className="company-auth-container company-register-container">
 
@@ -116,18 +110,10 @@ export default function CompanyRegister() {
         </div>
 
 
-        {/* =================================================
-            REGISTRATION FORM
-        ================================================= */}
-
         <form
           className="company-auth-card company-register-card"
           onSubmit={handleSubmit}
         >
-
-          {/* =================================================
-              COMPANY INFORMATION
-          ================================================= */}
 
           <section className="company-form-section">
 
@@ -356,9 +342,6 @@ export default function CompanyRegister() {
           </section>
 
 
-          {/* =================================================
-              LOCATION
-          ================================================= */}
 
           <section className="company-form-section">
 
@@ -581,9 +564,6 @@ export default function CompanyRegister() {
           </section>
 
 
-          {/* =================================================
-              AUTHORIZED PERSON
-          ================================================= */}
 
           <section className="company-form-section">
 
@@ -690,9 +670,6 @@ export default function CompanyRegister() {
           </section>
 
 
-          {/* =================================================
-              ACCOUNT SECURITY
-          ================================================= */}
 
           <section className="company-form-section">
 
@@ -762,9 +739,6 @@ export default function CompanyRegister() {
           </section>
 
 
-          {/* =================================================
-              COMPANY VERIFICATION
-          ================================================= */}
 
           <section className="company-form-section">
 
@@ -817,9 +791,6 @@ export default function CompanyRegister() {
           </section>
 
 
-          {/* =================================================
-              REGISTRATION NOTICE
-          ================================================= */}
 
           <div className="company-registration-notice">
 
@@ -835,10 +806,6 @@ export default function CompanyRegister() {
           </div>
 
 
-          {/* =================================================
-              SUBMIT
-          ================================================= */}
-
           <button
             type="submit"
             className="company-submit company-register-submit"
@@ -848,10 +815,6 @@ export default function CompanyRegister() {
 
         </form>
 
-
-        {/* =================================================
-            LOGIN LINK
-        ================================================= */}
 
         <p className="company-auth-switch">
 
