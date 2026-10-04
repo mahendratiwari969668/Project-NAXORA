@@ -101,24 +101,18 @@ import CompanySettings from "../pages/company/Settings/CompanySettings";
 export default function AppRoutes() {
   return (
     <Routes>
-      {/* =====================================================
-          PUBLIC
-      ====================================================== */}
+          {/* PUBLIC */}
 
       <Route path="/" element={<LandingPage />} />
 
-      {/* =====================================================
-          ROLE SELECTION
-      ====================================================== */}
+          {/* ROLE SELECTION */}
 
       <Route
         path="/auth/role-selection"
         element={<RoleSelection />}
       />
 
-      {/* =====================================================
-          STUDENT AUTHENTICATION
-      ====================================================== */}
+          {/* STUDENT AUTHENTICATION */}
 
       <Route
         path="/auth/student/login"
@@ -130,9 +124,7 @@ export default function AppRoutes() {
         element={<StudentRegister />}
       />
 
-      {/* =====================================================
-          INSTITUTION AUTHENTICATION
-      ====================================================== */}
+          {/* INSTITUTION AUTHENTICATION */}
 
       <Route
         path="/auth/institution/login"
@@ -144,9 +136,7 @@ export default function AppRoutes() {
         element={<InstitutionRegister />}
       />
 
-      {/* =====================================================
-          COMPANY AUTHENTICATION
-      ====================================================== */}
+          {/* COMPANY AUTHENTICATION */}
 
       <Route
         path="/auth/company/login"
@@ -158,9 +148,7 @@ export default function AppRoutes() {
         element={<CompanyRegister />}
       />
 
-      {/* =====================================================
-          STUDENT PORTAL
-      ====================================================== */}
+          {/* STUDENT PORTAL */}
 
       <Route
         path="/student"
@@ -178,18 +166,14 @@ export default function AppRoutes() {
           }
         />
 
-        {/* =================================================
-            DASHBOARD
-        ================================================= */}
+            {/* DASHBOARD */}
 
         <Route
           path="dashboard"
           element={<StudentDashboard />}
         />
 
-        {/* =================================================
-            PROFILE
-        ================================================= */}
+            {/* PROFILE */}
 
         <Route
           path="profile"
@@ -226,9 +210,7 @@ export default function AppRoutes() {
           />
         </Route>
 
-        {/* =================================================
-            SKILL MAPPING
-        ================================================= */}
+            {/* SKILL MAPPING */}
 
         {/* My Skills */}
         <Route
@@ -254,9 +236,8 @@ export default function AppRoutes() {
           element={<StudentSkillMapping />}
         />
 
-        {/* =================================================
-            OTHER STUDENT FEATURES
-        ================================================= */}
+            {/* OTHER STUDENT FEATURES */}
+       
 
         <Route
           path="opportunities"
@@ -301,9 +282,7 @@ export default function AppRoutes() {
         />
       </Route>
 
-      {/* =====================================================
-          INSTITUTION PORTAL
-      ====================================================== */}
+          {/* INSTITUTION PORTAL */}
 
       <Route
         path="/institution"
@@ -392,9 +371,7 @@ export default function AppRoutes() {
         />
       </Route>
 
-      {/* =====================================================
-          COMPANY PORTAL
-      ====================================================== */}
+          {/* COMPANY PORTAL */}
 
       <Route
         path="/company"
@@ -483,18 +460,14 @@ export default function AppRoutes() {
         />
       </Route>
 
-      {/* =====================================================
-          TEMPORARY ROLE PLACEHOLDER
-      ====================================================== */}
+          {/* TEMPORARY ROLE PLACEHOLDER */}
 
       <Route
         path="/auth/:role"
         element={<RolePlaceholder />}
       />
 
-      {/* =====================================================
-          FALLBACK
-      ====================================================== */}
+     {/*  fallback */}
 
       <Route
         path="*"

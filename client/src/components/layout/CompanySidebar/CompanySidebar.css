@@ -423,10 +423,6 @@ body[data-theme="dark"] .company-sidebar-account-info small,
   color: #68819d;
 }
 
-/* =========================
-   RESPONSIVE
-========================= */
-
 @media (max-width: 900px) {
   .company-sidebar {
     width: 220px;
