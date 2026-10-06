@@ -1,0 +1,1180 @@
+/* =========================================================
+   INSTITUTION PROFILE PAGE
+   ========================================================= */
+
+.institution-profile-page {
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+
+  padding: 4px 0 40px;
+
+  color: #e7f0f8;
+}
+
+
+/* =========================================================
+   PAGE HEADER
+   ========================================================= */
+
+.institution-profile-header {
+  width: 100%;
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+
+  gap: 24px;
+
+  margin-bottom: 24px;
+}
+
+.institution-profile-eyebrow {
+  margin: 0 0 7px;
+
+  color: #55cfe1;
+
+  font-size: 12px;
+  font-weight: 800;
+
+  letter-spacing: 1.2px;
+}
+
+.institution-profile-header h1 {
+  margin: 0;
+
+  color: #f1f6fa;
+
+  font-size: 30px;
+  line-height: 1.2;
+
+  font-weight: 750;
+  letter-spacing: -0.4px;
+}
+
+.institution-profile-header > div:first-child > p:last-child {
+  max-width: 720px;
+
+  margin: 9px 0 0;
+
+  color: #8da2b5;
+
+  font-size: 15px;
+  line-height: 1.55;
+}
+
+
+/* =========================================================
+   HEADER STATUS
+   ========================================================= */
+
+.institution-profile-header-status {
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+
+  padding: 10px 14px;
+
+  color: #6de0ed;
+
+  background: #102a38;
+
+  border: 1px solid #245064;
+  border-radius: 9px;
+
+  font-size: 13px;
+  font-weight: 650;
+}
+
+.institution-profile-header-status svg {
+  color: #43d3e3;
+}
+
+
+/* =========================================================
+   PROFILE WORKSPACE
+   ========================================================= */
+
+.institution-profile-workspace {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 20px;
+}
+
+
+/* =========================================================
+   PROFILE SUMMARY
+   ========================================================= */
+
+.institution-profile-summary {
+  width: 100%;
+  min-width: 0;
+
+  box-sizing: border-box;
+
+  display: flex;
+  align-items: center;
+
+  gap: 20px;
+
+  padding: 24px 26px;
+
+  background: #101b29;
+
+  border: 1px solid #26394c;
+  border-radius: 15px;
+
+  box-shadow:
+    0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+
+.institution-profile-avatar {
+  width: 76px;
+  height: 76px;
+
+  flex: 0 0 76px;
+
+  display: grid;
+  place-items: center;
+
+  color: #55d9e8;
+
+  background:
+    linear-gradient(
+      145deg,
+      #12394a,
+      #102735
+    );
+
+  border: 1px solid #286176;
+  border-radius: 13px;
+}
+
+
+.institution-profile-summary-content {
+  min-width: 0;
+  flex: 1;
+}
+
+
+.institution-profile-label {
+  display: block;
+
+  margin-bottom: 5px;
+
+  color: #6f91a6;
+
+  font-size: 11px;
+  font-weight: 800;
+
+  letter-spacing: 1px;
+}
+
+
+.institution-profile-summary-content h2 {
+  margin: 0;
+
+  color: #edf5fa;
+
+  font-size: 23px;
+  line-height: 1.3;
+
+  font-weight: 750;
+}
+
+
+.institution-profile-summary-content > p {
+  margin: 4px 0 12px;
+
+  color: #8da2b4;
+
+  font-size: 14px;
+}
+
+
+.institution-profile-contact {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 10px 20px;
+}
+
+
+.institution-profile-contact span {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 7px;
+
+  color: #9aabba;
+
+  font-size: 13px;
+}
+
+
+.institution-profile-contact svg {
+  flex-shrink: 0;
+
+  color: #4dc8da;
+}
+
+
+/* =========================================================
+   EDIT BUTTON
+   ========================================================= */
+
+.institution-profile-edit-button {
+  flex-shrink: 0;
+
+  display: inline-flex;
+  align-items: center;
+
+  gap: 8px;
+
+  min-height: 42px;
+
+  padding: 0 16px;
+
+  color: #dcebf2;
+
+  background: #142738;
+
+  border: 1px solid #2b455a;
+  border-radius: 9px;
+
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    color 0.2s ease,
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.institution-profile-edit-button:hover {
+  color: #62ddea;
+
+  background: #173244;
+
+  border-color: #357084;
+
+  transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   PROFILE CARD
+   ========================================================= */
+
+.institution-profile-card {
+  width: 100%;
+  min-width: 0;
+
+  box-sizing: border-box;
+
+  padding: 27px 29px;
+
+  background: #101b29;
+
+  border: 1px solid #26394c;
+  border-radius: 15px;
+
+  box-shadow:
+    0 10px 28px rgba(0, 0, 0, 0.13);
+}
+
+
+/* =========================================================
+   CARD HEADER
+   ========================================================= */
+
+.institution-profile-card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  padding-bottom: 21px;
+
+  border-bottom: 1px solid #213447;
+}
+
+
+.institution-profile-card-eyebrow {
+  display: block;
+
+  margin-bottom: 6px;
+
+  color: #6e8fa4;
+
+  font-size: 11px;
+  font-weight: 800;
+
+  letter-spacing: 1px;
+}
+
+
+.institution-profile-card-header h2 {
+  margin: 0;
+
+  color: #edf4f9;
+
+  font-size: 21px;
+  line-height: 1.3;
+
+  font-weight: 750;
+}
+
+
+.institution-profile-card-header p {
+  margin: 7px 0 0;
+
+  color: #8196a8;
+
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+
+.institution-profile-card-icon {
+  width: 42px;
+  height: 42px;
+
+  flex: 0 0 42px;
+
+  display: grid;
+  place-items: center;
+
+  color: #54d5e5;
+
+  background: #102c3b;
+
+  border: 1px solid #25566a;
+  border-radius: 9px;
+}
+
+
+/* =========================================================
+   PROFILE DETAILS
+   ========================================================= */
+
+.institution-profile-details {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  column-gap: 70px;
+  row-gap: 0;
+
+  padding-top: 8px;
+}
+
+
+.institution-profile-detail {
+  min-width: 0;
+
+  padding: 17px 0;
+
+  border-bottom: 1px solid #1e3041;
+}
+
+
+.institution-profile-detail span {
+  display: block;
+
+  margin-bottom: 7px;
+
+  color: #71899d;
+
+  font-size: 12px;
+  font-weight: 650;
+
+  letter-spacing: 0.15px;
+}
+
+
+.institution-profile-detail strong {
+  display: flex;
+  align-items: center;
+
+  gap: 7px;
+
+  min-width: 0;
+
+  overflow-wrap: anywhere;
+
+  color: #e4edf3;
+
+  font-size: 15px;
+  line-height: 1.45;
+
+  font-weight: 650;
+}
+
+
+.institution-profile-detail-full {
+  grid-column: 1 / -1;
+}
+
+
+/* =========================================================
+   EDIT FORM
+   ========================================================= */
+
+.institution-profile-form {
+  padding-top: 24px;
+}
+
+
+.institution-profile-form-grid {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 19px 25px;
+}
+
+
+.institution-profile-field {
+  width: 100%;
+  min-width: 0;
+}
+
+
+.institution-profile-field label {
+  display: block;
+
+  margin-bottom: 8px;
+
+  color: #8da2b4;
+
+  font-size: 13px;
+  font-weight: 650;
+}
+
+
+.institution-profile-field input {
+  width: 100%;
+  min-width: 0;
+
+  box-sizing: border-box;
+
+  min-height: 49px;
+
+  padding: 0 14px;
+
+  color: #e5eef4;
+
+  background: #0c1622;
+
+  border: 1px solid #294054;
+  border-radius: 9px;
+
+  outline: none;
+
+  font-family: inherit;
+  font-size: 14px;
+
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+
+.institution-profile-field input::placeholder {
+  color: #536a7d;
+}
+
+
+.institution-profile-field input:focus {
+  background: #101e2c;
+
+  border-color: #2bbfd5;
+
+  box-shadow:
+    0 0 0 3px rgba(43, 191, 213, 0.1);
+}
+
+
+/* Full width field */
+
+.institution-profile-field-full {
+  grid-column: 1 / -1;
+}
+
+
+/* =========================================================
+   AUTHORIZED REPRESENTATIVE FORM SECTION
+   ========================================================= */
+
+.institution-profile-form-section {
+  margin-top: 30px;
+
+  padding-top: 24px;
+
+  border-top: 1px solid #213447;
+}
+
+
+.institution-profile-form-section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 18px;
+}
+
+
+.institution-profile-form-section-header span {
+  display: block;
+
+  margin-bottom: 5px;
+
+  color: #6d8ca0;
+
+  font-size: 11px;
+  font-weight: 800;
+
+  letter-spacing: 1px;
+}
+
+
+.institution-profile-form-section-header h3 {
+  margin: 0;
+
+  color: #e8f0f5;
+
+  font-size: 18px;
+}
+
+
+.institution-profile-form-section-header > svg {
+  color: #4dcddd;
+}
+
+
+/* =========================================================
+   FORM ACTIONS
+   ========================================================= */
+
+.institution-profile-form-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  gap: 10px;
+
+  margin-top: 27px;
+
+  padding-top: 21px;
+
+  border-top: 1px solid #213447;
+}
+
+
+.institution-profile-cancel-button,
+.institution-profile-save-button {
+  min-height: 43px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  padding: 0 17px;
+
+  border-radius: 9px;
+
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    color 0.2s ease,
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+
+.institution-profile-cancel-button {
+  color: #a4b3c0;
+
+  background: transparent;
+
+  border: 1px solid #304557;
+}
+
+
+.institution-profile-cancel-button:hover {
+  color: #e3edf3;
+
+  background: #142333;
+
+  border-color: #40596d;
+}
+
+
+.institution-profile-save-button {
+  color: #06151b;
+
+  background: #45d0df;
+
+  border: 1px solid #45d0df;
+}
+
+
+.institution-profile-save-button:hover {
+  background: #65deea;
+
+  border-color: #65deea;
+}
+
+
+/* =========================================================
+   AUTHORIZED PERSON
+   ========================================================= */
+
+.institution-authorized-person {
+  display: flex;
+  align-items: center;
+
+  gap: 16px;
+
+  padding-top: 23px;
+}
+
+
+.institution-authorized-avatar {
+  width: 55px;
+  height: 55px;
+
+  flex: 0 0 55px;
+
+  display: grid;
+  place-items: center;
+
+  color: #54d5e5;
+
+  background: #102c3b;
+
+  border: 1px solid #25566a;
+  border-radius: 11px;
+}
+
+
+.institution-authorized-person > div:last-child {
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 5px;
+}
+
+
+.institution-authorized-person strong {
+  color: #e7f0f5;
+
+  font-size: 16px;
+  font-weight: 700;
+}
+
+
+.institution-authorized-person span {
+  color: #849aab;
+
+  font-size: 13px;
+}
+
+
+/* =========================================================
+   VERIFICATION
+   ========================================================= */
+
+.institution-profile-verification {
+  width: 100%;
+
+  box-sizing: border-box;
+
+  display: flex;
+  align-items: center;
+
+  gap: 14px;
+
+  padding: 17px 19px;
+
+  background: #102330;
+
+  border: 1px solid #24495b;
+  border-radius: 12px;
+}
+
+
+.institution-profile-verification-icon {
+  width: 39px;
+  height: 39px;
+
+  flex: 0 0 39px;
+
+  display: grid;
+  place-items: center;
+
+  color: #55d8e7;
+
+  background: #123443;
+
+  border: 1px solid #286075;
+  border-radius: 9px;
+}
+
+
+.institution-profile-verification > div:nth-child(2) {
+  min-width: 0;
+  flex: 1;
+}
+
+
+.institution-profile-verification strong {
+  display: block;
+
+  margin-bottom: 4px;
+
+  color: #e7f1f5;
+
+  font-size: 14px;
+}
+
+
+.institution-profile-verification p {
+  margin: 0;
+
+  color: #8198aa;
+
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+
+.institution-profile-pending {
+  flex-shrink: 0;
+
+  padding: 6px 10px;
+
+  color: #d7a95c;
+
+  background: rgba(215, 169, 92, 0.09);
+
+  border: 1px solid rgba(215, 169, 92, 0.28);
+  border-radius: 7px;
+
+  font-size: 11px;
+  font-weight: 750;
+}
+
+
+/* =========================================================
+   SUCCESS MESSAGE
+   ========================================================= */
+
+.institution-profile-success {
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+
+  padding: 13px 16px;
+
+  color: #67dca1;
+
+  background: rgba(45, 181, 117, 0.08);
+
+  border: 1px solid rgba(45, 181, 117, 0.25);
+  border-radius: 9px;
+
+  font-size: 13px;
+  font-weight: 650;
+}
+
+
+/* =========================================================
+   LIGHT MODE
+   ========================================================= */
+
+:root:not(.dark) .institution-profile-page {
+  color: #172033;
+}
+
+
+:root:not(.dark) .institution-profile-eyebrow {
+  color: #087f99;
+}
+
+
+:root:not(.dark) .institution-profile-header h1 {
+  color: #172033;
+}
+
+
+:root:not(.dark)
+  .institution-profile-header
+  > div:first-child
+  > p:last-child {
+  color: #64748b;
+}
+
+
+:root:not(.dark) .institution-profile-header-status {
+  color: #087f99;
+
+  background: #edfafd;
+
+  border-color: #c9e8ef;
+}
+
+
+:root:not(.dark) .institution-profile-summary,
+:root:not(.dark) .institution-profile-card {
+  background: #ffffff;
+
+  border-color: #dce5ed;
+
+  box-shadow:
+    0 10px 28px rgba(15, 23, 42, 0.055);
+}
+
+
+:root:not(.dark) .institution-profile-avatar {
+  color: #078aa3;
+
+  background: #eefafd;
+
+  border-color: #c9e8ef;
+}
+
+
+:root:not(.dark) .institution-profile-label {
+  color: #71869a;
+}
+
+
+:root:not(.dark) .institution-profile-summary-content h2 {
+  color: #172033;
+}
+
+
+:root:not(.dark) .institution-profile-summary-content > p {
+  color: #64748b;
+}
+
+
+:root:not(.dark) .institution-profile-contact span {
+  color: #687b8d;
+}
+
+
+:root:not(.dark) .institution-profile-edit-button {
+  color: #34495a;
+
+  background: #f6f9fb;
+
+  border-color: #d4e0e8;
+}
+
+
+:root:not(.dark) .institution-profile-edit-button:hover {
+  color: #087f99;
+
+  background: #eefafd;
+
+  border-color: #b9dfe8;
+}
+
+
+:root:not(.dark) .institution-profile-card-header {
+  border-color: #e3e9ef;
+}
+
+
+:root:not(.dark) .institution-profile-card-eyebrow {
+  color: #73879a;
+}
+
+
+:root:not(.dark) .institution-profile-card-header h2 {
+  color: #172033;
+}
+
+
+:root:not(.dark) .institution-profile-card-header p {
+  color: #687b8d;
+}
+
+
+:root:not(.dark) .institution-profile-card-icon {
+  color: #078aa3;
+
+  background: #eefafd;
+
+  border-color: #c9e8ef;
+}
+
+
+:root:not(.dark) .institution-profile-detail {
+  border-color: #e6ebf0;
+}
+
+
+:root:not(.dark) .institution-profile-detail span {
+  color: #718396;
+}
+
+
+:root:not(.dark) .institution-profile-detail strong {
+  color: #253447;
+}
+
+
+:root:not(.dark) .institution-profile-field label {
+  color: #617487;
+}
+
+
+:root:not(.dark) .institution-profile-field input {
+  color: #172033;
+
+  background: #f8fafc;
+
+  border-color: #d5e0e8;
+}
+
+
+:root:not(.dark) .institution-profile-field input::placeholder {
+  color: #8b9aaa;
+}
+
+
+:root:not(.dark) .institution-profile-field input:focus {
+  background: #ffffff;
+
+  border-color: #0b9ab5;
+
+  box-shadow:
+    0 0 0 3px rgba(11, 154, 181, 0.09);
+}
+
+
+:root:not(.dark) .institution-profile-form-section {
+  border-color: #e3e9ef;
+}
+
+
+:root:not(.dark) .institution-profile-form-section-header span {
+  color: #73879a;
+}
+
+
+:root:not(.dark) .institution-profile-form-section-header h3 {
+  color: #253447;
+}
+
+
+:root:not(.dark) .institution-profile-form-actions {
+  border-color: #e3e9ef;
+}
+
+
+:root:not(.dark) .institution-profile-cancel-button {
+  color: #536679;
+
+  background: #ffffff;
+
+  border-color: #d3dee7;
+}
+
+
+:root:not(.dark) .institution-profile-cancel-button:hover {
+  color: #243447;
+
+  background: #f5f8fa;
+
+  border-color: #bfcdd8;
+}
+
+
+:root:not(.dark) .institution-profile-save-button {
+  color: #ffffff;
+
+  background: #079bb5;
+
+  border-color: #079bb5;
+}
+
+
+:root:not(.dark) .institution-profile-save-button:hover {
+  background: #078ba3;
+
+  border-color: #078ba3;
+}
+
+
+:root:not(.dark) .institution-authorized-avatar {
+  color: #078aa3;
+
+  background: #eefafd;
+
+  border-color: #c9e8ef;
+}
+
+
+:root:not(.dark) .institution-authorized-person strong {
+  color: #253447;
+}
+
+
+:root:not(.dark) .institution-authorized-person span {
+  color: #718396;
+}
+
+
+:root:not(.dark) .institution-profile-verification {
+  background: #f1fafc;
+
+  border-color: #cbe6ed;
+}
+
+
+:root:not(.dark) .institution-profile-verification-icon {
+  color: #078aa3;
+
+  background: #e8f8fb;
+
+  border-color: #c5e4eb;
+}
+
+
+:root:not(.dark) .institution-profile-verification strong {
+  color: #253447;
+}
+
+
+:root:not(.dark) .institution-profile-verification p {
+  color: #687b8d;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+  .institution-profile-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .institution-profile-header-status {
+    align-self: flex-start;
+  }
+
+  .institution-profile-summary {
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .institution-profile-edit-button {
+    margin-left: auto;
+  }
+
+  .institution-profile-details {
+    column-gap: 35px;
+  }
+}
+
+
+@media (max-width: 700px) {
+
+  .institution-profile-summary {
+    padding: 20px;
+  }
+
+  .institution-profile-card {
+    padding: 22px;
+  }
+
+  .institution-profile-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .institution-profile-field-full {
+    grid-column: auto;
+  }
+
+  .institution-profile-details {
+    grid-template-columns: 1fr;
+  }
+
+  .institution-profile-detail-full {
+    grid-column: auto;
+  }
+
+  .institution-profile-form-actions {
+    justify-content: stretch;
+  }
+
+  .institution-profile-cancel-button,
+  .institution-profile-save-button {
+    flex: 1;
+  }
+}
+
+
+@media (max-width: 520px) {
+
+  .institution-profile-header h1 {
+    font-size: 26px;
+  }
+
+  .institution-profile-summary {
+    flex-direction: column;
+  }
+
+  .institution-profile-edit-button {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .institution-profile-contact {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .institution-profile-verification {
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .institution-profile-pending {
+    margin-left: 53px;
+  }
+}

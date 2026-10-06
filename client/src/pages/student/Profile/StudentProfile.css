@@ -1,7 +1,4 @@
-/* =========================================================
-   NEXORA - STUDENT PROFILE CONTENT
-   Used inside StudentProfileLayout
-   ========================================================= */
+
 
 .student-profile-page {
   width: 100%;
@@ -17,9 +14,6 @@
 }
 
 
-/* =========================================================
-   PAGE HEADING
-   ========================================================= */
 
 .profile-page-heading {
   width: 100%;
@@ -83,12 +77,6 @@
 }
 
 
-/* =========================================================
-   IMPORTANT FIX
-   Old profile-layout used to contain the sidebar.
-   Now sidebar is handled by StudentProfileLayout.
-   So Profile content must occupy FULL width.
-   ========================================================= */
 
 .profile-layout {
   width: 100% !important;
@@ -99,11 +87,6 @@
   padding: 0 !important;
 }
 
-
-/* =========================================================
-   MAIN PROFILE AREA
-   Personal Information + Resume
-   ========================================================= */
 
 .profile-information-area {
   width: 100% !important;
@@ -120,10 +103,6 @@
   align-items: start;
 }
 
-
-/* =========================================================
-   PERSONAL INFORMATION CARD
-   ========================================================= */
 
 .personal-information-card {
   width: 100%;
@@ -144,9 +123,6 @@
 }
 
 
-/* =========================================================
-   CARD HEADER
-   ========================================================= */
 
 .personal-card-header {
   display: flex;
@@ -183,10 +159,6 @@
   font-weight: 750;
 }
 
-
-/* =========================================================
-   EDIT BUTTON
-   ========================================================= */
 
 .profile-edit-button {
   min-height: 40px;
@@ -230,9 +202,6 @@
 }
 
 
-/* =========================================================
-   PROFILE INTRO
-   ========================================================= */
 
 .personal-intro {
   display: flex;
@@ -318,9 +287,6 @@
 }
 
 
-/* =========================================================
-   DETAILS
-   ========================================================= */
 
 .profile-details-grid {
   display: grid;
@@ -339,7 +305,7 @@
   padding: 12px 0;
 }
 
-.profile-detail > span {
+.profile-detail>span {
   display: block;
 
   margin-bottom: 7px;
@@ -374,9 +340,6 @@
 }
 
 
-/* =========================================================
-   PROFILE PREVIEW SECTIONS
-   ========================================================= */
 
 .profile-preview-section {
   padding: 24px 0;
@@ -431,9 +394,6 @@
 }
 
 
-/* =========================================================
-   EMPTY STATES
-   ========================================================= */
 
 .profile-empty-state {
   display: flex;
@@ -504,9 +464,6 @@
 }
 
 
-/* =========================================================
-   RESUME CARD
-   ========================================================= */
 
 .profile-side-card {
   width: 100%;
@@ -605,9 +562,6 @@
 
 
 
-/* =========================================================
-   EDIT PROFILE FORM
-   ========================================================= */
 
 .profile-edit-form {
   width: 100%;
@@ -751,10 +705,6 @@
 .profile-cancel-button:active,
 .profile-save-button:active { transform: translateY(0); }
 
-/* =========================================================
-   EDIT FORM - LIGHT MODE
-   ========================================================= */
-
 :root:not(.dark) .profile-form-field label { color: #52657a; }
 
 :root:not(.dark) .profile-input-wrapper,
@@ -798,9 +748,6 @@
   border-color: #bfcdda;
 }
 
-/* =========================================================
-   EDIT FORM - RESPONSIVE
-   ========================================================= */
 
 @media (max-width: 700px) {
   .profile-form-grid { grid-template-columns: 1fr; gap: 16px; }
@@ -817,9 +764,6 @@
 }
 
 
-/* =========================================================
-   LIGHT MODE
-   ========================================================= */
 
 :root:not(.dark) .profile-page-heading h1 {
   color: #172033;
@@ -890,10 +834,6 @@
   color: #667085;
 }
 
-
-/* =========================================================
-   RESPONSIVE
-   ========================================================= */
 
 @media (max-width: 1100px) {
   .profile-information-area {
