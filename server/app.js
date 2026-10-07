@@ -15,6 +15,9 @@ import opportunityRoutes from "./routes/opportunityRoutes.js";
 import applicationRoutes from "./routes/applicationRoutes.js";
 import learningRoutes from "./routes/learningRoutes.js";
 import skillMappingRoutes from "./routes/skillMappingRoutes.js";
+import studentDashboardRoutes from "./routes/studentDashboardRoutes.js";
+import studentSettingsRoutes from "./routes/studentSettingsRoutes.js";
+import passwordResetRoutes from "./routes/passwordResetRoutes.js";
 
 const app = express();
 
@@ -48,6 +51,9 @@ app.use("/api/student/opportunities", opportunityRoutes);
 app.use("/api/student/applications", applicationRoutes);
 app.use("/api/student/learning", learningRoutes);
 app.use("/api/student/skill-mapping", skillMappingRoutes);
+app.use("/api/student/dashboard", studentDashboardRoutes);
+app.use("/api/student/settings", studentSettingsRoutes);
+app.use("/api/auth/password", passwordResetRoutes);
 
 
 export default app;
