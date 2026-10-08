@@ -27,6 +27,13 @@ import companyOpportunityRoutes from "./routes/companyOpportunityRoutes.js";
 import companyApplicationRoutes from "./routes/companyApplicationRoutes.js";
 import companyDashboardRoutes from "./routes/companyDashboardRoutes.js";
 
+import institutionDashboardRoutes from "./routes/institutionDashboardRoutes.js";
+import institutionStudentRoutes from "./routes/institutionStudentRoutes.js";
+import institutionStudentOverviewRoutes from "./routes/institutionStudentOverviewRoutes.js";
+import institutionOpportunityRoutes from "./routes/institutionOpportunityRoutes.js";
+import institutionApplicationRoutes from "./routes/institutionApplicationRoutes.js";
+import institutionNotificationRoutes from "./routes/institutionNotificationRoutes.js";
+
 const app = express();
 
 app.use(
@@ -67,5 +74,11 @@ app.use("/api/institution/profile", institutionProfileRoutes);
 app.use("/api/company/opportunities", companyOpportunityRoutes);
 app.use("/api/company/applications", companyApplicationRoutes);
 app.use("/api/company/dashboard", companyDashboardRoutes);
+app.use("/api/institution/dashboard",institutionDashboardRoutes);
+app.use("/api/institution/students", institutionStudentRoutes);
+app.use("/api/institution/students/overview", institutionStudentOverviewRoutes);
+app.use("/api/institution/opportunities", institutionOpportunityRoutes);
+app.use("/api/institution/applications", institutionApplicationRoutes);
+app.use("/api/institution/notifications", institutionNotificationRoutes);
 
 export default app;
