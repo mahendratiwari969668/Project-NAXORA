@@ -19,6 +19,14 @@ import studentDashboardRoutes from "./routes/studentDashboardRoutes.js";
 import studentSettingsRoutes from "./routes/studentSettingsRoutes.js";
 import passwordResetRoutes from "./routes/passwordResetRoutes.js";
 
+
+import companyProfileRoutes from "./routes/companyProfileRoutes.js";
+import institutionProfileRoutes from "./routes/institutionProfileRoutes.js";
+
+import companyOpportunityRoutes from "./routes/companyOpportunityRoutes.js";
+import companyApplicationRoutes from "./routes/companyApplicationRoutes.js";
+import companyDashboardRoutes from "./routes/companyDashboardRoutes.js";
+
 const app = express();
 
 app.use(
@@ -54,6 +62,10 @@ app.use("/api/student/skill-mapping", skillMappingRoutes);
 app.use("/api/student/dashboard", studentDashboardRoutes);
 app.use("/api/student/settings", studentSettingsRoutes);
 app.use("/api/auth/password", passwordResetRoutes);
-
+app.use("/api/company/profile", companyProfileRoutes);
+app.use("/api/institution/profile", institutionProfileRoutes);
+app.use("/api/company/opportunities", companyOpportunityRoutes);
+app.use("/api/company/applications", companyApplicationRoutes);
+app.use("/api/company/dashboard", companyDashboardRoutes);
 
 export default app;
