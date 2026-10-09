@@ -51,6 +51,7 @@ export default function CompanyLogin() {
   const [userEmail, setUserEmail] = useState("");
   const [resendCooldown, setResendCooldown] = useState(0);
   const [wrongRole, setWrongRole] = useState("");
+  const [isDevMode, setIsDevMode] = useState(false);
 
   // Countdown timer for OTP resend
   useEffect(() => {
@@ -110,6 +111,7 @@ export default function CompanyLogin() {
         }
 
         if (response.status === 403 && data.isUnverified) {
+          if (data.isDevMode) setIsDevMode(true);
           setIsUnverifiedMode(true);
           setOtpMode(true);
           setUserEmail(data.email || formData.identifier.trim());
@@ -125,6 +127,7 @@ export default function CompanyLogin() {
       }
 
       if (data.otpRequired) {
+        if (data.isDevMode) setIsDevMode(true);
         setIsUnverifiedMode(false);
         setOtpMode(true);
         setUserEmail(data.email || formData.identifier.trim());
@@ -234,6 +237,7 @@ export default function CompanyLogin() {
         throw new Error(data.message || "Unable to resend verification code.");
       }
 
+      if (data.isDevMode) setIsDevMode(true);
       setSuccessMsg(data.message || "A new verification code has been sent to your email.");
       setResendCooldown(data.cooldownSeconds || 60);
     } catch (err) {
@@ -280,13 +284,34 @@ export default function CompanyLogin() {
 
               <h1>{isUnverifiedMode ? "Verify your email" : "Enter verification code"}</h1>
 
-              <p>
-                We sent a 6-digit verification code to{" "}
-                <strong style={{ color: "var(--company-text, #0f172a)" }}>
-                  {userEmail}
-                </strong>
-                . Enter the code below to access your portal.
-              </p>
+              {isDevMode ? (
+                <div
+                  style={{
+                    padding: "12px 16px",
+                    borderRadius: "8px",
+                    background: "rgba(59, 130, 246, 0.08)",
+                    border: "1px solid rgba(59, 130, 246, 0.25)",
+                    color: "var(--company-text, #0f172a)",
+                    fontSize: "13px",
+                    lineHeight: "1.5",
+                    margin: "12px 0 16px",
+                    textAlign: "left",
+                  }}
+                >
+                  <strong style={{ display: "block", color: "#3b82f6", marginBottom: "4px" }}>
+                    Development Mode Active
+                  </strong>
+                  Check your <strong>backend server terminal</strong> to view the generated 6-digit verification code for <strong>{userEmail}</strong>.
+                </div>
+              ) : (
+                <p>
+                  We sent a 6-digit verification code to{" "}
+                  <strong style={{ color: "var(--company-text, #0f172a)" }}>
+                    {userEmail}
+                  </strong>
+                  . Enter the code below to access your portal.
+                </p>
+              )}
             </div>
 
             <form className="company-auth-card" onSubmit={handleVerifyOtp}>
@@ -346,6 +371,8 @@ export default function CompanyLogin() {
                 <span>
                   {resendCooldown > 0
                     ? `Resend in ${resendCooldown}s`
+                    : isDevMode
+                    ? "Need a new terminal code?"
                     : "Didn't receive the email?"}
                 </span>
 

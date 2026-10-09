@@ -25,6 +25,21 @@ const hashOtp = (otp) => {
   return crypto.createHash("sha256").update(otp.trim()).digest("hex");
 };
 
+const isCompanyOtpDevMode = () => {
+  return (
+    process.env.NODE_ENV !== "production" &&
+    (process.env.COMPANY_OTP_DEV_MODE === "true" || process.env.OTP_DEV_MODE === "true")
+  );
+};
+
+const logCompanyDevOtp = (email, otp) => {
+  if (isCompanyOtpDevMode()) {
+    console.log(
+      `\n================================================================================\n[NEXORA COMPANY DEV OTP] Recipient: ${email} | OTP: ${otp}\n================================================================================\n`
+    );
+  }
+};
+
 // POST /api/auth/company/register
 export const registerCompany = async (req, res) => {
   console.log(
@@ -250,43 +265,60 @@ export const registerCompany = async (req, res) => {
       };
       await user.save();
 
-      try {
-        const emailResult = await sendOtpEmail({
+      if (isCompanyOtpDevMode()) {
+        logCompanyDevOtp(normalizedEmail, rawOtp);
+        sendOtpEmail({
           to: normalizedEmail,
           otp: rawOtp,
           purpose: "registration",
           firstName: user.firstName,
           role: "company",
+        }).catch((emailErr) => {
+          console.warn(
+            `[AUTH] (Dev mode) Background email dispatch note for ${normalizedEmail}: ${emailErr.message}`
+          );
         });
-
-        if (!emailResult?.delivered && process.env.OTP_DEV_MODE !== "true") {
-          throw new Error("SMTP server did not accept message for delivery.");
-        }
-      } catch (emailErr) {
-        console.error(
-          `[AUTH] Existing unverified company OTP email delivery error for ${normalizedEmail} [${emailErr.code || "EMAIL_FAILED"}]: ${emailErr.message}`
-        );
-        user.otp.resendAvailableAt = undefined;
-        await user.save();
-
-        if (process.env.OTP_DEV_MODE !== "true") {
-          return res.status(503).json({
-            success: false,
-            isExistingUnverified: true,
-            email: normalizedEmail,
-            message:
-              "An unverified registration exists, but unable to send verification email via SMTP. Please try again.",
+      } else {
+        try {
+          const emailResult = await sendOtpEmail({
+            to: normalizedEmail,
+            otp: rawOtp,
+            purpose: "registration",
+            firstName: user.firstName,
+            role: "company",
           });
+
+          if (!emailResult?.delivered && process.env.OTP_DEV_MODE !== "true") {
+            throw new Error("SMTP server did not accept message for delivery.");
+          }
+        } catch (emailErr) {
+          console.error(
+            `[AUTH] Existing unverified company OTP email delivery error for ${normalizedEmail} [${emailErr.code || "EMAIL_FAILED"}]: ${emailErr.message}`
+          );
+          user.otp.resendAvailableAt = undefined;
+          await user.save();
+
+          if (process.env.OTP_DEV_MODE !== "true") {
+            return res.status(503).json({
+              success: false,
+              isExistingUnverified: true,
+              email: normalizedEmail,
+              message:
+                "An unverified registration exists, but unable to send verification email via SMTP. Please try again.",
+            });
+          }
         }
       }
 
       return res.status(200).json({
         success: true,
+        isDevMode: isCompanyOtpDevMode(),
         isExistingUnverified: true,
         email: normalizedEmail,
         cooldownSeconds: 60,
-        message:
-          "An unverified registration exists for this email. A fresh 6-digit verification code has been sent to your official company email.",
+        message: isCompanyOtpDevMode()
+          ? "Development mode: Check the backend server terminal for your verification code."
+          : "An unverified registration exists for this email. A fresh 6-digit verification code has been sent to your official company email.",
       });
     }
 
@@ -354,39 +386,56 @@ export const registerCompany = async (req, res) => {
     });
 
     // Send OTP Email safely
-    try {
-      const emailResult = await sendOtpEmail({
+    if (isCompanyOtpDevMode()) {
+      logCompanyDevOtp(normalizedEmail, rawOtp);
+      sendOtpEmail({
         to: normalizedEmail,
         otp: rawOtp,
         purpose: "registration",
         firstName,
         role: "company",
+      }).catch((emailErr) => {
+        console.warn(
+          `[AUTH] (Dev mode) Background email dispatch note for ${normalizedEmail}: ${emailErr.message}`
+        );
       });
-
-      if (!emailResult?.delivered && process.env.OTP_DEV_MODE !== "true") {
-        throw new Error("SMTP server did not accept message for delivery.");
-      }
-    } catch (emailErr) {
-      console.error(
-        `[AUTH] Company registration email delivery error for ${normalizedEmail} [${emailErr.code || "EMAIL_FAILED"}]: ${emailErr.message}`
-      );
-      user.otp.resendAvailableAt = undefined;
-      await user.save();
-
-      if (process.env.OTP_DEV_MODE !== "true") {
-        return res.status(503).json({
-          success: false,
-          email: normalizedEmail,
-          message:
-            "Company account was created, but unable to send verification email via SMTP. Please check your network and try again.",
+    } else {
+      try {
+        const emailResult = await sendOtpEmail({
+          to: normalizedEmail,
+          otp: rawOtp,
+          purpose: "registration",
+          firstName,
+          role: "company",
         });
+
+        if (!emailResult?.delivered && process.env.OTP_DEV_MODE !== "true") {
+          throw new Error("SMTP server did not accept message for delivery.");
+        }
+      } catch (emailErr) {
+        console.error(
+          `[AUTH] Company registration email delivery error for ${normalizedEmail} [${emailErr.code || "EMAIL_FAILED"}]: ${emailErr.message}`
+        );
+        user.otp.resendAvailableAt = undefined;
+        await user.save();
+
+        if (process.env.OTP_DEV_MODE !== "true") {
+          return res.status(503).json({
+            success: false,
+            email: normalizedEmail,
+            message:
+              "Company account was created, but unable to send verification email via SMTP. Please check your network and try again.",
+          });
+        }
       }
     }
 
     return res.status(201).json({
       success: true,
-      message:
-        "Registration initiated. A 6-digit verification code has been sent to your official company email.",
+      isDevMode: isCompanyOtpDevMode(),
+      message: isCompanyOtpDevMode()
+        ? "Development mode: Check the backend server terminal for your verification code."
+        : "Registration initiated. A 6-digit verification code has been sent to your official company email.",
       email: normalizedEmail,
       cooldownSeconds: 60,
     });
@@ -607,37 +656,55 @@ export const resendCompanyOtp = async (req, res) => {
     };
     await user.save();
 
-    try {
-      const emailResult = await sendOtpEmail({
+    if (isCompanyOtpDevMode()) {
+      logCompanyDevOtp(normalizedEmail, rawOtp);
+      sendOtpEmail({
         to: normalizedEmail,
         otp: rawOtp,
         purpose: "registration",
         firstName: user.firstName,
         role: "company",
+      }).catch((emailErr) => {
+        console.warn(
+          `[AUTH] (Dev mode) Background email dispatch note for ${normalizedEmail}: ${emailErr.message}`
+        );
       });
-
-      if (!emailResult?.delivered && process.env.OTP_DEV_MODE !== "true") {
-        throw new Error("SMTP server did not accept message for delivery.");
-      }
-    } catch (emailErr) {
-      console.error(
-        `[AUTH] Resend company OTP email error for ${normalizedEmail} [${emailErr.code || "EMAIL_FAILED"}]: ${emailErr.message}`
-      );
-      user.otp.resendAvailableAt = undefined;
-      await user.save();
-
-      if (process.env.OTP_DEV_MODE !== "true") {
-        return res.status(503).json({
-          success: false,
-          message:
-            "Unable to send verification code via SMTP. Please check server configuration or try again later.",
+    } else {
+      try {
+        const emailResult = await sendOtpEmail({
+          to: normalizedEmail,
+          otp: rawOtp,
+          purpose: "registration",
+          firstName: user.firstName,
+          role: "company",
         });
+
+        if (!emailResult?.delivered && process.env.OTP_DEV_MODE !== "true") {
+          throw new Error("SMTP server did not accept message for delivery.");
+        }
+      } catch (emailErr) {
+        console.error(
+          `[AUTH] Resend company OTP email error for ${normalizedEmail} [${emailErr.code || "EMAIL_FAILED"}]: ${emailErr.message}`
+        );
+        user.otp.resendAvailableAt = undefined;
+        await user.save();
+
+        if (process.env.OTP_DEV_MODE !== "true") {
+          return res.status(503).json({
+            success: false,
+            message:
+              "Unable to send verification code via SMTP. Please check server configuration or try again later.",
+          });
+        }
       }
     }
 
     return res.status(200).json({
       success: true,
-      message: "A new verification code has been sent to your official company email.",
+      isDevMode: isCompanyOtpDevMode(),
+      message: isCompanyOtpDevMode()
+        ? "Development mode: Check the backend server terminal for your verification code."
+        : "A new verification code has been sent to your official company email.",
       cooldownSeconds: 60,
     });
   } catch (error) {
@@ -788,42 +855,59 @@ export const loginCompany = async (req, res) => {
       };
       await user.save();
 
-      try {
-        const emailResult = await sendOtpEmail({
+      if (isCompanyOtpDevMode()) {
+        logCompanyDevOtp(user.email, rawOtp);
+        sendOtpEmail({
           to: user.email,
           otp: rawOtp,
           purpose: "registration",
           firstName: user.firstName,
           role: "company",
+        }).catch((emailErr) => {
+          console.warn(
+            `[AUTH] (Dev mode) Background email dispatch note for ${user.email}: ${emailErr.message}`
+          );
         });
-
-        if (!emailResult?.delivered && process.env.OTP_DEV_MODE !== "true") {
-          throw new Error("SMTP server did not accept message for delivery.");
-        }
-      } catch (e) {
-        console.error(
-          `[AUTH] Company verification OTP email error for ${user.email} [${e.code || "EMAIL_FAILED"}]: ${e.message}`
-        );
-        user.otp.resendAvailableAt = undefined;
-        await user.save();
-
-        if (process.env.OTP_DEV_MODE !== "true") {
-          return res.status(503).json({
-            success: false,
-            isUnverified: true,
-            email: user.email,
-            message:
-              "Your official email is not verified, but unable to send verification email via SMTP. Please try again later.",
+      } else {
+        try {
+          const emailResult = await sendOtpEmail({
+            to: user.email,
+            otp: rawOtp,
+            purpose: "registration",
+            firstName: user.firstName,
+            role: "company",
           });
+
+          if (!emailResult?.delivered && process.env.OTP_DEV_MODE !== "true") {
+            throw new Error("SMTP server did not accept message for delivery.");
+          }
+        } catch (e) {
+          console.error(
+            `[AUTH] Company verification OTP email error for ${user.email} [${e.code || "EMAIL_FAILED"}]: ${e.message}`
+          );
+          user.otp.resendAvailableAt = undefined;
+          await user.save();
+
+          if (process.env.OTP_DEV_MODE !== "true") {
+            return res.status(503).json({
+              success: false,
+              isUnverified: true,
+              email: user.email,
+              message:
+                "Your official email is not verified, but unable to send verification email via SMTP. Please try again later.",
+            });
+          }
         }
       }
 
       return res.status(403).json({
         success: false,
         isUnverified: true,
+        isDevMode: isCompanyOtpDevMode(),
         email: user.email,
-        message:
-          "Your official email is not verified yet. A verification code has been sent to your email.",
+        message: isCompanyOtpDevMode()
+          ? "Your official email is not verified yet. Development mode: Check the backend server terminal for your verification code."
+          : "Your official email is not verified yet. A verification code has been sent to your email.",
       });
     }
 
@@ -842,37 +926,55 @@ export const loginCompany = async (req, res) => {
     };
     await user.save();
 
-    try {
-      const emailResult = await sendOtpEmail({
+    if (isCompanyOtpDevMode()) {
+      logCompanyDevOtp(user.email, rawOtp);
+      sendOtpEmail({
         to: user.email,
         otp: rawOtp,
         purpose: "login",
         firstName: user.firstName,
         role: "company",
+      }).catch((emailErr) => {
+        console.warn(
+          `[AUTH] (Dev mode) Background email dispatch note for ${user.email}: ${emailErr.message}`
+        );
       });
-
-      if (!emailResult?.delivered && process.env.OTP_DEV_MODE !== "true") {
-        throw new Error("SMTP server did not accept message for delivery.");
-      }
-    } catch (e) {
-      console.error(
-        `[AUTH] Company login OTP email error for ${user.email} [${e.code || "EMAIL_FAILED"}]: ${e.message}`
-      );
-      user.otp.resendAvailableAt = undefined;
-      await user.save();
-
-      if (process.env.OTP_DEV_MODE !== "true") {
-        return res.status(503).json({
-          success: false,
-          message: "Unable to send login verification code via SMTP. Please try again later.",
+    } else {
+      try {
+        const emailResult = await sendOtpEmail({
+          to: user.email,
+          otp: rawOtp,
+          purpose: "login",
+          firstName: user.firstName,
+          role: "company",
         });
+
+        if (!emailResult?.delivered && process.env.OTP_DEV_MODE !== "true") {
+          throw new Error("SMTP server did not accept message for delivery.");
+        }
+      } catch (e) {
+        console.error(
+          `[AUTH] Company login OTP email error for ${user.email} [${e.code || "EMAIL_FAILED"}]: ${e.message}`
+        );
+        user.otp.resendAvailableAt = undefined;
+        await user.save();
+
+        if (process.env.OTP_DEV_MODE !== "true") {
+          return res.status(503).json({
+            success: false,
+            message: "Unable to send login verification code via SMTP. Please try again later.",
+          });
+        }
       }
     }
 
     return res.status(200).json({
       success: true,
       otpRequired: true,
-      message: "Verification code sent to your registered official email.",
+      isDevMode: isCompanyOtpDevMode(),
+      message: isCompanyOtpDevMode()
+        ? "Development mode: Check the backend server terminal for your login verification code."
+        : "Verification code sent to your registered official email.",
       email: user.email,
       cooldownSeconds: 60,
       approvalStatus: profile?.verification?.status || "pending",
@@ -1077,37 +1179,55 @@ export const resendCompanyLoginOtp = async (req, res) => {
     };
     await user.save();
 
-    try {
-      const emailResult = await sendOtpEmail({
+    if (isCompanyOtpDevMode()) {
+      logCompanyDevOtp(normalizedEmail, rawOtp);
+      sendOtpEmail({
         to: normalizedEmail,
         otp: rawOtp,
         purpose: "login",
         firstName: user.firstName,
         role: "company",
+      }).catch((emailErr) => {
+        console.warn(
+          `[AUTH] (Dev mode) Background email dispatch note for ${normalizedEmail}: ${emailErr.message}`
+        );
       });
-
-      if (!emailResult?.delivered && process.env.OTP_DEV_MODE !== "true") {
-        throw new Error("SMTP server did not accept message for delivery.");
-      }
-    } catch (emailErr) {
-      console.error(
-        `[AUTH] Resend company login OTP email error for ${normalizedEmail} [${emailErr.code || "EMAIL_FAILED"}]: ${emailErr.message}`
-      );
-      user.otp.resendAvailableAt = undefined;
-      await user.save();
-
-      if (process.env.OTP_DEV_MODE !== "true") {
-        return res.status(503).json({
-          success: false,
-          message:
-            "Unable to send verification code via SMTP. Please try again later.",
+    } else {
+      try {
+        const emailResult = await sendOtpEmail({
+          to: normalizedEmail,
+          otp: rawOtp,
+          purpose: "login",
+          firstName: user.firstName,
+          role: "company",
         });
+
+        if (!emailResult?.delivered && process.env.OTP_DEV_MODE !== "true") {
+          throw new Error("SMTP server did not accept message for delivery.");
+        }
+      } catch (emailErr) {
+        console.error(
+          `[AUTH] Resend company login OTP email error for ${normalizedEmail} [${emailErr.code || "EMAIL_FAILED"}]: ${emailErr.message}`
+        );
+        user.otp.resendAvailableAt = undefined;
+        await user.save();
+
+        if (process.env.OTP_DEV_MODE !== "true") {
+          return res.status(503).json({
+            success: false,
+            message:
+              "Unable to send verification code via SMTP. Please try again later.",
+          });
+        }
       }
     }
 
     return res.status(200).json({
       success: true,
-      message: "A new login verification code has been sent to your official company email.",
+      isDevMode: isCompanyOtpDevMode(),
+      message: isCompanyOtpDevMode()
+        ? "Development mode: Check the backend server terminal for your verification code."
+        : "A new login verification code has been sent to your official company email.",
       cooldownSeconds: 60,
     });
   } catch (error) {

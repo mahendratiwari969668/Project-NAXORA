@@ -63,6 +63,7 @@ export default function CompanyRegister() {
   const [isVerifiedNotice, setIsVerifiedNotice] = useState(false);
   const [alreadyVerifiedEmail, setAlreadyVerifiedEmail] = useState(false);
   const [existingUserRole, setExistingUserRole] = useState("company");
+  const [isDevMode, setIsDevMode] = useState(false);
 
   // Countdown timer for OTP resend
   useEffect(() => {
@@ -193,11 +194,16 @@ export default function CompanyRegister() {
       }
 
       // Successful registration (either fresh or resuming unverified account)
+      if (data.isDevMode) {
+        setIsDevMode(true);
+      }
       setRegisteredEmail(data.email || formData.officialEmail.trim().toLowerCase());
       setVerificationMode(true);
       setSuccessMsg(
         data.message ||
-          "Registration initiated. A 6-digit verification code has been sent to your official company email."
+          (data.isDevMode
+            ? "Development mode: Check the backend server terminal for your verification code."
+            : "Registration initiated. A 6-digit verification code has been sent to your official company email.")
       );
       setResendCooldown(data.cooldownSeconds || 60);
     } catch (err) {
@@ -277,7 +283,15 @@ export default function CompanyRegister() {
         throw new Error(data.message || "Unable to resend verification code.");
       }
 
-      setSuccessMsg(data.message || "A new verification code has been sent to your email.");
+      if (data.isDevMode) {
+        setIsDevMode(true);
+      }
+      setSuccessMsg(
+        data.message ||
+          (data.isDevMode
+            ? "Development mode: Check the backend server terminal for your verification code."
+            : "A new verification code has been sent to your email.")
+      );
       setResendCooldown(data.cooldownSeconds || 60);
     } catch (err) {
       console.error("Resend OTP failed:", err);
@@ -382,22 +396,45 @@ export default function CompanyRegister() {
 
               <h1>Verify your company email</h1>
 
-              <p>
-                We sent a 6-digit verification code to{" "}
-                <strong style={{ color: "var(--company-text, #0f172a)" }}>
-                  {registeredEmail}
-                </strong>
-                . Enter the code below to complete your registration.
-              </p>
-              <p
-                style={{
-                  fontSize: "12px",
-                  color: "var(--company-muted, #94a3b8)",
-                  marginTop: "6px",
-                }}
-              >
-                Tip: Please also check your <strong>Spam or Junk</strong> folder if the email does not appear in your Primary Inbox.
-              </p>
+              {isDevMode ? (
+                <div
+                  style={{
+                    padding: "12px 16px",
+                    borderRadius: "8px",
+                    background: "rgba(59, 130, 246, 0.08)",
+                    border: "1px solid rgba(59, 130, 246, 0.25)",
+                    color: "var(--company-text, #0f172a)",
+                    fontSize: "13px",
+                    lineHeight: "1.5",
+                    margin: "12px 0 16px",
+                    textAlign: "left",
+                  }}
+                >
+                  <strong style={{ display: "block", color: "#3b82f6", marginBottom: "4px" }}>
+                    Development Mode Active
+                  </strong>
+                  Check your <strong>backend server terminal</strong> to view the generated 6-digit verification code for <strong>{registeredEmail}</strong>.
+                </div>
+              ) : (
+                <>
+                  <p>
+                    We sent a 6-digit verification code to{" "}
+                    <strong style={{ color: "var(--company-text, #0f172a)" }}>
+                      {registeredEmail}
+                    </strong>
+                    . Enter the code below to complete your registration.
+                  </p>
+                  <p
+                    style={{
+                      fontSize: "12px",
+                      color: "var(--company-muted, #94a3b8)",
+                      marginTop: "6px",
+                    }}
+                  >
+                    Tip: Please also check your <strong>Spam or Junk</strong> folder if the email does not appear in your Primary Inbox.
+                  </p>
+                </>
+              )}
             </div>
 
             <form className="company-auth-card" onSubmit={handleVerifyOtp}>
@@ -457,6 +494,8 @@ export default function CompanyRegister() {
                 <span>
                   {resendCooldown > 0
                     ? `Resend available in ${resendCooldown}s`
+                    : isDevMode
+                    ? "Need a new terminal code?"
                     : "Didn't receive the email?"}
                 </span>
 
