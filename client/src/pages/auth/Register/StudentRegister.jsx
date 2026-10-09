@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import {
   ArrowLeft,
@@ -10,9 +10,13 @@ import {
   Phone,
   User,
   CheckCircle2,
+  RefreshCw,
+  Loader2,
 } from "lucide-react";
 
 import ThemeToggle from "../../../components/common/ThemeToggle";
+
+const API_BASE = "http://localhost:5000";
 
 const graduationYears = Array.from(
   { length: 8 },
@@ -26,6 +30,23 @@ export default function StudentRegister() {
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const [verificationMode, setVerificationMode] = useState(false);
   const [otp, setOtp] = useState("");
+  const [error, setError] = useState("");
+  const [successMsg, setSuccessMsg] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [verifying, setVerifying] = useState(false);
+  const [resending, setResending] = useState(false);
+  const [resendCooldown, setResendCooldown] = useState(0);
+
+  // Master Data state
+  const [universities, setUniversities] = useState([]);
+  const [institutions, setInstitutions] = useState([]);
+  const [departments, setDepartments] = useState([]);
+  const [courses, setCourses] = useState([]);
+
+  const [loadingUniversities, setLoadingUniversities] = useState(false);
+  const [loadingInstitutions, setLoadingInstitutions] = useState(false);
+  const [loadingDepartments, setLoadingDepartments] = useState(false);
+  const [loadingCourses, setLoadingCourses] = useState(false);
 
   const [formData, setFormData] = useState({
     fullName: "",
@@ -41,66 +62,297 @@ export default function StudentRegister() {
     studentId: "",
   });
 
+  // Countdown timer for OTP resend
+  useEffect(() => {
+    if (resendCooldown <= 0) return;
+    const timer = setInterval(() => {
+      setResendCooldown((prev) => (prev > 0 ? prev - 1 : 0));
+    }, 1000);
+    return () => clearInterval(timer);
+  }, [resendCooldown]);
+
+  // Fetch universities on mount
+  useEffect(() => {
+    const fetchUniversities = async () => {
+      setLoadingUniversities(true);
+      try {
+        const res = await fetch(`${API_BASE}/api/master-data/universities`);
+        const json = await res.json();
+        if (json.success && Array.isArray(json.data)) {
+          setUniversities(json.data);
+        }
+      } catch (err) {
+        console.error("Failed to load universities:", err);
+      } finally {
+        setLoadingUniversities(false);
+      }
+    };
+
+    fetchUniversities();
+  }, []);
+
+  // Fetch institutions when universityId changes
+  const handleUniversityChange = async (e) => {
+    const universityId = e.target.value;
+    setFormData((prev) => ({
+      ...prev,
+      universityId,
+      institutionId: "",
+      departmentId: "",
+      courseId: "",
+    }));
+    setInstitutions([]);
+    setDepartments([]);
+    setCourses([]);
+
+    if (!universityId) return;
+
+    setLoadingInstitutions(true);
+    try {
+      const res = await fetch(
+        `${API_BASE}/api/master-data/universities/${universityId}/institutions`
+      );
+      const json = await res.json();
+      if (json.success && Array.isArray(json.data)) {
+        setInstitutions(json.data);
+      }
+    } catch (err) {
+      console.error("Failed to load institutions:", err);
+    } finally {
+      setLoadingInstitutions(false);
+    }
+  };
+
+  // Fetch departments when institutionId changes
+  const handleInstitutionChange = async (e) => {
+    const institutionId = e.target.value;
+    setFormData((prev) => ({
+      ...prev,
+      institutionId,
+      departmentId: "",
+      courseId: "",
+    }));
+    setDepartments([]);
+    setCourses([]);
+
+    if (!institutionId) return;
+
+    setLoadingDepartments(true);
+    try {
+      const res = await fetch(
+        `${API_BASE}/api/master-data/institutions/${institutionId}/departments`
+      );
+      const json = await res.json();
+      if (json.success && Array.isArray(json.data)) {
+        setDepartments(json.data);
+      }
+    } catch (err) {
+      console.error("Failed to load departments:", err);
+    } finally {
+      setLoadingDepartments(false);
+    }
+  };
+
+  // Fetch courses when departmentId changes
+  const handleDepartmentChange = async (e) => {
+    const departmentId = e.target.value;
+    setFormData((prev) => ({
+      ...prev,
+      departmentId,
+      courseId: "",
+    }));
+    setCourses([]);
+
+    if (!departmentId) return;
+
+    setLoadingCourses(true);
+    try {
+      const res = await fetch(
+        `${API_BASE}/api/master-data/departments/${departmentId}/courses`
+      );
+      const json = await res.json();
+      if (json.success && Array.isArray(json.data)) {
+        setCourses(json.data);
+      }
+    } catch (err) {
+      console.error("Failed to load courses:", err);
+    } finally {
+      setLoadingCourses(false);
+    }
+  };
+
   const handleChange = (e) => {
     const { name, value } = e.target;
-
     setFormData((previous) => ({
       ...previous,
       [name]: value,
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    setError("");
+    setSuccessMsg("");
+
+    if (!formData.fullName.trim()) {
+      setError("Please enter your full name.");
+      return;
+    }
+
+    if (!formData.email.trim()) {
+      setError("Please enter your email address.");
+      return;
+    }
+
+    if (!formData.password || formData.password.length < 6) {
+      setError("Password must be at least 6 characters.");
+      return;
+    }
 
     if (formData.password !== formData.confirmPassword) {
-      alert("Passwords do not match.");
+      setError("Passwords do not match.");
       return;
     }
 
-    /*
-      Backend registration will be connected here.
+    if (
+      !formData.universityId ||
+      !formData.institutionId ||
+      !formData.departmentId ||
+      !formData.courseId ||
+      !formData.graduationYear
+    ) {
+      setError("Please complete all required academic fields.");
+      return;
+    }
 
-      Important:
-      universityId
-      institutionId
-      courseId
-      departmentId
+    setLoading(true);
 
-      will eventually come from controlled master-data APIs.
-    */
+    try {
+      const response = await fetch(`${API_BASE}/api/auth/student/register`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        credentials: "include",
+        body: JSON.stringify({
+          fullName: formData.fullName.trim(),
+          email: formData.email.trim().toLowerCase(),
+          mobile: formData.mobile.trim(),
+          password: formData.password,
+          universityId: formData.universityId,
+          institutionId: formData.institutionId,
+          departmentId: formData.departmentId,
+          courseId: formData.courseId,
+          graduationYear: formData.graduationYear,
+          studentId: formData.studentId.trim(),
+        }),
+      });
 
-    setVerificationMode(true);
+      const data = await response.json();
+
+      if (!response.ok || !data.success) {
+        throw new Error(data.message || "Registration failed");
+      }
+
+      setVerificationMode(true);
+      setSuccessMsg(data.message || "A verification code has been sent to your email.");
+      setResendCooldown(data.cooldownSeconds || 60);
+    } catch (err) {
+      console.error("Student registration failed:", err);
+      setError(err.message || "Registration failed. Please try again.");
+    } finally {
+      setLoading(false);
+    }
   };
 
-  const handleVerification = (e) => {
+  const handleVerification = async (e) => {
     e.preventDefault();
+    setError("");
+    setSuccessMsg("");
 
-    if (otp.length !== 6) {
+    const cleanOtp = otp.trim();
+    if (cleanOtp.length !== 6) {
+      setError("Please enter a valid 6-digit verification code.");
       return;
     }
 
-    // Backend OTP verification will be connected here.
-    navigate("/student/dashboard");
+    setVerifying(true);
+
+    try {
+      const response = await fetch(`${API_BASE}/api/auth/student/verify-otp`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        credentials: "include",
+        body: JSON.stringify({
+          email: formData.email.trim().toLowerCase(),
+          otp: cleanOtp,
+        }),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok || !data.success) {
+        throw new Error(data.message || "Verification failed");
+      }
+
+      // Verification successful, navigate to student dashboard
+      navigate("/student/dashboard");
+    } catch (err) {
+      console.error("OTP verification failed:", err);
+      setError(err.message || "Verification failed. Please check your code.");
+    } finally {
+      setVerifying(false);
+    }
+  };
+
+  const handleResendOtp = async () => {
+    if (resendCooldown > 0 || resending) return;
+    setError("");
+    setSuccessMsg("");
+    setResending(true);
+
+    try {
+      const response = await fetch(`${API_BASE}/api/auth/student/resend-otp`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        credentials: "include",
+        body: JSON.stringify({
+          email: formData.email.trim().toLowerCase(),
+        }),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok || !data.success) {
+        throw new Error(data.message || "Unable to resend verification code");
+      }
+
+      setSuccessMsg(data.message || "A new verification code has been sent to your email.");
+      setResendCooldown(data.cooldownSeconds || 60);
+    } catch (err) {
+      console.error("Resend OTP failed:", err);
+      setError(err.message || "Failed to resend verification code.");
+    } finally {
+      setResending(false);
+    }
   };
 
   return (
     <div className="min-h-screen bg-slate-50 text-slate-950 transition-colors dark:bg-[#0B1220] dark:text-slate-50">
-
       {/* Header */}
       <header className="border-b border-slate-200 bg-white/80 backdrop-blur dark:border-slate-800 dark:bg-[#0B1220]/80">
         <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6">
-
           <ThemeToggle />
 
           <Link to="/" className="flex items-center gap-3">
             <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-blue-500 text-lg font-bold text-white">
               N
             </div>
-
-            <span className="text-xl font-semibold">
-              NEXORA
-            </span>
+            <span className="text-xl font-semibold">NEXORA</span>
           </Link>
 
           <Link
@@ -114,10 +366,8 @@ export default function StudentRegister() {
       </header>
 
       <main className="mx-auto max-w-3xl px-5 py-12">
-
         {/* Heading */}
         <div className="mb-10 text-center">
-
           <div className="mx-auto mb-5 flex h-14 w-14 items-center justify-center rounded-xl bg-blue-50 text-blue-600 dark:bg-blue-500/10 dark:text-blue-400">
             <GraduationCap size={28} />
           </div>
@@ -138,36 +388,40 @@ export default function StudentRegister() {
 
         {/* Card */}
         <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm dark:border-slate-800 dark:bg-[#111C2E] sm:p-8">
+          {error && (
+            <div className="mb-6 rounded-lg border border-red-500/20 bg-red-500/10 p-3 text-sm text-red-600 dark:text-red-400">
+              {error}
+            </div>
+          )}
+
+          {successMsg && (
+            <div className="mb-6 rounded-lg border border-green-500/20 bg-green-500/10 p-3 text-sm text-green-700 dark:text-green-300">
+              {successMsg}
+            </div>
+          )}
 
           {!verificationMode ? (
             <form onSubmit={handleSubmit} className="space-y-8">
-
               {/* Basic Information */}
               <section>
                 <div className="mb-5">
-                  <h2 className="text-lg font-semibold">
-                    Basic information
-                  </h2>
-
+                  <h2 className="text-lg font-semibold">Basic information</h2>
                   <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
                     Use your real contact details for account verification.
                   </p>
                 </div>
 
                 <div className="grid gap-5 sm:grid-cols-2">
-
                   {/* Full Name */}
                   <div className="sm:col-span-2">
                     <label className="mb-2 block text-sm font-medium">
                       Full name
                     </label>
-
                     <div className="relative">
                       <User
                         size={18}
                         className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400"
                       />
-
                       <input
                         name="fullName"
                         value={formData.fullName}
@@ -182,15 +436,13 @@ export default function StudentRegister() {
                   {/* Email */}
                   <div>
                     <label className="mb-2 block text-sm font-medium">
-                      Email
+                      Email address
                     </label>
-
                     <div className="relative">
                       <Mail
                         size={18}
                         className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400"
                       />
-
                       <input
                         type="email"
                         name="email"
@@ -208,19 +460,16 @@ export default function StudentRegister() {
                     <label className="mb-2 block text-sm font-medium">
                       Mobile number
                     </label>
-
                     <div className="relative">
                       <Phone
                         size={18}
                         className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400"
                       />
-
                       <input
                         type="tel"
                         name="mobile"
                         value={formData.mobile}
                         onChange={handleChange}
-                        required
                         placeholder="Enter mobile number"
                         className="w-full rounded-lg border border-slate-300 bg-white py-3 pl-10 pr-4 text-sm outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/10 dark:border-slate-700 dark:bg-[#0B1220]"
                       />
@@ -232,34 +481,27 @@ export default function StudentRegister() {
                     <label className="mb-2 block text-sm font-medium">
                       Password
                     </label>
-
                     <div className="relative">
                       <LockKeyhole
                         size={18}
                         className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400"
                       />
-
                       <input
                         type={showPassword ? "text" : "password"}
                         name="password"
                         value={formData.password}
                         onChange={handleChange}
                         required
-                        minLength={8}
-                        placeholder="Minimum 8 characters"
+                        minLength={6}
+                        placeholder="Minimum 6 characters"
                         className="w-full rounded-lg border border-slate-300 bg-white py-3 pl-10 pr-11 text-sm outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/10 dark:border-slate-700 dark:bg-[#0B1220]"
                       />
-
                       <button
                         type="button"
                         onClick={() => setShowPassword(!showPassword)}
                         className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400"
                       >
-                        {showPassword ? (
-                          <EyeOff size={18} />
-                        ) : (
-                          <Eye size={18} />
-                        )}
+                        {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
                       </button>
                     </div>
                   </div>
@@ -269,13 +511,11 @@ export default function StudentRegister() {
                     <label className="mb-2 block text-sm font-medium">
                       Confirm password
                     </label>
-
                     <div className="relative">
                       <LockKeyhole
                         size={18}
                         className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400"
                       />
-
                       <input
                         type={showConfirmPassword ? "text" : "password"}
                         name="confirmPassword"
@@ -285,7 +525,6 @@ export default function StudentRegister() {
                         placeholder="Re-enter password"
                         className="w-full rounded-lg border border-slate-300 bg-white py-3 pl-10 pr-11 text-sm outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/10 dark:border-slate-700 dark:bg-[#0B1220]"
                       />
-
                       <button
                         type="button"
                         onClick={() =>
@@ -307,34 +546,36 @@ export default function StudentRegister() {
               {/* Academic Information */}
               <section className="border-t border-slate-200 pt-8 dark:border-slate-800">
                 <div className="mb-5">
-                  <h2 className="text-lg font-semibold">
-                    Academic information
-                  </h2>
-
+                  <h2 className="text-lg font-semibold">Academic information</h2>
                   <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
-                    Select your academic relationships from controlled data.
+                    Select your academic relationships from controlled master data.
                   </p>
                 </div>
 
                 <div className="grid gap-5 sm:grid-cols-2">
-
                   {/* University */}
                   <div>
                     <label className="mb-2 block text-sm font-medium">
                       University
                     </label>
-
                     <select
                       name="universityId"
                       value={formData.universityId}
-                      onChange={handleChange}
+                      onChange={handleUniversityChange}
                       required
-                      className="w-full rounded-lg border border-slate-300 bg-white px-3 py-3 text-sm outline-none focus:border-blue-500 dark:border-slate-700 dark:bg-[#0B1220]"
+                      disabled={loadingUniversities}
+                      className="w-full rounded-lg border border-slate-300 bg-white px-3 py-3 text-sm outline-none focus:border-blue-500 dark:border-slate-700 dark:bg-[#0B1220] disabled:opacity-60"
                     >
-                      <option value="">Select university</option>
-                      <option value="demo-university">
-                        Select after master data is connected
+                      <option value="">
+                        {loadingUniversities
+                          ? "Loading universities..."
+                          : "Select university"}
                       </option>
+                      {universities.map((u) => (
+                        <option key={u._id} value={u._id}>
+                          {u.name} ({u.code})
+                        </option>
+                      ))}
                     </select>
                   </div>
 
@@ -343,38 +584,26 @@ export default function StudentRegister() {
                     <label className="mb-2 block text-sm font-medium">
                       College / Institution
                     </label>
-
                     <select
                       name="institutionId"
                       value={formData.institutionId}
-                      onChange={handleChange}
+                      onChange={handleInstitutionChange}
                       required
-                      className="w-full rounded-lg border border-slate-300 bg-white px-3 py-3 text-sm outline-none focus:border-blue-500 dark:border-slate-700 dark:bg-[#0B1220]"
+                      disabled={!formData.universityId || loadingInstitutions}
+                      className="w-full rounded-lg border border-slate-300 bg-white px-3 py-3 text-sm outline-none focus:border-blue-500 dark:border-slate-700 dark:bg-[#0B1220] disabled:opacity-60"
                     >
-                      <option value="">Select institution</option>
-                      <option value="demo-institution">
-                        Select after master data is connected
+                      <option value="">
+                        {!formData.universityId
+                          ? "Select university first"
+                          : loadingInstitutions
+                          ? "Loading colleges..."
+                          : "Select institution / college"}
                       </option>
-                    </select>
-                  </div>
-
-                  {/* Course */}
-                  <div>
-                    <label className="mb-2 block text-sm font-medium">
-                      Course
-                    </label>
-
-                    <select
-                      name="courseId"
-                      value={formData.courseId}
-                      onChange={handleChange}
-                      required
-                      className="w-full rounded-lg border border-slate-300 bg-white px-3 py-3 text-sm outline-none focus:border-blue-500 dark:border-slate-700 dark:bg-[#0B1220]"
-                    >
-                      <option value="">Select course</option>
-                      <option value="demo-course">
-                        Select after master data is connected
-                      </option>
+                      {institutions.map((inst) => (
+                        <option key={inst._id} value={inst._id}>
+                          {inst.name}
+                        </option>
+                      ))}
                     </select>
                   </div>
 
@@ -383,27 +612,62 @@ export default function StudentRegister() {
                     <label className="mb-2 block text-sm font-medium">
                       Department / Branch
                     </label>
-
                     <select
                       name="departmentId"
                       value={formData.departmentId}
-                      onChange={handleChange}
+                      onChange={handleDepartmentChange}
                       required
-                      className="w-full rounded-lg border border-slate-300 bg-white px-3 py-3 text-sm outline-none focus:border-blue-500 dark:border-slate-700 dark:bg-[#0B1220]"
+                      disabled={!formData.institutionId || loadingDepartments}
+                      className="w-full rounded-lg border border-slate-300 bg-white px-3 py-3 text-sm outline-none focus:border-blue-500 dark:border-slate-700 dark:bg-[#0B1220] disabled:opacity-60"
                     >
-                      <option value="">Select department</option>
-                      <option value="demo-department">
-                        Select after master data is connected
+                      <option value="">
+                        {!formData.institutionId
+                          ? "Select institution first"
+                          : loadingDepartments
+                          ? "Loading departments..."
+                          : "Select department"}
                       </option>
+                      {departments.map((dept) => (
+                        <option key={dept._id} value={dept._id}>
+                          {dept.name} ({dept.code})
+                        </option>
+                      ))}
                     </select>
                   </div>
 
-                  {/* Graduation */}
+                  {/* Course */}
+                  <div>
+                    <label className="mb-2 block text-sm font-medium">
+                      Course / Program
+                    </label>
+                    <select
+                      name="courseId"
+                      value={formData.courseId}
+                      onChange={handleChange}
+                      required
+                      disabled={!formData.departmentId || loadingCourses}
+                      className="w-full rounded-lg border border-slate-300 bg-white px-3 py-3 text-sm outline-none focus:border-blue-500 dark:border-slate-700 dark:bg-[#0B1220] disabled:opacity-60"
+                    >
+                      <option value="">
+                        {!formData.departmentId
+                          ? "Select department first"
+                          : loadingCourses
+                          ? "Loading courses..."
+                          : "Select course"}
+                      </option>
+                      {courses.map((c) => (
+                        <option key={c._id} value={c._id}>
+                          {c.name}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
+
+                  {/* Graduation Year */}
                   <div>
                     <label className="mb-2 block text-sm font-medium">
                       Graduation year
                     </label>
-
                     <select
                       name="graduationYear"
                       value={formData.graduationYear}
@@ -412,7 +676,6 @@ export default function StudentRegister() {
                       className="w-full rounded-lg border border-slate-300 bg-white px-3 py-3 text-sm outline-none focus:border-blue-500 dark:border-slate-700 dark:bg-[#0B1220]"
                     >
                       <option value="">Select year</option>
-
                       {graduationYears.map((year) => (
                         <option key={year} value={year}>
                           {year}
@@ -429,13 +692,12 @@ export default function StudentRegister() {
                         Optional
                       </span>
                     </label>
-
                     <input
                       type="text"
                       name="studentId"
                       value={formData.studentId}
                       onChange={handleChange}
-                      placeholder="Enter student ID"
+                      placeholder="Enter student ID or roll number"
                       className="w-full rounded-lg border border-slate-300 bg-white px-3 py-3 text-sm outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/10 dark:border-slate-700 dark:bg-[#0B1220]"
                     />
                   </div>
@@ -445,34 +707,34 @@ export default function StudentRegister() {
               {/* Submit */}
               <button
                 type="submit"
-                className="flex w-full items-center justify-center rounded-lg bg-blue-600 px-5 py-3 text-sm font-semibold text-white transition hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500/30"
+                disabled={loading}
+                className="flex w-full items-center justify-center gap-2 rounded-lg bg-blue-600 px-5 py-3 text-sm font-semibold text-white transition hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500/30 disabled:opacity-60"
               >
-                Create student account
+                {loading && <Loader2 size={18} className="animate-spin" />}
+                {loading ? "Creating account..." : "Create student account"}
               </button>
 
               <p className="text-center text-xs leading-5 text-slate-500">
-                Your academic relationships will be stored using controlled
-                identifiers rather than arbitrary institution names.
+                Your academic relationships will be stored using verified master
+                data identifiers rather than arbitrary institution names.
               </p>
             </form>
           ) : (
-            /* OTP */
-            <form
-              onSubmit={handleVerification}
-              className="mx-auto max-w-md space-y-6"
-            >
+            /* OTP Verification Screen */
+            <form onSubmit={handleVerification} className="mx-auto max-w-md space-y-6">
               <div className="text-center">
                 <div className="mx-auto mb-5 flex h-14 w-14 items-center justify-center rounded-full bg-green-50 text-green-600 dark:bg-green-500/10 dark:text-green-400">
                   <CheckCircle2 size={28} />
                 </div>
 
-                <h2 className="text-xl font-semibold">
-                  Verify your account
-                </h2>
+                <h2 className="text-xl font-semibold">Verify your account</h2>
 
                 <p className="mt-2 text-sm leading-6 text-slate-500 dark:text-slate-400">
-                  Enter the 6-digit verification code sent to your registered
-                  email or mobile number.
+                  Enter the 6-digit verification code sent to{" "}
+                  <span className="font-semibold text-slate-800 dark:text-slate-200">
+                    {formData.email}
+                  </span>
+                  .
                 </p>
               </div>
 
@@ -481,27 +743,51 @@ export default function StudentRegister() {
                 inputMode="numeric"
                 maxLength={6}
                 value={otp}
-                onChange={(e) =>
-                  setOtp(e.target.value.replace(/\D/g, ""))
-                }
+                onChange={(e) => setOtp(e.target.value.replace(/\D/g, ""))}
                 placeholder="000000"
-                className="w-full rounded-lg border border-slate-300 bg-white px-4 py-4 text-center text-xl tracking-[0.5em] outline-none focus:border-blue-500 dark:border-slate-700 dark:bg-[#0B1220]"
+                autoFocus
+                className="w-full rounded-lg border border-slate-300 bg-white px-4 py-4 text-center text-2xl font-bold tracking-[0.5em] outline-none focus:border-blue-500 dark:border-slate-700 dark:bg-[#0B1220]"
               />
 
               <button
                 type="submit"
-                className="w-full rounded-lg bg-blue-600 px-5 py-3 text-sm font-semibold text-white hover:bg-blue-700"
+                disabled={verifying || otp.length !== 6}
+                className="flex w-full items-center justify-center gap-2 rounded-lg bg-blue-600 px-5 py-3 text-sm font-semibold text-white transition hover:bg-blue-700 disabled:opacity-60"
               >
-                Verify account
+                {verifying && <Loader2 size={18} className="animate-spin" />}
+                {verifying ? "Verifying..." : "Verify account"}
               </button>
 
-              <button
-                type="button"
-                onClick={() => setVerificationMode(false)}
-                className="w-full text-sm font-medium text-slate-500 hover:text-blue-600"
-              >
-                Back to registration
-              </button>
+              <div className="flex items-center justify-between pt-2">
+                <button
+                  type="button"
+                  onClick={handleResendOtp}
+                  disabled={resendCooldown > 0 || resending}
+                  className="flex items-center gap-1.5 text-sm font-medium text-blue-600 hover:text-blue-700 disabled:text-slate-400 dark:text-blue-400 dark:disabled:text-slate-600"
+                >
+                  <RefreshCw
+                    size={14}
+                    className={resending ? "animate-spin" : ""}
+                  />
+                  {resending
+                    ? "Sending..."
+                    : resendCooldown > 0
+                    ? `Resend code in ${resendCooldown}s`
+                    : "Resend code"}
+                </button>
+
+                <button
+                  type="button"
+                  onClick={() => {
+                    setVerificationMode(false);
+                    setError("");
+                    setSuccessMsg("");
+                  }}
+                  className="text-sm font-medium text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200"
+                >
+                  Back to registration
+                </button>
+              </div>
             </form>
           )}
 

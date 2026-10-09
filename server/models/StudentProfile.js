@@ -87,6 +87,54 @@ const studentProfileSchema = new mongoose.Schema(
       },
     },
 
+    academic: {
+      university: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "University",
+      },
+      institution: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Institution",
+      },
+      department: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Department",
+      },
+      course: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Course",
+      },
+      universityName: {
+        type: String,
+        default: "",
+        trim: true,
+      },
+      institutionName: {
+        type: String,
+        default: "",
+        trim: true,
+      },
+      departmentName: {
+        type: String,
+        default: "",
+        trim: true,
+      },
+      courseName: {
+        type: String,
+        default: "",
+        trim: true,
+      },
+      graduationYear: {
+        type: Number,
+        default: null,
+      },
+      studentId: {
+        type: String,
+        default: "",
+        trim: true,
+      },
+    },
+
     careerGoal: {
       targetRole: {
         type: String,

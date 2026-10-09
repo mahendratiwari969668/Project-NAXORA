@@ -22,6 +22,12 @@ const companyProfileSchema = new mongoose.Schema(
       trim: true,
     },
 
+    companyType: {
+      type: String,
+      default: "",
+      trim: true,
+    },
+
     industry: {
       type: String,
       default: "",
@@ -68,22 +74,61 @@ const companyProfileSchema = new mongoose.Schema(
       maxlength: 3000,
     },
 
+    location: {
+      country: {
+        type: String,
+        default: "India",
+        trim: true,
+      },
+      state: {
+        type: String,
+        default: "",
+        trim: true,
+      },
+      district: {
+        type: String,
+        default: "",
+        trim: true,
+      },
+      extraAddress: {
+        type: String,
+        default: "",
+        trim: true,
+      },
+    },
+
     headquarters: {
       city: {
         type: String,
         default: "",
         trim: true,
       },
-
       state: {
         type: String,
         default: "",
         trim: true,
       },
-
       country: {
         type: String,
         default: "India",
+        trim: true,
+      },
+    },
+
+    authorizedPerson: {
+      name: {
+        type: String,
+        default: "",
+        trim: true,
+      },
+      designation: {
+        type: String,
+        default: "",
+        trim: true,
+      },
+      contactNumber: {
+        type: String,
+        default: "",
         trim: true,
       },
     },
@@ -95,11 +140,37 @@ const companyProfileSchema = new mongoose.Schema(
         trim: true,
         lowercase: true,
       },
-
       phone: {
         type: String,
         default: "",
         trim: true,
+      },
+    },
+
+    supportingDocument: {
+      originalName: {
+        type: String,
+        default: "",
+      },
+      fileName: {
+        type: String,
+        default: "",
+      },
+      fileUrl: {
+        type: String,
+        default: "",
+      },
+      mimeType: {
+        type: String,
+        default: "",
+      },
+      size: {
+        type: Number,
+        default: 0,
+      },
+      uploadedAt: {
+        type: Date,
+        default: null,
       },
     },
 
@@ -109,13 +180,11 @@ const companyProfileSchema = new mongoose.Schema(
         default: "",
         trim: true,
       },
-
       github: {
         type: String,
         default: "",
         trim: true,
       },
-
       twitter: {
         type: String,
         default: "",
@@ -129,10 +198,13 @@ const companyProfileSchema = new mongoose.Schema(
         enum: ["pending", "verified", "rejected"],
         default: "pending",
       },
-
       verifiedAt: {
         type: Date,
         default: null,
+      },
+      remarks: {
+        type: String,
+        default: "",
       },
     },
 

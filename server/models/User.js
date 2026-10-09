@@ -34,6 +34,12 @@ const userSchema = new mongoose.Schema(
       enum: ["student", "company", "institution"],
     },
 
+    phone: {
+      type: String,
+      default: "",
+      trim: true,
+    },
+
     isActive: {
       type: Boolean,
       default: true,
@@ -42,6 +48,27 @@ const userSchema = new mongoose.Schema(
     isVerified: {
       type: Boolean,
       default: false,
+    },
+
+    otp: {
+      codeHash: {
+        type: String,
+        select: false,
+      },
+      expiresAt: {
+        type: Date,
+      },
+      purpose: {
+        type: String,
+        enum: ["registration", "login", "reset"],
+      },
+      resendAvailableAt: {
+        type: Date,
+      },
+      attempts: {
+        type: Number,
+        default: 0,
+      },
     },
   },
   {

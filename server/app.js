@@ -1,7 +1,9 @@
 import express from "express";
 import cors from "cors";
 import cookieParser from "cookie-parser";
+import path from "path";
 import authRoutes from "./routes/authRoutes.js";
+import masterDataRoutes from "./routes/masterDataRoutes.js";
 
 
 import studentProfileRoutes from "./routes/studentProfileRoutes.js";
@@ -34,18 +36,54 @@ import institutionOpportunityRoutes from "./routes/institutionOpportunityRoutes.
 import institutionApplicationRoutes from "./routes/institutionApplicationRoutes.js";
 import institutionNotificationRoutes from "./routes/institutionNotificationRoutes.js";
 
+
+import aiResumeRoutes from "./routes/aiResumeRoutes.js";
+
 const app = express();
+
+const defaultAllowedOrigins = [
+  "http://localhost:5173",
+  "http://localhost:5174",
+  "http://localhost:5175",
+  "http://127.0.0.1:5173",
+  "http://127.0.0.1:5174",
+  "http://127.0.0.1:5175",
+];
+
+const envOrigins = process.env.CLIENT_URL
+  ? process.env.CLIENT_URL.split(",").map((origin) => origin.trim())
+  : [];
+
+const allowedOrigins = [
+  ...new Set([...defaultAllowedOrigins, ...envOrigins]),
+].filter(Boolean);
+
+const isOriginAllowed = (origin) => {
+  if (!origin) return true;
+  if (allowedOrigins.includes(origin)) return true;
+  if (/^http:\/\/(localhost|127\.0\.0\.1)(:\d+)?$/.test(origin)) return true;
+  return false;
+};
 
 app.use(
   cors({
-    origin: process.env.CLIENT_URL || "http://localhost:5173",
+    origin: (origin, callback) => {
+      if (isOriginAllowed(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error(`Not allowed by CORS: ${origin}`));
+      }
+    },
     credentials: true,
+    methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization", "X-Requested-With"],
   })
 );
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
+app.use("/uploads", express.static(path.resolve("uploads")));
 
 app.get("/api/health", (_req, res) => {
   res.json({
@@ -55,6 +93,7 @@ app.get("/api/health", (_req, res) => {
 });
 
 app.use("/api/auth", authRoutes);
+app.use("/api/master-data", masterDataRoutes);
 app.use("/api/student", studentProfileRoutes);
 app.use("/api/student/education", educationRoutes);
 app.use("/api/student/skills", skillRoutes);
@@ -80,5 +119,6 @@ app.use("/api/institution/students/overview", institutionStudentOverviewRoutes);
 app.use("/api/institution/opportunities", institutionOpportunityRoutes);
 app.use("/api/institution/applications", institutionApplicationRoutes);
 app.use("/api/institution/notifications", institutionNotificationRoutes);
+app.use("/api/student/ai-resume", aiResumeRoutes);
 
 export default app;

@@ -33,6 +33,7 @@ const institutionProfileSchema = new mongoose.Schema(
       enum: [
         "university",
         "college",
+        "institute",
         "school",
         "training-institute",
         "other",
@@ -73,6 +74,12 @@ const institutionProfileSchema = new mongoose.Schema(
         trim: true,
       },
 
+      district: {
+        type: String,
+        default: "",
+        trim: true,
+      },
+
       state: {
         type: String,
         default: "",
@@ -83,6 +90,61 @@ const institutionProfileSchema = new mongoose.Schema(
         type: String,
         default: "India",
         trim: true,
+      },
+
+      extraAddress: {
+        type: String,
+        default: "",
+        trim: true,
+      },
+    },
+
+    authorizedPerson: {
+      name: {
+        type: String,
+        default: "",
+        trim: true,
+      },
+      designation: {
+        type: String,
+        default: "",
+        trim: true,
+      },
+      contactNumber: {
+        type: String,
+        default: "",
+        trim: true,
+      },
+    },
+
+    supportingDocument: {
+      originalName: {
+        type: String,
+        default: "",
+        trim: true,
+      },
+      fileName: {
+        type: String,
+        default: "",
+        trim: true,
+      },
+      fileUrl: {
+        type: String,
+        default: "",
+        trim: true,
+      },
+      mimeType: {
+        type: String,
+        default: "",
+        trim: true,
+      },
+      size: {
+        type: Number,
+        default: 0,
+      },
+      uploadedAt: {
+        type: Date,
+        default: null,
       },
     },
 

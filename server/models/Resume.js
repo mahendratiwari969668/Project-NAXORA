@@ -12,19 +12,19 @@ const resumeSchema = new mongoose.Schema(
 
     fileName: {
       type: String,
-      required: true,
+      required: false,
       trim: true,
     },
 
     originalName: {
       type: String,
-      required: true,
+      required: false,
       trim: true,
     },
 
     fileUrl: {
       type: String,
-      required: true,
+      required: false,
       trim: true,
     },
 
@@ -53,8 +53,30 @@ const resumeSchema = new mongoose.Schema(
     aiAnalysis: {
       status: {
         type: String,
-        enum: ["not_started", "processing", "completed", "failed"],
+        enum: [
+          "not_started",
+          "processing",
+          "completed",
+          "failed",
+        ],
         default: "not_started",
+      },
+
+      provider: {
+        type: String,
+        default: "",
+      },
+
+      model: {
+        type: String,
+        default: "",
+      },
+
+      resumeScore: {
+        type: Number,
+        min: 0,
+        max: 100,
+        default: null,
       },
 
       score: {
@@ -70,6 +92,109 @@ const resumeSchema = new mongoose.Schema(
         trim: true,
       },
 
+      skills: {
+        type: [String],
+        default: [],
+      },
+
+      softSkills: {
+        type: [String],
+        default: [],
+      },
+
+      experience: {
+        type: [
+          {
+            company: {
+              type: String,
+              default: "",
+            },
+            role: {
+              type: String,
+              default: "",
+            },
+            duration: {
+              type: String,
+              default: "",
+            },
+            description: {
+              type: String,
+              default: "",
+            },
+          },
+        ],
+        default: [],
+      },
+
+      education: {
+        type: [
+          {
+            institution: {
+              type: String,
+              default: "",
+            },
+            degree: {
+              type: String,
+              default: "",
+            },
+            field: {
+              type: String,
+              default: "",
+            },
+            duration: {
+              type: String,
+              default: "",
+            },
+          },
+        ],
+        default: [],
+      },
+
+      projects: {
+        type: [
+          {
+            name: {
+              type: String,
+              default: "",
+            },
+            description: {
+              type: String,
+              default: "",
+            },
+            technologies: {
+              type: [String],
+              default: [],
+            },
+          },
+        ],
+        default: [],
+      },
+
+      certifications: {
+        type: [String],
+        default: [],
+      },
+
+      strengths: {
+        type: [String],
+        default: [],
+      },
+
+      weaknesses: {
+        type: [String],
+        default: [],
+      },
+
+      suggestedRoles: {
+        type: [String],
+        default: [],
+      },
+
+      skillGaps: {
+        type: [String],
+        default: [],
+      },
+
       analyzedAt: {
         type: Date,
         default: null,
@@ -81,6 +206,9 @@ const resumeSchema = new mongoose.Schema(
   }
 );
 
-const Resume = mongoose.model("Resume", resumeSchema);
+const Resume = mongoose.model(
+  "Resume",
+  resumeSchema
+);
 
 export default Resume;
